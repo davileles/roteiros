@@ -154,7 +154,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 .now-btn{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:6px;font-family:var(--font);font-size:11px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
 .now-btn-maps{background:#4285f4;color:#fff}
 .now-btn-waze{background:#33ccff;color:#000}
-.day-nav{position:sticky;top:0;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.day-nav{position:sticky;top:68px;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .day-nav::-webkit-scrollbar{display:none}
 .day-nav-inner{display:flex;gap:4px;padding:10px 24px;min-width:max-content;margin:0 auto;justify-content:center}
 .day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
@@ -1031,7 +1031,7 @@ function toggleDay(btn) {
 function jumpToDay(n) {
   const el = document.getElementById('day-' + n);
   if (!el) return;
-  const offset = el.getBoundingClientRect().top + window.scrollY - 120;
+  const offset = el.getBoundingClientRect().top + window.scrollY - 160;
   window.scrollTo({ top: offset, behavior: 'smooth' });
   document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
   const btn = document.getElementById('day-nav-' + n);
@@ -1043,7 +1043,7 @@ function updateDayNav() {
   for (let i = 1; i <= 8; i++) {
     const el = document.getElementById('day-' + i);
     if (!el) continue;
-    if (el.getBoundingClientRect().top <= 140) activeDay = i;
+    if (el.getBoundingClientRect().top <= 170) activeDay = i;
   }
   document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
   const btn = document.getElementById('day-nav-' + activeDay);
