@@ -90,7 +90,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 /* DAY NAV */
 .day-nav{position:sticky;top:var(--topbar-h,64px);z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .day-nav::-webkit-scrollbar{display:none}
-.day-nav-inner{display:flex;gap:4px;padding:10px 16px;min-width:max-content}
+.day-nav-inner{display:flex;gap:4px;padding:10px 16px;min-width:max-content;justify-content:center}
 .day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
 .day-nav-btn:hover{background:var(--surface);color:var(--text)}
 .day-nav-btn.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
@@ -1215,13 +1215,13 @@ const ativsHtml = (d.atividades||[]).map((a, ai, arr) => {
       </div>` : '';
     return `
     <div class="atracao">
-      ${navHtml}
       <div class="atracao-header">
         <span class="atracao-time">${a.horario||''}</span>
         <span class="atracao-nome">${a.nome||''}</span>
       </div>
       ${a.descricao ? `<div class="atracao-desc">${a.descricao}</div>` : ''}
       ${a.dica ? `<div class="atracao-tip">💡 ${a.dica}</div>` : ''}
+      ${navHtml}
     </div>`;
   }).join('');
 
