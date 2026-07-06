@@ -145,6 +145,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .doc-del-btn{background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;padding:0;line-height:1;margin-left:auto;flex-shrink:0}
 .doc-del-btn:hover{color:var(--accent)}
 .doc-uploading{font-size:11px;color:var(--muted);font-style:italic}
+.desl-nav-btns{display:flex;gap:6px;margin-top:5px}
+.desl-nav-btn{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;text-decoration:none;transition:opacity .15s}
+.desl-nav-btn:hover{opacity:.8}
+.desl-nav-btn.maps{background:rgba(18,110,255,.15);color:#60a5fa;border:1px solid rgba(18,110,255,.3)}
+.desl-nav-btn.waze{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
 .doc-input{display:none}
 /* FINANCE TABLE */
 .finance-table{width:100%;border-collapse:collapse}
@@ -457,7 +462,25 @@ function buildDayBlock(d, idx) {
 
   const deslHtml = (d.deslocamentos||[]).length ? `
     <span class="day-section-label">Deslocamentos</span>
-    ${d.deslocamentos.map(dl => `<div class="desl-item">${dl}</div>`).join('')}` : '';
+    ${d.deslocamentos.map(dl => {
+      // Extract destination from pattern "A → B: details" or "A → B"
+      const arrowMatch = dl.match(/→\s*([^:→\(]+)/);
+      const dest = arrowMatch ? arrowMatch[1].trim().split(/[\(,]/)[0].trim() : '';
+      const mapsUrl = dest ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(dest) : '';
+      const wazeUrl = dest ? 'https://waze.com/ul?q=' + encodeURIComponent(dest) + '&navigate=yes' : '';
+      const navBtns = dest ? `
+        <div class="desl-nav-btns">
+          <a href="${mapsUrl}" target="_blank" class="desl-nav-btn maps" title="Abrir no Google Maps">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Maps
+          </a>
+          <a href="${wazeUrl}" target="_blank" class="desl-nav-btn waze" title="Abrir no Waze">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm3.8 14.2c-1 .7-2.3 1.1-3.8 1.1s-2.8-.4-3.8-1.1c-.3-.2-.4-.6-.2-.9.2-.3.6-.4.9-.2.8.6 1.9.9 3.1.9s2.3-.3 3.1-.9c.3-.2.7-.1.9.2.2.3.1.7-.2.9zM9 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+            Waze
+          </a>
+        </div>` : '';
+      return `<div class="desl-item">${dl}${navBtns}</div>`;
+    }).join('')}` : '';
 
   const custosHtml = (d.custos||[]).length ? `
     <span class="day-section-label">Custos Estimados</span>
@@ -650,11 +673,20 @@ function closeMobileNav() {
 const PROXY = 'https://cdv-proxy-production.up.railway.app';
 let _docsUploadados = {}; // { docId: { nome, rawUrl, mediaType } }
 
+let _docsList = [];
+
 function renderDocCards(documentos) {
-  document.getElementById('docs-grid').innerHTML = documentos.map((doc, i) => {
-    const docId = doc.docId || ('doc_' + i);
+  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
+  _redrawDocs();
+}
+
+function _redrawDocs() {
+  const grid = document.getElementById('docs-grid');
+  grid.innerHTML = _docsList.map((doc) => {
+    const docId = doc.docId;
     return `
-    <div class="doc-card" id="doccard-${docId}">
+    <div class="doc-card" id="doccard-${docId}" style="position:relative">
+      <button class="doc-card-del" title="Remover este documento" onclick="removerDocCard('${docId}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;line-height:1;padding:0" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted2)'">✕</button>
       <span class="doc-icon">${doc.icon||'📄'}</span>
       <span class="doc-title">${doc.titulo||''}</span>
       <span class="doc-meta">${doc.meta||''}</span>
@@ -672,7 +704,29 @@ function renderDocCards(documentos) {
           onchange="handleDocUpload('${docId}', '${(doc.titulo||'doc').replace(/'/g,'')}', this)">
       </div>
     </div>`;
-  }).join('');
+  }).join('') + `
+    <div class="doc-card doc-card-add" onclick="adicionarDocCard()" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--border2);background:transparent;min-height:140px;transition:border-color .15s,background .15s" onmouseover="this.style.borderColor='var(--blue)';this.style.background='rgba(18,110,255,.06)'" onmouseout="this.style.borderColor='var(--border2)';this.style.background='transparent'">
+      <span style="font-size:26px;color:var(--muted2)">+</span>
+      <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Adicionar documento</span>
+    </div>`;
+}
+
+function removerDocCard(docId) {
+  if (!confirm('Remover este cartão de documento?')) return;
+  _docsList = _docsList.filter(d => d.docId !== docId);
+  _redrawDocs();
+  // Restore uploaded state for remaining docs
+  Object.keys(_docsUploadados).forEach(id => { if (id !== docId) mostrarDocAnexado(id); });
+}
+
+function adicionarDocCard() {
+  const titulo = prompt('Nome do documento:');
+  if (!titulo) return;
+  const icon = '📄';
+  const newId = 'doc_extra_' + Date.now();
+  _docsList.push({ docId: newId, icon, titulo, meta: 'Adicionado manualmente', badge: '' });
+  _redrawDocs();
+  Object.keys(_docsUploadados).forEach(id => mostrarDocAnexado(id));
 }
 
 function triggerUpload(docId) {
