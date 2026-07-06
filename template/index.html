@@ -34,9 +34,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .topbar.scrolled{background:rgba(30,37,53,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .topbar-brand{font-family:var(--display);font-size:20px;font-weight:900;color:var(--text);text-transform:uppercase;display:flex;align-items:center;gap:10px}
 .topbar-brand span{color:var(--accent)}
+/* Nav desktop */
 .topbar-nav{display:flex;gap:8px;flex-wrap:wrap}
 .topbar-nav a{font-size:11px;font-weight:700;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.8px;padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
 .topbar-nav a:hover{color:var(--text);background:var(--surface)}
+/* Hamburguer */
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:101}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile drawer */
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(30,37,53,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:8px;backdrop-filter:blur(16px)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;padding:12px 24px;border-radius:10px;width:220px;text-align:center;transition:background .15s,color .15s}
+.mobile-nav a:hover,.mobile-nav a:active{background:var(--surface2);color:var(--accent)}
 .container{max-width:960px;margin:0 auto;padding:0 24px}
 .section{padding:56px 0}
 .section-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:8px;display:block}
@@ -48,8 +60,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .info-card-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:4px}
 .info-card.coral .info-card-label{color:var(--accent)}.info-card.green .info-card-label{color:var(--green)}
 .info-card-value{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+/* VOO CARD */
 .voo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:24px;margin-bottom:10px}
-.voo-lado{flex:1}.voo-city{font-family:var(--display);font-size:42px;font-weight:900;color:var(--text);line-height:1}
+.voo-lado{flex:1}
+.voo-city{font-family:var(--display);font-size:clamp(28px,7vw,42px);font-weight:900;color:var(--text);line-height:1}
 .voo-airport{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px}
 .voo-time{font-size:18px;font-weight:700;color:var(--accent);margin-top:4px}
 .voo-date{font-size:12px;color:var(--muted)}
@@ -57,13 +71,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .voo-arrow{font-size:22px;color:var(--blue);display:block}
 .voo-duration{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
 .voo-badge{display:inline-block;font-size:10px;font-weight:700;background:rgba(18,110,255,.15);color:var(--blue);border:1px solid rgba(18,110,255,.3);border-radius:6px;padding:3px 8px;margin-top:8px}
+/* HOTEL CARD */
 .hotel-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
 .hotel-icon{font-size:28px;flex-shrink:0}
-.hotel-info{flex:1}
-.hotel-nome{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.hotel-info{flex:1;min-width:0}
+.hotel-nome{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;word-break:break-word}
 .hotel-meta{font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
 .hotel-periodo{font-size:13px;font-weight:600;color:var(--accent);margin-top:4px}
 .hotel-conf{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);margin-top:6px}
+/* SERVIÇOS */
 .serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:12px}
 .serv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
 .serv-card-header{display:flex;gap:10px;align-items:center;margin-bottom:6px}
@@ -71,9 +87,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .serv-nome{font-size:13px;font-weight:700;color:var(--text)}
 .serv-meta{font-size:11px;color:var(--muted);line-height:1.5}
 .serv-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(18,110,255,.12);color:#60a5fa;border:1px solid rgba(18,110,255,.25);margin-top:6px}
+/* DAY NAV */
 .day-nav{position:sticky;top:68px;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .day-nav::-webkit-scrollbar{display:none}
-.day-nav-inner{display:flex;gap:4px;padding:10px 24px;min-width:max-content;margin:0 auto;justify-content:center}
+.day-nav-inner{display:flex;gap:4px;padding:10px 16px;min-width:max-content}
 .day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
 .day-nav-btn:hover{background:var(--surface);color:var(--text)}
 .day-nav-btn.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
@@ -81,39 +98,43 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .day-nav-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
 .day-nav-dots{display:flex;gap:3px;justify-content:center}
 .day-nav-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+/* DAY BLOCK */
 .day-block{margin-bottom:16px}
-.day-toggle{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
+.day-toggle{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
 .day-toggle:hover{background:var(--surface2);border-color:var(--border2)}
 .day-toggle.open{border-color:var(--blue);background:var(--surface2)}
-.day-num-badge{font-family:var(--display);font-size:28px;font-weight:900;color:var(--accent);line-height:1;flex-shrink:0;width:52px}
-.day-toggle-info{flex:1}
+.day-num-badge{font-family:var(--display);font-size:28px;font-weight:900;color:var(--accent);line-height:1;flex-shrink:0;width:44px}
+.day-toggle-info{flex:1;min-width:0}
 .day-toggle-date{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.day-toggle-title{font-family:var(--display);font-size:18px;font-weight:900;color:var(--text);text-transform:uppercase}
-.day-toggle-summary{font-size:12px;color:var(--muted);margin-top:2px}
+.day-toggle-title{font-family:var(--display);font-size:18px;font-weight:900;color:var(--text);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day-toggle-summary{font-size:12px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .day-chevron{color:var(--muted);font-size:18px;transition:transform .25s;flex-shrink:0}
 .day-toggle.open .day-chevron{transform:rotate(180deg)}
-.day-energy{font-size:11px;font-weight:700;background:#e1f5ee;color:#0f6e56;border-radius:20px;padding:3px 10px;flex-shrink:0}
-.day-content{display:none;background:var(--surface);border:1px solid var(--blue);border-top:none;border-radius:0 0 var(--r) var(--r);padding:20px 24px;margin-top:-4px}
+.day-energy{font-size:10px;font-weight:700;background:#e1f5ee;color:#0f6e56;border-radius:20px;padding:3px 8px;flex-shrink:0;white-space:nowrap}
+.day-content{display:none;background:var(--surface);border:1px solid var(--blue);border-top:none;border-radius:0 0 var(--r) var(--r);padding:18px 20px;margin-top:-4px}
 .day-content.open{display:block}
+/* ATRAÇÕES */
 .atracao{padding:14px 0;border-bottom:1px solid var(--border)}
 .atracao:last-child{border-bottom:none}
-.atracao-header{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
-.atracao-time{font-size:12px;font-weight:700;color:var(--blue);white-space:nowrap;min-width:100px;flex-shrink:0;padding-top:2px}
-.atracao-nome{font-size:15px;font-weight:700;color:var(--text)}
-.atracao-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-left:114px;margin-top:0}
-.atracao-tip{font-size:12px;color:#4ade80;font-style:italic;margin-left:114px;margin-top:4px;line-height:1.5}
+.atracao-header{display:flex;gap:12px;align-items:flex-start;margin-bottom:6px}
+.atracao-time{font-size:12px;font-weight:700;color:var(--blue);white-space:nowrap;min-width:90px;flex-shrink:0;padding-top:2px}
+.atracao-nome{font-size:15px;font-weight:700;color:var(--text);flex:1;min-width:0}
+.atracao-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-left:102px;margin-top:0}
+.atracao-tip{font-size:12px;color:#4ade80;font-style:italic;margin-left:102px;margin-top:4px;line-height:1.5}
 .day-section-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin:18px 0 8px;display:block;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .desl-item{font-size:13px;color:var(--muted);padding:5px 0 5px 14px;border-left:2px solid var(--blue);margin-bottom:6px;line-height:1.5}
 .desl-arrow{color:var(--accent);font-weight:700;margin:0 4px}
 .dica-box{background:rgba(18,110,255,.06);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
 .dica-box-text{font-size:13px;color:var(--muted);line-height:1.55}
 .dica-box-text strong{color:var(--text)}
+/* DOCUMENTOS */
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
 .doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
 .doc-icon{font-size:28px}.doc-title{font-size:13px;font-weight:700;color:var(--text)}
 .doc-meta{font-size:11px;color:var(--muted)}
 .doc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);width:fit-content}
 .doc-badge.pending{background:rgba(255,88,94,.12);color:var(--accent);border-color:rgba(255,88,94,.25)}
+/* FINANCE TABLE */
 .finance-table{width:100%;border-collapse:collapse}
 .finance-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 14px;text-align:left}
 .finance-table td{font-size:13px;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--border)}
@@ -121,20 +142,75 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .finance-table tr:last-child td{border-bottom:none}
 .finance-table .dia-num{font-family:var(--display);font-size:20px;font-weight:900;color:var(--accent)}
 .finance-table .total-row td{font-weight:700;color:var(--accent);font-size:14px;border-top:1px solid var(--border2);border-bottom:none;background:rgba(255,88,94,.05)}
-.finance-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
+.finance-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;overflow-x:auto;margin-bottom:16px;-webkit-overflow-scrolling:touch}
+/* FOOTER */
 .site-footer{background:var(--surface);border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .footer-brand{font-family:var(--display);font-size:22px;font-weight:900;color:var(--text);text-transform:uppercase}
 .footer-brand span{color:var(--accent)}
 .footer-note{font-size:12px;color:var(--muted)}
 hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ══ MOBILE ≤ 680px ══ */
 @media(max-width:680px){
-  .topbar{padding:12px 20px}.topbar-nav{display:none}
-  .hero-content{padding:0 20px 40px}.container{padding:0 16px}.section{padding:40px 0}
+  /* Topbar */
+  .topbar{padding:14px 20px}
+  .topbar-nav{display:none}
+  .menu-toggle{display:flex}
+
+  /* Hero */
+  .hero{min-height:500px}
+  .hero-content{padding:0 20px 36px}
+  .hero-title{line-height:1}
+
+  /* Layout */
+  .container{padding:0 16px}
+  .section{padding:36px 0}
+
+  /* Visão geral — 2 colunas */
   .overview-grid{grid-template-columns:1fr 1fr}
-  .voo-card{flex-direction:column;gap:12px}
-  .atracao-desc,.atracao-tip{margin-left:0;margin-top:6px}
-  .atracao-header{flex-direction:column;gap:4px}.atracao-time{min-width:unset}
-  .site-footer{flex-direction:column;text-align:center}
+
+  /* Voo card — coluna única, centralizado */
+  .voo-card{flex-direction:column;align-items:stretch;gap:0;padding:16px}
+  .voo-lado{display:flex;justify-content:space-between;align-items:flex-end;padding:10px 0}
+  .voo-lado:last-child{text-align:left;border-top:1px solid var(--border)}
+  .voo-center{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .voo-arrow{font-size:18px}
+  .voo-city{font-size:clamp(28px,9vw,38px)}
+  .voo-duration{white-space:normal;flex:1}
+
+  /* Day nav — scroll livre sem justify-content:center */
+  .day-nav-inner{justify-content:flex-start;padding:8px 16px}
+
+  /* Day toggle — compacto */
+  .day-toggle{padding:14px 14px;gap:10px}
+  .day-num-badge{font-size:22px;width:36px}
+  .day-toggle-title{font-size:16px}
+  .day-energy{display:none}
+
+  /* Day content — padding menor */
+  .day-content{padding:14px 14px}
+
+  /* Atração — empilhado */
+  .atracao-header{flex-direction:column;gap:2px}
+  .atracao-time{min-width:unset;font-size:11px}
+  .atracao-nome{font-size:14px}
+  .atracao-desc,.atracao-tip{margin-left:0;margin-top:4px}
+
+  /* Serviços — 1 coluna */
+  .serv-grid{grid-template-columns:1fr}
+
+  /* Docs — 1 coluna */
+  .docs-grid{grid-template-columns:1fr 1fr}
+
+  /* Footer */
+  .site-footer{flex-direction:column;text-align:center;padding:24px 20px}
+}
+
+/* ══ EXTRA PEQUENO ≤ 380px ══ */
+@media(max-width:380px){
+  .overview-grid{grid-template-columns:1fr}
+  .docs-grid{grid-template-columns:1fr}
+  .day-toggle-summary{display:none}
 }
 </style>
 </head>
@@ -146,7 +222,16 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   <nav class="topbar-nav" id="topbar-nav">
     <!-- gerado por JS -->
   </nav>
+  <!-- Hamburguer mobile -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobile-nav">
+  <!-- gerado por JS -->
+</nav>
 
 <!-- DAY NAV -->
 <nav class="day-nav" id="day-nav" style="display:none">
@@ -300,7 +385,7 @@ function buildVooCard(v) {
       <span class="voo-badge">${v.cia||'Companhia a confirmar'}${v.classe?' · '+v.classe:''}</span>
       ${v.conexao?`<div style="font-size:11px;color:var(--muted);margin-top:4px">Conexão: ${v.conexao}</div>`:''}
     </div>
-    <div class="voo-lado" style="text-align:right">
+    <div class="voo-lado">
       <div class="voo-city">${v.destinoIata||'???'}</div>
       <div class="voo-airport">${v.destinoNome||''}</div>
       <div class="voo-time">${v.horaChegada||'—'}</div>
@@ -411,7 +496,7 @@ function renderRoteiro() {
   document.getElementById('hero-subtitle').textContent = D.subtitulo||'';
   document.getElementById('hero-pills').innerHTML = (D.pills||[]).map(p=>`<span class="pill">${p}</span>`).join('');
 
-  // Topbar nav
+  // Topbar nav links
   const navLinks = [
     ['#visao-geral','Visão Geral'],
     ...(D.voos?.length ? [['#voos','Voos']] : []),
@@ -421,6 +506,7 @@ function renderRoteiro() {
     ...(D.documentos?.length ? [['#documentos','Documentos']] : []),
   ];
   document.getElementById('topbar-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}">${l}</a>`).join('');
+  document.getElementById('mobile-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}" onclick="closeMobileNav()">${l}</a>`).join('');
 
   // Visão geral
   const cards = D.visaoGeral||[];
@@ -437,7 +523,7 @@ function renderRoteiro() {
       <span class="info-card-value">${c.value}</span>
     </div>`).join('');
   if (D.obs) {
-    document.getElementById('obs-box').style.display = '';
+    document.getElementById('obs-box').style.display = 'block';
     document.getElementById('obs-text').innerHTML = D.obs;
   }
 
@@ -507,7 +593,7 @@ function toggleDay(btn) {
   content.classList.toggle('open', !isOpen);
 }
 
-// Day nav
+// Day nav jump
 function jumpToDay(n) {
   const el = document.getElementById('day-'+n);
   if (!el) return;
@@ -529,6 +615,20 @@ function updateDayNav() {
   if (btn) btn.classList.add('active');
 }
 window.addEventListener('scroll', updateDayNav, {passive:true});
+
+// Mobile nav
+function toggleMobileNav() {
+  const nav = document.getElementById('mobile-nav');
+  const toggle = document.getElementById('menu-toggle');
+  const open = nav.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.getElementById('menu-toggle').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 document.addEventListener('DOMContentLoaded', ()=>{
   renderRoteiro();
