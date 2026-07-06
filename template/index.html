@@ -30,8 +30,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .hero-pills{display:flex;gap:10px;flex-wrap:wrap}
 .pill{border:1px solid rgba(238,238,238,.2);border-radius:20px;padding:5px 16px;font-size:12px;font-weight:600;color:rgba(238,238,238,.75);backdrop-filter:blur(8px);background:rgba(42,50,70,.4)}
 .hero-stripe{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue));z-index:3}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(30,37,53,0);transition:background .3s,backdrop-filter .3s}
-.topbar.scrolled{background:rgba(30,37,53,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(30,37,53,0);transition:background .3s,backdrop-filter .3s}
+.topbar.scrolled{background:rgba(30,37,53,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .topbar-brand{font-family:var(--display);font-size:20px;font-weight:900;color:var(--text);text-transform:uppercase;display:flex;align-items:center;gap:10px}
 .topbar-brand span{color:var(--accent)}
 /* Nav desktop */
@@ -88,7 +88,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .serv-meta{font-size:11px;color:var(--muted);line-height:1.5}
 .serv-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(18,110,255,.12);color:#60a5fa;border:1px solid rgba(18,110,255,.25);margin-top:6px}
 /* DAY NAV */
-.day-nav{position:sticky;top:68px;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.day-nav{position:sticky;top:var(--topbar-h,64px);z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .day-nav::-webkit-scrollbar{display:none}
 .day-nav-inner{display:flex;gap:4px;padding:10px 16px;min-width:max-content}
 .day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
@@ -129,11 +129,23 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .dica-box-text strong{color:var(--text)}
 /* DOCUMENTOS */
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;position:relative}
 .doc-icon{font-size:28px}.doc-title{font-size:13px;font-weight:700;color:var(--text)}
 .doc-meta{font-size:11px;color:var(--muted)}
 .doc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);width:fit-content}
 .doc-badge.pending{background:rgba(255,88,94,.12);color:var(--accent);border-color:rgba(255,88,94,.25)}
+/* Upload área */
+.doc-upload-area{margin-top:auto;padding-top:8px;border-top:1px dashed var(--border)}
+.doc-upload-btn{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 0;transition:color .15s;width:100%;text-align:left}
+.doc-upload-btn:hover{color:var(--blue)}
+.doc-upload-btn svg{flex-shrink:0;opacity:.7}
+.doc-uploaded{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);font-weight:600;flex-wrap:wrap}
+.doc-uploaded-link{color:var(--green);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block;vertical-align:middle}
+.doc-uploaded-link:hover{text-decoration:underline}
+.doc-del-btn{background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;padding:0;line-height:1;margin-left:auto;flex-shrink:0}
+.doc-del-btn:hover{color:var(--accent)}
+.doc-uploading{font-size:11px;color:var(--muted);font-style:italic}
+.doc-input{display:none}
 /* FINANCE TABLE */
 .finance-table{width:100%;border-collapse:collapse}
 .finance-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 14px;text-align:left}
@@ -153,7 +165,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 /* ══ MOBILE ≤ 680px ══ */
 @media(max-width:680px){
   /* Topbar */
-  .topbar{padding:14px 20px}
+  .topbar{height:56px;padding:0 20px}
   .topbar-nav{display:none}
   .menu-toggle{display:flex}
 
@@ -313,6 +325,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   <div class="container">
     <span class="section-label">Documentos</span>
     <h2 class="section-title">Pasta de Viagem</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:20px;margin-top:-20px">Clique em &#8593; para anexar comprovantes, passaportes e reservas — ficam salvos e acessíveis em qualquer dispositivo.</p>
     <div class="docs-grid" id="docs-grid"></div>
   </div>
 </section>
@@ -356,7 +369,8 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 //    documentos: [
 //      { icon, titulo, meta, badge, badgeClass? }
 //    ],
-//    footerNote: "Andes em Família · Santiago, Chile · Julho 2025"
+//    footerNote: "Andes em Família · Santiago, Chile · Julho 2025",
+//    _slug: "andes-em-familia"  // pasta no repositório roteiros (para upload de docs)
 //  }
 // ══════════════════════════════════════════════════════════════
 
@@ -567,13 +581,8 @@ function renderRoteiro() {
   if (D.documentos?.length) {
     document.getElementById('documentos').style.display = '';
     document.getElementById('hr-documentos').style.display = '';
-    document.getElementById('docs-grid').innerHTML = D.documentos.map(doc=>`
-      <div class="doc-card">
-        <span class="doc-icon">${doc.icon||'📄'}</span>
-        <span class="doc-title">${doc.titulo||''}</span>
-        <span class="doc-meta">${doc.meta||''}</span>
-        ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
-      </div>`).join('');
+    renderDocCards(D.documentos);
+    if (D._slug) carregarDocsUpload(D._slug);
   }
 
   // Footer
@@ -581,9 +590,16 @@ function renderRoteiro() {
 }
 
 // Topbar scroll
+// Topbar scroll + CSS var para day-nav top dinâmico
+function updateTopbarVar() {
+  const h = document.getElementById('topbar')?.offsetHeight || 64;
+  document.documentElement.style.setProperty('--topbar-h', h + 'px');
+}
 window.addEventListener('scroll', ()=>{
   document.getElementById('topbar').classList.toggle('scrolled', window.scrollY > 60);
 }, {passive:true});
+window.addEventListener('resize', updateTopbarVar, {passive:true});
+updateTopbarVar();
 
 // Toggle day
 function toggleDay(btn) {
@@ -629,6 +645,138 @@ function closeMobileNav() {
   document.getElementById('menu-toggle').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+// ── Docs upload ──────────────────────────────────────────────
+const PROXY = 'https://cdv-proxy-production.up.railway.app';
+let _docsUploadados = {}; // { docId: { nome, rawUrl, mediaType } }
+
+function renderDocCards(documentos) {
+  document.getElementById('docs-grid').innerHTML = documentos.map((doc, i) => {
+    const docId = doc.docId || ('doc_' + i);
+    return `
+    <div class="doc-card" id="doccard-${docId}">
+      <span class="doc-icon">${doc.icon||'📄'}</span>
+      <span class="doc-title">${doc.titulo||''}</span>
+      <span class="doc-meta">${doc.meta||''}</span>
+      ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
+      <div class="doc-upload-area" id="upload-area-${docId}">
+        <div class="doc-uploading" id="uploading-${docId}" style="display:none">Enviando...</div>
+        <div id="upload-status-${docId}">
+          <button class="doc-upload-btn" onclick="triggerUpload('${docId}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Anexar arquivo
+          </button>
+        </div>
+        <input class="doc-input" type="file" id="input-${docId}"
+          accept=".pdf,.jpg,.jpeg,.png,.webp,.heic"
+          onchange="handleDocUpload('${docId}', '${(doc.titulo||'doc').replace(/'/g,'')}', this)">
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function triggerUpload(docId) {
+  document.getElementById('input-' + docId)?.click();
+}
+
+async function handleDocUpload(docId, nomeDoc, input) {
+  const file = input.files?.[0];
+  if (!file) return;
+  const slug = ROTEIRO_DATA?._slug;
+  if (!slug) { alert('Slug do roteiro não definido.'); return; }
+
+  const maxMB = 8;
+  if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
+
+  const ext = file.name.split('.').pop().toLowerCase();
+  const fileName = docId + '.' + ext;
+
+  document.getElementById('uploading-' + docId).style.display = '';
+  document.getElementById('upload-status-' + docId).style.display = 'none';
+
+  try {
+    const b64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    const resp = await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName, nome: nomeDoc, tipo: ext, base64: b64, mediaType: file.type })
+    });
+    const data = await resp.json();
+    if (!data.ok) throw new Error(data.erro||'Erro no upload');
+
+    _docsUploadados[docId] = { nome: file.name, rawUrl: data.rawUrl, mediaType: file.type };
+    mostrarDocAnexado(docId);
+  } catch(e) {
+    alert('Erro ao enviar arquivo: ' + e.message);
+    document.getElementById('uploading-' + docId).style.display = 'none';
+    document.getElementById('upload-status-' + docId).style.display = '';
+  }
+  input.value = '';
+}
+
+function mostrarDocAnexado(docId) {
+  const d = _docsUploadados[docId];
+  if (!d) return;
+  const statusEl = document.getElementById('upload-status-' + docId);
+  const uploadingEl = document.getElementById('uploading-' + docId);
+  if (uploadingEl) uploadingEl.style.display = 'none';
+  if (statusEl) {
+    const shortName = d.nome.length > 18 ? d.nome.substring(0,15)+'...' : d.nome;
+    statusEl.style.display = '';
+    statusEl.innerHTML = `
+      <div class="doc-uploaded">
+        ✅ <a href="${d.rawUrl}" target="_blank" class="doc-uploaded-link" title="${d.nome}">${shortName}</a>
+        <button class="doc-del-btn" title="Remover arquivo" onclick="removerDoc('${docId}')">✕</button>
+      </div>`;
+  }
+}
+
+async function removerDoc(docId) {
+  const slug = ROTEIRO_DATA?._slug;
+  const d = _docsUploadados[docId];
+  if (!slug || !d) return;
+  if (!confirm('Remover o arquivo "' + d.nome + '"?')) return;
+  try {
+    const ext = d.nome.split('.').pop().toLowerCase();
+    const fileName = docId + '.' + ext;
+    await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName })
+    });
+    delete _docsUploadados[docId];
+    const statusEl = document.getElementById('upload-status-' + docId);
+    if (statusEl) statusEl.innerHTML = `
+      <button class="doc-upload-btn" onclick="triggerUpload('${docId}')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Anexar arquivo
+      </button>`;
+  } catch(e) {
+    alert('Erro ao remover: ' + e.message);
+  }
+}
+
+async function carregarDocsUpload(slug) {
+  try {
+    const resp = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug));
+    const data = await resp.json();
+    if (!data.ok || !data.docs) return;
+    Object.entries(data.docs).forEach(([fileName, info]) => {
+      // docId é o fileName sem extensão
+      const docId = fileName.replace(/\.[^.]+$/, '');
+      const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
+      _docsUploadados[docId] = { nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'' };
+      mostrarDocAnexado(docId);
+    });
+  } catch(e) { /* silencioso */ }
+}
+// ── Fim docs upload ──────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', ()=>{
   renderRoteiro();
