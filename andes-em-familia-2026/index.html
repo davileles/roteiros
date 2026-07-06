@@ -1606,11 +1606,15 @@ async function carregarDocsUpload(slug) {
     const data = await resp.json();
     if (!data.ok || !data.docs) return;
     Object.entries(data.docs).forEach(([fileName, info]) => {
-      // docId é o fileName sem extensão
-      const docId = fileName.replace(/\.[^.]+$/, '');
+      // fileId = fileName sem extensão, docId = parte antes do primeiro "_" timestamp
+      const fileId = fileName.replace(/\.[^.]+$/, '');
+      const docId = fileId.replace(/_\d+$/, '');
       const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
-      _docsUploadados[docId] = { nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'' };
-      mostrarDocAnexado(docId);
+      if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+      _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
+      // Atualizar lista no card
+      const statusEl = document.getElementById('upload-status-' + docId);
+      if (statusEl) statusEl.innerHTML = _fileListHtml(docId);
     });
   } catch(e) { /* silencioso */ }
 }
