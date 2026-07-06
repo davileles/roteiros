@@ -62,7 +62,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .info-card-value{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
 /* VOO CARD */
 .voo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:24px;margin-bottom:10px}
-.voo-lado{flex:1}
+.voo-lado{flex:1}.voo-lado:last-child{text-align:right}
 .voo-city{font-family:var(--display);font-size:clamp(28px,7vw,42px);font-weight:900;color:var(--text);line-height:1}
 .voo-airport{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px}
 .voo-time{font-size:18px;font-weight:700;color:var(--accent);margin-top:4px}
@@ -244,7 +244,10 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 
 <!-- TOPBAR -->
 <header class="topbar" id="topbar">
-  <div class="topbar-brand">Travel <span>Concierge</span></div>
+  <div class="topbar-brand">
+    <img id="topbar-logo" src="" alt="Travel Concierge" style="height:32px;width:32px;border-radius:8px;object-fit:cover;display:none;flex-shrink:0">
+    <span id="topbar-brand-text">Travel <span>Concierge</span></span>
+  </div>
   <nav class="topbar-nav" id="topbar-nav">
     <!-- gerado por JS -->
   </nav>
@@ -493,7 +496,7 @@ const ROTEIRO_DATA = {
       "hospedes": "4 pessoas"
     },
     {
-      "nome": "Hotel em Santiago",
+      "nome": "Hyatt Place Santiago",
       "cidade": "Santiago (Providencia / Las Condes)",
       "checkin": "2026-07-19",
       "checkout": "2026-07-21",
@@ -1111,6 +1114,7 @@ const ROTEIRO_DATA = {
     }
   ],
   "footerNote": "Andes em Família · Santiago & Cordilheira · Julho 2026 · Travel Concierge",
+  "logo": "COLE_AQUI_O_BASE64_DO_LOGO",
   "_slug": "andes-em-familia-2026"
 };
 
@@ -1290,6 +1294,11 @@ function renderRoteiro() {
 
   // Title
   document.getElementById('page-title').textContent = (D.titulo||'Roteiro') + ' · Travel Concierge';
+  // Logo
+  if (D.logo) {
+    const logoEl = document.getElementById('topbar-logo');
+    if (logoEl) { logoEl.src = D.logo; logoEl.style.display = 'block'; }
+  }
 
   // Hero
   if (D.heroImage) document.getElementById('hero-img').style.backgroundImage = `url('${D.heroImage}')`;
