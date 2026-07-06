@@ -3,35 +3,25 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Andes em Família · Santiago · Travel Concierge</title>
+<title id="page-title">Roteiro · Travel Concierge</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#1e2535;
-  --surface:#2a3246;
-  --surface2:#323c54;
-  --border:#3d4a66;
-  --border2:#4a5878;
-  --accent:#ff585e;
-  --accent2:#e04449;
-  --blue:#126eff;
-  --blue2:#0f5fe0;
-  --text:#eeeeee;
-  --muted:#8a9bbf;
-  --muted2:#5a6a8a;
-  --green:#22c55e;
-  --r:10px;
+  --bg:#1e2535;--surface:#2a3246;--surface2:#323c54;
+  --border:#3d4a66;--border2:#4a5878;
+  --accent:#ff585e;--accent2:#e04449;
+  --blue:#126eff;--blue2:#0f5fe0;
+  --text:#eeeeee;--muted:#8a9bbf;--muted2:#5a6a8a;
+  --green:#22c55e;--r:10px;
   --font:'Plus Jakarta Sans',sans-serif;
   --display:'Barlow Condensed',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.6}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 .hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
-.hero-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=1600&q=80') center/cover no-repeat}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
 .hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,#1e2535 18%,rgba(30,37,53,.7) 45%,rgba(30,37,53,.2) 70%,transparent 100%)}
 .hero-content{position:relative;z-index:2;padding:0 40px 48px;max-width:900px}
 .hero-eyebrow{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;display:block}
@@ -54,23 +44,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
 .overview-grid.two{grid-template-columns:repeat(2,1fr)}
 .info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;border-left:3px solid var(--blue)}
-.info-card.coral{border-left-color:var(--accent)}
-.info-card.green{border-left-color:var(--green)}
+.info-card.coral{border-left-color:var(--accent)}.info-card.green{border-left-color:var(--green)}
 .info-card-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:4px}
-.info-card.coral .info-card-label{color:var(--accent)}
-.info-card.green .info-card-label{color:var(--green)}
+.info-card.coral .info-card-label{color:var(--accent)}.info-card.green .info-card-label{color:var(--green)}
 .info-card-value{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
-.clima-row{display:flex;gap:10px;margin:16px 0 0}
-.clima-card{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center}
-.clima-icon{font-size:24px;display:block;margin-bottom:4px}
-.clima-val{font-size:15px;font-weight:700;color:var(--text);display:block}
-.clima-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-.dica-box{background:rgba(18,110,255,.06);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
-.dica-box-text{font-size:13px;color:var(--muted);line-height:1.55}
-.dica-box-text strong{color:var(--text)}
 .voo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:24px;margin-bottom:10px}
-.voo-lado{flex:1}
-.voo-city{font-family:var(--display);font-size:42px;font-weight:900;color:var(--text);line-height:1}
+.voo-lado{flex:1}.voo-city{font-family:var(--display);font-size:42px;font-weight:900;color:var(--text);line-height:1}
 .voo-airport{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px}
 .voo-time{font-size:18px;font-weight:700;color:var(--accent);margin-top:4px}
 .voo-date{font-size:12px;color:var(--muted)}
@@ -78,7 +57,30 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .voo-arrow{font-size:22px;color:var(--blue);display:block}
 .voo-duration{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
 .voo-badge{display:inline-block;font-size:10px;font-weight:700;background:rgba(18,110,255,.15);color:var(--blue);border:1px solid rgba(18,110,255,.3);border-radius:6px;padding:3px 8px;margin-top:8px}
-.timeline{position:relative;padding-left:0}
+.hotel-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.hotel-icon{font-size:28px;flex-shrink:0}
+.hotel-info{flex:1}
+.hotel-nome{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.hotel-meta{font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.hotel-periodo{font-size:13px;font-weight:600;color:var(--accent);margin-top:4px}
+.hotel-conf{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);margin-top:6px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:12px}
+.serv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.serv-card-header{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.serv-icon{font-size:20px;flex-shrink:0}
+.serv-nome{font-size:13px;font-weight:700;color:var(--text)}
+.serv-meta{font-size:11px;color:var(--muted);line-height:1.5}
+.serv-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(18,110,255,.12);color:#60a5fa;border:1px solid rgba(18,110,255,.25);margin-top:6px}
+.day-nav{position:sticky;top:68px;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.day-nav::-webkit-scrollbar{display:none}
+.day-nav-inner{display:flex;gap:4px;padding:10px 24px;min-width:max-content;margin:0 auto;justify-content:center}
+.day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
+.day-nav-btn:hover{background:var(--surface);color:var(--text)}
+.day-nav-btn.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.day-nav-num{font-family:var(--display);font-size:22px;font-weight:900;line-height:1}
+.day-nav-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
+.day-nav-dots{display:flex;gap:3px;justify-content:center}
+.day-nav-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .day-block{margin-bottom:16px}
 .day-toggle{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
 .day-toggle:hover{background:var(--surface2);border-color:var(--border2)}
@@ -101,31 +103,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .atracao-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-left:114px;margin-top:0}
 .atracao-tip{font-size:12px;color:#4ade80;font-style:italic;margin-left:114px;margin-top:4px;line-height:1.5}
 .day-section-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin:18px 0 8px;display:block;padding-bottom:6px;border-bottom:1px solid var(--border)}
-.custo-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.06);color:var(--muted)}
-.custo-row:last-child{border-bottom:none}
-.custo-row.total{font-weight:700;color:var(--accent);border-top:1px solid var(--border);border-bottom:none;margin-top:4px;padding-top:8px;font-size:14px}
-.rest-item{font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border);line-height:1.55}
-.rest-item:last-child{border-bottom:none}
-.rest-item strong{color:var(--text)}
-.rest-num{color:var(--blue);font-weight:700;margin-right:4px}
 .desl-item{font-size:13px;color:var(--muted);padding:5px 0 5px 14px;border-left:2px solid var(--blue);margin-bottom:6px;line-height:1.5}
 .desl-arrow{color:var(--accent);font-weight:700;margin:0 4px}
-.link-item{font-size:12px;color:var(--blue);display:block;padding:3px 0;text-decoration:none}
-.link-item:hover{color:var(--text);text-decoration:underline}
+.dica-box{background:rgba(18,110,255,.06);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.dica-box-text{font-size:13px;color:var(--muted);line-height:1.55}
+.dica-box-text strong{color:var(--text)}
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s;cursor:pointer}
-.doc-card:hover{border-color:var(--blue)}
-.doc-card.add{border-style:dashed;color:var(--muted);align-items:center;justify-content:center;text-align:center;min-height:100px}
-.doc-card.add:hover{border-color:var(--accent);color:var(--text)}
-.doc-icon{font-size:28px}
-.doc-title{font-size:13px;font-weight:700;color:var(--text)}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
+.doc-icon{font-size:28px}.doc-title{font-size:13px;font-weight:700;color:var(--text)}
 .doc-meta{font-size:11px;color:var(--muted)}
 .doc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);width:fit-content}
 .doc-badge.pending{background:rgba(255,88,94,.12);color:var(--accent);border-color:rgba(255,88,94,.25)}
-.doc-badge.info{background:rgba(18,110,255,.12);color:#60a5fa;border-color:rgba(18,110,255,.25)}
-.doc-add-icon{font-size:32px;color:var(--muted2);margin-bottom:4px}
-.doc-add-text{font-size:12px;font-weight:600}
-.doc-add-sub{font-size:11px;color:var(--muted2);margin-top:2px}
 .finance-table{width:100%;border-collapse:collapse}
 .finance-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 14px;text-align:left}
 .finance-table td{font-size:13px;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--border)}
@@ -139,66 +127,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .footer-brand span{color:var(--accent)}
 .footer-note{font-size:12px;color:var(--muted)}
 hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
-.now-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(30,37,53,.97);border-top:2px solid var(--accent);backdrop-filter:blur(14px);padding:10px 24px;display:none}
-.now-bar.visible{display:block}
-.now-bar-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.now-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.now-label{font-size:9px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;display:block}
-.now-name{font-size:14px;font-weight:700;color:var(--text);display:block}
-.now-time{font-size:11px;color:var(--muted);display:block}
-.now-day-badge{font-family:var(--display);font-size:18px;font-weight:900;color:var(--accent);flex-shrink:0}
-.now-col{flex:1;min-width:120px}
-.now-sep{width:1px;height:40px;background:var(--border);flex-shrink:0}
-.now-nav-btns{display:flex;gap:6px;margin-left:auto}
-.now-btn{display:flex;align-items:center;gap:4px;padding:6px 12px;border-radius:6px;font-family:var(--font);font-size:11px;font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
-.now-btn-maps{background:#4285f4;color:#fff}
-.now-btn-waze{background:#33ccff;color:#000}
-.day-nav{position:sticky;top:68px;z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
-.day-nav::-webkit-scrollbar{display:none}
-.day-nav-inner{display:flex;gap:4px;padding:10px 24px;min-width:max-content;margin:0 auto;justify-content:center}
-.day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
-.day-nav-btn:hover{background:var(--surface);color:var(--text)}
-.day-nav-btn.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
-.day-nav-btn.today{background:rgba(255,88,94,.12);border:1px solid rgba(255,88,94,.3);color:var(--accent)}
-.day-nav-num{font-family:var(--display);font-size:22px;font-weight:900;line-height:1}
-.day-nav-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
-.day-nav-dots{display:flex;gap:3px;justify-content:center}
-.day-nav-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.travel-block{margin-top:8px;background:rgba(50,60,84,.5);border:1px solid var(--border);border-radius:8px;padding:8px 12px;margin-left:114px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.travel-block-header{display:none}
-.travel-route{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);flex-shrink:0;white-space:nowrap}
-.travel-route-from{font-weight:600;color:var(--muted);font-size:11px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.travel-route-arrow{color:var(--blue);font-size:12px;flex-shrink:0}
-.travel-route-to{font-weight:600;color:var(--accent);font-size:11px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.travel-modes{display:flex;gap:4px;flex-wrap:nowrap}
-.travel-mode-pill{display:flex;align-items:center;gap:3px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:11px;font-weight:600;color:var(--muted);text-decoration:none;transition:border-color .15s,color .15s;cursor:pointer;white-space:nowrap}
-.travel-mode-pill:hover{border-color:var(--blue);color:var(--text)}
-.travel-mode-pill-icon{font-size:12px}
-.travel-nav-btns{display:flex;gap:6px;margin-left:auto}
-.travel-nav-btn{display:flex;align-items:center;gap:4px;padding:4px 10px;border:none;border-radius:6px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;text-decoration:none;transition:opacity .15s;white-space:nowrap}
-.travel-nav-btn:hover{opacity:.85}
-.travel-nav-btn-maps{background:#4285f4;color:#fff}
-.travel-nav-btn-waze{background:#33ccff;color:#000}
 @media(max-width:680px){
-  .topbar{padding:12px 20px}
-  .topbar-nav{display:none}
-  .hero-content{padding:0 20px 40px}
-  .container{padding:0 16px}
-  .section{padding:40px 0}
+  .topbar{padding:12px 20px}.topbar-nav{display:none}
+  .hero-content{padding:0 20px 40px}.container{padding:0 16px}.section{padding:40px 0}
   .overview-grid{grid-template-columns:1fr 1fr}
   .voo-card{flex-direction:column;gap:12px}
   .atracao-desc,.atracao-tip{margin-left:0;margin-top:6px}
-  .atracao-header{flex-direction:column;gap:4px}
-  .atracao-time{min-width:unset}
-  .clima-row{flex-wrap:wrap}
-  .clima-card{min-width:calc(50% - 5px)}
-  .docs-grid{grid-template-columns:1fr 1fr}
+  .atracao-header{flex-direction:column;gap:4px}.atracao-time{min-width:unset}
   .site-footer{flex-direction:column;text-align:center}
-  .travel-block{margin-left:0;flex-direction:column;align-items:flex-start}
-  .day-nav-inner{padding:8px 16px}
-  .day-nav-btn{min-width:54px;padding:6px 10px}
-  .day-nav-num{font-size:18px}
 }
 </style>
 </head>
@@ -207,83 +143,25 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 <!-- TOPBAR -->
 <header class="topbar" id="topbar">
   <div class="topbar-brand">Travel <span>Concierge</span></div>
-  <nav class="topbar-nav">
-    <a href="#visao-geral">Visão Geral</a>
-    <a href="#voos">Voos</a>
-    <a href="#roteiro">Roteiro</a>
-    <a href="#documentos">Documentos</a>
-    <a href="#custos">Custos</a>
+  <nav class="topbar-nav" id="topbar-nav">
+    <!-- gerado por JS -->
   </nav>
 </header>
 
 <!-- DAY NAV -->
-<nav class="day-nav" id="day-nav">
-  <div class="day-nav-inner">
-    <button class="day-nav-btn" onclick="jumpToDay(1)" id="day-nav-1">
-      <span class="day-nav-num">1</span>
-      <span class="day-nav-label">Chegada</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#126eff"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">15/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(2)" id="day-nav-2">
-      <span class="day-nav-num">2</span>
-      <span class="day-nav-label">Santiago</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#22c55e"></div><div class="day-nav-dot" style="background:#126eff"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">16/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(3)" id="day-nav-3">
-      <span class="day-nav-num">3</span>
-      <span class="day-nav-label">Farellones</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#60a5fa"></div><div class="day-nav-dot" style="background:#f59e0b"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">17/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(4)" id="day-nav-4">
-      <span class="day-nav-num">4</span>
-      <span class="day-nav-label">Neve ❄️</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#60a5fa"></div><div class="day-nav-dot" style="background:#22c55e"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">18/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(5)" id="day-nav-5">
-      <span class="day-nav-num">5</span>
-      <span class="day-nav-label">Valle Nevado</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#60a5fa"></div><div class="day-nav-dot" style="background:#f59e0b"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">19/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(6)" id="day-nav-6">
-      <span class="day-nav-num">6</span>
-      <span class="day-nav-label">Descida</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#f59e0b"></div><div class="day-nav-dot" style="background:#126eff"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">20/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(7)" id="day-nav-7">
-      <span class="day-nav-num">7</span>
-      <span class="day-nav-label">Mercado</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#22c55e"></div><div class="day-nav-dot" style="background:#f59e0b"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">21/07</span>
-    </button>
-    <button class="day-nav-btn" onclick="jumpToDay(8)" id="day-nav-8">
-      <span class="day-nav-num">8</span>
-      <span class="day-nav-label">Partida</span>
-      <div class="day-nav-dots"><div class="day-nav-dot" style="background:#126eff"></div></div>
-      <span style="font-size:9px;color:var(--muted2);margin-top:-2px">22/07</span>
-    </button>
-  </div>
+<nav class="day-nav" id="day-nav" style="display:none">
+  <div class="day-nav-inner" id="day-nav-inner"></div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"></div>
+  <div class="hero-img" id="hero-img"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Travel Concierge · Santiago, Chile</span>
-    <h1 class="hero-title">Santiago<br>& Andes</h1>
-    <p class="hero-subtitle">Andes em Família — Neve, Vinho e Memórias</p>
-    <div class="hero-pills">
-      <span class="pill">✈️ 15 a 23 de julho</span>
-      <span class="pill">👨‍👩‍👧‍👦 4 pessoas</span>
-      <span class="pill">🏨 Hyatt Place Vitacura · Apart Bianco</span>
-      <span class="pill">❄️ 8 dias no Chile</span>
-    </div>
+    <span class="hero-eyebrow" id="hero-eyebrow">Travel Concierge</span>
+    <h1 class="hero-title" id="hero-title">Roteiro</h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <div class="hero-pills" id="hero-pills"></div>
   </div>
   <div class="hero-stripe"></div>
 </section>
@@ -293,733 +171,900 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   <div class="container">
     <span class="section-label">Visão Geral</span>
     <h2 class="section-title">A Viagem</h2>
-    <div class="overview-grid">
-      <div class="info-card">
-        <span class="info-card-label">Destino</span>
-        <span class="info-card-value">🇨🇱 Santiago + Farellones + Valle Nevado</span>
-      </div>
-      <div class="info-card">
-        <span class="info-card-label">Período</span>
-        <span class="info-card-value">15 a 23 de julho de 2025</span>
-      </div>
-      <div class="info-card coral">
-        <span class="info-card-label">Duração</span>
-        <span class="info-card-value">8 dias / 7 noites</span>
-      </div>
-    </div>
-    <div class="overview-grid">
-      <div class="info-card">
-        <span class="info-card-label">Viajantes</span>
-        <span class="info-card-value">4 pessoas — casal + 2 crianças</span>
-      </div>
-      <div class="info-card">
-        <span class="info-card-label">Hospedagem</span>
-        <span class="info-card-value">Hyatt Place Vitacura (dias 1–2 e 6–8) · Apart Bianco Hotel (dias 3–5)</span>
-      </div>
-      <div class="info-card coral">
-        <span class="info-card-label">Ritmo</span>
-        <span class="info-card-value">Moderado com pausas inteligentes</span>
-      </div>
-    </div>
-    <div class="clima-row">
-      <div class="clima-card"><span class="clima-icon">🌡️</span><span class="clima-val">3–15°C</span><span class="clima-lbl">Santiago</span></div>
-      <div class="clima-card"><span class="clima-icon">❄️</span><span class="clima-val">−5°C</span><span class="clima-lbl">Neve (mín.)</span></div>
-      <div class="clima-card"><span class="clima-icon">☁️</span><span class="clima-val">Frio seco</span><span class="clima-lbl">Inverno</span></div>
-      <div class="clima-card"><span class="clima-icon">🧊</span><span class="clima-val">Jul/Alta</span><span class="clima-lbl">Temporada neve</span></div>
-    </div>
-    <div style="margin-top:20px">
-      <div class="dica-box"><span class="dica-box-text">🧥 <strong>Use sistema de camadas:</strong> segunda pele + fleece + casaco impermeável. Luvas, gorro e óculos são essenciais para as crianças.</span></div>
-      <div class="dica-box"><span class="dica-box-text">🏔️ <strong>Neve fica a 1h30–2h de Santiago</strong> (subida de montanha com muitas curvas). Planeje deslocamentos com calma para crianças e idosos.</span></div>
-      <div class="dica-box"><span class="dica-box-text">👗 <strong>Alugue roupa de neve no Chile</strong> — é mais prático e barato do que trazer do Brasil. Faça isso em Santiago antes de subir a serra.</span></div>
-      <div class="dica-box"><span class="dica-box-text">🚐 <strong>Transfer privado ou carro por app</strong> é o mais prático para 4 pessoas com malas, especialmente no aeroporto e na subida para Farellones.</span></div>
-    </div>
+    <div id="overview-grid-1" class="overview-grid"></div>
+    <div id="overview-grid-2" class="overview-grid"></div>
+    <div id="obs-box" style="display:none" class="dica-box"><span class="dica-box-text" id="obs-text"></span></div>
   </div>
 </section>
 
 <hr class="sec-div"/>
 
 <!-- VOOS -->
-<section class="section" id="voos">
+<section class="section" id="voos" style="display:none">
   <div class="container">
     <span class="section-label">Voos</span>
-    <h2 class="section-title">Ida & Volta</h2>
-    <div class="voo-card">
-      <div class="voo-lado">
-        <div class="voo-city">BHZ</div>
-        <div class="voo-airport">Aeroporto de Belo Horizonte</div>
-        <div class="voo-time">Confirmar</div>
-        <div class="voo-date">15 de julho</div>
-      </div>
-      <div class="voo-center">
-        <span class="voo-arrow">✈</span>
-        <div class="voo-duration">Voo Ida</div>
-        <span class="voo-badge">Confirmar cia</span>
-      </div>
-      <div class="voo-lado" style="text-align:right">
-        <div class="voo-city">SCL</div>
-        <div class="voo-airport">Aeropuerto Internacional Arturo Merino Benítez</div>
-        <div class="voo-time">22:30</div>
-        <div class="voo-date">15 de julho</div>
-      </div>
-    </div>
-    <div class="voo-card">
-      <div class="voo-lado">
-        <div class="voo-city">SCL</div>
-        <div class="voo-airport">Aeropuerto Internacional Arturo Merino Benítez — T2 Internacional</div>
-        <div class="voo-time">04:45</div>
-        <div class="voo-date">23 de julho · saída do hotel ~01:15–01:45</div>
-      </div>
-      <div class="voo-center">
-        <span class="voo-arrow">✈</span>
-        <div class="voo-duration">Voo Volta</div>
-        <span class="voo-badge">Confirmar cia</span>
-      </div>
-      <div class="voo-lado" style="text-align:right">
-        <div class="voo-city">BHZ</div>
-        <div class="voo-airport">Aeroporto de Belo Horizonte</div>
-        <div class="voo-time">Confirmar</div>
-        <div class="voo-date">23 de julho</div>
-      </div>
-    </div>
+    <h2 class="section-title">Ida &amp; Volta</h2>
+    <div id="voos-container"></div>
   </div>
 </section>
 
-<hr class="sec-div"/>
+<hr class="sec-div" id="hr-hospedagem" style="display:none"/>
 
-<!-- ROTEIRO -->
-<section class="section" id="roteiro">
+<!-- HOSPEDAGEM -->
+<section class="section" id="hospedagem" style="display:none">
   <div class="container">
-    <span class="section-label">Roteiro Diário</span>
-    <h2 class="section-title">Os 8 Dias</h2>
-    <div class="timeline" id="timeline-days">
-
-      <!-- DIA 1 -->
-      <div class="day-block" id="day-1">
-        <button class="day-toggle open" onclick="toggleDay(this)">
-          <div class="day-num-badge">1</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">15 de julho · terça-feira</div>
-            <div class="day-toggle-title">Chegada e Descanso Total</div>
-            <div class="day-toggle-summary">Chegada noturna às 22:30 — imigração, transfer e hotel</div>
-          </div>
-          <span class="day-energy">🔋 Leve</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content open">
-          <div class="dica-box" style="margin-bottom:14px"><span class="dica-box-text">🧳 Dia puramente logístico. Nenhum passeio — isso protege o humor das crianças e evita desgaste dos avós.</span></div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">22:30 – 00:15</span><span class="atracao-nome">Chegada em Santiago + Imigração + Retirada de Bagagem</span></div>
-            <div class="atracao-desc">Saída do aeroporto sem pressa e direto para a hospedagem. O Terminal Internacional de Santiago é o T2.</div>
-            <div class="atracao-tip">💡 Deixe na bagagem de mão: casaco, água, snack e uma troca simples para as crianças.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">00:15 – 01:00</span><span class="atracao-nome">Transfer para o Hotel em Providencia ou Las Condes</span></div>
-            <div class="atracao-desc">Com 4 pessoas e malas, carro por app ou transfer privado são as melhores opções. Não recomendado transporte público nesse horário.</div>
-            <div class="atracao-tip">💡 O Hyatt Place Vitacura fica em uma das regiões mais tranquilas e seguras de Santiago — ótima base para os primeiros dias.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">01:00 em diante</span><span class="atracao-nome">Check-in e Descanso</span></div>
-            <div class="atracao-desc">Entrada no hotel, instalação das crianças e dos avós, e descanso total para começar bem o dia seguinte.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">✈️ Aeroporto SCL <span class="desl-arrow">→</span> Hyatt Place Vitacura: transfer privado ou carro por app (~35 min)</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Transfer aeroporto → hotel</span><span>R$ 50 a R$ 130</span></div>
-          <div class="custo-row"><span>Lanche leve / água</span><span>R$ 15 a R$ 40</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 65 a R$ 170</span></div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.nuevopudahuel.cl/faqs" target="_blank">🔗 Aeroporto de Santiago — FAQ oficial</a>
-          <a class="link-item" href="https://derechosdelpasajero.jac.gob.cl/recomendaciones.html" target="_blank">🔗 Direitos do Passageiro Aéreo no Chile — oficial</a>
-        </div>
-      </div>
-
-      <!-- DIA 2 -->
-      <div class="day-block" id="day-2">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">2</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">16 de julho · quarta-feira</div>
-            <div class="day-toggle-title">Parque, Vista da Cidade e Adaptação ao Inverno</div>
-            <div class="day-toggle-summary">Parque Bicentenario + Sky Costanera ao pôr do sol</div>
-          </div>
-          <span class="day-energy">🔋 Leve a Moderado</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">10:00 – 11:15</span><span class="atracao-nome">Café da Manhã sem Pressa + Organização</span></div>
-            <div class="atracao-desc">Começo lento e intencional: comprar água, snacks e verificar itens que faltam para os dias de neve. Compensar a chegada tarde do dia anterior.</div>
-            <div class="atracao-tip">💡 Use essa manhã para ajustar roupas de frio e perceber o que ainda precisa ser comprado antes da subida à serra.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:45 – 13:15</span><span class="atracao-nome">Parque Bicentenario</span></div>
-            <div class="atracao-desc">27 hectares ao longo do rio Mapocho — plano, bonito e agradável para os avós. As crianças adoram os espaços abertos e as aves no lago.</div>
-            <div class="atracao-tip">💡 Mesmo com sol, julho pede casaco, gorro e camada corta-vento. O parque é ao ar livre e o frio aparece mais do que parece nas fotos.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">13:20 – 14:45</span><span class="atracao-nome">Almoço na Região de Vitacura</span></div>
-            <div class="atracao-desc">Almoço perto do parque para evitar deslocamentos desnecessários. Restaurante com espaço confortável para o grupo grande.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">15:15 – 17:00</span><span class="atracao-nome">Volta ao Hotel + Descanso</span></div>
-            <div class="atracao-desc">Pausa essencial para o roteiro ser realista. Crianças descansam, adultos respiram — todos chegam melhores para o passeio do fim de tarde.</div>
-            <div class="atracao-tip">💡 Vale separar já nessa hora as camadas de roupa para a montanha nos próximos dias.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">17:30 – 19:00</span><span class="atracao-nome">Sky Costanera</span></div>
-            <div class="atracao-desc">Mirante do Gran Torre Santiago — uma das maneiras mais impactantes de apresentar a cidade a quem está chegando. Funciona todos os dias das 10:00 às 22:00, com último elevador às 21:00. Com céu limpo, já mostra a cordilheira ao fundo.</div>
-            <div class="atracao-tip">💡 Fim de tarde é o melhor horário para luz bonita e experiência marcante. Adulto ~R$ 130 | Criança 4–12 anos ~R$ 45 | 0–3 anos grátis.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">19:20 – 21:00</span><span class="atracao-nome">Jantar Tranquilo em Providencia ou Las Condes</span></div>
-            <div class="atracao-desc">Encerramento confortável perto do hotel, sem noite longa — ainda virão os dias de neve.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏨 Hotel <span class="desl-arrow">→</span> Parque Bicentenario: carro por app</div>
-          <div class="desl-item">🌿 Parque <span class="desl-arrow">→</span> Hotel: carro por app</div>
-          <div class="desl-item">🏨 Hotel <span class="desl-arrow">→</span> Sky Costanera: carro por app</div>
-          <div class="desl-item">🏙️ Sky Costanera <span class="desl-arrow">→</span> Jantar / Hotel: carro por app</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Parque Bicentenario</span><span>R$ 0</span></div>
-          <div class="custo-row"><span>Sky Costanera — adulto</span><span>R$ 130</span></div>
-          <div class="custo-row"><span>Sky Costanera — criança (4–12 anos)</span><span>R$ 45</span></div>
-          <div class="custo-row"><span>Almoço</span><span>R$ 90 a R$ 160</span></div>
-          <div class="custo-row"><span>Jantar</span><span>R$ 90 a R$ 180</span></div>
-          <div class="custo-row"><span>Deslocamentos (app)</span><span>R$ 40 a R$ 90</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 393 a R$ 603</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Mestizo</strong> — chileno contemporâneo | excelente para almoço em família perto do Bicentenario | R$ 120 a R$ 220 | <a href="https://mestizorestaurant.cl/" target="_blank" style="color:var(--blue)">mestizorestaurant.cl</a></div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Jantar em Providencia ou Las Condes</strong> — chileno ou internacional | confortável e perto do hotel | R$ 90 a R$ 180</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://vitacura.cl/parque-bicentenario/parquebicentenario/" target="_blank">🔗 Parque Bicentenario — site oficial</a>
-          <a class="link-item" href="https://www.skycostanera.cl/es/tarifas-y-horarios" target="_blank">🔗 Sky Costanera — horários e tarifas oficiais</a>
-          <a class="link-item" href="https://www.skycostanera.cl/es" target="_blank">🔗 Sky Costanera — site oficial</a>
-        </div>
-      </div>
-
-      <!-- DIA 3 -->
-      <div class="day-block" id="day-3">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">3</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">17 de julho · quinta-feira</div>
-            <div class="day-toggle-title">Subida para Farellones + Primeiro Contato com a Montanha</div>
-            <div class="day-toggle-summary">Check-out Santiago, aluguel de roupa de neve e chegada à cordilheira</div>
-          </div>
-          <span class="day-energy">🔋 Moderado</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:00 – 10:00</span><span class="atracao-nome">Café da Manhã + Check-out em Santiago</span></div>
-            <div class="atracao-desc">Sair sem pressa com todos alimentados. Mala "de acesso rápido" separada para a montanha com luvas, meias extras, segunda pele, snacks e água.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">10:15 – 11:30</span><span class="atracao-nome">Parada em Santiago — Aluguel de Roupa/Equipamento de Neve</span></div>
-            <div class="atracao-desc">Muito mais vantajoso alugar roupa e equipamento em Santiago antes de subir. O próprio El Colorado/Farellones tem serviço de rental com mais de 2.000 equipamentos, mas alugar antes dá mais margem de preço e menos correria no check-in.</div>
-            <div class="atracao-tip">💡 Foque em roupa, botas e luvas. Neste dia vocês ainda não precisam transformar a tarde em dia esportivo.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:30 – 13:30</span><span class="atracao-nome">Subida para Farellones</span></div>
-            <div class="atracao-desc">A subida já faz parte do roteiro — a família entra no "mundo da neve" pela estrada de montanha histórica de Farellones, vila ligada ao complexo El Colorado.</div>
-            <div class="atracao-tip">💡 Evitem telas nas curvas, levem algo leve para comer e contem com ritmo mais lento por causa de crianças e avós. Remédio para enjoo à mão!</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">13:30 – 14:30</span><span class="atracao-nome">Check-in + Almoço Simples na Montanha</span></div>
-            <div class="atracao-desc">Check-in no Apart Bianco Hotel (Calle La Paloma N° 64, Lo Barnechea) — chegada usada para adaptação: quarto, chá/café quente, organização das camadas e almoço sem pressa. Altitude e frio derrubam energia mais rápido do que parece.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">15:30 – 17:00</span><span class="atracao-nome">Primeira Saída Curta para Brincar na Neve</span></div>
-            <div class="atracao-desc">Primeiro contato sem cobrança: andar na neve, brincar, tirar fotos e deixar as crianças curtirem a novidade. Não é o "grande dia da neve" — apenas a descoberta.</div>
-            <div class="atracao-tip">💡 Uma janela curta funciona melhor no primeiro impacto com o frio.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">18:30 – 20:00</span><span class="atracao-nome">Jantar Aconchegante e Noite Tranquila</span></div>
-            <div class="atracao-desc">Comida quente e pouco deslocamento. Quanto menos movimentação à noite, melhor para o grupo inteiro.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏨 Hotel Santiago <span class="desl-arrow">→</span> Ponto de aluguel: carro por app ou van privada</div>
-          <div class="desl-item">🏪 Aluguel <span class="desl-arrow">→</span> Apart Bianco Hotel (Lo Barnechea): van privada ou transfer contratado (~1h30)</div>
-          <div class="desl-item">🏔️ Apart Bianco → área de neve: deslocamento local curto</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Aluguel de roupa/equipamento de neve</span><span>R$ 80 a R$ 180</span></div>
-          <div class="custo-row"><span>Transfer/van para Farellones</span><span>R$ 120 a R$ 260</span></div>
-          <div class="custo-row"><span>Almoço simples na montanha</span><span>R$ 70 a R$ 140</span></div>
-          <div class="custo-row"><span>Jantar</span><span>R$ 100 a R$ 190</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 370 a R$ 770</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Restaurante da própria hospedagem</strong> — cozinha de montanha | reduz deslocamento no primeiro dia de altitude | R$ 100 a R$ 190</div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Restaurante local em Farellones</strong> — casual de montanha | clima autêntico de vila nevada | R$ 90 a R$ 170</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.elcolorado.cl/" target="_blank">🔗 El Colorado / Farellones — site oficial</a>
-          <a class="link-item" href="https://www.elcolorado.cl/colorado/" target="_blank">🔗 História e contexto de Farellones — oficial</a>
-        </div>
-      </div>
-
-      <!-- DIA 4 -->
-      <div class="day-block" id="day-4">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">4</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">18 de julho · sexta-feira</div>
-            <div class="day-toggle-title">Dia Completo de Neve em Farellones — Foco Família</div>
-            <div class="day-toggle-summary">Tubing, neve livre e dia lúdico no complexo El Colorado</div>
-          </div>
-          <span class="day-energy">🔋 Moderado</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:15 – 10:00</span><span class="atracao-nome">Café da Manhã + Vestir Camadas com Calma</span></div>
-            <div class="atracao-desc">Em viagem com crianças, esse preparo leva mais tempo do que parece. Faz toda a diferença no humor do resto do dia.</div>
-            <div class="atracao-tip">💡 Levem uma segunda luva ou meia reserva para os pequenos.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">10:00 – 15:00</span><span class="atracao-nome">Dia Principal de Neve em Farellones</span></div>
-            <div class="atracao-desc">Brincar de verdade: tubing, escorregadas, neve livre e, se o grupo estiver animado, alguma atividade guiada simples. Farellones se apresenta oficialmente como centro de entretenimento para toda a família, com escola, rental e estrutura voltada a inverno. O objetivo não é performance — é memória boa.</div>
-            <div class="atracao-tip">💡 Em alta temporada, filas e lotação crescem bastante. Chegue cedo e mantenha o dia flexível.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">12:30 – 13:30</span><span class="atracao-nome">Almoço no Centro de Montanha</span></div>
-            <div class="atracao-desc">Melhor almoçar ali mesmo, sem descer e sem quebrar o fluxo do dia. Antecipar alguns minutos ajuda a escapar do horário mais concorrido.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">15:30 – 17:00</span><span class="atracao-nome">Retorno para Hospedagem + Descanso</span></div>
-            <div class="atracao-desc">Banho quente, troca de roupa e recuperação das crianças. Deixe secando o que molhou para não começar o dia seguinte no improviso.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">18:30 – 20:00</span><span class="atracao-nome">Jantar Tranquilo com Clima de Montanha</span></div>
-            <div class="atracao-desc">Hora para um jantar mais gostoso, taça de vinho para os adultos e noite curta. Não vale programar noite longa em altitude com crianças pequenas.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏠 Hospedagem Farellones <span class="desl-arrow">→</span> Área de neve/parque: a pé ou traslado local (dependendo da localização)</div>
-          <div class="desl-item">❄️ Dia concentrado na mesma região — uma das grandes vantagens de dormir na montanha</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Entrada / atividades de neve</span><span>R$ 220 a R$ 450</span></div>
-          <div class="custo-row"><span>Almoço no centro de montanha</span><span>R$ 80 a R$ 150</span></div>
-          <div class="custo-row"><span>Jantar</span><span>R$ 100 a R$ 190</span></div>
-          <div class="custo-row"><span>Aula / apoio para iniciantes (opcional)</span><span>Cotação a confirmar</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 400 a R$ 790</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Restaurante do centro de montanha</strong> — casual / refeição rápida de inverno | praticidade total durante o dia | R$ 80 a R$ 150</div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Restaurante da hospedagem</strong> — montanha / comfort food | melhor para jantar sem expor o grupo ao frio | R$ 100 a R$ 190</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.elcolorado.cl/" target="_blank">🔗 El Colorado / Farellones — site oficial</a>
-          <a class="link-item" href="https://www.elcolorado.cl/escuelaski/" target="_blank">🔗 Escola de ski e snowboard — oficial</a>
-          <a class="link-item" href="https://www.elcolorado.cl/tarifas-ticket-dia/" target="_blank">🔗 Tickets / tarifas — página oficial</a>
-          <a class="link-item" href="https://www.vallenevado.com/pt/perguntas-frequentes/" target="_blank">🔗 Valle Nevado — FAQ oficial</a>
-        </div>
-      </div>
-
-      <!-- DIA 5 -->
-      <div class="day-block" id="day-5">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">5</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">19 de julho · sábado</div>
-            <div class="day-toggle-title">Valle Nevado Premium + Dia Cênico na Cordilheira</div>
-            <div class="day-toggle-summary">O dia "cartão-postal" — resort, neve com visual impactante e conforto</div>
-          </div>
-          <span class="day-energy">🔋 Moderado</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">08:30 – 09:15</span><span class="atracao-nome">Café da Manhã + Preparação Final para o Dia Premium</span></div>
-            <div class="atracao-desc">Sair já com tudo organizado: luvas secas, meias extras, protetor labial e óculos. Não deixar para vestir tudo no carro.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:15 – 10:00</span><span class="atracao-nome">Deslocamento Farellones → Valle Nevado</span></div>
-            <div class="atracao-desc">Trecho curto em distância, mas estrada de montanha. Vocês já estarão aclimatados — vantagem de vir de Farellones em vez de Santiago. A janela oficial de operação das pistas e teleféricos é geralmente das 09:00 às 17:00.</div>
-            <div class="atracao-tip">💡 Valle Nevado recomenda verificar condições do caminho e portar correntes no inverno.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">10:00 – 12:30</span><span class="atracao-nome">Manhã Panorâmica em Valle Nevado</span></div>
-            <div class="atracao-desc">Contemplação, fotos, brincadeiras leves na neve e circulação pelas áreas mais confortáveis do resort. O Hotel Puerta del Sol se apresenta como ideal para famílias, com quartos conectáveis e áreas de entretenimento. O ganho do dia está no cenário, no clima e no conforto — não no ski técnico.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">12:30 – 13:45</span><span class="atracao-nome">Almoço em Valle Nevado</span></div>
-            <div class="atracao-desc">Use o almoço como parte da experiência premium — refeição quente e pausa longa o suficiente para as crianças descansarem.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">14:00 – 15:45</span><span class="atracao-nome">Tarde Livre na Neve / Área de Resort / Descanso com Vista</span></div>
-            <div class="atracao-desc">Deixe o dia respirar. Quem quiser brinca mais um pouco; quem estiver cansado fica em ambiente interno com vista da cordilheira. Em altitude maior, sinais de cansaço aparecem antes — o formato flexível funciona melhor com avós e crianças.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">16:00 – 16:45</span><span class="atracao-nome">Retorno para Farellones</span></div>
-            <div class="atracao-desc">Volta ainda com luz e sem empurrar o grupo até o limite. Não vale tentar espremer a última hora se o grupo já estiver cansado.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">18:30 – 20:00</span><span class="atracao-nome">Jantar Tranquilo em Farellones</span></div>
-            <div class="atracao-desc">Fechamento confortável na base da montanha. Noite simples, comida quente e descanso são a melhor preparação para o dia seguinte.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏠 Farellones <span class="desl-arrow">→</span> Valle Nevado: carro privado, van ou transfer local</div>
-          <div class="desl-item">⛷️ Valle Nevado <span class="desl-arrow">→</span> Farellones: mesmo modal de ida</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Passeio / acesso / consumo em Valle Nevado</span><span>R$ 220 a R$ 450</span></div>
-          <div class="custo-row"><span>Almoço em Valle Nevado</span><span>R$ 120 a R$ 220</span></div>
-          <div class="custo-row"><span>Lanche / chocolate quente</span><span>R$ 25 a R$ 60</span></div>
-          <div class="custo-row"><span>Jantar em Farellones</span><span>R$ 100 a R$ 190</span></div>
-          <div class="custo-row"><span>Deslocamento local Farellones ↔ Valle Nevado</span><span>R$ 40 a R$ 90</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 505 a R$ 1.010</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Restaurante dentro de Valle Nevado</strong> — montanha / resort | transforma o almoço em experiência premium | R$ 120 a R$ 220</div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Jantar na hospedagem em Farellones</strong> — comfort food de montanha | fecha o dia com conforto e zero desgaste | R$ 100 a R$ 190</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.vallenevado.com/pt/" target="_blank">🔗 Valle Nevado — site oficial</a>
-          <a class="link-item" href="https://www.vallenevado.com/pt/perguntas-frequentes/" target="_blank">🔗 Valle Nevado — FAQ oficial</a>
-          <a class="link-item" href="https://www.vallenevado.com/pt/hotel/hotel-puerta-del-sol/" target="_blank">🔗 Hotel Puerta del Sol — perfil familiar oficial</a>
-          <a class="link-item" href="https://www.vallenevado.com/pt/cameras/" target="_blank">🔗 Valle Nevado — câmeras e condições ao vivo</a>
-        </div>
-      </div>
-
-      <!-- DIA 6 -->
-      <div class="day-block" id="day-6">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">6</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">20 de julho · domingo</div>
-            <div class="day-toggle-title">Última Manhã na Montanha + Descida para Santiago</div>
-            <div class="day-toggle-summary">Despedida da neve e retorno urbano com jantar especial</div>
-          </div>
-          <span class="day-energy">🔋 Moderado para Leve</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">08:30 – 09:30</span><span class="atracao-nome">Café da Manhã com Calma e Arrumação Parcial das Malas</span></div>
-            <div class="atracao-desc">Manhã feita para desacelerar. Deixar só uma mala menor acessível e organizar tudo sem pressa. Separar roupa seca e confortável para a descida.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:45 – 11:00</span><span class="atracao-nome">Última Saída Curta na Neve / Vila / Mirantes Próximos</span></div>
-            <div class="atracao-desc">Fotos finais, brincadeira curta com as crianças e despedida da montanha. 1h a 1h30 é suficiente — o valor está no ritual de despedida, não em "fazer mais".</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:00 – 11:30</span><span class="atracao-nome">Check-out</span></div>
-            <div class="atracao-desc">Encerramento da hospedagem e ajuste final das malas. Descer alimentados e com snacks no carro.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:30 – 13:30</span><span class="atracao-nome">Descida Farellones → Santiago</span></div>
-            <div class="atracao-desc">Descer no início do dia evita pressão de trânsito e mudanças climáticas tardias. A experiência da neve fica bem fechada sem o desgaste de sair correndo.</div>
-            <div class="atracao-tip">💡 Remédio para enjoo à mão, especialmente para as crianças — a sequência de curvas continua sensível.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">13:30 – 14:30</span><span class="atracao-nome">Check-in em Santiago + Pausa Curta</span></div>
-            <div class="atracao-desc">Entrar de novo em ambiente urbano depois da montanha é bem-vindo: banho, organização e descanso breve. Check-in novamente no Hyatt Place Vitacura.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">15:30 – 17:30</span><span class="atracao-nome">Tarde Leve em Santiago</span></div>
-            <div class="atracao-desc">Sem atrações pesadas. Café especial ou passeio curto no entorno do hotel. Excelente espaço para encaixar uma cafeteria boa ou padaria artesanal.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">19:00 – 21:00</span><span class="atracao-nome">Jantar Mais Caprichado em Santiago</span></div>
-            <div class="atracao-desc">Depois de três noites na montanha, ótimo momento para jantar com boa carta de vinhos. Reserve com antecedência, especialmente em julho.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏔️ Apart Bianco <span class="desl-arrow">→</span> Hyatt Place Vitacura: van privada ou transfer (~1h30)</div>
-          <div class="desl-item">🏨 Hyatt Place Vitacura <span class="desl-arrow">→</span> Jantar / passeio: carro por app</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Manhã final na neve</span><span>R$ 0 a R$ 80</span></div>
-          <div class="custo-row"><span>Transfer descida para Santiago</span><span>R$ 120 a R$ 260</span></div>
-          <div class="custo-row"><span>Café especial / pausa da tarde</span><span>R$ 25 a R$ 50</span></div>
-          <div class="custo-row"><span>Jantar em Santiago</span><span>R$ 110 a R$ 220</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 255 a R$ 610</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Bocanáriz</strong> — wine bar / gastronomia chilena | ótima escolha para vinhos sem ir a vinícola | R$ 120 a R$ 220 | <a href="https://www.bocanariz.cl/" target="_blank" style="color:var(--blue)">bocanariz.cl</a></div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Cafeteria de especialidade em Providencia</strong> — café especial | retomada tranquila da cidade | R$ 25 a R$ 50</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.bocanariz.cl/" target="_blank">🔗 Bocanáriz — site oficial</a>
-        </div>
-      </div>
-
-      <!-- DIA 7 -->
-      <div class="day-block" id="day-7">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">7</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">21 de julho · segunda-feira</div>
-            <div class="day-toggle-title">Mercado Local + Teleférico + Vinho em Lastarria</div>
-            <div class="day-toggle-summary">La Vega Central + Teleférico Santiago + Bocanáriz</div>
-          </div>
-          <span class="day-energy">🔋 Moderado</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:00 – 09:30</span><span class="atracao-nome">Saída do Hotel e Deslocamento para La Vega Central</span></div>
-            <div class="atracao-desc">Usar a manhã para ver uma Santiago mais viva e menos "cartão-postal". Ir cedo deixa o mercado mais agradável para crianças e evita o pico do meio do dia.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">09:30 – 11:30</span><span class="atracao-nome">La Vega Central</span></div>
-            <div class="atracao-desc">Mercado icônico de Santiago, com frutas, verduras e gastronomia local — aberto todos os dias. Ingredientes, barracas, produtos frescos e cultura alimentar real da cidade.</div>
-            <div class="atracao-tip">💡 Para família com crianças pequenas, 1h30 a 2h é o tempo ideal para curtir sem saturar.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:30 – 12:15</span><span class="atracao-nome">Pausa para Café / Lanche no Entorno do Mercado</span></div>
-            <div class="atracao-desc">Reorganizar o ritmo antes do próximo passeio. Bom momento para um café mais caprichado.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">13:00 – 15:30</span><span class="atracao-nome">Teleférico Santiago + Vista do Parque Metropolitano</span></div>
-            <div class="atracao-desc">Atração panorâmica do Parque Metropolitano — bonita, leve e agrada gerações diferentes ao mesmo tempo. Combos a partir de CLP 6.300 (≈R$ 35). Estação Oasis em Av. El Cerro 750, Providencia. Confirme horários 24–48h antes no site (opera em torno de 10:00–18:45/19:45 conforme temporada).</div>
-            <div class="atracao-tip">💡 Confirme operação no site oficial antes de sair.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">16:30 – 18:00</span><span class="atracao-nome">Descanso no Hotel</span></div>
-            <div class="atracao-desc">Pausa que preserva o jantar e evita transformar o dia em sequência cansativa. "Janela de respiro" essencial para grupo grande.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">19:30 – 21:30</span><span class="atracao-nome">Jantar no Bocanáriz — Lastarria</span></div>
-            <div class="atracao-desc">Wine bar, restaurante e loja de vinhos com foco no vinho chileno, no bairro Lastarria. Endereço: José Victorino Lastarria 276. O bloco mais alinhado ao interesse por vinhos de toda a viagem.</div>
-            <div class="atracao-tip">💡 Reserve com antecedência, especialmente em julho.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏨 Hotel <span class="desl-arrow">→</span> La Vega Central: carro por app</div>
-          <div class="desl-item">🛒 La Vega <span class="desl-arrow">→</span> Estação Oasis / Teleférico: carro por app</div>
-          <div class="desl-item">🚡 Teleférico <span class="desl-arrow">→</span> Hotel: carro por app</div>
-          <div class="desl-item">🏨 Hotel <span class="desl-arrow">→</span> Bocanáriz / Lastarria: carro por app</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>La Vega Central</span><span>R$ 0</span></div>
-          <div class="custo-row"><span>Café / lanche no mercado</span><span>R$ 20 a R$ 45</span></div>
-          <div class="custo-row"><span>Teleférico Santiago (combo)</span><span>≈ R$ 35 a R$ 91</span></div>
-          <div class="custo-row"><span>Jantar no Bocanáriz</span><span>R$ 120 a R$ 220</span></div>
-          <div class="custo-row"><span>Deslocamentos (app)</span><span>R$ 45 a R$ 100</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 220 a R$ 400</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Bocanáriz</strong> — wine bar / chileno | melhor encaixe urbano para vinhos da viagem | R$ 120 a R$ 220 | <a href="https://bocanariz.cl/" target="_blank" style="color:var(--blue)">bocanariz.cl</a></div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Refeição simples na região da La Vega</strong> — comida local / mercado | experiência mais autêntica da viagem | R$ 45 a R$ 90</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://vegacentral.cl/" target="_blank">🔗 La Vega Central — site oficial</a>
-          <a class="link-item" href="https://telefericosantiago.cl/" target="_blank">🔗 Teleférico Santiago — site oficial</a>
-          <a class="link-item" href="https://telefericoonline.cl/" target="_blank">🔗 Teleférico Santiago — compra de ingressos</a>
-          <a class="link-item" href="https://bocanariz.cl/" target="_blank">🔗 Bocanáriz — site oficial</a>
-          <a class="link-item" href="https://bocanariz.cl/index.php/reserva/" target="_blank">🔗 Bocanáriz — reservas online</a>
-        </div>
-      </div>
-
-      <!-- DIA 8 -->
-      <div class="day-block" id="day-8">
-        <button class="day-toggle" onclick="toggleDay(this)">
-          <div class="day-num-badge">8</div>
-          <div class="day-toggle-info">
-            <div class="day-toggle-date">22 de julho · terça-feira</div>
-            <div class="day-toggle-title">Último Dia Leve + Café + Jantar Cedo + Logística do Voo</div>
-            <div class="day-toggle-summary">Manhã livre, passeio de bairro e preparação para voo madrugada (04:45 do dia 23)</div>
-          </div>
-          <span class="day-energy">🔋 Leve</span>
-          <span class="day-chevron">▾</span>
-        </button>
-        <div class="day-content">
-          <div class="dica-box" style="margin-bottom:14px"><span class="dica-box-text">⚠️ <strong>Voo às 04:45 do dia 23.</strong> O aeroporto recomenda chegar 3h a 3h30 antes para voos internacionais. Saída do hotel: 01:15–01:45. Terminal Internacional = T2.</span></div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">10:00 – 11:30</span><span class="atracao-nome">Manhã Livre e Lenta no Hotel</span></div>
-            <div class="atracao-desc">Começo tranquilo — fechar mala, separar documentos e deixar roupas do aeroporto já prontas. Essa madrugada vai ser longa.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">11:45 – 13:15</span><span class="atracao-nome">Almoço Agradável Perto do Hotel</span></div>
-            <div class="atracao-desc">Manter o dia simples e gostoso, sem atravessar a cidade. Restaurante de almoço fácil, com serviço rápido e espaço confortável.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">14:00 – 16:00</span><span class="atracao-nome">Passeio Leve de Bairro / Café Especial / Tempo em Família</span></div>
-            <div class="atracao-desc">Sem atrações grandes. Cafeteria boa, volta curta em Providencia/Lastarria ou pausa agradável em parque urbano próximo. Espaço para compra de item final de viagem sem entrar em roteiro pesado.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">16:00 – 18:00</span><span class="atracao-nome">Retorno ao Hotel + Banho + Arrumação Final</span></div>
-            <div class="atracao-desc">Mala única de apoio com casacos, remédios, documentos e itens das crianças. Esse trecho é essencial para a viagem terminar bem.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">18:30 – 20:30</span><span class="atracao-nome">Jantar Cedo</span></div>
-            <div class="atracao-desc">Madrugada será puxada — jantar cedo, perto da hospedagem, sem programa noturno longo. Não marcar restaurante distante nesse dia.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">20:30 – 01:15</span><span class="atracao-nome">Descanso / Sono Inicial</span></div>
-            <div class="atracao-desc">A meta é dormir algumas horas antes de sair para o aeroporto. Peçam ao hotel apoio para táxi/transfer na madrugada com antecedência.</div>
-          </div>
-          <div class="atracao">
-            <div class="atracao-header"><span class="atracao-time">01:15 – 01:45</span><span class="atracao-nome">Saída para o Aeroporto</span></div>
-            <div class="atracao-desc">Intervalo mais seguro para voo às 04:45. Terminal Internacional de Santiago = T2. Com 6 pessoas, o ideal é transfer ou van reservada com antecedência.</div>
-          </div>
-
-          <span class="day-section-label">Deslocamentos</span>
-          <div class="desl-item">🏨 Tudo concentrado perto do hotel neste dia</div>
-          <div class="desl-item">✈️ Hotel <span class="desl-arrow">→</span> Aeroporto SCL (T2 Internacional): transfer ou van na madrugada — reservar com antecedência</div>
-
-          <span class="day-section-label">Custos Estimados por Pessoa</span>
-          <div class="custo-row"><span>Almoço</span><span>R$ 80 a R$ 150</span></div>
-          <div class="custo-row"><span>Café / pausa da tarde</span><span>R$ 20 a R$ 45</span></div>
-          <div class="custo-row"><span>Jantar cedo</span><span>R$ 90 a R$ 180</span></div>
-          <div class="custo-row"><span>Transfer hotel → aeroporto (madrugada)</span><span>R$ 50 a R$ 130</span></div>
-          <div class="custo-row total"><span>Total estimado do dia</span><span>R$ 240 a R$ 505</span></div>
-
-          <span class="day-section-label">Restaurantes Sugeridos</span>
-          <div class="rest-item"><span class="rest-num">1.</span> <strong>Bocanáriz</strong> (se preferir trocar com o Dia 7) — wine bar / chileno | jantar especial do fim da viagem | R$ 120 a R$ 220</div>
-          <div class="rest-item"><span class="rest-num">2.</span> <strong>Restaurante próximo ao hotel</strong> — casual / confortável | melhor decisão logística para quem sai de madrugada | R$ 90 a R$ 180</div>
-
-          <span class="day-section-label">Links Úteis</span>
-          <a class="link-item" href="https://www.nuevopudahuel.cl/TerminalInternacional" target="_blank">🔗 Aeroporto de Santiago — Terminal Internacional oficial</a>
-          <a class="link-item" href="https://www.nuevopudahuel.cl/faqs" target="_blank">🔗 Aeroporto de Santiago — FAQ oficial</a>
-          <a class="link-item" href="https://www.nuevopudahuel.cl/consejos-para-un-viaje-seguro" target="_blank">🔗 Aeroporto de Santiago — dicas para viagem segura</a>
-        </div>
-      </div>
-
-    </div><!-- /timeline -->
+    <span class="section-label">Hospedagem</span>
+    <h2 class="section-title">Onde Ficar</h2>
+    <div id="hospedagem-container"></div>
   </div>
 </section>
 
-<hr class="sec-div"/>
+<hr class="sec-div" id="hr-servicos" style="display:none"/>
+
+<!-- SERVIÇOS (carro, passeio, seguro) -->
+<section class="section" id="servicos" style="display:none">
+  <div class="container">
+    <span class="section-label">Serviços</span>
+    <h2 class="section-title">Reservas &amp; Serviços</h2>
+    <div id="servicos-grid" class="serv-grid"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-roteiro" style="display:none"/>
+
+<!-- ROTEIRO DIA A DIA -->
+<section class="section" id="roteiro" style="display:none">
+  <div class="container">
+    <span class="section-label">Dia a Dia</span>
+    <h2 class="section-title">Roteiro</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-documentos" style="display:none"/>
 
 <!-- DOCUMENTOS -->
-<section class="section" id="documentos">
+<section class="section" id="documentos" style="display:none">
   <div class="container">
     <span class="section-label">Documentos</span>
     <h2 class="section-title">Pasta de Viagem</h2>
-
-    <!-- Upload zone -->
-    <div id="upload-zone" style="
-      border:2px dashed var(--border2);
-      border-radius:12px;
-      padding:28px 24px;
-      text-align:center;
-      margin-bottom:20px;
-      cursor:pointer;
-      transition:border-color .2s,background .2s;
-      background:rgba(18,110,255,.03);
-    " onclick="document.getElementById('doc-file-input').click()"
-       ondragover="event.preventDefault();this.style.borderColor='var(--blue)'"
-       ondragleave="this.style.borderColor='var(--border2)'"
-       ondrop="handleDrop(event)">
-      <div style="font-size:32px;margin-bottom:8px">📎</div>
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Adicionar documento</div>
-      <div style="font-size:12px;color:var(--muted)">Clique ou arraste um arquivo — PDF, imagem ou texto<br>A IA lê e preenche os campos automaticamente</div>
-    </div>
-    <input type="file" id="doc-file-input" accept=".pdf,.jpg,.jpeg,.png,.txt,.eml" style="display:none" onchange="handleFileSelect(this)"/>
-
-    <!-- Processing feedback -->
-    <div id="doc-processing" style="display:none;background:rgba(18,110,255,.08);border:1px solid rgba(18,110,255,.25);border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:var(--muted);display:none;align-items:center;gap:10px">
-      <div style="width:16px;height:16px;border:2px solid var(--blue);border-top-color:transparent;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0"></div>
-      <span id="doc-processing-text">Lendo o documento…</span>
-    </div>
-
-    <!-- Result banner -->
-    <div id="doc-result" style="display:none;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:var(--green)"></div>
-
-    <!-- Cards grid -->
-    <div class="docs-grid" id="docs-grid">
-      <div class="doc-card" data-slot="passaportes">
-        <span class="doc-icon">🛂</span>
-        <span class="doc-title">Passaportes</span>
-        <span class="doc-meta" id="doc-meta-passaportes">Todos os 4 viajantes</span>
-        <span class="doc-badge pending" id="doc-badge-passaportes">Verificar validade</span>
-      </div>
-      <div class="doc-card" data-slot="passagens">
-        <span class="doc-icon">✈️</span>
-        <span class="doc-title">Passagens Aéreas</span>
-        <span class="doc-meta" id="doc-meta-passagens">Ida: 15/07 · Volta: 23/07</span>
-        <span class="doc-badge" id="doc-badge-passagens">Confirmar</span>
-      </div>
-      <div class="doc-card" data-slot="hotel">
-        <span class="doc-icon">🏨</span>
-        <span class="doc-title">Vouchers de Hotel</span>
-        <span class="doc-meta" id="doc-meta-hotel">Hyatt Place Vitacura · Apart Bianco Hotel</span>
-        <span class="doc-badge pending" id="doc-badge-hotel">A reservar</span>
-      </div>
-      <div class="doc-card" data-slot="seguro">
-        <span class="doc-icon">🏥</span>
-        <span class="doc-title">Seguro Viagem</span>
-        <span class="doc-meta" id="doc-meta-seguro">4 pessoas · Cobertura neve</span>
-        <span class="doc-badge pending" id="doc-badge-seguro">A contratar</span>
-      </div>
-      <div class="doc-card" data-slot="outros">
-        <span class="doc-icon">💊</span>
-        <span class="doc-title">Medicamentos</span>
-        <span class="doc-meta" id="doc-meta-outros">Enjoo, altitude, crianças</span>
-        <span class="doc-badge info" id="doc-badge-outros">Levar</span>
-      </div>
-    </div>
+    <div class="docs-grid" id="docs-grid"></div>
   </div>
 </section>
-
-<style>
-@keyframes spin{to{transform:rotate(360deg)}}
-#upload-zone:hover{border-color:var(--blue);background:rgba(18,110,255,.06)}
-</style>
-
-<hr class="sec-div"/>
-
-<!-- CUSTOS -->
-<section class="section" id="custos">
-  <div class="container">
-    <span class="section-label">Resumo Financeiro</span>
-    <h2 class="section-title">Custos Estimados</h2>
-
-    <div class="finance-wrap">
-      <table class="finance-table">
-        <thead>
-          <tr><th>Dia</th><th>Data</th><th>Cidade</th><th>Resumo</th><th>Valor / pessoa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="dia-num">1</td><td>15 jul</td><td>Santiago</td><td>Chegada noturna e descanso total</td><td>R$ 65–170</td></tr>
-          <tr><td class="dia-num">2</td><td>16 jul</td><td>Santiago</td><td>Parque, vista da cidade e adaptação</td><td>R$ 393–603</td></tr>
-          <tr><td class="dia-num">3</td><td>17 jul</td><td>Farellones</td><td>Subida à montanha e primeira neve</td><td>R$ 370–770</td></tr>
-          <tr><td class="dia-num">4</td><td>18 jul</td><td>Farellones</td><td>Dia completo de neve em família</td><td>R$ 400–790</td></tr>
-          <tr><td class="dia-num">5</td><td>19 jul</td><td>Valle Nevado</td><td>Dia premium na cordilheira</td><td>R$ 505–1.010</td></tr>
-          <tr><td class="dia-num">6</td><td>20 jul</td><td>Santiago</td><td>Descida da montanha e retorno urbano</td><td>R$ 255–610</td></tr>
-          <tr><td class="dia-num">7</td><td>21 jul</td><td>Santiago</td><td>Mercado local, teleférico e vinhos</td><td>R$ 220–400</td></tr>
-          <tr><td class="dia-num">8</td><td>22 jul</td><td>Santiago</td><td>Último dia leve e preparação do voo</td><td>R$ 240–505</td></tr>
-          <tr class="total-row"><td colspan="4"><strong>TOTAL GERAL (por pessoa, exceto hospedagem)</strong></td><td><strong>R$ 2.848 – R$ 4.858</strong></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="dica-box" style="margin-top:16px"><span class="dica-box-text">💡 <strong>Hospedagem não incluída nos valores acima.</strong> Considere também: roupa de neve (aluguel por pessoa mais barato em Santiago), transfer para Farellones (dividido entre 4) e tarifas de ski que variam conforme temporada.</span></div>
-  </div>
-</section>
-
-<!-- NOW BAR -->
-<div class="now-bar" id="now-bar">
-  <div id="now-bar-content"></div>
-</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-brand">Travel <span>Concierge</span></div>
-  <div class="footer-note">Andes em Família — Neve, Vinho e Memórias · Santiago, Chile · Julho 2025</div>
+  <div class="footer-note" id="footer-note"></div>
 </footer>
 
 <script>
-// TOPBAR SCROLL
-window.addEventListener('scroll', () => {
-  document.getElementById('topbar').classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+// ══════════════════════════════════════════════════════════════
+//  ROTEIRO_DATA — injetado pelo gerador do concierge
+//  Estrutura esperada:
+//  {
+//    titulo: "Santiago & Andes",
+//    subtitulo: "Andes em Família — Neve, Vinho e Memórias",
+//    eyebrow: "Travel Concierge · Santiago, Chile",
+//    heroImage: "https://images.unsplash.com/...",
+//    pills: ["✈️ 15 a 23 de julho", "👨‍👩‍👧 4 pessoas"],
+//    visaoGeral: [ {label, value, variant?} ],  // variant: 'coral'|'green'|''
+//    obs: "Texto opcional de observação",
+//    voos: [
+//      { tipo:'ida'|'volta', origemIata, origemNome, destinoIata, destinoNome,
+//        data, horaPartida, horaChegada, cia, nvoo, conexao, classe }
+//    ],
+//    hospedagem: [
+//      { nome, cidade, checkin, checkout, noites, conf, hospedes }
+//    ],
+//    servicos: [
+//      { tipo:'carro'|'passeio'|'seguro'|'outro', icon, nome, meta, badge }
+//    ],
+//    dias: [
+//      { num, data, titulo, resumo, energia?,
+//        atividades: [ { horario, nome, descricao, dica? } ],
+//        deslocamentos: ["Hotel → Aeroporto"],
+//        custos: [ {label, valor} ],
+//        custoTotal: "R$ 200–400"
+//      }
+//    ],
+//    documentos: [
+//      { icon, titulo, meta, badge, badgeClass? }
+//    ],
+//    footerNote: "Andes em Família · Santiago, Chile · Julho 2025"
+//  }
+// ══════════════════════════════════════════════════════════════
 
-// TOGGLE DAY
+const ROTEIRO_DATA = {
+  titulo: "Andes em Família",
+  subtitulo: "Neve, Vinho e Memórias",
+  eyebrow: "Travel Concierge · Santiago, Chile · Julho 2025",
+  heroImage: "https://images.unsplash.com/photo-1596731498067-2e4d9f1b9a55?w=1600&q=80",
+  pills: ["✈️ 14 a 21 de julho de 2025", "👨‍👩‍👧‍👦 6 pessoas", "❄️ Neve + Gastronomia", "🏔️ Farellones & Valle Nevado"],
+  visaoGeral: [
+    { label: "Destino", value: "Santiago + Cordilheira dos Andes", variant: "" },
+    { label: "Período", value: "14 a 21 de julho de 2025 · 7 noites", variant: "" },
+    { label: "Grupo", value: "Casal + 2 crianças + 2 idosos ativos", variant: "" },
+    { label: "Estilo", value: "Familiar · Neve · Gastronômico", variant: "coral" },
+    { label: "Ritmo", value: "Moderado com pausas inteligentes", variant: "green" },
+    { label: "Temperatura", value: "Santiago: 3–15°C · Serra: até -5°C", variant: "" }
+  ],
+  obs: "⚠️ Atenção: a neve fica a 1h30–2h de Santiago. Subida com muitas curvas — prever remédio para enjoo para crianças. Em Santiago, uso de camadas é essencial mesmo com sol.",
+  voos: [
+    {
+      tipo: "ida",
+      origemIata: "CNF",
+      origemNome: "Confins – Belo Horizonte",
+      destinoIata: "SCL",
+      destinoNome: "Arturo Merino Benítez – Santiago",
+      data: "2025-07-14",
+      horaPartida: "19:35",
+      horaChegada: "23:35",
+      cia: "Sky Airline",
+      nvoo: "Loc. OEVTUK",
+      conexao: "",
+      classe: "Economy"
+    },
+    {
+      tipo: "volta",
+      origemIata: "SCL",
+      origemNome: "Arturo Merino Benítez – Santiago",
+      destinoIata: "GRU",
+      destinoNome: "Guarulhos – São Paulo",
+      data: "2025-07-21",
+      horaPartida: "— (confirmar)",
+      horaChegada: "— (confirmar)",
+      cia: "Sky Airline",
+      nvoo: "Trecho SCL → GRU",
+      conexao: "",
+      classe: "Economy"
+    },
+    {
+      tipo: "volta",
+      origemIata: "GRU",
+      origemNome: "Guarulhos – São Paulo",
+      destinoIata: "CNF",
+      destinoNome: "Confins – Belo Horizonte",
+      data: "2025-07-21",
+      dataChegada: "2025-07-21",
+      horaPartida: "21:40",
+      horaChegada: "22:50",
+      cia: "Azul Linhas Aéreas",
+      nvoo: "Loc. RNPM5Q",
+      conexao: "",
+      classe: "Economy"
+    }
+  ],
+  hospedagem: [
+    {
+      nome: "Hayat Place Santiago Vitacura",
+      cidade: "Vitacura, Santiago",
+      checkin: "2025-07-14",
+      checkout: "2025-07-16",
+      noites: 2,
+      conf: "",
+      hospedes: "6 pessoas"
+    },
+    {
+      nome: "Apart Bianca Hotel",
+      cidade: "Farellones / Cordilheira",
+      checkin: "2025-07-16",
+      checkout: "2025-07-19",
+      noites: 3,
+      conf: "",
+      hospedes: "6 pessoas"
+    },
+    {
+      nome: "Hayat Place Santiago Vitacura",
+      cidade: "Vitacura, Santiago",
+      checkin: "2025-07-19",
+      checkout: "2025-07-21",
+      noites: 2,
+      conf: "",
+      hospedes: "6 pessoas"
+    }
+  ],
+  servicos: [
+    { tipo: "carro", icon: "🚐", nome: "Transfer Aeroporto (Chegada)", meta: "Aeroporto SCL → Hayat Place Vitacura · Van privada para 6", badge: "14/07 · 23:35" },
+    { tipo: "carro", icon: "🚐", nome: "Transfer Santiago → Farellones", meta: "Hayat Place → Apart Bianca Hotel · Van privada", badge: "16/07 · manhã" },
+    { tipo: "carro", icon: "🚐", nome: "Transfer Farellones → Santiago", meta: "Apart Bianca → Hayat Place Vitacura · Van privada", badge: "19/07 · manhã" },
+    { tipo: "carro", icon: "🚐", nome: "Transfer Aeroporto (Volta)", meta: "Hayat Place → Aeroporto SCL · T2 Internacional · Van", badge: "21/07 · madrugada" },
+    { tipo: "outro", icon: "🎿", nome: "Aluguel de Roupa de Neve", meta: "Roupas + botas + luvas para 6 pessoas · Santiago antes de subir", badge: "16/07" },
+    { tipo: "seguro", icon: "🛡️", nome: "Seguro Viagem", meta: "Cobrir 6 pessoas incluindo neve e altitude · Confirmar cobertura", badge: "Verificar" }
+  ],
+  dias: [
+    {
+      num: 1,
+      data: "2025-07-14",
+      titulo: "Chegada e Descanso Total",
+      resumo: "Dia puramente logístico. Voo chega às 23:35 em Santiago — o melhor é sair do aeroporto sem pressa, transfer direto para o Hayat Place Vitacura e descanso total.",
+      energia: "🟢 Leve",
+      atividades: [
+        {
+          horario: "19:35 – 23:35",
+          nome: "Voo CNF → SCL | Sky Airline",
+          descricao: "Partida de Confins às 19:35. Chegada em Santiago às 23:35 (fuso -4h do Brasil). Loc. OEVTUK.",
+          dica: "Deixe na bagagem de mão: casaco, água, snack e uma troca simples para as crianças."
+        },
+        {
+          horario: "23:35 – 00:30",
+          nome: "Chegada + imigração + retirada de bagagem",
+          descricao: "Imigração com calma. Trecho puramente logístico — não encaixar nenhum passeio.",
+          dica: "Com 6 pessoas e malas, saia do aeroporto com transfer privado ou van já reservado."
+        },
+        {
+          horario: "00:30 – 01:15",
+          nome: "Traslado para Hayat Place Santiago Vitacura",
+          descricao: "Transfer privado do aeroporto até o hotel em Vitacura. Região confortável para família e ótima base para os primeiros dias.",
+          dica: "Van única para 6 evita dividir o grupo em dois carros — melhor custo-conforto."
+        },
+        {
+          horario: "01:15 em diante",
+          nome: "Check-in e descanso total",
+          descricao: "Check-in e direto para os quartos. Isso protege o humor das crianças, evita desgaste dos avós e deixa o grupo pronto para o Dia 2.",
+          dica: ""
+        }
+      ],
+      deslocamentos: [
+        "Aeroporto SCL → Hayat Place Vitacura: transfer privado ou van (para esse horário, não recomendo transporte público)"
+      ],
+      custos: [
+        { label: "Traslado aeroporto → hotel", valor: "R$ 50–130" },
+        { label: "Lanche leve / água / emergência", valor: "R$ 15–40" },
+        { label: "Passeios", valor: "R$ 0" }
+      ],
+      custoTotal: "R$ 65–170"
+    },
+    {
+      num: 2,
+      data: "2025-07-15",
+      titulo: "Parque, Vista da Cidade e Adaptação ao Inverno",
+      resumo: "Primeiro dia real da viagem: manhã leve no Parque Bicentenario e, no fim da tarde, o Sky Costanera para apresentar Santiago de cima — com a cordilheira ao fundo.",
+      energia: "🟡 Leve a Moderado",
+      atividades: [
+        {
+          horario: "10:00 – 11:15",
+          nome: "Café da manhã sem pressa + organização",
+          descricao: "Início lento e intencional: compensar a chegada tarde, ajustar roupas de frio e perceber o que ainda falta para os dias de neve.",
+          dica: "Aproveite para comprar água, snacks e qualquer item simples para a rotina das crianças."
+        },
+        {
+          horario: "11:45 – 13:15",
+          nome: "Parque Bicentenario",
+          descricao: "27 hectares ao longo do rio Mapocho. Passeio plano, bonito, agradável para os avós e interessante para as crianças pelas aves no lago.",
+          dica: "Mesmo com sol, julho pede casaco, gorro e camada corta-vento — frio aparece mais do que parece nas fotos."
+        },
+        {
+          horario: "13:20 – 14:45",
+          nome: "Almoço na região de Vitacura",
+          descricao: "Almoçar perto do parque evita deslocamentos desnecessários. Mestizo é boa pedida: chileno contemporâneo, encaixa bem com família.",
+          dica: "Restaurante com espaço e serviço tranquilo faz diferença quando o grupo é grande."
+        },
+        {
+          horario: "15:15 – 17:00",
+          nome: "Volta ao hotel + descanso",
+          descricao: "Pausa essencial: crianças descansam, adultos respiram. Separar nessa hora as camadas de roupa para a montanha nos dias seguintes.",
+          dica: ""
+        },
+        {
+          horario: "17:30 – 19:00",
+          nome: "Sky Costanera",
+          descricao: "Mirante no topo do edifício mais alto da América do Sul. Visão geral da cidade e, se o tempo colaborar, a cordilheira ao fundo. Funciona das 10:00 às 22:00 (último elevador às 21:00).",
+          dica: "Fim de tarde é o melhor horário para pegar luz bonita. Adulto: R$ 129 | Criança 4–12 anos: R$ 45 | 0–3 anos: gratuito."
+        },
+        {
+          horario: "19:20 – 21:00",
+          nome: "Jantar tranquilo em Vitacura/Providencia",
+          descricao: "Encerramento confortável perto do hotel, sem noite longa. Como ainda virão os dias de neve, priorize conforto.",
+          dica: ""
+        }
+      ],
+      deslocamentos: [
+        "Hotel → Parque Bicentenario: carro por app",
+        "Parque → Hotel: carro por app",
+        "Hotel → Sky Costanera: carro por app",
+        "Sky Costanera → jantar/hotel: carro por app"
+      ],
+      custos: [
+        { label: "Parque Bicentenario", valor: "R$ 0" },
+        { label: "Sky Costanera (adulto)", valor: "R$ 129" },
+        { label: "Sky Costanera (criança 4–12)", valor: "R$ 45" },
+        { label: "Almoço (Mestizo)", valor: "R$ 90–160" },
+        { label: "Jantar", valor: "R$ 90–180" },
+        { label: "Deslocamentos app", valor: "R$ 40–90" }
+      ],
+      custoTotal: "R$ 393–603"
+    },
+    {
+      num: 3,
+      data: "2025-07-16",
+      titulo: "Check-out + Subida para Farellones",
+      resumo: "A viagem muda de clima: saem da base urbana e entram no mundo da cordilheira. Aluguel de roupa em Santiago antes de subir, depois check-in no Apart Bianca Hotel em Farellones.",
+      energia: "🟡 Moderado",
+      atividades: [
+        {
+          horario: "09:00 – 10:00",
+          nome: "Café da manhã + check-out no Hayat Place",
+          descricao: "Sair sem pressa, com todos alimentados. Uma mala de acesso rápido separada para a montanha.",
+          dica: "Deixe luvas, meias extras, segunda pele, snacks e água fora da mala principal."
+        },
+        {
+          horario: "10:15 – 11:30",
+          nome: "Parada em Santiago — aluguel de roupa de neve",
+          descricao: "Vale muito a pena fazer isso ainda em Santiago. Mais margem de preço e menos correria no check-in. Foco em roupa, botas e luvas.",
+          dica: "Neste dia vocês ainda não precisam transformar a tarde em dia esportivo."
+        },
+        {
+          horario: "11:30 – 13:30",
+          nome: "Subida para Farellones",
+          descricao: "Estrada de montanha histórica ligada ao complexo El Colorado. A subida já faz a família entrar no 'mundo da neve'.",
+          dica: "Evitem telas nas curvas, levem algo leve para comer e contem com ritmo mais lento por causa das crianças e avós."
+        },
+        {
+          horario: "13:30 – 14:30",
+          nome: "Check-in Apart Bianca Hotel + almoço simples",
+          descricao: "Chegada usada para adaptação: banheiro, quarto, chá/café quente, organização das camadas e almoço sem pressa.",
+          dica: "Altitude e frio derrubam energia mais rápido do que parece — tarde começa leve."
+        },
+        {
+          horario: "15:30 – 17:00",
+          nome: "Primeira saída curta na neve",
+          descricao: "Primeiro contato sem cobrança: andar na neve, brincar, tirar fotos, deixar as crianças curtirem a novidade.",
+          dica: "Não tentem fazer 'o grande dia da neve' já hoje. Uma janela mais curta costuma funcionar melhor no primeiro impacto com o frio."
+        },
+        {
+          horario: "18:30 – 20:00",
+          nome: "Jantar aconchegante no Apart Bianca",
+          descricao: "Comida quente, pouco deslocamento. Quanto menos movimentação à noite, melhor para o grupo inteiro.",
+          dica: ""
+        }
+      ],
+      deslocamentos: [
+        "Hotel Santiago → ponto de aluguel: carro por app ou van privada",
+        "Ponto de aluguel → Apart Bianca (Farellones): van privada ou transfer contratado",
+        "Dentro de Farellones: preferencialmente a pé ou deslocamentos curtos de carro"
+      ],
+      custos: [
+        { label: "Aluguel de roupa/equipamento de neve", valor: "R$ 80–180" },
+        { label: "Subida/transfer para Farellones", valor: "R$ 120–260" },
+        { label: "Almoço simples na montanha", valor: "R$ 70–140" },
+        { label: "Jantar", valor: "R$ 100–190" }
+      ],
+      custoTotal: "R$ 370–770"
+    },
+    {
+      num: 4,
+      data: "2025-07-17",
+      titulo: "Dia Completo de Neve em Farellones (Foco Família)",
+      resumo: "A neve vira o centro do roteiro. Farellones/El Colorado: escola, rental e estrutura voltada a inverno, perfeito para crianças pequenas. O objetivo não é performance — é memória boa.",
+      energia: "🟡 Moderado",
+      atividades: [
+        {
+          horario: "09:15 – 10:00",
+          nome: "Café da manhã + vestir camadas com calma",
+          descricao: "Em viagem com crianças, esse preparo leva mais tempo do que parece e faz toda a diferença no humor do resto do dia.",
+          dica: "Levem uma segunda luva ou meia reserva para os pequenos."
+        },
+        {
+          horario: "10:00 – 15:00",
+          nome: "Dia principal de neve — Farellones / El Colorado",
+          descricao: "Tubing, escorregadas, neve livre e, se o grupo estiver animado, alguma atividade guiada simples. O complexo El Colorado/Farellones se apresenta como centro de entretenimento para toda a família.",
+          dica: "Em alta temporada, filas e lotação crescem — vale chegar cedo e manter o dia flexível."
+        },
+        {
+          horario: "12:30 – 13:30",
+          nome: "Almoço no centro de montanha",
+          descricao: "Almoçar por ali mesmo, sem descer e sem quebrar o fluxo do dia.",
+          dica: "Antecipar o almoço alguns minutos ajuda a escapar do horário mais concorrido."
+        },
+        {
+          horario: "15:30 – 17:00",
+          nome: "Retorno à hospedagem + descanso",
+          descricao: "Após a neve: banho quente, troca de roupa e recuperação das crianças.",
+          dica: "Deixe secando o que molhou para não começar o dia seguinte no improviso."
+        },
+        {
+          horario: "18:30 – 20:00",
+          nome: "Jantar com clima de montanha",
+          descricao: "Jantar mais gostoso, taça de vinho para os adultos e noite curta.",
+          dica: "Não vale programar noite longa em altitude com crianças pequenas."
+        }
+      ],
+      deslocamentos: [
+        "Apart Bianca → área de neve/parque El Colorado: a pé ou traslado local (vantagem de dormir na montanha — menos desgaste)"
+      ],
+      custos: [
+        { label: "Entrada / atividades de neve", valor: "R$ 220–450" },
+        { label: "Almoço no centro de montanha", valor: "R$ 80–150" },
+        { label: "Jantar", valor: "R$ 100–190" }
+      ],
+      custoTotal: "R$ 400–790"
+    },
+    {
+      num: 5,
+      data: "2025-07-18",
+      titulo: "Valle Nevado Premium — Dia Cênico na Cordilheira",
+      resumo: "O dia mais cartão-postal da viagem. De Farellones para Valle Nevado: visual impactante, estrutura de resort, clima de experiência especial. Foco em contemplação, conforto e a memória da família na neve.",
+      energia: "🟡 Moderado",
+      atividades: [
+        {
+          horario: "08:30 – 09:15",
+          nome: "Café da manhã + preparação final",
+          descricao: "Como esse será o dia mais bonito da montanha, sair já com tudo organizado: luvas secas, meias extras, protetor labial e óculos.",
+          dica: "Não deixar para vestir tudo no carro — com criança pequena, isso costuma atrasar."
+        },
+        {
+          horario: "09:15 – 10:00",
+          nome: "Deslocamento Farellones → Valle Nevado",
+          descricao: "Trecho curto em distância, mas continua sendo estrada de montanha. Vocês já estarão aclimatados — bem mais tranquilo do que vir de Santiago.",
+          dica: "Saída cedo aproveita melhor a janela de operação das pistas (normalmente 09:00–17:00)."
+        },
+        {
+          horario: "10:00 – 12:30",
+          nome: "Manhã panorâmica em Valle Nevado",
+          descricao: "Contemplação, fotos, brincadeiras leves na neve e circulação pelas áreas mais confortáveis do resort. Hotel Puerta del Sol: quartos conectáveis e áreas de entretenimento para famílias.",
+          dica: "Não coloque pressão para ski técnico. O ganho do dia está no cenário, clima e conforto."
+        },
+        {
+          horario: "12:30 – 13:45",
+          nome: "Almoço em Valle Nevado",
+          descricao: "Usar o almoço como parte da experiência premium — refeição quente, pausa longa para as crianças descansarem.",
+          dica: "Bom momento para decidir se a tarde segue mais ativa ou mais contemplativa."
+        },
+        {
+          horario: "14:00 – 15:45",
+          nome: "Tarde livre — neve / resort / descanso com vista",
+          descricao: "Deixar o dia respirar. Quem quiser brinca mais; quem estiver cansado fica em ambiente interno com vista da cordilheira.",
+          dica: "Em altitude maior, sinais de cansaço aparecem antes — esse formato flexível funciona melhor com avós e crianças."
+        },
+        {
+          horario: "16:00 – 16:45",
+          nome: "Retorno para Farellones",
+          descricao: "Volta ainda com luz e sem empurrar o grupo até o limite do dia.",
+          dica: "Não vale tentar 'espremer' a última hora da estação se o grupo já estiver cansado."
+        },
+        {
+          horario: "18:30 – 20:00",
+          nome: "Jantar tranquilo no Apart Bianca",
+          descricao: "Fechamento confortável na base da montanha, sem nova logística longa.",
+          dica: "Valle Nevado recomenda verificar condições de caminho e portar correntes no inverno."
+        }
+      ],
+      deslocamentos: [
+        "Apart Bianca (Farellones) → Valle Nevado: carro privado ou transfer local",
+        "Valle Nevado → Apart Bianca: mesmo modal da ida",
+        "Trecho muito mais eficiente do que partir de Santiago"
+      ],
+      custos: [
+        { label: "Passeio / acesso / consumo Valle Nevado", valor: "R$ 220–450" },
+        { label: "Almoço em Valle Nevado", valor: "R$ 120–220" },
+        { label: "Lanche / chocolate quente", valor: "R$ 25–60" },
+        { label: "Jantar em Farellones", valor: "R$ 100–190" },
+        { label: "Deslocamento Farellones ↔ Valle Nevado", valor: "R$ 40–90" }
+      ],
+      custoTotal: "R$ 505–1.010"
+    },
+    {
+      num: 6,
+      data: "2025-07-19",
+      titulo: "Última Manhã na Montanha + Descida para Santiago",
+      resumo: "Dia pensado para não ter cara de 'fim corrido'. Última manhã leve em Farellones, depois descida confortável e check-in de volta no Hayat Place Vitacura.",
+      energia: "🟡 Moderado para Leve",
+      atividades: [
+        {
+          horario: "08:30 – 09:30",
+          nome: "Café da manhã + arrumação parcial das malas",
+          descricao: "Manhã de desaceleração. Deixar só uma mala menor acessível e organizar tudo sem pressa.",
+          dica: "Separar roupa seca e confortável para a descida a Santiago."
+        },
+        {
+          horario: "09:45 – 11:00",
+          nome: "Última saída curta na neve",
+          descricao: "Fotos finais, brincadeira curta com as crianças e despedida da montanha sem transformar o dia em desgaste físico.",
+          dica: "1h a 1h30 é suficiente. O valor está no ritual de despedida, não em 'fazer mais'."
+        },
+        {
+          horario: "11:00 – 11:30",
+          nome: "Check-out do Apart Bianca Hotel",
+          descricao: "Encerramento da hospedagem e ajuste final das malas.",
+          dica: "Tentem descer alimentados e com snacks no carro."
+        },
+        {
+          horario: "11:30 – 13:30",
+          nome: "Descida Farellones → Santiago",
+          descricao: "Descer ainda no início do dia evita pressão de trânsito e mudanças climáticas tardias.",
+          dica: "Manter remédio para enjoo à mão, especialmente para as crianças."
+        },
+        {
+          horario: "13:30 – 14:30",
+          nome: "Check-in Hayat Place Vitacura + pausa curta",
+          descricao: "Banho, organização e descanso breve. Voltar ao ambiente urbano depois da montanha costuma ser bem-vindo.",
+          dica: ""
+        },
+        {
+          horario: "15:30 – 17:30",
+          nome: "Tarde leve em Santiago",
+          descricao: "Não programar atração pesada. Uma boa opção é ficar no entorno do hotel, tomar um café especial ou passeio curto em bairro agradável.",
+          dica: "Espaço perfeito para uma cafeteria melhor ou padaria artesanal."
+        },
+        {
+          horario: "19:00 – 21:00",
+          nome: "Jantar mais caprichado em Santiago (Bocanáriz)",
+          descricao: "Depois de três noites na montanha, excelente momento para jantar com boa carta de vinhos. Bocanáriz: wine bar / gastronomia chilena, bairro Lastarria.",
+          dica: "Reservar com antecedência, especialmente em julho. bocanáriz.cl"
+        }
+      ],
+      deslocamentos: [
+        "Apart Bianca (Farellones) → Hayat Place Vitacura: van privada ou transfer",
+        "Hotel → jantar / passeio curto: carro por app"
+      ],
+      custos: [
+        { label: "Manhã final na neve", valor: "R$ 0–80" },
+        { label: "Transfer/descida para Santiago", valor: "R$ 120–260" },
+        { label: "Café especial / pausa da tarde", valor: "R$ 25–50" },
+        { label: "Jantar (Bocanáriz)", valor: "R$ 110–220" }
+      ],
+      custoTotal: "R$ 255–610"
+    },
+    {
+      num: 7,
+      data: "2025-07-20",
+      titulo: "Mercado Local + Teleférico + Vinho em Lastarria",
+      resumo: "O lado mais autêntico de Santiago: La Vega Central de manhã, teleférico panorâmico à tarde e jantar com vinhos chilenos no Bocanáriz. Dia moderado, com pausa no hotel.",
+      energia: "🟡 Moderado",
+      atividades: [
+        {
+          horario: "09:00 – 09:30",
+          nome: "Saída do hotel e deslocamento para La Vega Central",
+          descricao: "A manhã serve para ver uma Santiago mais viva e menos 'cartão-postal'. Ir cedo deixa o mercado mais agradável para crianças.",
+          dica: "Evita o pico do meio do dia."
+        },
+        {
+          horario: "09:30 – 11:30",
+          nome: "La Vega Central",
+          descricao: "Mercado icônico com frutas, verduras e gastronomia local — abre todos os dias. Ingredientes, barracas, produtos frescos e muita cultura alimentar.",
+          dica: "1h30 a 2h é o tempo ideal para curtir sem saturar com crianças pequenas."
+        },
+        {
+          horario: "11:30 – 12:15",
+          nome: "Pausa para café / lanche no entorno do mercado",
+          descricao: "Reorganizar o ritmo antes do próximo passeio. Ótimo momento para um café especial.",
+          dica: ""
+        },
+        {
+          horario: "13:00 – 15:30",
+          nome: "Teleférico Santiago + Parque Metropolitano",
+          descricao: "Atração panorâmica no Parque Metropolitano. Opera aprox. 10:00–18:45 (confirmar 24–48h antes). Combo a partir de CLP 6.300 (~R$ 35).",
+          dica: "Estação Oasis fica em Av. El Cerro 750, Providencia. Confirmar horários em telefericosantiago.cl."
+        },
+        {
+          horario: "16:30 – 18:00",
+          nome: "Descanso no hotel",
+          descricao: "Pausa para preservar a energia para o jantar e evitar roteiro cansativo.",
+          dica: "Com grupo grande, essa 'janela de respiro' costuma ser o que faz o roteiro continuar prazeroso até o fim."
+        },
+        {
+          horario: "19:30 – 21:30",
+          nome: "Jantar no Bocanáriz — Lastarria",
+          descricao: "Wine bar, restaurante e loja de vinhos com foco na vitrine do vinho chileno. Endereço: José Victorino Lastarria 276.",
+          dica: "Reservar com antecedência. bocanariz.cl/index.php/reserva/"
+        }
+      ],
+      deslocamentos: [
+        "Hotel → La Vega Central: carro por app",
+        "La Vega → Teleférico / Estação Oasis (Pedro de Valdivia): carro por app",
+        "Teleférico → hotel: carro por app",
+        "Hotel → Lastarria / Bocanáriz: carro por app"
+      ],
+      custos: [
+        { label: "La Vega Central", valor: "R$ 0" },
+        { label: "Café / lanche no mercado", valor: "R$ 20–45" },
+        { label: "Combo Teleférico Santiago", valor: "CLP 6.300 ≈ R$ 35" },
+        { label: "Jantar no Bocanáriz", valor: "R$ 120–220" },
+        { label: "Deslocamentos por app", valor: "R$ 45–100" }
+      ],
+      custoTotal: "R$ 220–400"
+    },
+    {
+      num: 8,
+      data: "2025-07-21",
+      titulo: "Último Dia Leve + Logística do Voo de Volta",
+      resumo: "Último dia gostoso, mas inteligente. Voo SKY SCL→GRU + Azul GRU→CNF. Saída de madrugada: jantar cedo, descanso e transfer para o T2 Internacional do Aeroporto de Santiago.",
+      energia: "🟢 Leve",
+      atividades: [
+        {
+          horario: "10:00 – 11:30",
+          nome: "Manhã livre e lenta no hotel",
+          descricao: "Fechar mala, separar documentos e deixar roupas do aeroporto já prontas.",
+          dica: "Começo tranquilo faz sentido porque vocês terão uma noite/madrugada longa."
+        },
+        {
+          horario: "11:45 – 13:15",
+          nome: "Almoço agradável perto do hotel",
+          descricao: "Manter o dia simples, sem atravessar a cidade. Restaurante de almoço fácil com serviço rápido e espaço confortável.",
+          dica: ""
+        },
+        {
+          horario: "14:00 – 16:00",
+          nome: "Passeio leve / café especial / tempo em família",
+          descricao: "Cafeteria boa, volta curta em Providencia/Lastarria ou pausa em parque urbano. Ótimo para comprar algum item final de viagem.",
+          dica: "Evitar atrações grandes neste dia."
+        },
+        {
+          horario: "16:00 – 18:00",
+          nome: "Retorno ao hotel + banho + arrumação final",
+          descricao: "Trecho essencial para a viagem terminar bem. Uma única mala de apoio com casacos, remédios, documentos e itens das crianças.",
+          dica: ""
+        },
+        {
+          horario: "18:30 – 20:30",
+          nome: "Jantar cedo",
+          descricao: "Como a madrugada será puxada, melhor um jantar cedo, sem álcool em excesso e perto da hospedagem.",
+          dica: "Não marcar restaurante distante ou programa noturno nesse dia."
+        },
+        {
+          horario: "20:30 – horário de saída",
+          nome: "Descanso / sono inicial",
+          descricao: "Dormir algumas horas antes de sair para o aeroporto. Pedir ao hotel apoio para van/transfer na madrugada.",
+          dica: "Peça o transfer com antecedência — não deixe para o último minuto."
+        },
+        {
+          horario: "Madrugada — saída para aeroporto",
+          nome: "Transfer para Aeroporto SCL (T2 Internacional)",
+          descricao: "Voo SCL→GRU (Sky) + conexão GRU→CNF (Azul, 21:40→22:50, Loc. RNPM5Q). Terminal Internacional T2. Chegar com 3h de antecedência para voos internacionais.",
+          dica: "Com 6 pessoas, van reservada é a melhor opção. Terminal T2 para voos internacionais."
+        }
+      ],
+      deslocamentos: [
+        "Tudo concentrado perto do hotel",
+        "Hotel → jantar: carro por app ou a pé",
+        "Hotel → Aeroporto SCL T2 Internacional: transfer ou van na madrugada"
+      ],
+      custos: [
+        { label: "Almoço", valor: "R$ 80–150" },
+        { label: "Café / pausa da tarde", valor: "R$ 20–45" },
+        { label: "Jantar cedo", valor: "R$ 90–180" },
+        { label: "Transfer hotel → aeroporto (madrugada)", valor: "R$ 50–130" }
+      ],
+      custoTotal: "R$ 240–505"
+    }
+  ],
+  documentos: [
+    { icon: "🛂", titulo: "Passaportes", meta: "Validade mínima 6 meses além da data de retorno · Para todos os 6 viajantes", badge: "Obrigatório" },
+    { icon: "✈️", titulo: "Voos (Ida)", meta: "CNF→SCL · Sky · 14/07 · 19:35→23:35 · Loc. OEVTUK", badge: "Confirmado" },
+    { icon: "✈️", titulo: "Voos (Volta)", meta: "SCL→GRU · Sky · 21/07 | GRU→CNF · Azul · 21:40→22:50 · Loc. RNPM5Q", badge: "Confirmado" },
+    { icon: "🏨", titulo: "Hayat Place Santiago Vitacura", meta: "Check-in 14/07 · Check-out 16/07 · 2 noites · e Check-in 19/07 · Check-out 21/07 · 2 noites", badge: "Reservado" },
+    { icon: "🏔️", titulo: "Apart Bianca Hotel", meta: "Check-in 16/07 · Check-out 19/07 · 3 noites · Farellones", badge: "Reservado" },
+    { icon: "🛡️", titulo: "Seguro Viagem", meta: "Cobrir neve, altitude e atividades ao ar livre para 6 pessoas", badge: "Verificar" },
+    { icon: "💊", titulo: "Remédio para enjoo", meta: "Para crianças nas curvas da subida/descida da cordilheira", badge: "Levar" },
+    { icon: "💴", titulo: "Câmbio / Pesos Chilenos", meta: "Recomendado ter CLP em espécie para mercados e pequenos gastos", badge: "Preparar" }
+  ],
+  footerNote: "Andes em Família · Santiago & Cordilheira · Julho 2025 · Travel Concierge por Davi Leles"
+};
+
+
+function fmtDateBR(iso) {
+  if (!iso) return '';
+  const p = iso.split('-');
+  if (p.length === 3) return p[2]+'/'+p[1]+'/'+p[0];
+  return iso;
+}
+
+function buildVooCard(v) {
+  return `
+  <div class="voo-card">
+    <div class="voo-lado">
+      <div class="voo-city">${v.origemIata||'???'}</div>
+      <div class="voo-airport">${v.origemNome||''}</div>
+      <div class="voo-time">${v.horaPartida||'—'}</div>
+      <div class="voo-date">${v.data ? fmtDateBR(v.data) : ''}</div>
+    </div>
+    <div class="voo-center">
+      <span class="voo-arrow">✈</span>
+      <div class="voo-duration">Voo ${v.tipo==='ida'?'Ida':'Volta'}${v.nvoo?' · '+v.nvoo:''}</div>
+      <span class="voo-badge">${v.cia||'Companhia a confirmar'}${v.classe?' · '+v.classe:''}</span>
+      ${v.conexao?`<div style="font-size:11px;color:var(--muted);margin-top:4px">Conexão: ${v.conexao}</div>`:''}
+    </div>
+    <div class="voo-lado" style="text-align:right">
+      <div class="voo-city">${v.destinoIata||'???'}</div>
+      <div class="voo-airport">${v.destinoNome||''}</div>
+      <div class="voo-time">${v.horaChegada||'—'}</div>
+      <div class="voo-date">${v.dataChegada ? fmtDateBR(v.dataChegada) : ''}</div>
+    </div>
+  </div>`;
+}
+
+function buildHotelCard(h) {
+  return `
+  <div class="hotel-card">
+    <div class="hotel-icon">🏨</div>
+    <div class="hotel-info">
+      <div class="hotel-nome">${h.nome||'Hotel'}</div>
+      <div class="hotel-meta">
+        ${h.cidade ? `<span>📍 ${h.cidade}</span>` : ''}
+        ${h.hospedes ? `<span>👥 ${h.hospedes}</span>` : ''}
+        ${h.noites ? `<span>🌙 ${h.noites} noite${h.noites!=1?'s':''}</span>` : ''}
+      </div>
+      <div class="hotel-periodo">
+        ${h.checkin ? fmtDateBR(h.checkin) : ''}${h.checkout ? ' → '+fmtDateBR(h.checkout) : ''}
+      </div>
+      ${h.conf ? `<span class="hotel-conf">Conf. ${h.conf}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+function buildServCard(s) {
+  return `
+  <div class="serv-card">
+    <div class="serv-card-header">
+      <span class="serv-icon">${s.icon||'📋'}</span>
+      <span class="serv-nome">${s.nome||''}</span>
+    </div>
+    <div class="serv-meta">${s.meta||''}</div>
+    ${s.badge ? `<span class="serv-badge">${s.badge}</span>` : ''}
+  </div>`;
+}
+
+function buildDayBlock(d, idx) {
+  const dotColors = ['#126eff','#22c55e','#f59e0b','#60a5fa','#a78bfa','#fb923c','#34d399'];
+  const dots = (d.atividades||[]).slice(0,4).map((_,i) =>
+    `<div class="day-nav-dot" style="background:${dotColors[i%dotColors.length]}"></div>`
+  ).join('');
+
+  const ativsHtml = (d.atividades||[]).map(a => `
+    <div class="atracao">
+      <div class="atracao-header">
+        <span class="atracao-time">${a.horario||''}</span>
+        <span class="atracao-nome">${a.nome||''}</span>
+      </div>
+      ${a.descricao ? `<div class="atracao-desc">${a.descricao}</div>` : ''}
+      ${a.dica ? `<div class="atracao-tip">💡 ${a.dica}</div>` : ''}
+    </div>`).join('');
+
+  const deslHtml = (d.deslocamentos||[]).length ? `
+    <span class="day-section-label">Deslocamentos</span>
+    ${d.deslocamentos.map(dl => `<div class="desl-item">${dl}</div>`).join('')}` : '';
+
+  const custosHtml = (d.custos||[]).length ? `
+    <span class="day-section-label">Custos Estimados</span>
+    ${d.custos.map(c => `<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:4px 0;border-bottom:1px dashed rgba(255,255,255,.06)"><span>${c.label}</span><span>${c.valor}</span></div>`).join('')}
+    ${d.custoTotal ? `<div style="display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:var(--accent);padding:8px 0 0;border-top:1px solid var(--border);margin-top:4px"><span>Total estimado</span><span>${d.custoTotal}</span></div>` : ''}` : '';
+
+  return {
+    navBtn: `
+    <button class="day-nav-btn" onclick="jumpToDay(${d.num})" id="day-nav-${d.num}">
+      <span class="day-nav-num">${d.num}</span>
+      <span class="day-nav-label">${(d.titulo||'Dia').substring(0,10)}</span>
+      <div class="day-nav-dots">${dots}</div>
+      ${d.data ? `<span style="font-size:9px;color:var(--muted2);margin-top:-2px">${fmtDateBR(d.data).substring(0,5)}</span>` : ''}
+    </button>`,
+    block: `
+    <div class="day-block" id="day-${d.num}">
+      <button class="day-toggle" onclick="toggleDay(this)">
+        <div class="day-num-badge">${String(d.num).padStart(2,'0')}</div>
+        <div class="day-toggle-info">
+          ${d.data ? `<div class="day-toggle-date">${fmtDateBR(d.data)}</div>` : ''}
+          <div class="day-toggle-title">${d.titulo||'Dia '+d.num}</div>
+          ${d.resumo ? `<div class="day-toggle-summary">${d.resumo}</div>` : ''}
+        </div>
+        ${d.energia ? `<span class="day-energy">${d.energia}</span>` : ''}
+        <span class="day-chevron">▾</span>
+      </button>
+      <div class="day-content">
+        ${ativsHtml}
+        ${deslHtml}
+        ${custosHtml}
+      </div>
+    </div>`
+  };
+}
+
+function renderRoteiro() {
+  if (typeof ROTEIRO_DATA === 'undefined') {
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#8a9bbf;font-size:14px">Nenhum roteiro carregado.</div>';
+    return;
+  }
+  const D = ROTEIRO_DATA;
+
+  // Title
+  document.getElementById('page-title').textContent = (D.titulo||'Roteiro') + ' · Travel Concierge';
+
+  // Hero
+  if (D.heroImage) document.getElementById('hero-img').style.backgroundImage = `url('${D.heroImage}')`;
+  document.getElementById('hero-eyebrow').textContent = D.eyebrow||'Travel Concierge';
+  document.getElementById('hero-title').innerHTML = (D.titulo||'').replace(' & ','<br>');
+  document.getElementById('hero-subtitle').textContent = D.subtitulo||'';
+  document.getElementById('hero-pills').innerHTML = (D.pills||[]).map(p=>`<span class="pill">${p}</span>`).join('');
+
+  // Topbar nav
+  const navLinks = [
+    ['#visao-geral','Visão Geral'],
+    ...(D.voos?.length ? [['#voos','Voos']] : []),
+    ...(D.hospedagem?.length ? [['#hospedagem','Hotel']] : []),
+    ...(D.servicos?.length ? [['#servicos','Serviços']] : []),
+    ...(D.dias?.length ? [['#roteiro','Roteiro']] : []),
+    ...(D.documentos?.length ? [['#documentos','Documentos']] : []),
+  ];
+  document.getElementById('topbar-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}">${l}</a>`).join('');
+
+  // Visão geral
+  const cards = D.visaoGeral||[];
+  const half = Math.ceil(cards.length/2);
+  const g1 = cards.slice(0,half), g2 = cards.slice(half);
+  document.getElementById('overview-grid-1').innerHTML = g1.map(c=>`
+    <div class="info-card ${c.variant||''}">
+      <span class="info-card-label">${c.label}</span>
+      <span class="info-card-value">${c.value}</span>
+    </div>`).join('');
+  document.getElementById('overview-grid-2').innerHTML = g2.map(c=>`
+    <div class="info-card ${c.variant||''}">
+      <span class="info-card-label">${c.label}</span>
+      <span class="info-card-value">${c.value}</span>
+    </div>`).join('');
+  if (D.obs) {
+    document.getElementById('obs-box').style.display = '';
+    document.getElementById('obs-text').innerHTML = D.obs;
+  }
+
+  // Voos
+  if (D.voos?.length) {
+    document.getElementById('voos').style.display = '';
+    document.getElementById('voos-container').innerHTML = D.voos.map(buildVooCard).join('');
+  }
+
+  // Hospedagem
+  if (D.hospedagem?.length) {
+    document.getElementById('hospedagem').style.display = '';
+    document.getElementById('hr-hospedagem').style.display = '';
+    document.getElementById('hospedagem-container').innerHTML = D.hospedagem.map(buildHotelCard).join('');
+  }
+
+  // Serviços
+  if (D.servicos?.length) {
+    document.getElementById('servicos').style.display = '';
+    document.getElementById('hr-servicos').style.display = '';
+    document.getElementById('servicos-grid').innerHTML = D.servicos.map(buildServCard).join('');
+  }
+
+  // Roteiro dia a dia
+  if (D.dias?.length) {
+    document.getElementById('roteiro').style.display = '';
+    document.getElementById('hr-roteiro').style.display = '';
+    document.getElementById('day-nav').style.display = '';
+    const navEl = document.getElementById('day-nav-inner');
+    const timelineEl = document.getElementById('timeline');
+    navEl.innerHTML = '';
+    timelineEl.innerHTML = '';
+    D.dias.forEach((d,i) => {
+      const { navBtn, block } = buildDayBlock(d, i);
+      navEl.innerHTML += navBtn;
+      timelineEl.innerHTML += block;
+    });
+  }
+
+  // Documentos
+  if (D.documentos?.length) {
+    document.getElementById('documentos').style.display = '';
+    document.getElementById('hr-documentos').style.display = '';
+    document.getElementById('docs-grid').innerHTML = D.documentos.map(doc=>`
+      <div class="doc-card">
+        <span class="doc-icon">${doc.icon||'📄'}</span>
+        <span class="doc-title">${doc.titulo||''}</span>
+        <span class="doc-meta">${doc.meta||''}</span>
+        ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
+      </div>`).join('');
+  }
+
+  // Footer
+  document.getElementById('footer-note').textContent = D.footerNote||D.titulo||'';
+}
+
+// Topbar scroll
+window.addEventListener('scroll', ()=>{
+  document.getElementById('topbar').classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+
+// Toggle day
 function toggleDay(btn) {
   const content = btn.nextElementSibling;
   const isOpen = btn.classList.contains('open');
@@ -1027,419 +1072,33 @@ function toggleDay(btn) {
   content.classList.toggle('open', !isOpen);
 }
 
-// DAY NAV
+// Day nav
 function jumpToDay(n) {
-  const el = document.getElementById('day-' + n);
+  const el = document.getElementById('day-'+n);
   if (!el) return;
-  const offset = el.getBoundingClientRect().top + window.scrollY - 160;
-  window.scrollTo({ top: offset, behavior: 'smooth' });
-  document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById('day-nav-' + n);
-  if (btn) { btn.classList.add('active'); btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }
+  window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 160, behavior:'smooth'});
+  document.querySelectorAll('.day-nav-btn').forEach(b=>b.classList.remove('active'));
+  const btn = document.getElementById('day-nav-'+n);
+  if (btn) { btn.classList.add('active'); btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
 }
 
 function updateDayNav() {
-  let activeDay = 1;
-  for (let i = 1; i <= 8; i++) {
-    const el = document.getElementById('day-' + i);
-    if (!el) continue;
-    if (el.getBoundingClientRect().top <= 170) activeDay = i;
-  }
-  document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById('day-nav-' + activeDay);
-  if (btn) { btn.classList.add('active'); btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }
-}
-window.addEventListener('scroll', updateDayNav, { passive: true });
-document.addEventListener('DOMContentLoaded', updateDayNav);
-
-// TRAVEL DATA — Santiago roteiro
-const TRAVEL_DATA = [
-  // DAY 1
-  { day:1, idx:0, name:'Aeroporto de Santiago (SCL)', lat:-33.3930, lng:-70.7858 },
-  { day:1, idx:1, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  // DAY 2
-  { day:2, idx:0, name:'Parque Bicentenario', lat:-33.3940, lng:-70.5760 },
-  { day:2, idx:1, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  { day:2, idx:2, name:'Sky Costanera', lat:-33.4175, lng:-70.6060 },
-  { day:2, idx:3, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  // DAY 3
-  { day:3, idx:0, name:'Hyatt Place Vitacura (check-out)', lat:-33.3967, lng:-70.5765 },
-  { day:3, idx:1, name:'Loja de Aluguel de Neve — Santiago', lat:-33.4350, lng:-70.6500 },
-  { day:3, idx:2, name:'Apart Bianco Hotel — Lo Barnechea', lat:-33.3456, lng:-70.4812 },
-  // DAY 4
-  { day:4, idx:0, name:'Apart Bianco Hotel', lat:-33.3456, lng:-70.4812 },
-  { day:4, idx:1, name:'El Colorado / Área de Neve', lat:-33.3620, lng:-70.2980 },
-  { day:4, idx:2, name:'Apart Bianco Hotel', lat:-33.3456, lng:-70.4812 },
-  // DAY 5
-  { day:5, idx:0, name:'Apart Bianco Hotel', lat:-33.3456, lng:-70.4812 },
-  { day:5, idx:1, name:'Valle Nevado', lat:-33.3570, lng:-70.2720 },
-  { day:5, idx:2, name:'Apart Bianco Hotel', lat:-33.3456, lng:-70.4812 },
-  // DAY 6
-  { day:6, idx:0, name:'Apart Bianco Hotel (check-out)', lat:-33.3456, lng:-70.4812 },
-  { day:6, idx:1, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  { day:6, idx:2, name:'Bocanáriz — Lastarria', lat:-33.4408, lng:-70.6389 },
-  // DAY 7
-  { day:7, idx:0, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  { day:7, idx:1, name:'La Vega Central', lat:-33.4354, lng:-70.6608 },
-  { day:7, idx:2, name:'Teleférico Santiago — Estação Oasis', lat:-33.4283, lng:-70.6219 },
-  { day:7, idx:3, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  { day:7, idx:4, name:'Bocanáriz — Lastarria', lat:-33.4408, lng:-70.6389 },
-  // DAY 8
-  { day:8, idx:0, name:'Hyatt Place Santiago Vitacura', lat:-33.3967, lng:-70.5765 },
-  { day:8, idx:1, name:'Aeroporto de Santiago SCL — T2', lat:-33.3930, lng:-70.7858 },
-];
-
-function buildTravelBlock(from, to) {
-  if (!to) return '';
-  const fromName = from.name;
-  const toName = to.name;
-  const mapsCarUrl = `https://www.google.com/maps/dir/?api=1&origin=${from.lat},${from.lng}&destination=${to.lat},${to.lng}&travelmode=driving`;
-  const mapsWalkUrl = `https://www.google.com/maps/dir/?api=1&origin=${from.lat},${from.lng}&destination=${to.lat},${to.lng}&travelmode=walking`;
-  const mapsTransitUrl = `https://www.google.com/maps/dir/?api=1&origin=${from.lat},${from.lng}&destination=${to.lat},${to.lng}&travelmode=transit`;
-  const mapsBikeUrl = `https://www.google.com/maps/dir/?api=1&origin=${from.lat},${from.lng}&destination=${to.lat},${to.lng}&travelmode=bicycling`;
-  const wazeUrl = `https://waze.com/ul?ll=${to.lat},${to.lng}&navigate=yes&from=${from.lat},${from.lng}`;
-  return `
-  <div class="travel-block">
-    <div class="travel-route">
-      <span class="travel-route-from">${fromName}</span>
-      <span class="travel-route-arrow">→</span>
-      <span class="travel-route-to">${toName}</span>
-    </div>
-    <div class="travel-modes">
-      <a class="travel-mode-pill" href="${mapsWalkUrl}" target="_blank"><span class="travel-mode-pill-icon">🚶</span><span>A pé</span></a>
-      <a class="travel-mode-pill" href="${mapsCarUrl}" target="_blank"><span class="travel-mode-pill-icon">🚗</span><span>Carro</span></a>
-      <a class="travel-mode-pill" href="${mapsTransitUrl}" target="_blank"><span class="travel-mode-pill-icon">🚌</span><span>Ônibus</span></a>
-      <a class="travel-mode-pill" href="${mapsBikeUrl}" target="_blank"><span class="travel-mode-pill-icon">🚲</span><span>Bicicleta</span></a>
-    </div>
-    <div class="travel-nav-btns">
-      <a class="travel-nav-btn travel-nav-btn-maps" href="${mapsCarUrl}" target="_blank">🗺️ Google Maps</a>
-      <a class="travel-nav-btn travel-nav-btn-waze" href="${wazeUrl}" target="_blank">🚦 Waze</a>
-    </div>
-  </div>`;
-}
-
-function injectTravelBlocks() {
-  document.querySelectorAll('.day-block').forEach((dayBlock, dayIdx) => {
-    const day = dayIdx + 1;
-    const dayData = TRAVEL_DATA.filter(d => d.day === day);
-    const atracoes = dayBlock.querySelectorAll('.atracao');
-    atracoes.forEach((el, i) => {
-      const from = dayData[i];
-      const to = dayData[i + 1];
-      if (!from || !to) return;
-      if (from.lat === to.lat && from.lng === to.lng) return;
-      el.insertAdjacentHTML('beforeend', buildTravelBlock(from, to));
-    });
+  if (!ROTEIRO_DATA?.dias?.length) return;
+  let active = 1;
+  ROTEIRO_DATA.dias.forEach(d => {
+    const el = document.getElementById('day-'+d.num);
+    if (el && el.getBoundingClientRect().top <= 170) active = d.num;
   });
+  document.querySelectorAll('.day-nav-btn').forEach(b=>b.classList.remove('active'));
+  const btn = document.getElementById('day-nav-'+active);
+  if (btn) btn.classList.add('active');
 }
-document.addEventListener('DOMContentLoaded', injectTravelBlocks);
-</script>
-<script>
-// ── PASTA DE VIAGEM — UPLOAD INTELIGENTE ─────────────────────────────────
+window.addEventListener('scroll', updateDayNav, {passive:true});
 
-function handleDrop(e) {
-  e.preventDefault();
-  document.getElementById('upload-zone').style.borderColor = 'var(--border2)';
-  const file = e.dataTransfer.files[0];
-  if (file) processDoc(file);
-}
-
-function handleFileSelect(input) {
-  const file = input.files[0];
-  if (file) processDoc(file);
-  input.value = '';
-}
-
-async function processDoc(file) {
-  showProcessing('Lendo o documento…');
-
-  try {
-    const { base64, mediaType } = await readFileAsBase64(file);
-    showProcessing('Identificando informações da viagem…');
-
-    const messages = buildMessages(base64, mediaType, file.name, file.type);
-    const data = await callClaude(messages);
-
-    const text = data.content?.find(b => b.type === 'text')?.text || '';
-    let parsed;
-    try {
-      const clean = text.replace(/```json|```/g, '').trim();
-      parsed = JSON.parse(clean);
-    } catch {
-      hideProcessing();
-      showResult('⚠️ Não consegui extrair informações estruturadas deste arquivo. Verifique se é um documento de viagem válido.', false);
-      return;
-    }
-
-    applyToPage(parsed, file.name);
-    hideProcessing();
-
-  } catch (err) {
-    hideProcessing();
-    showResult('❌ Erro ao processar o arquivo: ' + err.message, false);
-  }
-}
-
-function readFileAsBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataUrl = reader.result;
-      const base64 = dataUrl.split(',')[1];
-      const mediaType = file.type || 'application/octet-stream';
-      resolve({ base64, mediaType });
-    };
-    reader.onerror = () => reject(new Error('Falha ao ler o arquivo'));
-    reader.readAsDataURL(file);
-  });
-}
-
-function buildMessages(base64, mediaType, fileName, fileType) {
-  const prompt = `Você é um extrator de informações de documentos de viagem. Analise este arquivo e retorne SOMENTE um JSON válido, sem texto antes ou depois, sem markdown.
-
-Extraia todas as informações que encontrar e preencha os campos relevantes. Para campos sem informação, use null.
-
-Formato obrigatório:
-{
-  "tipo": "passagem" | "hotel" | "seguro" | "passaporte" | "outro",
-  "resumo": "descrição curta do que foi encontrado",
-  "voo_ida": {
-    "origem_cidade": null,
-    "origem_iata": null,
-    "destino_cidade": null,
-    "destino_iata": null,
-    "data": null,
-    "horario_partida": null,
-    "horario_chegada": null,
-    "companhia": null,
-    "numero_voo": null
-  },
-  "voo_volta": {
-    "origem_cidade": null,
-    "origem_iata": null,
-    "destino_cidade": null,
-    "destino_iata": null,
-    "data": null,
-    "horario_partida": null,
-    "horario_chegada": null,
-    "companhia": null,
-    "numero_voo": null
-  },
-  "hotel": {
-    "nome": null,
-    "cidade": null,
-    "checkin": null,
-    "checkout": null,
-    "confirmacao": null
-  },
-  "seguro": {
-    "seguradora": null,
-    "validade": null,
-    "cobertura": null,
-    "apolice": null
-  },
-  "passaporte": {
-    "titular": null,
-    "numero": null,
-    "validade": null,
-    "nacionalidade": null
-  },
-  "passageiros": null,
-  "observacoes": null
-}`;
-
-  const isImage = fileType.startsWith('image/');
-  const isPdf = fileType === 'application/pdf';
-
-  let contentBlock;
-  if (isImage) {
-    contentBlock = {
-      type: 'image',
-      source: { type: 'base64', media_type: fileType, data: base64 }
-    };
-  } else if (isPdf) {
-    contentBlock = {
-      type: 'document',
-      source: { type: 'base64', media_type: 'application/pdf', data: base64 }
-    };
-  } else {
-    // text/plain or .eml — decode base64 back to text
-    const decoded = atob(base64);
-    contentBlock = { type: 'text', text: `Conteúdo do arquivo "${fileName}":\n\n${decoded}` };
-  }
-
-  return [{ role: 'user', content: [contentBlock, { type: 'text', text: prompt }] }];
-}
-
-async function callClaude(messages) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 1000,
-      messages
-    })
-  });
-  if (!res.ok) throw new Error(`API erro ${res.status}`);
-  return res.json();
-}
-
-function applyToPage(data, fileName) {
-  const updates = [];
-
-  // ── VOOS ──────────────────────────────────────────────────────
-  if (data.voo_ida && data.voo_ida.origem_iata) {
-    const v = data.voo_ida;
-    safeSet('.voo-card:first-of-type .voo-city:first-child', v.origem_iata);
-    safeSet('.voo-card:first-of-type .voo-airport:first-child', v.origem_cidade || '');
-    safeSet('.voo-card:first-of-type .voo-time:first-child', v.horario_partida || '');
-    safeSet('.voo-card:first-of-type .voo-date:first-child', v.data || '');
-    // destino
-    const vooIdaCards = document.querySelectorAll('.voo-card');
-    if (vooIdaCards[0]) {
-      const lados = vooIdaCards[0].querySelectorAll('.voo-lado');
-      if (lados[0]) {
-        if (v.origem_iata) lados[0].querySelector('.voo-city').textContent = v.origem_iata;
-        if (v.origem_cidade) lados[0].querySelector('.voo-airport').textContent = v.origem_cidade;
-        if (v.horario_partida) lados[0].querySelector('.voo-time').textContent = v.horario_partida;
-        if (v.data) lados[0].querySelector('.voo-date').textContent = v.data;
-      }
-      if (lados[1]) {
-        if (v.destino_iata) lados[1].querySelector('.voo-city').textContent = v.destino_iata;
-        if (v.destino_cidade) lados[1].querySelector('.voo-airport').textContent = v.destino_cidade;
-        if (v.horario_chegada) lados[1].querySelector('.voo-time').textContent = v.horario_chegada;
-      }
-      if (v.companhia) {
-        const badge = vooIdaCards[0].querySelector('.voo-badge');
-        if (badge) badge.textContent = v.companhia;
-        const dur = vooIdaCards[0].querySelector('.voo-duration');
-        if (dur && v.numero_voo) dur.textContent = v.numero_voo;
-      }
-    }
-    updates.push(`✈️ Voo de ida atualizado: ${v.origem_iata || ''} → ${v.destino_iata || ''}`);
-  }
-
-  if (data.voo_volta && data.voo_volta.origem_iata) {
-    const v = data.voo_volta;
-    const vooCards = document.querySelectorAll('.voo-card');
-    if (vooCards[1]) {
-      const lados = vooCards[1].querySelectorAll('.voo-lado');
-      if (lados[0]) {
-        if (v.origem_iata) lados[0].querySelector('.voo-city').textContent = v.origem_iata;
-        if (v.origem_cidade) lados[0].querySelector('.voo-airport').textContent = v.origem_cidade;
-        if (v.horario_partida) lados[0].querySelector('.voo-time').textContent = v.horario_partida;
-        if (v.data) lados[0].querySelector('.voo-date').textContent = v.data;
-      }
-      if (lados[1]) {
-        if (v.destino_iata) lados[1].querySelector('.voo-city').textContent = v.destino_iata;
-        if (v.destino_cidade) lados[1].querySelector('.voo-airport').textContent = v.destino_cidade;
-        if (v.horario_chegada) lados[1].querySelector('.voo-time').textContent = v.horario_chegada;
-      }
-      if (v.companhia) {
-        const badge = vooCards[1].querySelector('.voo-badge');
-        if (badge) badge.textContent = v.companhia;
-      }
-    }
-    updates.push(`✈️ Voo de volta atualizado: ${v.origem_iata || ''} → ${v.destino_iata || ''}`);
-  }
-
-  // ── HOTEL ─────────────────────────────────────────────────────
-  if (data.hotel && data.hotel.nome) {
-    const h = data.hotel;
-    const metaEl = document.getElementById('doc-meta-hotel');
-    const badgeEl = document.getElementById('doc-badge-hotel');
-    if (metaEl) metaEl.textContent = [h.nome, h.checkin ? `Check-in: ${h.checkin}` : null, h.checkout ? `Check-out: ${h.checkout}` : null].filter(Boolean).join(' · ');
-    if (badgeEl) { badgeEl.textContent = h.confirmacao ? `Conf. ${h.confirmacao}` : 'Confirmado'; badgeEl.className = 'doc-badge'; }
-    // Also update hotel info card if it exists
-    const hospCard = document.querySelector('.info-card-value[data-field="hotel"]');
-    if (hospCard) hospCard.textContent = `${h.nome}${h.cidade ? ', ' + h.cidade : ''}`;
-    updates.push(`🏨 Hotel identificado: ${h.nome}`);
-  }
-
-  // ── SEGURO ────────────────────────────────────────────────────
-  if (data.seguro && data.seguro.seguradora) {
-    const s = data.seguro;
-    const metaEl = document.getElementById('doc-meta-seguro');
-    const badgeEl = document.getElementById('doc-badge-seguro');
-    if (metaEl) metaEl.textContent = [s.seguradora, s.validade ? `Válido até ${s.validade}` : null].filter(Boolean).join(' · ');
-    if (badgeEl) { badgeEl.textContent = 'Confirmado'; badgeEl.className = 'doc-badge'; }
-    updates.push(`🏥 Seguro identificado: ${s.seguradora}`);
-  }
-
-  // ── PASSAPORTE ────────────────────────────────────────────────
-  if (data.passaporte && data.passaporte.titular) {
-    const p = data.passaporte;
-    const metaEl = document.getElementById('doc-meta-passaportes');
-    const badgeEl = document.getElementById('doc-badge-passaportes');
-    if (metaEl) metaEl.textContent = [p.titular, p.validade ? `Válido até ${p.validade}` : null].filter(Boolean).join(' · ');
-    if (badgeEl) { badgeEl.textContent = 'Verificado'; badgeEl.className = 'doc-badge'; }
-    updates.push(`🛂 Passaporte: ${p.titular}`);
-  }
-
-  // ── PASSAGENS (card) ──────────────────────────────────────────
-  if (data.tipo === 'passagem' || data.voo_ida?.origem_iata) {
-    const metaEl = document.getElementById('doc-meta-passagens');
-    const badgeEl = document.getElementById('doc-badge-passagens');
-    const ida = data.voo_ida;
-    const volta = data.voo_volta;
-    if (metaEl && (ida || volta)) {
-      const parts = [];
-      if (ida?.data) parts.push(`Ida: ${ida.data}`);
-      if (volta?.data) parts.push(`Volta: ${volta.data}`);
-      if (parts.length) metaEl.textContent = parts.join(' · ');
-    }
-    if (badgeEl) { badgeEl.textContent = 'Confirmado'; badgeEl.className = 'doc-badge'; }
-  }
-
-  // ── RESULT BANNER ─────────────────────────────────────────────
-  if (updates.length) {
-    showResult(`✅ <strong>${fileName}</strong> processado com sucesso!<br>` + updates.map(u => `&nbsp;&nbsp;${u}`).join('<br>'), true);
-  } else {
-    showResult(`📎 <strong>${fileName}</strong> adicionado à pasta. ${data.resumo || 'Nenhum campo automático identificado.'}`, true);
-  }
-
-  // Flash cards that were updated
-  if (data.tipo === 'passagem' || data.voo_ida) flashCard('[data-slot="passagens"]');
-  if (data.hotel?.nome) flashCard('[data-slot="hotel"]');
-  if (data.seguro?.seguradora) flashCard('[data-slot="seguro"]');
-  if (data.passaporte?.titular) flashCard('[data-slot="passaportes"]');
-}
-
-function flashCard(selector) {
-  const el = document.querySelector(selector);
-  if (!el) return;
-  el.style.transition = 'border-color .3s, background .3s';
-  el.style.borderColor = 'var(--green)';
-  el.style.background = 'rgba(34,197,94,.06)';
-  setTimeout(() => { el.style.borderColor = ''; el.style.background = ''; }, 2000);
-}
-
-function safeSet(selector, value) {
-  if (!value) return;
-  const el = document.querySelector(selector);
-  if (el) el.textContent = value;
-}
-
-function showProcessing(msg) {
-  const el = document.getElementById('doc-processing');
-  document.getElementById('doc-processing-text').textContent = msg;
-  el.style.display = 'flex';
-  document.getElementById('doc-result').style.display = 'none';
-}
-
-function hideProcessing() {
-  document.getElementById('doc-processing').style.display = 'none';
-}
-
-function showResult(html, success) {
-  const el = document.getElementById('doc-result');
-  el.innerHTML = html;
-  el.style.display = 'block';
-  el.style.background = success ? 'rgba(34,197,94,.08)' : 'rgba(255,88,94,.08)';
-  el.style.borderColor = success ? 'rgba(34,197,94,.25)' : 'rgba(255,88,94,.25)';
-  el.style.color = success ? 'var(--green)' : 'var(--accent)';
-}
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderRoteiro();
+  updateDayNav();
+});
 </script>
 </body>
 </html>
