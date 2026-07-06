@@ -88,28 +88,28 @@ Ao receber confirmação, execute **em sequência**:
 
 Gere o slug automaticamente a partir do destino e ano:
 - Regra: `{destino-normalizado}-{ano}` em letras minúsculas, sem acentos, espaços substituídos por hífen
-- Exemplos: `curacao-2025`, `paris-julho-2025`, `santiago-andes-2026`
+- Exemplos: `curacao-2025`, `paris-julho-2025`, `andes-em-familia-2026`
 - Se o usuário tiver informado um nome específico para o roteiro, use-o como base
 
 ### 2b. Buscar o template atualizado
-
-Faça `GET` autenticado para obter o template:
 
 ```
 GET https://raw.githubusercontent.com/davileles/roteiros/main/template/index.html
 ```
 
-Este é o template canônico — sempre use esta versão, nunca fallback local ou versão em memória. O template é um HTML completo com JS que consome um objeto `ROTEIRO_DATA` injetado. Não contém placeholders `{{ASSIM}}` — o dado é um objeto JavaScript.
+Este é o template canônico. **Sempre use esta versão — nunca use fallback local ou versão em memória.**
 
-### 2c. Montar o objeto ROTEIRO_DATA
+O template é um HTML completo com JS que consome um objeto `ROTEIRO_DATA` injetado diretamente no código. **Não contém placeholders `{{ASSIM}}`** — o dado é injetado como objeto JavaScript literal.
 
-O template espera que o seguinte bloco seja injetado no lugar do comentário:
+### 2c. Montar e injetar o ROTEIRO_DATA
+
+Localize no template o comentário:
 
 ```js
 // const ROTEIRO_DATA = { ... };
 ```
 
-Substitua exatamente esse comentário por:
+Substitua **exatamente esse comentário** por:
 
 ```js
 const ROTEIRO_DATA = { ...dados do roteiro... };
@@ -122,7 +122,7 @@ const ROTEIRO_DATA = { ...dados do roteiro... };
   "titulo": "Nome curto do roteiro (ex: Andes em Família)",
   "subtitulo": "Tagline descritiva (ex: Neve, Vinho e Memórias)",
   "eyebrow": "Travel Concierge · Destino, País",
-  "heroImage": "URL ou data:image/jpeg;base64,... da foto de capa",
+  "heroImage": "URL pública do Unsplash ou data:image/jpeg;base64,... se imagem local",
   "pills": ["✈️ Datas", "👥 Grupo", "🏔️ Regiões", "🍷 Tema"],
   "visaoGeral": [
     {"label": "Destino", "value": "..."},
@@ -132,7 +132,7 @@ const ROTEIRO_DATA = { ...dados do roteiro... };
     {"label": "Estilo", "value": "...", "variant": "coral"},
     {"label": "Ritmo", "value": "...", "variant": "green"}
   ],
-  "obs": "Texto opcional de observação ou dica geral da viagem",
+  "obs": "Texto opcional de observação geral da viagem",
   "voos": [
     {
       "tipo": "ida",
@@ -179,7 +179,7 @@ const ROTEIRO_DATA = { ...dados do roteiro... };
       "atividades": [
         {
           "horario": "22:30",
-          "nome": "Nome da atividade / atração",
+          "nome": "Nome descritivo e geográfico da atração (ex: Parque Bicentenario — Vitacura)",
           "descricao": "Descrição da atividade...",
           "dica": "Dica prática..."
         }
@@ -197,7 +197,7 @@ const ROTEIRO_DATA = { ...dados do roteiro... };
     {
       "icon": "✈️",
       "titulo": "Passagens Aéreas",
-      "meta": "Descrição dos voos",
+      "meta": "Descrição dos voos e localizadores",
       "badge": "3 trechos"
     }
   ],
@@ -206,31 +206,36 @@ const ROTEIRO_DATA = { ...dados do roteiro... };
 }
 ```
 
-**Notas sobre o campo `atividades`:**
-- O template renderiza automaticamente botões de navegação (Google Maps 🚗 🚇 🚶 + Waze) entre atividades consecutivas, usando o nome da atividade anterior como origem e o nome da atividade atual como destino.
-- Nomes de atividades devem ser descritivos e geográficos quando possível (ex: "Parque Bicentenario — Vitacura") para que os links de navegação funcionem corretamente.
+**Notas críticas sobre `atividades`:**
+- O template renderiza automaticamente botões de navegação (Google Maps 🚗 🚇 🚶 + Waze) **abaixo da descrição e dica** de cada atividade (a partir da 2ª do dia), usando o nome da atividade anterior como origem e o atual como destino.
+- Os botões ficam alinhados com a descrição, não com o horário.
+- **Nomes de atividades devem ser descritivos e geográficos** (ex: "Parque Bicentenario — Vitacura", "Sky Costanera — Mirante") para que os links de navegação funcionem corretamente.
 - A primeira atividade do dia não recebe botões de navegação.
 
 **Notas sobre `heroImage`:**
-- Prefira URLs públicas do Unsplash (ex: `https://images.unsplash.com/photo-XXXX?w=1600&q=80`)
-- Se o usuário fornecer uma imagem local, converta para `data:image/jpeg;base64,...` com qualidade 82 e largura máxima 1600px antes de injetar
+- Prefira URLs públicas do Unsplash: `https://images.unsplash.com/photo-XXXX?w=1600&q=80`
+- Se o usuário fornecer imagem local, converta para `data:image/jpeg;base64,...` com qualidade 82 e largura máxima 1600px
+
+**Notas sobre `documentos`:**
+- Cada card de documento suporta **múltiplos arquivos** — o usuário pode anexar quantos quiser por card
+- O template inclui botão "Adicionar documento" para criar novos cards em tempo real
+- Cada arquivo pode ser removido individualmente com o botão ✕
 
 ### 2d. Publicar via GitHub API autenticada
 
-**⚠️ IMPORTANTE:** O proxy CDV (`cdv-proxy-production.up.railway.app`) está fora do allowlist de egress. Use sempre a GitHub Contents API diretamente.
+**⚠️ IMPORTANTE:** Use **sempre** a GitHub Contents API diretamente.
+O proxy CDV (`cdv-proxy-production.up.railway.app`) **não está disponível** para publicação de HTML — use apenas a GitHub API.
 
-**Token de autenticação:**
-```
-USE O TOKEN SALVO NAS CONFIGURAÇÕES DO CONCIERGE (variável GITHUB_TOKEN)
-```
+**Token:** salvo nas configurações do concierge (variável `GITHUB_TOKEN`)
 
-**Repositório:** `davileles/roteiros`
+Em sessões Claude com acesso a bash/ferramentas, use o token disponível nas instruções da sessão.
 
-**Path do arquivo:** `{slug}/index.html`
+**Repositório:** `davileles/roteiros`  
+**Path:** `{slug}/index.html`
 
-**Fluxo de publicação:**
+**Fluxo:**
 
-1. Verificar se o arquivo já existe (para obter o SHA — necessário em atualizações):
+1. Verificar SHA existente (necessário para atualizar arquivo já publicado):
 ```
 GET https://api.github.com/repos/davileles/roteiros/contents/{slug}/index.html
 Headers:
@@ -238,9 +243,9 @@ Headers:
   Accept: application/vnd.github+json
   X-GitHub-Api-Version: 2022-11-28
 ```
-Se retornar 200, extrair o campo `sha`. Se retornar 404, o arquivo não existe (criação nova).
+→ 200: extrair `sha`. → 404: arquivo novo, sem SHA.
 
-2. Publicar o arquivo (criação ou atualização):
+2. Publicar:
 ```
 PUT https://api.github.com/repos/davileles/roteiros/contents/{slug}/index.html
 Headers:
@@ -248,40 +253,40 @@ Headers:
   Accept: application/vnd.github+json
   Content-Type: application/json
   X-GitHub-Api-Version: 2022-11-28
-Body JSON:
+Body:
 {
   "message": "Publica roteiro {slug}",
-  "content": "{html-completo-em-base64-utf8}",
+  "content": "{html-completo-em-base64-utf8-sem-quebras}",
   "branch": "main",
-  "sha": "{sha-se-arquivo-existir}"
+  "sha": "{sha-se-existir}"
 }
 ```
-O campo `content` deve ser o HTML completo encodado em base64 (UTF-8, sem quebras de linha no base64).
 
-3. Se a resposta for 200 ou 201, a publicação foi bem-sucedida.
+3. Resposta 200 ou 201 = sucesso.
 
-**URL final do roteiro:** `https://davileles.github.io/roteiros/{slug}/`
+**⚠️ Atenção ao construir o HTML final:**
+- O arquivo publicado deve conter **exatamente um `<script>` tag** com o ROTEIRO_DATA injetado.
+- Nunca concatene o template completo com um segundo bloco de script — isso causa duplicação silenciosa que quebra a renderização.
+- Após a injeção, verifique: `html.count('<script') == 1` e `html.count('const ROTEIRO_DATA') == 1` e `'// const ROTEIRO_DATA = { ... };' not in html`.
 
-### 2e. Confirmar publicação
+**URL final:** `https://davileles.github.io/roteiros/{slug}/`
 
-Ao receber resposta de sucesso da API, informe:
+### 2e. Confirmar ao usuário
 
 > "🚀 Roteiro publicado com sucesso!
 > 🔗 **Link:** https://davileles.github.io/roteiros/{slug}/
 >
 > ⚠️ O GitHub Pages pode levar até 10 minutos para atualizar. Aguarde antes de enviar ao cliente."
 
-Se receber erro, informe o código e mensagem e ofereça tentar novamente.
-
 ---
 
 ## PASSO 3 — viagemId (quando disponível)
 
-Se o usuário mencionar que existe uma viagem cadastrada no concierge (painel interno de gestão), peça o ID:
+Se o usuário mencionar viagem cadastrada no concierge:
 
 > "Para vincular este roteiro à viagem no painel do concierge, você tem o ID da viagem? (formato: VIA-XXXXXXXXXX)"
 
-Se fornecido, registre para referência futura. A vinculação no painel deve ser feita manualmente por enquanto.
+A vinculação no painel deve ser feita manualmente por enquanto.
 
 ---
 
@@ -290,26 +295,27 @@ Se fornecido, registre para referência futura. A vinculação no painel deve se
 ```
 Roteiro finalizado
   → Confirmar publicação com usuário
-  → GET template do GitHub (raw, autenticado)
-  → Injetar const ROTEIRO_DATA = {...}; no lugar do comentário placeholder
-  → Converter HTML para base64 (UTF-8)
-  → GET SHA do arquivo existente (ou criar novo)
+  → GET template do GitHub (raw, sempre atualizado)
+  → Injetar: const ROTEIRO_DATA = {...}; no lugar do comentário placeholder
+  → Verificar: 1 <script>, 1 ROTEIRO_DATA, 0 comentários placeholder
+  → Converter HTML para base64 UTF-8
+  → GET SHA do arquivo existente (ou criar novo se 404)
   → PUT /repos/davileles/roteiros/contents/{slug}/index.html
-  → Receber 200/201 de sucesso
+  → Receber 200/201
   → Exibir link https://davileles.github.io/roteiros/{slug}/
-  → Aguardar até 10 min para GitHub Pages atualizar
 ```
 
 ---
 
-## FUNCIONALIDADES DO TEMPLATE (para referência)
+## FUNCIONALIDADES DO TEMPLATE (referência)
 
-O template `template/index.html` já inclui as seguintes funcionalidades automáticas — não é necessário implementá-las manualmente:
+O `template/index.html` já inclui automaticamente — não reimplementar:
 
-- **Navegação por dias** (day-nav sticky com scroll automático)
-- **Botões Waze + Google Maps** (🚗 Carro / 🚇 Ônibus-Metrô / 🚶 A pé) entre atividades consecutivas, com origem e destino extraídos automaticamente dos nomes das atividades
-- **Pasta de documentos** com upload de arquivos (PDF, imagens) via proxy CDV, visualização e remoção local imediata
-- **Botão "Adicionar documento"** para adicionar novos cards à pasta de viagem
-- **Now bar** mostrando a atividade atual em tempo real (baseado no horário do dispositivo)
-- **Topbar responsiva** com menu hambúrguer no mobile
-- **Seções condicionais** (voos, hospedagem, serviços, documentos) que só aparecem se os dados correspondentes forem fornecidos no ROTEIRO_DATA
+- **Navegação por dias** — day-nav sticky com scroll e highlight automático
+- **Botões Waze + Google Maps** (🚗 🚇 🚶) entre atividades consecutivas, alinhados à descrição (margin-left 102px no desktop, 0 no mobile)
+- **Pasta de documentos** — múltiplos arquivos por card, upload via proxy CDV, remoção local imediata
+- **Botão "Adicionar documento"** — cria novos cards em tempo real via prompt
+- **Now bar** — atividade atual em tempo real pelo horário do dispositivo
+- **Topbar responsiva** — menu hambúrguer no mobile
+- **Seções condicionais** — voos, hospedagem, serviços, documentos só aparecem se fornecidos no ROTEIRO_DATA
+- **Day-nav centralizado** — no desktop; scroll livre no mobile
