@@ -127,6 +127,20 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .footer-brand span{color:var(--accent)}
 .footer-note{font-size:12px;color:var(--muted)}
 hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
+
+.travel-block{background:rgba(18,110,255,.07);border:1px solid rgba(18,110,255,.2);border-radius:8px;padding:12px 14px;margin:10px 0 4px;}
+.travel-route{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;font-size:12px;}
+.travel-route-from,.travel-route-to{font-weight:600;color:var(--text);}
+.travel-route-arrow{color:var(--blue);font-size:14px;flex-shrink:0;}
+.travel-modes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.travel-mode-pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 10px;text-decoration:none;transition:color .15s,border-color .15s;}
+.travel-mode-pill:hover{color:var(--text);border-color:var(--blue);}
+.travel-mode-pill-icon{font-size:13px;}
+.travel-nav-btns{display:flex;gap:8px;}
+.travel-nav-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;text-decoration:none;transition:opacity .15s;}
+.travel-nav-btn-maps{background:rgba(18,110,255,.15);color:var(--blue);border:1px solid rgba(18,110,255,.3);}
+.travel-nav-btn-waze{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);}
+.travel-nav-btn:hover{opacity:.8;}
 @media(max-width:680px){
   .topbar{padding:12px 20px}.topbar-nav{display:none}
   .hero-content{padding:0 20px 40px}.container{padding:0 16px}.section{padding:40px 0}
@@ -384,25 +398,33 @@ const ROTEIRO_DATA = {
           horario: "19:35 – 23:35",
           nome: "Voo CNF → SCL | Sky Airline",
           descricao: "Partida de Confins às 19:35. Chegada em Santiago às 23:35 (fuso -4h do Brasil). Loc. OEVTUK.",
-          dica: "Deixe na bagagem de mão: casaco, água, snack e uma troca simples para as crianças."
+          dica: "Deixe na bagagem de mão: casaco, água, snack e uma troca simples para as crianças.",
+          lat: -33.393,
+          lng: -70.7858
         },
         {
           horario: "23:35 – 00:30",
           nome: "Chegada + imigração + retirada de bagagem",
           descricao: "Imigração com calma. Trecho puramente logístico — não encaixar nenhum passeio.",
-          dica: "Com 6 pessoas e malas, saia do aeroporto com transfer privado ou van já reservado."
+          dica: "Com 6 pessoas e malas, saia do aeroporto com transfer privado ou van já reservado.",
+          lat: -33.393,
+          lng: -70.7858
         },
         {
           horario: "00:30 – 01:15",
           nome: "Traslado para Hayat Place Santiago Vitacura",
           descricao: "Transfer privado do aeroporto até o hotel em Vitacura. Região confortável para família e ótima base para os primeiros dias.",
-          dica: "Van única para 6 evita dividir o grupo em dois carros — melhor custo-conforto."
+          dica: "Van única para 6 evita dividir o grupo em dois carros — melhor custo-conforto.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "01:15 em diante",
           nome: "Check-in e descanso total",
           descricao: "Check-in e direto para os quartos. Isso protege o humor das crianças, evita desgaste dos avós e deixa o grupo pronto para o Dia 2.",
-          dica: ""
+          dica: "",
+          lat: -33.3967,
+          lng: -70.5765
         }
       ],
       deslocamentos: [
@@ -426,37 +448,49 @@ const ROTEIRO_DATA = {
           horario: "10:00 – 11:15",
           nome: "Café da manhã sem pressa + organização",
           descricao: "Início lento e intencional: compensar a chegada tarde, ajustar roupas de frio e perceber o que ainda falta para os dias de neve.",
-          dica: "Aproveite para comprar água, snacks e qualquer item simples para a rotina das crianças."
+          dica: "Aproveite para comprar água, snacks e qualquer item simples para a rotina das crianças.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "11:45 – 13:15",
           nome: "Parque Bicentenario",
           descricao: "27 hectares ao longo do rio Mapocho. Passeio plano, bonito, agradável para os avós e interessante para as crianças pelas aves no lago.",
-          dica: "Mesmo com sol, julho pede casaco, gorro e camada corta-vento — frio aparece mais do que parece nas fotos."
+          dica: "Mesmo com sol, julho pede casaco, gorro e camada corta-vento — frio aparece mais do que parece nas fotos.",
+          lat: -33.4037,
+          lng: -70.5764
         },
         {
           horario: "13:20 – 14:45",
           nome: "Almoço na região de Vitacura",
           descricao: "Almoçar perto do parque evita deslocamentos desnecessários. Mestizo é boa pedida: chileno contemporâneo, encaixa bem com família.",
-          dica: "Restaurante com espaço e serviço tranquilo faz diferença quando o grupo é grande."
+          dica: "Restaurante com espaço e serviço tranquilo faz diferença quando o grupo é grande.",
+          lat: -33.4013,
+          lng: -70.5728
         },
         {
           horario: "15:15 – 17:00",
           nome: "Volta ao hotel + descanso",
           descricao: "Pausa essencial: crianças descansam, adultos respiram. Separar nessa hora as camadas de roupa para a montanha nos dias seguintes.",
-          dica: ""
+          dica: "",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "17:30 – 19:00",
           nome: "Sky Costanera",
           descricao: "Mirante no topo do edifício mais alto da América do Sul. Visão geral da cidade e, se o tempo colaborar, a cordilheira ao fundo. Funciona das 10:00 às 22:00 (último elevador às 21:00).",
-          dica: "Fim de tarde é o melhor horário para pegar luz bonita. Adulto: R$ 129 | Criança 4–12 anos: R$ 45 | 0–3 anos: gratuito."
+          dica: "Fim de tarde é o melhor horário para pegar luz bonita. Adulto: R$ 129 | Criança 4–12 anos: R$ 45 | 0–3 anos: gratuito.",
+          lat: -33.4162,
+          lng: -70.6069
         },
         {
           horario: "19:20 – 21:00",
           nome: "Jantar tranquilo em Vitacura/Providencia",
           descricao: "Encerramento confortável perto do hotel, sem noite longa. Como ainda virão os dias de neve, priorize conforto.",
-          dica: ""
+          dica: "",
+          lat: -33.433,
+          lng: -70.6173
         }
       ],
       deslocamentos: [
@@ -486,37 +520,49 @@ const ROTEIRO_DATA = {
           horario: "09:00 – 10:00",
           nome: "Café da manhã + check-out no Hayat Place",
           descricao: "Sair sem pressa, com todos alimentados. Uma mala de acesso rápido separada para a montanha.",
-          dica: "Deixe luvas, meias extras, segunda pele, snacks e água fora da mala principal."
+          dica: "Deixe luvas, meias extras, segunda pele, snacks e água fora da mala principal.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "10:15 – 11:30",
           nome: "Parada em Santiago — aluguel de roupa de neve",
           descricao: "Vale muito a pena fazer isso ainda em Santiago. Mais margem de preço e menos correria no check-in. Foco em roupa, botas e luvas.",
-          dica: "Neste dia vocês ainda não precisam transformar a tarde em dia esportivo."
+          dica: "Neste dia vocês ainda não precisam transformar a tarde em dia esportivo.",
+          lat: -33.423,
+          lng: -70.608
         },
         {
           horario: "11:30 – 13:30",
           nome: "Subida para Farellones",
           descricao: "Estrada de montanha histórica ligada ao complexo El Colorado. A subida já faz a família entrar no 'mundo da neve'.",
-          dica: "Evitem telas nas curvas, levem algo leve para comer e contem com ritmo mais lento por causa das crianças e avós."
+          dica: "Evitem telas nas curvas, levem algo leve para comer e contem com ritmo mais lento por causa das crianças e avós.",
+          lat: -33.356,
+          lng: -70.335
         },
         {
           horario: "13:30 – 14:30",
           nome: "Check-in Apart Bianca Hotel + almoço simples",
           descricao: "Chegada usada para adaptação: banheiro, quarto, chá/café quente, organização das camadas e almoço sem pressa.",
-          dica: "Altitude e frio derrubam energia mais rápido do que parece — tarde começa leve."
+          dica: "Altitude e frio derrubam energia mais rápido do que parece — tarde começa leve.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "15:30 – 17:00",
           nome: "Primeira saída curta na neve",
           descricao: "Primeiro contato sem cobrança: andar na neve, brincar, tirar fotos, deixar as crianças curtirem a novidade.",
-          dica: "Não tentem fazer 'o grande dia da neve' já hoje. Uma janela mais curta costuma funcionar melhor no primeiro impacto com o frio."
+          dica: "Não tentem fazer 'o grande dia da neve' já hoje. Uma janela mais curta costuma funcionar melhor no primeiro impacto com o frio.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "18:30 – 20:00",
           nome: "Jantar aconchegante no Apart Bianca",
           descricao: "Comida quente, pouco deslocamento. Quanto menos movimentação à noite, melhor para o grupo inteiro.",
-          dica: ""
+          dica: "",
+          lat: -33.3456,
+          lng: -70.313
         }
       ],
       deslocamentos: [
@@ -543,31 +589,41 @@ const ROTEIRO_DATA = {
           horario: "09:15 – 10:00",
           nome: "Café da manhã + vestir camadas com calma",
           descricao: "Em viagem com crianças, esse preparo leva mais tempo do que parece e faz toda a diferença no humor do resto do dia.",
-          dica: "Levem uma segunda luva ou meia reserva para os pequenos."
+          dica: "Levem uma segunda luva ou meia reserva para os pequenos.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "10:00 – 15:00",
           nome: "Dia principal de neve — Farellones / El Colorado",
           descricao: "Tubing, escorregadas, neve livre e, se o grupo estiver animado, alguma atividade guiada simples. O complexo El Colorado/Farellones se apresenta como centro de entretenimento para toda a família.",
-          dica: "Em alta temporada, filas e lotação crescem — vale chegar cedo e manter o dia flexível."
+          dica: "Em alta temporada, filas e lotação crescem — vale chegar cedo e manter o dia flexível.",
+          lat: -33.3516,
+          lng: -70.3061
         },
         {
           horario: "12:30 – 13:30",
           nome: "Almoço no centro de montanha",
           descricao: "Almoçar por ali mesmo, sem descer e sem quebrar o fluxo do dia.",
-          dica: "Antecipar o almoço alguns minutos ajuda a escapar do horário mais concorrido."
+          dica: "Antecipar o almoço alguns minutos ajuda a escapar do horário mais concorrido.",
+          lat: -33.3516,
+          lng: -70.3061
         },
         {
           horario: "15:30 – 17:00",
           nome: "Retorno à hospedagem + descanso",
           descricao: "Após a neve: banho quente, troca de roupa e recuperação das crianças.",
-          dica: "Deixe secando o que molhou para não começar o dia seguinte no improviso."
+          dica: "Deixe secando o que molhou para não começar o dia seguinte no improviso.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "18:30 – 20:00",
           nome: "Jantar com clima de montanha",
           descricao: "Jantar mais gostoso, taça de vinho para os adultos e noite curta.",
-          dica: "Não vale programar noite longa em altitude com crianças pequenas."
+          dica: "Não vale programar noite longa em altitude com crianças pequenas.",
+          lat: -33.3456,
+          lng: -70.313
         }
       ],
       deslocamentos: [
@@ -591,43 +647,57 @@ const ROTEIRO_DATA = {
           horario: "08:30 – 09:15",
           nome: "Café da manhã + preparação final",
           descricao: "Como esse será o dia mais bonito da montanha, sair já com tudo organizado: luvas secas, meias extras, protetor labial e óculos.",
-          dica: "Não deixar para vestir tudo no carro — com criança pequena, isso costuma atrasar."
+          dica: "Não deixar para vestir tudo no carro — com criança pequena, isso costuma atrasar.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "09:15 – 10:00",
           nome: "Deslocamento Farellones → Valle Nevado",
           descricao: "Trecho curto em distância, mas continua sendo estrada de montanha. Vocês já estarão aclimatados — bem mais tranquilo do que vir de Santiago.",
-          dica: "Saída cedo aproveita melhor a janela de operação das pistas (normalmente 09:00–17:00)."
+          dica: "Saída cedo aproveita melhor a janela de operação das pistas (normalmente 09:00–17:00).",
+          lat: -33.3602,
+          lng: -70.2786
         },
         {
           horario: "10:00 – 12:30",
           nome: "Manhã panorâmica em Valle Nevado",
           descricao: "Contemplação, fotos, brincadeiras leves na neve e circulação pelas áreas mais confortáveis do resort. Hotel Puerta del Sol: quartos conectáveis e áreas de entretenimento para famílias.",
-          dica: "Não coloque pressão para ski técnico. O ganho do dia está no cenário, clima e conforto."
+          dica: "Não coloque pressão para ski técnico. O ganho do dia está no cenário, clima e conforto.",
+          lat: -33.3602,
+          lng: -70.2786
         },
         {
           horario: "12:30 – 13:45",
           nome: "Almoço em Valle Nevado",
           descricao: "Usar o almoço como parte da experiência premium — refeição quente, pausa longa para as crianças descansarem.",
-          dica: "Bom momento para decidir se a tarde segue mais ativa ou mais contemplativa."
+          dica: "Bom momento para decidir se a tarde segue mais ativa ou mais contemplativa.",
+          lat: -33.3602,
+          lng: -70.2786
         },
         {
           horario: "14:00 – 15:45",
           nome: "Tarde livre — neve / resort / descanso com vista",
           descricao: "Deixar o dia respirar. Quem quiser brinca mais; quem estiver cansado fica em ambiente interno com vista da cordilheira.",
-          dica: "Em altitude maior, sinais de cansaço aparecem antes — esse formato flexível funciona melhor com avós e crianças."
+          dica: "Em altitude maior, sinais de cansaço aparecem antes — esse formato flexível funciona melhor com avós e crianças.",
+          lat: -33.3602,
+          lng: -70.2786
         },
         {
           horario: "16:00 – 16:45",
           nome: "Retorno para Farellones",
           descricao: "Volta ainda com luz e sem empurrar o grupo até o limite do dia.",
-          dica: "Não vale tentar 'espremer' a última hora da estação se o grupo já estiver cansado."
+          dica: "Não vale tentar 'espremer' a última hora da estação se o grupo já estiver cansado.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "18:30 – 20:00",
           nome: "Jantar tranquilo no Apart Bianca",
           descricao: "Fechamento confortável na base da montanha, sem nova logística longa.",
-          dica: "Valle Nevado recomenda verificar condições de caminho e portar correntes no inverno."
+          dica: "Valle Nevado recomenda verificar condições de caminho e portar correntes no inverno.",
+          lat: -33.3456,
+          lng: -70.313
         }
       ],
       deslocamentos: [
@@ -655,43 +725,57 @@ const ROTEIRO_DATA = {
           horario: "08:30 – 09:30",
           nome: "Café da manhã + arrumação parcial das malas",
           descricao: "Manhã de desaceleração. Deixar só uma mala menor acessível e organizar tudo sem pressa.",
-          dica: "Separar roupa seca e confortável para a descida a Santiago."
+          dica: "Separar roupa seca e confortável para a descida a Santiago.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "09:45 – 11:00",
           nome: "Última saída curta na neve",
           descricao: "Fotos finais, brincadeira curta com as crianças e despedida da montanha sem transformar o dia em desgaste físico.",
-          dica: "1h a 1h30 é suficiente. O valor está no ritual de despedida, não em 'fazer mais'."
+          dica: "1h a 1h30 é suficiente. O valor está no ritual de despedida, não em 'fazer mais'.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "11:00 – 11:30",
           nome: "Check-out do Apart Bianca Hotel",
           descricao: "Encerramento da hospedagem e ajuste final das malas.",
-          dica: "Tentem descer alimentados e com snacks no carro."
+          dica: "Tentem descer alimentados e com snacks no carro.",
+          lat: -33.3456,
+          lng: -70.313
         },
         {
           horario: "11:30 – 13:30",
           nome: "Descida Farellones → Santiago",
           descricao: "Descer ainda no início do dia evita pressão de trânsito e mudanças climáticas tardias.",
-          dica: "Manter remédio para enjoo à mão, especialmente para as crianças."
+          dica: "Manter remédio para enjoo à mão, especialmente para as crianças.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "13:30 – 14:30",
           nome: "Check-in Hayat Place Vitacura + pausa curta",
           descricao: "Banho, organização e descanso breve. Voltar ao ambiente urbano depois da montanha costuma ser bem-vindo.",
-          dica: ""
+          dica: "",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "15:30 – 17:30",
           nome: "Tarde leve em Santiago",
           descricao: "Não programar atração pesada. Uma boa opção é ficar no entorno do hotel, tomar um café especial ou passeio curto em bairro agradável.",
-          dica: "Espaço perfeito para uma cafeteria melhor ou padaria artesanal."
+          dica: "Espaço perfeito para uma cafeteria melhor ou padaria artesanal.",
+          lat: -33.438,
+          lng: -70.6505
         },
         {
           horario: "19:00 – 21:00",
           nome: "Jantar mais caprichado em Santiago (Bocanáriz)",
           descricao: "Depois de três noites na montanha, excelente momento para jantar com boa carta de vinhos. Bocanáriz: wine bar / gastronomia chilena, bairro Lastarria.",
-          dica: "Reservar com antecedência, especialmente em julho. bocanáriz.cl"
+          dica: "Reservar com antecedência, especialmente em julho. bocanáriz.cl",
+          lat: -33.4408,
+          lng: -70.6389
         }
       ],
       deslocamentos: [
@@ -717,37 +801,49 @@ const ROTEIRO_DATA = {
           horario: "09:00 – 09:30",
           nome: "Saída do hotel e deslocamento para La Vega Central",
           descricao: "A manhã serve para ver uma Santiago mais viva e menos 'cartão-postal'. Ir cedo deixa o mercado mais agradável para crianças.",
-          dica: "Evita o pico do meio do dia."
+          dica: "Evita o pico do meio do dia.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "09:30 – 11:30",
           nome: "La Vega Central",
           descricao: "Mercado icônico com frutas, verduras e gastronomia local — abre todos os dias. Ingredientes, barracas, produtos frescos e muita cultura alimentar.",
-          dica: "1h30 a 2h é o tempo ideal para curtir sem saturar com crianças pequenas."
+          dica: "1h30 a 2h é o tempo ideal para curtir sem saturar com crianças pequenas.",
+          lat: -33.4354,
+          lng: -70.6608
         },
         {
           horario: "11:30 – 12:15",
           nome: "Pausa para café / lanche no entorno do mercado",
           descricao: "Reorganizar o ritmo antes do próximo passeio. Ótimo momento para um café especial.",
-          dica: ""
+          dica: "",
+          lat: -33.4354,
+          lng: -70.6608
         },
         {
           horario: "13:00 – 15:30",
           nome: "Teleférico Santiago + Parque Metropolitano",
           descricao: "Atração panorâmica no Parque Metropolitano. Opera aprox. 10:00–18:45 (confirmar 24–48h antes). Combo a partir de CLP 6.300 (~R$ 35).",
-          dica: "Estação Oasis fica em Av. El Cerro 750, Providencia. Confirmar horários em telefericosantiago.cl."
+          dica: "Estação Oasis fica em Av. El Cerro 750, Providencia. Confirmar horários em telefericosantiago.cl.",
+          lat: -33.4283,
+          lng: -70.6219
         },
         {
           horario: "16:30 – 18:00",
           nome: "Descanso no hotel",
           descricao: "Pausa para preservar a energia para o jantar e evitar roteiro cansativo.",
-          dica: "Com grupo grande, essa 'janela de respiro' costuma ser o que faz o roteiro continuar prazeroso até o fim."
+          dica: "Com grupo grande, essa 'janela de respiro' costuma ser o que faz o roteiro continuar prazeroso até o fim.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "19:30 – 21:30",
           nome: "Jantar no Bocanáriz — Lastarria",
           descricao: "Wine bar, restaurante e loja de vinhos com foco na vitrine do vinho chileno. Endereço: José Victorino Lastarria 276.",
-          dica: "Reservar com antecedência. bocanariz.cl/index.php/reserva/"
+          dica: "Reservar com antecedência. bocanariz.cl/index.php/reserva/",
+          lat: -33.4408,
+          lng: -70.6389
         }
       ],
       deslocamentos: [
@@ -776,43 +872,57 @@ const ROTEIRO_DATA = {
           horario: "10:00 – 11:30",
           nome: "Manhã livre e lenta no hotel",
           descricao: "Fechar mala, separar documentos e deixar roupas do aeroporto já prontas.",
-          dica: "Começo tranquilo faz sentido porque vocês terão uma noite/madrugada longa."
+          dica: "Começo tranquilo faz sentido porque vocês terão uma noite/madrugada longa.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "11:45 – 13:15",
           nome: "Almoço agradável perto do hotel",
           descricao: "Manter o dia simples, sem atravessar a cidade. Restaurante de almoço fácil com serviço rápido e espaço confortável.",
-          dica: ""
+          dica: "",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "14:00 – 16:00",
           nome: "Passeio leve / café especial / tempo em família",
           descricao: "Cafeteria boa, volta curta em Providencia/Lastarria ou pausa em parque urbano. Ótimo para comprar algum item final de viagem.",
-          dica: "Evitar atrações grandes neste dia."
+          dica: "Evitar atrações grandes neste dia.",
+          lat: -33.4013,
+          lng: -70.5728
         },
         {
           horario: "16:00 – 18:00",
           nome: "Retorno ao hotel + banho + arrumação final",
           descricao: "Trecho essencial para a viagem terminar bem. Uma única mala de apoio com casacos, remédios, documentos e itens das crianças.",
-          dica: ""
+          dica: "",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "18:30 – 20:30",
           nome: "Jantar cedo",
           descricao: "Como a madrugada será puxada, melhor um jantar cedo, sem álcool em excesso e perto da hospedagem.",
-          dica: "Não marcar restaurante distante ou programa noturno nesse dia."
+          dica: "Não marcar restaurante distante ou programa noturno nesse dia.",
+          lat: -33.4013,
+          lng: -70.5728
         },
         {
           horario: "20:30 – horário de saída",
           nome: "Descanso / sono inicial",
           descricao: "Dormir algumas horas antes de sair para o aeroporto. Pedir ao hotel apoio para van/transfer na madrugada.",
-          dica: "Peça o transfer com antecedência — não deixe para o último minuto."
+          dica: "Peça o transfer com antecedência — não deixe para o último minuto.",
+          lat: -33.3967,
+          lng: -70.5765
         },
         {
           horario: "Madrugada — saída para aeroporto",
           nome: "Transfer para Aeroporto SCL (T2 Internacional)",
           descricao: "Voo SCL→GRU · Sky · 13:05→18:00 | Conexão GRU→CNF · Azul · 21:40→22:50 · Loc. RNPM5Q. Terminal Internacional T2. Chegar com 3h de antecedência.",
-          dica: "Com 6 pessoas, van reservada é a melhor opção. Terminal T2 para voos internacionais."
+          dica: "Com 6 pessoas, van reservada é a melhor opção. Terminal T2 para voos internacionais.",
+          lat: -33.393,
+          lng: -70.7858
         }
       ],
       deslocamentos: [
@@ -905,13 +1015,44 @@ function buildServCard(s) {
   </div>`;
 }
 
+
+function buildTravelBlock(from, to) {
+  if (!from || !to || !from.lat || !from.lng || !to.lat || !to.lng) return '';
+  if (from.lat === to.lat && from.lng === to.lng) return '';
+  const base = `https://www.google.com/maps/dir/?api=1&origin=${from.lat},${from.lng}&destination=${to.lat},${to.lng}`;
+  const mC = base + '&travelmode=driving';
+  const mW = base + '&travelmode=walking';
+  const mT = base + '&travelmode=transit';
+  const wz = `https://waze.com/ul?ll=${to.lat},${to.lng}&navigate=yes&from=${from.lat},${from.lng}`;
+  return `
+  <div class="travel-block">
+    <div class="travel-route">
+      <span class="travel-route-from">${from.nome}</span>
+      <span class="travel-route-arrow">→</span>
+      <span class="travel-route-to">${to.nome}</span>
+    </div>
+    <div class="travel-modes">
+      <a class="travel-mode-pill" href="${mW}" target="_blank"><span class="travel-mode-pill-icon">🚶</span><span>A pé</span></a>
+      <a class="travel-mode-pill" href="${mC}" target="_blank"><span class="travel-mode-pill-icon">🚗</span><span>Carro</span></a>
+      <a class="travel-mode-pill" href="${mT}" target="_blank"><span class="travel-mode-pill-icon">🚌</span><span>Transporte</span></a>
+    </div>
+    <div class="travel-nav-btns">
+      <a class="travel-nav-btn travel-nav-btn-maps" href="${mC}" target="_blank">🗺️ Google Maps</a>
+      <a class="travel-nav-btn travel-nav-btn-waze" href="${wz}" target="_blank">🚦 Waze</a>
+    </div>
+  </div>`;
+}
+
 function buildDayBlock(d, idx) {
   const dotColors = ['#126eff','#22c55e','#f59e0b','#60a5fa','#a78bfa','#fb923c','#34d399'];
   const dots = (d.atividades||[]).slice(0,4).map((_,i) =>
     `<div class="day-nav-dot" style="background:${dotColors[i%dotColors.length]}"></div>`
   ).join('');
 
-  const ativsHtml = (d.atividades||[]).map(a => `
+  const ativsHtml = (d.atividades||[]).map((a, ai) => {
+    const next = (d.atividades||[])[ai + 1];
+    const travelBlock = next ? buildTravelBlock(a, next) : '';
+    return `
     <div class="atracao">
       <div class="atracao-header">
         <span class="atracao-time">${a.horario||''}</span>
@@ -919,7 +1060,8 @@ function buildDayBlock(d, idx) {
       </div>
       ${a.descricao ? `<div class="atracao-desc">${a.descricao}</div>` : ''}
       ${a.dica ? `<div class="atracao-tip">💡 ${a.dica}</div>` : ''}
-    </div>`).join('');
+    </div>${travelBlock}`;
+  }).join('');
 
   const deslHtml = (d.deslocamentos||[]).length ? `
     <span class="day-section-label">Deslocamentos</span>
