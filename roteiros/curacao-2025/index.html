@@ -395,8 +395,8 @@ const ROTEIRO_DATA = {
   titulo: "Entre Corais e Casinhas",
   subtitulo: "Curaçao — Mar, Cultura e Cor",
   eyebrow: "Travel Concierge · Curaçao, Antilhas Holandesas",
-  heroImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1600&q=80",
-  pills: ["✈️ 7 dias", "🌊 Mar do Caribe", "🎨 Willemstad UNESCO", "🤿 Mergulho & Snorkeling"],
+  heroImage: "https://raw.githubusercontent.com/davileles/roteiros/main/assets/images/curacao-hero.jpg",
+  pills: ["✈️ 17–24 jul 2026", "🏨 Hilton Mangrove Beach", "🌊 Mar do Caribe", "🤿 Mergulho & Snorkeling"],
   visaoGeral: [
     { label: "Destino", value: "Curaçao, Antilhas Holandesas", variant: "coral" },
     { label: "Duração", value: "7 dias / 6 noites" },
@@ -409,42 +409,44 @@ const ROTEIRO_DATA = {
   voos: [
     {
       tipo: "ida",
-      origemIata: "GRU",
-      origemNome: "São Paulo – Guarulhos",
+      origemIata: "CNF",
+      origemNome: "Belo Horizonte – Confins",
       destinoIata: "CUR",
       destinoNome: "Curaçao – Hato Int'l",
-      data: "2025-07-05",
-      horaPartida: "Consultar",
-      horaChegada: "Consultar",
-      cia: "Copa Airlines / Avianca (conexão Bogotá ou Panamá)",
-      nvoo: "",
-      conexao: "Bogotá ou Cidade do Panamá",
+      data: "2026-07-17",
+      dataChegada: "2026-07-17",
+      horaPartida: "15:30",
+      horaChegada: "20:40",
+      cia: "Azul Linhas Aéreas",
+      nvoo: "VPHEWA",
+      conexao: "",
       classe: "Econômica"
     },
     {
       tipo: "volta",
       origemIata: "CUR",
       origemNome: "Curaçao – Hato Int'l",
-      destinoIata: "GRU",
-      destinoNome: "São Paulo – Guarulhos",
-      data: "2025-07-12",
-      horaPartida: "Consultar",
-      horaChegada: "Consultar",
-      cia: "Copa Airlines / Avianca (conexão Bogotá ou Panamá)",
-      nvoo: "",
-      conexao: "Bogotá ou Cidade do Panamá",
+      destinoIata: "CNF",
+      destinoNome: "Belo Horizonte – Confins",
+      data: "2026-07-24",
+      dataChegada: "2026-07-25",
+      horaPartida: "22:20",
+      horaChegada: "05:20",
+      cia: "Azul Linhas Aéreas",
+      nvoo: "VPHEWA",
+      conexao: "",
       classe: "Econômica"
     }
   ],
   hospedagem: [
     {
-      nome: "Kura Hulanda Village & Spa",
-      cidade: "Otrobanda, Willemstad",
-      checkin: "2025-07-05",
-      checkout: "2025-07-12",
+      nome: "The Rif at Mangrove Beach Corendon Curaçao All-Inclusive, Curio by Hilton",
+      cidade: "Piscadera Bay, Curaçao",
+      checkin: "2026-07-17",
+      checkout: "2026-07-24",
       noites: 7,
-      conf: "A confirmar",
-      hospedes: "2 pessoas"
+      conf: "72076176924106",
+      hospedes: "2 famílias"
     }
   ],
   servicos: [
@@ -864,7 +866,7 @@ const ROTEIRO_DATA = {
       badgeClass: ""
     }
   ],
-  footerNote: "Entre Corais e Casinhas · Curaçao, Antilhas Holandesas · Julho 2025",
+  footerNote: "Entre Corais e Casinhas · Curaçao, Antilhas Holandesas · Julho 2026",
   _slug: "curacao-2025"
 };
 
@@ -1196,9 +1198,36 @@ const PROXY = 'https://cdv-proxy-production.up.railway.app';
 let _docsUploadados = {};
 
 let _docsList = [];
+// Sets that survive page reload (in-memory per session) — persisted to sessionStorage
+let _deletedCards = new Set();   // docIds removidos pelo usuário nesta sessão
+let _deletedFiles = {};           // { docId: Set<fileId> }
+
+function _saveDeletionState() {
+  try {
+    sessionStorage.setItem('_deletedCards', JSON.stringify([..._deletedCards]));
+    const df = {};
+    Object.entries(_deletedFiles).forEach(([k,v]) => { df[k] = [...v]; });
+    sessionStorage.setItem('_deletedFiles', JSON.stringify(df));
+  } catch(e) {}
+}
+
+function _loadDeletionState() {
+  try {
+    const dc = sessionStorage.getItem('_deletedCards');
+    if (dc) _deletedCards = new Set(JSON.parse(dc));
+    const df = sessionStorage.getItem('_deletedFiles');
+    if (df) {
+      const parsed = JSON.parse(df);
+      Object.entries(parsed).forEach(([k,v]) => { _deletedFiles[k] = new Set(v); });
+    }
+  } catch(e) {}
+}
 
 function renderDocCards(documentos) {
-  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
+  _loadDeletionState();
+  _docsList = documentos
+    .map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }))
+    .filter(doc => !_deletedCards.has(doc.docId));
   _redrawDocs();
 }
 
@@ -1247,6 +1276,8 @@ function _redrawDocs() {
 
 function removerDocCard(docId) {
   if (!confirm('Remover este cartão de documento?')) return;
+  _deletedCards.add(docId);
+  _saveDeletionState();
   _docsList = _docsList.filter(d => d.docId !== docId);
   delete _docsUploadados[docId];
   _redrawDocs();
@@ -1312,6 +1343,10 @@ function removerDocArquivo(docId, fi) {
   const f = files[fi];
   if (!f) return;
   if (!confirm('Remover "' + f.nome + '"?')) return;
+  // Persist deletion so file doesn't reappear on F5
+  if (!_deletedFiles[docId]) _deletedFiles[docId] = new Set();
+  _deletedFiles[docId].add(f.fileId);
+  _saveDeletionState();
   // Remove locally immediately
   _docsUploadados[docId].splice(fi, 1);
   document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
@@ -1365,8 +1400,13 @@ async function carregarDocsUpload(slug) {
       // fileId = fileName sem extensão, docId = parte antes do primeiro "_" timestamp
       const fileId = fileName.replace(/\.[^.]+$/, '');
       const docId = fileId.replace(/_\d+$/, '');
+      // Skip if card was deleted or file was explicitly removed this session
+      if (_deletedCards.has(docId)) return;
+      if (_deletedFiles[docId]?.has(fileId)) return;
       const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
       if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+      // Avoid duplicates on re-render
+      if (_docsUploadados[docId].some(x => x.fileId === fileId)) return;
       _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
       // Atualizar lista no card
       const statusEl = document.getElementById('upload-status-' + docId);
