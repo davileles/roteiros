@@ -315,6 +315,7 @@ O `template/index.html` já inclui automaticamente — não reimplementar:
 - **Botões Waze + Google Maps** (🚗 🚇 🚶) entre atividades consecutivas, alinhados à descrição (margin-left 102px no desktop, 0 no mobile)
 - **Pasta de documentos** — múltiplos arquivos por card, upload via proxy CDV, remoção local imediata
 - **Botão "Adicionar documento"** — cria novos cards em tempo real via prompt
+- **Logo Travel Concierge** — `logocdv.png` do repositório `davileles/painel-cdv`, embutido como base64 diretamente no template; aparece no topbar com `border-radius: 8px`. Não requer campo `logo` no ROTEIRO_DATA — já está no template.
 - **Now bar** — atividade atual em tempo real pelo horário do dispositivo
 - **Topbar responsiva** — menu hambúrguer no mobile
 - **Seções condicionais** — voos, hospedagem, serviços, documentos só aparecem se fornecidos no ROTEIRO_DATA
