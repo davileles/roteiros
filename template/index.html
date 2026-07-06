@@ -150,7 +150,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .desl-nav-btn:hover{opacity:.8}
 .desl-nav-btn.maps{background:rgba(18,110,255,.15);color:#60a5fa;border:1px solid rgba(18,110,255,.3)}
 .desl-nav-btn.waze{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
-.atracao-nav{margin-bottom:8px;padding:8px 10px;background:rgba(18,110,255,.06);border:1px solid rgba(18,110,255,.15);border-radius:7px}
+.atracao-nav{margin-left:102px;margin-top:6px;padding:8px 10px;background:rgba(18,110,255,.06);border:1px solid rgba(18,110,255,.15);border-radius:7px}
 .atracao-nav-label{font-size:9px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px}
 .atracao-nav-btns{display:flex;gap:5px;flex-wrap:wrap}
 .nav-btn{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;text-decoration:none;transition:opacity .15s;white-space:nowrap}
@@ -220,7 +220,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   .atracao-header{flex-direction:column;gap:2px}
   .atracao-time{min-width:unset;font-size:11px}
   .atracao-nome{font-size:14px}
-  .atracao-desc,.atracao-tip{margin-left:0;margin-top:4px}
+  .atracao-desc,.atracao-tip,.atracao-nav{margin-left:0;margin-top:4px}
 
   /* Serviços — 1 coluna */
   .serv-grid{grid-template-columns:1fr}
@@ -713,7 +713,8 @@ function closeMobileNav() {
 
 // ── Docs upload ──────────────────────────────────────────────
 const PROXY = 'https://cdv-proxy-production.up.railway.app';
-let _docsUploadados = {}; // { docId: { nome, rawUrl, mediaType } }
+// _docsUploadados: { docId: [ {nome, rawUrl, mediaType, fileId}, ... ] }
+let _docsUploadados = {};
 
 let _docsList = [];
 
@@ -722,28 +723,40 @@ function renderDocCards(documentos) {
   _redrawDocs();
 }
 
+function _fileListHtml(docId) {
+  const files = _docsUploadados[docId] || [];
+  if (!files.length) return '';
+  return files.map((f, fi) => {
+    const short = f.nome.length > 20 ? f.nome.substring(0,17)+'...' : f.nome;
+    return `<div class="doc-uploaded" style="margin-top:4px">
+      ✅ <a href="${f.rawUrl}" target="_blank" class="doc-uploaded-link" title="${f.nome}">${short}</a>
+      <button class="doc-del-btn" title="Remover arquivo" onclick="removerDocArquivo('${docId}',${fi})">✕</button>
+    </div>`;
+  }).join('');
+}
+
 function _redrawDocs() {
   const grid = document.getElementById('docs-grid');
   grid.innerHTML = _docsList.map((doc) => {
     const docId = doc.docId;
+    const titulo = (doc.titulo||'doc').replace(/'/g, '');
     return `
     <div class="doc-card" id="doccard-${docId}" style="position:relative">
-      <button class="doc-card-del" title="Remover este documento" onclick="removerDocCard('${docId}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;line-height:1;padding:0" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted2)'">✕</button>
+      <button class="doc-card-del" title="Remover este cartão" onclick="removerDocCard('${docId}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;line-height:1;padding:0" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted2)'">✕</button>
       <span class="doc-icon">${doc.icon||'📄'}</span>
       <span class="doc-title">${doc.titulo||''}</span>
       <span class="doc-meta">${doc.meta||''}</span>
       ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
       <div class="doc-upload-area" id="upload-area-${docId}">
         <div class="doc-uploading" id="uploading-${docId}" style="display:none">Enviando...</div>
-        <div id="upload-status-${docId}">
-          <button class="doc-upload-btn" onclick="triggerUpload('${docId}')">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            Anexar arquivo
-          </button>
-        </div>
+        <div id="upload-status-${docId}">${_fileListHtml(docId)}</div>
+        <button class="doc-upload-btn" style="margin-top:6px" onclick="triggerUpload('${docId}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Anexar arquivo
+        </button>
         <input class="doc-input" type="file" id="input-${docId}"
           accept=".pdf,.jpg,.jpeg,.png,.webp,.heic"
-          onchange="handleDocUpload('${docId}', '${(doc.titulo||'doc').replace(/'/g,'')}', this)">
+          onchange="handleDocUpload('${docId}', '${titulo}', this)">
       </div>
     </div>`;
   }).join('') + `
@@ -756,19 +769,16 @@ function _redrawDocs() {
 function removerDocCard(docId) {
   if (!confirm('Remover este cartão de documento?')) return;
   _docsList = _docsList.filter(d => d.docId !== docId);
+  delete _docsUploadados[docId];
   _redrawDocs();
-  // Restore uploaded state for remaining docs
-  Object.keys(_docsUploadados).forEach(id => { if (id !== docId) mostrarDocAnexado(id); });
 }
 
 function adicionarDocCard() {
   const titulo = prompt('Nome do documento:');
   if (!titulo) return;
-  const icon = '📄';
   const newId = 'doc_extra_' + Date.now();
-  _docsList.push({ docId: newId, icon, titulo, meta: 'Adicionado manualmente', badge: '' });
+  _docsList.push({ docId: newId, icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' });
   _redrawDocs();
-  Object.keys(_docsUploadados).forEach(id => mostrarDocAnexado(id));
 }
 
 function triggerUpload(docId) {
@@ -785,10 +795,11 @@ async function handleDocUpload(docId, nomeDoc, input) {
   if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
 
   const ext = file.name.split('.').pop().toLowerCase();
-  const fileName = docId + '.' + ext;
+  // fileId único por arquivo dentro do card
+  const fileId = docId + '_' + Date.now();
+  const fileName = fileId + '.' + ext;
 
   document.getElementById('uploading-' + docId).style.display = '';
-  document.getElementById('upload-status-' + docId).style.display = 'none';
 
   try {
     const b64 = await new Promise((res, rej) => {
@@ -806,31 +817,39 @@ async function handleDocUpload(docId, nomeDoc, input) {
     const data = await resp.json();
     if (!data.ok) throw new Error(data.erro||'Erro no upload');
 
-    _docsUploadados[docId] = { nome: file.name, rawUrl: data.rawUrl, mediaType: file.type };
-    mostrarDocAnexado(docId);
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
+    document.getElementById('uploading-' + docId).style.display = 'none';
+    document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
   } catch(e) {
     alert('Erro ao enviar arquivo: ' + e.message);
     document.getElementById('uploading-' + docId).style.display = 'none';
-    document.getElementById('upload-status-' + docId).style.display = '';
   }
   input.value = '';
 }
 
-function mostrarDocAnexado(docId) {
-  const d = _docsUploadados[docId];
-  if (!d) return;
-  const statusEl = document.getElementById('upload-status-' + docId);
-  const uploadingEl = document.getElementById('uploading-' + docId);
-  if (uploadingEl) uploadingEl.style.display = 'none';
-  if (statusEl) {
-    const shortName = d.nome.length > 18 ? d.nome.substring(0,15)+'...' : d.nome;
-    statusEl.style.display = '';
-    statusEl.innerHTML = `
-      <div class="doc-uploaded">
-        ✅ <a href="${d.rawUrl}" target="_blank" class="doc-uploaded-link" title="${d.nome}">${shortName}</a>
-        <button class="doc-del-btn" title="Remover arquivo" onclick="removerDoc('${docId}')">✕</button>
-      </div>`;
+function removerDocArquivo(docId, fi) {
+  const files = _docsUploadados[docId] || [];
+  const f = files[fi];
+  if (!f) return;
+  if (!confirm('Remover "' + f.nome + '"?')) return;
+  // Remove locally immediately
+  _docsUploadados[docId].splice(fi, 1);
+  document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+  // Best-effort remote delete
+  const slug = ROTEIRO_DATA?._slug;
+  if (slug) {
+    const ext = f.nome.split('.').pop().toLowerCase();
+    fetch(PROXY + '/roteiros/doc-delete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: f.fileId + '.' + ext })
+    }).catch(()=>{});
   }
+}
+
+function mostrarDocAnexado(docId) {
+  // Legacy compat — no-op (multi-file now rendered inline)
 }
 
 async function removerDoc(docId) {
