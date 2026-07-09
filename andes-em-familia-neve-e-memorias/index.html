@@ -1612,7 +1612,8 @@ async function removerDocArquivo(docId, fi) {
   // O proxy já cuida de deletar o arquivo e remover do docs-meta.json
   const slug = ROTEIRO_DATA?._slug;
   if (!slug) return;
-  const ext = f.nome.split('.').pop().toLowerCase();
+  // Extrair extensão do rawUrl (fonte correta), não do nome amigável
+  const ext = f.rawUrl.split('.').pop().toLowerCase();
   const fileName = f.fileId + '.' + ext;
   try {
     await fetch(PROXY + '/roteiros/doc-upload', {
