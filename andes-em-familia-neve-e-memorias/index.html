@@ -1446,7 +1446,7 @@ let _docsList = [];
 // ── helpers proxy ─────────────────────────────────────────────
 async function _metaGet(slug) {
   try {
-    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug));
+    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug) + '&_=' + Date.now());
     const d = await r.json();
     return (d.ok && d.docs) ? d.docs : {};
   } catch(e) { return {}; }
@@ -1609,6 +1609,7 @@ async function removerDocArquivo(docId, fi) {
   document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
 
   // Remove no servidor via DELETE /roteiros/doc-upload
+  // O proxy já cuida de deletar o arquivo e remover do docs-meta.json
   const slug = ROTEIRO_DATA?._slug;
   if (!slug) return;
   const ext = f.nome.split('.').pop().toLowerCase();
@@ -1619,12 +1620,6 @@ async function removerDocArquivo(docId, fi) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug, docId: fileName })
     });
-    // Remove também do meta para não reaparecer no próximo carregamento
-    const meta = await _metaGet(slug);
-    if (meta[fileName]) {
-      delete meta[fileName];
-      await _metaSave(slug, meta);
-    }
   } catch(e) {}
 }
 
