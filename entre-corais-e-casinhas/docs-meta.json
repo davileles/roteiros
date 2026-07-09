@@ -4,5 +4,14 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-07-07T16:53:53.401Z"
-  }
+  },
+  "_extraCards": [
+    {
+      "docId": "doc_extra_1783443076659",
+      "icon": "📄",
+      "titulo": "Hospedagem",
+      "meta": "Adicionado manualmente",
+      "badge": ""
+    }
+  ]
 }
