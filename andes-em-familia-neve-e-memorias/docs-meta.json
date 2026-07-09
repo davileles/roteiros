@@ -1,34 +1,4 @@
 {
-  "doc_0.pdf": {
-    "nome": "Passagens Aéreas",
-    "tipo": "pdf",
-    "mediaType": "application/pdf",
-    "uploadEm": "2026-07-06T17:23:32.990Z"
-  },
-  "doc_0_1783359441332.pdf": {
-    "nome": "Passagens Aéreas",
-    "tipo": "pdf",
-    "mediaType": "application/pdf",
-    "uploadEm": "2026-07-06T17:37:26.119Z"
-  },
-  "doc_0_1783359594448.jpg": {
-    "nome": "Passagens Aéreas",
-    "tipo": "jpg",
-    "mediaType": "image/jpeg",
-    "uploadEm": "2026-07-06T17:40:15.359Z"
-  },
-  "doc_0_1783598062726.pdf": {
-    "nome": "Passagens Aéreas",
-    "tipo": "pdf",
-    "mediaType": "application/pdf",
-    "uploadEm": "2026-07-09T11:54:25.048Z"
-  },
-  "doc_0_1783598071644.pdf": {
-    "nome": "Passagens Aéreas",
-    "tipo": "pdf",
-    "mediaType": "application/pdf",
-    "uploadEm": "2026-07-09T11:54:33.956Z"
-  },
   "_deletedCards": [
     "doc_2",
     "doc_6",
