@@ -903,6 +903,12 @@ async function removerDocArquivo(docId, fi) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug, docId: fileName })
     });
+    // Remove também do meta para não reaparecer no próximo carregamento
+    const meta = await _metaGet(slug);
+    if (meta[fileName]) {
+      delete meta[fileName];
+      await _metaSave(slug, meta);
+    }
   } catch(e) {}
 }
 
