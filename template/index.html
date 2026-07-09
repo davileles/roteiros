@@ -725,41 +725,29 @@ function closeMobileNav() {
 const PROXY = 'https://cdv-proxy-production.up.railway.app';
 // _docsUploadados: { docId: [ {nome, rawUrl, mediaType, fileId}, ... ] }
 let _docsUploadados = {};
-
 let _docsList = [];
-// Sets that survive page reload (in-memory per session) — persisted to sessionStorage
-let _deletedCards = new Set();   // docIds removidos pelo usuário nesta sessão
-let _deletedFiles = {};           // { docId: Set<fileId> }
 
-function _saveDeletionState() {
+// ── helpers proxy ─────────────────────────────────────────────
+async function _metaGet(slug) {
   try {
-    sessionStorage.setItem('_deletedCards', JSON.stringify([..._deletedCards]));
-    const df = {};
-    Object.entries(_deletedFiles).forEach(([k,v]) => { df[k] = [...v]; });
-    sessionStorage.setItem('_deletedFiles', JSON.stringify(df));
+    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug));
+    const d = await r.json();
+    return (d.ok && d.docs) ? d.docs : {};
+  } catch(e) { return {}; }
+}
+
+async function _metaSave(slug, meta) {
+  // Usa POST /roteiros/doc-meta (novo endpoint) para salvar meta completo
+  try {
+    await fetch(PROXY + '/roteiros/doc-meta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, meta })
+    });
   } catch(e) {}
 }
 
-function _loadDeletionState() {
-  try {
-    const dc = sessionStorage.getItem('_deletedCards');
-    if (dc) _deletedCards = new Set(JSON.parse(dc));
-    const df = sessionStorage.getItem('_deletedFiles');
-    if (df) {
-      const parsed = JSON.parse(df);
-      Object.entries(parsed).forEach(([k,v]) => { _deletedFiles[k] = new Set(v); });
-    }
-  } catch(e) {}
-}
-
-function renderDocCards(documentos) {
-  _loadDeletionState();
-  _docsList = documentos
-    .map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }))
-    .filter(doc => !_deletedCards.has(doc.docId));
-  _redrawDocs();
-}
-
+// ── renderiza a grid de cards ─────────────────────────────────
 function _fileListHtml(docId) {
   const files = _docsUploadados[docId] || [];
   if (!files.length) return '';
@@ -803,27 +791,54 @@ function _redrawDocs() {
     </div>`;
 }
 
-function removerDocCard(docId) {
-  if (!confirm('Remover este cartão de documento?')) return;
-  _deletedCards.add(docId);
-  _saveDeletionState();
-  _docsList = _docsList.filter(d => d.docId !== docId);
-  delete _docsUploadados[docId];
+// ── carregamento inicial ──────────────────────────────────────
+async function carregarDocsUpload(slug) {
+  // Busca docs-meta.json via proxy — fonte de verdade absoluta
+  const meta = await _metaGet(slug);
+
+  // Cards deletados (persistidos no meta como _deletedCards: ['id1','id2'])
+  const deletedCards = new Set(meta._deletedCards || []);
+  // Cards extras criados pelo usuário (meta._extraCards: [{docId, titulo, icon, meta, badge}])
+  const extraCards = meta._extraCards || [];
+
+  // Reconstituir _docsList: cards base do ROTEIRO_DATA menos deletados, mais extras
+  // (já foi montado por renderDocCards antes, mas aqui refiltramos)
+  _docsList = (_docsList.length ? _docsList : (ROTEIRO_DATA?.documentos||[]).map((d,i)=>({...d, docId: d.docId||('doc_'+i)})))
+    .filter(d => !deletedCards.has(d.docId));
+  // Adicionar extras (evitar duplicatas)
+  const existingIds = new Set(_docsList.map(d => d.docId));
+  for (const ex of extraCards) {
+    if (!existingIds.has(ex.docId)) _docsList.push(ex);
+  }
+
+  // Mapear arquivos para cards
+  _docsUploadados = {};
+  Object.entries(meta).forEach(([fileName, info]) => {
+    if (fileName.startsWith('_')) return; // skip _deletedCards, _extraCards
+    const fileId = fileName.replace(/\.[^.]+$/, '');
+    const docId  = fileId.replace(/_\d+$/, '');
+    const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    if (!_docsUploadados[docId].some(x => x.fileId === fileId))
+      _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
+  });
+
   _redrawDocs();
 }
 
-function adicionarDocCard() {
-  const titulo = prompt('Nome do documento:');
-  if (!titulo) return;
-  const newId = 'doc_extra_' + Date.now();
-  _docsList.push({ docId: newId, icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' });
+function renderDocCards(documentos) {
+  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
   _redrawDocs();
+  // Carregar estado real do servidor em seguida
+  const slug = ROTEIRO_DATA?._slug;
+  if (slug) carregarDocsUpload(slug);
 }
 
 function triggerUpload(docId) {
   document.getElementById('input-' + docId)?.click();
 }
 
+// ── upload de arquivo ─────────────────────────────────────────
 async function handleDocUpload(docId, nomeDoc, input) {
   const file = input.files?.[0];
   if (!file) return;
@@ -834,7 +849,6 @@ async function handleDocUpload(docId, nomeDoc, input) {
   if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
 
   const ext = file.name.split('.').pop().toLowerCase();
-  // fileId único por arquivo dentro do card
   const fileId = docId + '_' + Date.now();
   const fileName = fileId + '.' + ext;
 
@@ -867,82 +881,74 @@ async function handleDocUpload(docId, nomeDoc, input) {
   input.value = '';
 }
 
-function removerDocArquivo(docId, fi) {
+// ── remover arquivo ───────────────────────────────────────────
+async function removerDocArquivo(docId, fi) {
   const files = _docsUploadados[docId] || [];
   const f = files[fi];
   if (!f) return;
   if (!confirm('Remover "' + f.nome + '"?')) return;
-  // Persist deletion so file doesn't reappear on F5
-  if (!_deletedFiles[docId]) _deletedFiles[docId] = new Set();
-  _deletedFiles[docId].add(f.fileId);
-  _saveDeletionState();
-  // Remove locally immediately
+
+  // Remove localmente imediato
   _docsUploadados[docId].splice(fi, 1);
   document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
-  // Best-effort remote delete
-  const slug = ROTEIRO_DATA?._slug;
-  if (slug) {
-    const ext = f.nome.split('.').pop().toLowerCase();
-    fetch(PROXY + '/roteiros/doc-delete', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, docId: f.fileId + '.' + ext })
-    }).catch(()=>{});
-  }
-}
 
-function mostrarDocAnexado(docId) {
-  // Legacy compat — no-op (multi-file now rendered inline)
-}
-
-async function removerDoc(docId) {
+  // Remove no servidor via DELETE /roteiros/doc-upload
   const slug = ROTEIRO_DATA?._slug;
-  const d = _docsUploadados[docId];
-  if (!slug || !d) return;
-  if (!confirm('Remover o arquivo "' + d.nome + '"?')) return;
-  // Remove locally first — always works even if proxy is offline
-  delete _docsUploadados[docId];
-  const statusEl = document.getElementById('upload-status-' + docId);
-  if (statusEl) statusEl.innerHTML = `
-    <button class="doc-upload-btn" onclick="triggerUpload('${docId}')">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      Anexar arquivo
-    </button>`;
-  // Best-effort remote delete (POST with _method for CORS compat)
+  if (!slug) return;
+  const ext = f.nome.split('.').pop().toLowerCase();
+  const fileName = f.fileId + '.' + ext;
   try {
-    const ext = d.nome.split('.').pop().toLowerCase();
-    const fileName = docId + '.' + ext;
-    fetch(PROXY + '/roteiros/doc-delete', {
-      method: 'POST',
+    await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug, docId: fileName })
-    }).catch(()=>{});
-  } catch(e) { /* silencioso — remoção local já feita */ }
+    });
+  } catch(e) {}
 }
 
-async function carregarDocsUpload(slug) {
-  try {
-    const resp = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug));
-    const data = await resp.json();
-    if (!data.ok || !data.docs) return;
-    Object.entries(data.docs).forEach(([fileName, info]) => {
-      // fileId = fileName sem extensão, docId = parte antes do primeiro "_" timestamp
-      const fileId = fileName.replace(/\.[^.]+$/, '');
-      const docId = fileId.replace(/_\d+$/, '');
-      // Skip if card was deleted or file was explicitly removed this session
-      if (_deletedCards.has(docId)) return;
-      if (_deletedFiles[docId]?.has(fileId)) return;
-      const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
-      if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
-      // Avoid duplicates on re-render
-      if (_docsUploadados[docId].some(x => x.fileId === fileId)) return;
-      _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
-      // Atualizar lista no card
-      const statusEl = document.getElementById('upload-status-' + docId);
-      if (statusEl) statusEl.innerHTML = _fileListHtml(docId);
-    });
-  } catch(e) { /* silencioso */ }
+// ── remover card ──────────────────────────────────────────────
+async function removerDocCard(docId) {
+  if (!confirm('Remover este cartão de documento?')) return;
+  const slug = ROTEIRO_DATA?._slug;
+
+  // Remove localmente imediato
+  _docsList = _docsList.filter(d => d.docId !== docId);
+  delete _docsUploadados[docId];
+  _redrawDocs();
+
+  // Persiste no servidor: adiciona docId à lista _deletedCards no meta
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  const deleted = new Set(meta._deletedCards || []);
+  deleted.add(docId);
+  // Remove também do _extraCards se era um card extra
+  const extras = (meta._extraCards || []).filter(e => e.docId !== docId);
+  meta._deletedCards = [...deleted];
+  meta._extraCards = extras;
+  await _metaSave(slug, meta);
 }
+
+// ── adicionar card extra ──────────────────────────────────────
+async function adicionarDocCard() {
+  const titulo = prompt('Nome do documento:');
+  if (!titulo) return;
+  const slug = ROTEIRO_DATA?._slug;
+  const newId = 'doc_extra_' + Date.now();
+  const novoCard = { docId: newId, icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' };
+
+  _docsList.push(novoCard);
+  _redrawDocs();
+
+  // Persiste no servidor
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  meta._extraCards = [...(meta._extraCards || []), novoCard];
+  await _metaSave(slug, meta);
+}
+
+// ── compat legado ─────────────────────────────────────────────
+function mostrarDocAnexado(docId) {}
+async function removerDoc(docId) { await removerDocArquivo(docId, 0); }
 // ── Fim docs upload ──────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', ()=>{
