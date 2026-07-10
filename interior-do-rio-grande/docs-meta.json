@@ -4,5 +4,9 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-07-10T14:29:39.898Z"
-  }
+  },
+  "_deletedCards": [
+    "doc_3"
+  ],
+  "_extraCards": []
 }
