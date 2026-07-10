@@ -24,18 +24,250 @@
 <section class="section" id="documentos" style="display:none"><div class="container"><span class="section-label">Documentos</span><h2 class="section-title">Pasta de Viagem</h2><div class="docs-grid" id="docs-grid"></div></div></section>
 <footer class="site-footer"><div class="footer-brand">Travel <span>Concierge</span></div><div class="footer-note" id="footer-note"></div></footer>
 <script>
-const ROTEIRO_DATA = {"titulo":"Interior do Rio Grande","subtitulo":"Frio, vinho e amigos","eyebrow":"Travel Concierge","heroImage":"https://images.unsplash.com/photo-1581444225536-c626f49eb5c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","pills":["📅 22/07/2026 – 27/07/2026","👤 Oswaldo Luiz, Mônica","🏨 Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola"],"visaoGeral":[{"label":"Destino","value":"Bento Gonçalves","variant":"coral"},{"label":"Período","value":"22/07/2026 a 27/07/2026"},{"label":"Viajantes","value":"Oswaldo Luiz, Mônica"},{"label":"Hospedagem","value":"Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola"}],"obs":"","voos":[{"tipo":"ida","origemIata":"CNF","origemNome":"","destinoIata":"POA","destinoNome":"","data":"2026-07-22","horaPartida":"07:55","horaChegada":"10:10","cia":"LATAM","nvoo":"LA3454","conexao":"","classe":"Econômica Premium"},{"tipo":"volta","origemIata":"POA","origemNome":"","destinoIata":"CNF","destinoNome":"","data":"2026-07-27","horaPartida":"17:35","horaChegada":"19:45","cia":"LATAM","nvoo":"LA3590","conexao":"","classe":"Econômica Premium"}],"hospedagem":[{"nome":"Park Plaza Moinhos Porto Alegre","cidade":"Porto Alegre, RS, Brasil","checkin":"2026-07-26","checkout":"2026-07-27","noites":"1","conf":"XXXXXX","hospedes":"4"},{"nome":"Spa do Vinho Condomínio Vitivinícola","cidade":"Bento Gonçalves, RS","checkin":"2026-07-22","checkout":"2026-07-26","noites":"4","conf":"592186976","hospedes":"2"}],"servicos":[{"tipo":"carro","icon":"🚗","nome":"Unidas — Compacto (EA) VW POLO 1.0 TURBO AUTOMÁTICO OU SIMILAR","meta":"Ret: 22/07/2026 Dev: 26/07/2026","badge":"Conf. 5BPMJ2"}],"dias":[],"documentos":[{"icon":"✈️","titulo":"Passagens Aéreas","meta":"CNF→POA","badge":"Confirmado"},{"icon":"🏨","titulo":"Vouchers de Hotel","meta":"Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola","badge":"Confirmado"},{"icon":"🚌","titulo":"Locação de Veículo","meta":"Unidas","badge":"Confirmado"},{"icon":"🛂","titulo":"Passaportes","meta":"Oswaldo Luiz","badge":"Verificar validade","badgeClass":"pending"}],"footerNote":"Interior do Rio Grande · Oswaldo Luiz"};
+const ROTEIRO_DATA = {"titulo":"Interior do Rio Grande","subtitulo":"Frio, vinho e amigos","eyebrow":"Travel Concierge","heroImage":"https://images.unsplash.com/photo-1581444225536-c626f49eb5c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","pills":["📅 22/07/2026 – 27/07/2026","👤 Oswaldo Luiz, Mônica","🏨 Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola"],"visaoGeral":[{"label":"Destino","value":"Bento Gonçalves","variant":"coral"},{"label":"Período","value":"22/07/2026 a 27/07/2026"},{"label":"Viajantes","value":"Oswaldo Luiz, Mônica"},{"label":"Hospedagem","value":"Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola"}],"obs":"","voos":[{"tipo":"ida","origemIata":"CNF","origemNome":"","destinoIata":"POA","destinoNome":"","data":"2026-07-22","horaPartida":"07:55","horaChegada":"10:10","cia":"LATAM","nvoo":"LA3454","conexao":"","classe":"Econômica Premium"},{"tipo":"volta","origemIata":"POA","origemNome":"","destinoIata":"CNF","destinoNome":"","data":"2026-07-27","horaPartida":"17:35","horaChegada":"19:45","cia":"LATAM","nvoo":"LA3590","conexao":"","classe":"Econômica Premium"}],"hospedagem":[{"nome":"Park Plaza Moinhos Porto Alegre","cidade":"Porto Alegre, RS, Brasil","checkin":"2026-07-26","checkout":"2026-07-27","noites":"1","conf":"XXXXXX","hospedes":"4"},{"nome":"Spa do Vinho Condomínio Vitivinícola","cidade":"Bento Gonçalves, RS","checkin":"2026-07-22","checkout":"2026-07-26","noites":"4","conf":"592186976","hospedes":"2"}],"servicos":[{"tipo":"carro","icon":"🚗","nome":"Unidas — Compacto (EA) VW POLO 1.0 TURBO AUTOMÁTICO OU SIMILAR","meta":"Ret: 22/07/2026 Dev: 26/07/2026","badge":"Conf. 5BPMJ2"}],"dias":[],"documentos":[{"icon":"✈️","titulo":"Passagens Aéreas","meta":"CNF→POA","badge":"Confirmado"},{"icon":"🏨","titulo":"Vouchers de Hotel","meta":"Park Plaza Moinhos Porto Alegre · Spa do Vinho Condomínio Vitivinícola","badge":"Confirmado"},{"icon":"🚌","titulo":"Locação de Veículo","meta":"Unidas","badge":"Confirmado"},{"icon":"🛂","titulo":"Passaportes","meta":"Oswaldo Luiz","badge":"Verificar validade","badgeClass":"pending"}],"footerNote":"Interior do Rio Grande · Oswaldo Luiz","_slug":"interior-do-rio-grande"};
 function fmtDateBR(iso){if(!iso)return'';var p=iso.split('-');if(p.length===3)return p[2]+'/'+p[1]+'/'+p[0];return iso;}
 function bVC(v){return'<div class="voo-card"><div class="voo-lado"><div class="voo-city">'+(v.origemIata||'???')+'</div><div class="voo-airport">'+(v.origemNome||'')+'</div><div class="voo-time">'+(v.horaPartida||'—')+'</div><div class="voo-date">'+(v.data?fmtDateBR(v.data):'')+'</div></div><div class="voo-center"><span class="voo-arrow">✈</span><div class="voo-duration">Voo '+(v.tipo==='ida'?'Ida':'Volta')+(v.nvoo?' · '+v.nvoo:'')+'</div><span class="voo-badge">'+(v.cia||'Companhia a confirmar')+(v.classe?' · '+v.classe:'')+'</span>'+(v.conexao?'<div style="font-size:11px;color:var(--muted);margin-top:4px">Conexão: '+v.conexao+'</div>':'')+'</div><div class="voo-lado" style="text-align:right"><div class="voo-city">'+(v.destinoIata||'???')+'</div><div class="voo-airport">'+(v.destinoNome||'')+'</div><div class="voo-time">'+(v.horaChegada||'—')+'</div><div class="voo-date">'+(v.dataChegada?fmtDateBR(v.dataChegada):'')+'</div></div></div>';}
 function bHC(h){return'<div class="hotel-card"><div class="hotel-icon">🏨</div><div class="hotel-info"><div class="hotel-nome">'+(h.nome||'Hotel')+'</div><div class="hotel-meta">'+(h.cidade?'<span>📍 '+h.cidade+'</span>':'')+(h.hospedes?'<span>👥 '+h.hospedes+'</span>':'')+(h.noites?'<span>🌙 '+h.noites+' noite'+(h.noites!=1?'s':'')+'</span>':'')+'</div><div class="hotel-periodo">'+(h.checkin?fmtDateBR(h.checkin):'')+(h.checkout?' → '+fmtDateBR(h.checkout):'')+'</div>'+(h.conf?'<span class="hotel-conf">Conf. '+h.conf+'</span>':'')+'</div></div>';}
 function bSC(s){return'<div class="serv-card"><div class="serv-card-header"><span class="serv-icon">'+(s.icon||'📋')+'</span><span class="serv-nome">'+(s.nome||'')+'</span></div><div class="serv-meta">'+(s.meta||'')+'</div>'+(s.badge?'<span class="serv-badge">'+s.badge+'</span>':'')+'</div>';}
 function bTB(from,to){if(!from||!to||!from.lat||!from.lng||!to.lat||!to.lng)return'';if(from.lat===to.lat&&from.lng===to.lng)return'';var mC='https://www.google.com/maps/dir/?api=1&origin='+from.lat+','+from.lng+'&destination='+to.lat+','+to.lng+'&travelmode=driving';var mW='https://www.google.com/maps/dir/?api=1&origin='+from.lat+','+from.lng+'&destination='+to.lat+','+to.lng+'&travelmode=walking';var mT='https://www.google.com/maps/dir/?api=1&origin='+from.lat+','+from.lng+'&destination='+to.lat+','+to.lng+'&travelmode=transit';var wz='https://waze.com/ul?ll='+to.lat+','+to.lng+'&navigate=yes&from='+from.lat+','+from.lng;return'<div class="travel-block"><div class="travel-route"><span class="travel-route-from">'+from.nome+'</span><span class="travel-route-arrow">→</span><span class="travel-route-to">'+to.nome+'</span></div><div class="travel-modes"><a class="travel-mode-pill" href="'+mW+'" target="_blank"><span class="travel-mode-pill-icon">🚶</span><span>A pé</span></a><a class="travel-mode-pill" href="'+mC+'" target="_blank"><span class="travel-mode-pill-icon">🚗</span><span>Carro</span></a><a class="travel-mode-pill" href="'+mT+'" target="_blank"><span class="travel-mode-pill-icon">🚌</span><span>Transporte</span></a></div><div class="travel-nav-btns"><a class="travel-nav-btn travel-nav-btn-maps" href="'+mC+'" target="_blank">🗺️ Google Maps</a><a class="travel-nav-btn travel-nav-btn-waze" href="'+wz+'" target="_blank">🚦 Waze</a></div></div>';}
 function bDB(d){var dc=['#126eff','#22c55e','#f59e0b','#60a5fa','#a78bfa','#fb923c','#34d399'];var dots=(d.atividades||[]).slice(0,4).map(function(_,i){return'<div class="day-nav-dot" style="background:'+dc[i%dc.length]+'"></div>';}).join('');var ah=(d.atividades||[]).map(function(a,ai){var tb='';var next=(d.atividades||[])[ai+1];if(next)tb=bTB(a,next);return'<div class="atracao"><div class="atracao-header"><span class="atracao-time">'+(a.horario||'')+'</span><span class="atracao-nome">'+(a.nome||'')+'</span></div>'+(a.descricao?'<div class="atracao-desc">'+a.descricao+'</div>':'')+(a.dica?'<div class="atracao-tip">💡 '+a.dica+'</div>':'')+tb+'</div>';}).join('');var dh=(d.deslocamentos||[]).length?'<span class="day-section-label">Deslocamentos</span>'+(d.deslocamentos.map(function(dl){return'<div class="desl-item">'+dl+'</div>';}).join('')):'';return{nb:'<button class="day-nav-btn" onclick="jumpToDay('+d.num+')" id="day-nav-'+d.num+'"><span class="day-nav-num">'+d.num+'</span><span class="day-nav-label">'+((d.titulo||'Dia').substring(0,10))+'</span><div class="day-nav-dots">'+dots+'</div>'+(d.data?'<span style="font-size:9px;color:var(--muted2);margin-top:-2px">'+fmtDateBR(d.data).substring(0,5)+'</span>':'')+' </button>',bl:'<div class="day-block" id="day-'+d.num+'"><button class="day-toggle" onclick="toggleDay(this)"><div class="day-num-badge">'+String(d.num).padStart(2,'0')+'</div><div class="day-toggle-info">'+(d.data?'<div class="day-toggle-date">'+fmtDateBR(d.data)+'</div>':'')+' <div class="day-toggle-title">'+(d.titulo||'Dia '+d.num)+'</div>'+(d.resumo?'<div class="day-toggle-summary">'+d.resumo+'</div>':'')+' </div>'+(d.energia?'<span class="day-energy">'+d.energia+'</span>':'')+' <span class="day-chevron">▾</span></button><div class="day-content">'+ah+dh+'</div></div>'};}
-function rR(){if(typeof ROTEIRO_DATA==='undefined')return;var D=ROTEIRO_DATA;if(D.heroImage)document.getElementById('hero-img').style.backgroundImage="url('"+D.heroImage+"')";document.getElementById('hero-eyebrow').textContent=D.eyebrow||'Travel Concierge';document.getElementById('hero-title').innerHTML=(D.titulo||'').replace(' & ','<br>');document.getElementById('hero-subtitle').textContent=D.subtitulo||'';document.getElementById('hero-pills').innerHTML=(D.pills||[]).map(function(p){return'<span class="pill">'+p+'</span>';}).join('');var nl=[['#visao-geral','Visão Geral']].concat(D.voos&&D.voos.length?[['#voos','Voos']]:[]).concat(D.hospedagem&&D.hospedagem.length?[['#hospedagem','Hotel']]:[]).concat(D.servicos&&D.servicos.length?[['#servicos','Serviços']]:[]).concat(D.dias&&D.dias.length?[['#roteiro','Roteiro']]:[]).concat(D.documentos&&D.documentos.length?[['#documentos','Documentos']]:[]);document.getElementById('topbar-nav').innerHTML=nl.map(function(n){return'<a href="'+n[0]+'">'+n[1]+'</a>';}).join('');var cards=D.visaoGeral||[];var half=Math.ceil(cards.length/2);document.getElementById('overview-grid-1').innerHTML=cards.slice(0,half).map(function(c){return'<div class="info-card '+(c.variant||'')+'"><span class="info-card-label">'+c.label+'</span><span class="info-card-value">'+c.value+'</span></div>';}).join('');document.getElementById('overview-grid-2').innerHTML=cards.slice(half).map(function(c){return'<div class="info-card '+(c.variant||'')+'"><span class="info-card-label">'+c.label+'</span><span class="info-card-value">'+c.value+'</span></div>';}).join('');if(D.obs){document.getElementById('obs-box').style.display='';document.getElementById('obs-text').innerHTML=D.obs;}if(D.voos&&D.voos.length){document.getElementById('voos').style.display='';document.getElementById('voos-container').innerHTML=D.voos.map(bVC).join('');}if(D.hospedagem&&D.hospedagem.length){document.getElementById('hospedagem').style.display='';document.getElementById('hr-hospedagem').style.display='';document.getElementById('hospedagem-container').innerHTML=D.hospedagem.map(bHC).join('');}if(D.servicos&&D.servicos.length){document.getElementById('servicos').style.display='';document.getElementById('hr-servicos').style.display='';document.getElementById('servicos-grid').innerHTML=D.servicos.map(bSC).join('');}if(D.dias&&D.dias.length){document.getElementById('roteiro').style.display='';document.getElementById('hr-roteiro').style.display='';document.getElementById('day-nav').style.display='';var ne=document.getElementById('day-nav-inner');var te=document.getElementById('timeline');ne.innerHTML='';te.innerHTML='';D.dias.forEach(function(d,i){var r=bDB(d);ne.innerHTML+=r.nb;te.innerHTML+=r.bl;});}if(D.documentos&&D.documentos.length){document.getElementById('documentos').style.display='';document.getElementById('hr-documentos').style.display='';document.getElementById('docs-grid').innerHTML=D.documentos.map(function(doc){return'<div class="doc-card"><span class="doc-icon">'+(doc.icon||'📄')+'</span><span class="doc-title">'+(doc.titulo||'')+'</span><span class="doc-meta">'+(doc.meta||'')+'</span>'+(doc.badge?'<span class="doc-badge '+(doc.badgeClass||'')+'">'+doc.badge+'</span>':'')+'</div>';}).join('');}document.getElementById('footer-note').textContent=D.footerNote||D.titulo||'';document.title=(D.titulo||'Roteiro')+' · Travel Concierge';}
+function rR(){if(typeof ROTEIRO_DATA==='undefined')return;var D=ROTEIRO_DATA;if(D.heroImage)document.getElementById('hero-img').style.backgroundImage="url('"+D.heroImage+"')";document.getElementById('hero-eyebrow').textContent=D.eyebrow||'Travel Concierge';document.getElementById('hero-title').innerHTML=(D.titulo||'').replace(' & ','<br>');document.getElementById('hero-subtitle').textContent=D.subtitulo||'';document.getElementById('hero-pills').innerHTML=(D.pills||[]).map(function(p){return'<span class="pill">'+p+'</span>';}).join('');var nl=[['#visao-geral','Visão Geral']].concat(D.voos&&D.voos.length?[['#voos','Voos']]:[]).concat(D.hospedagem&&D.hospedagem.length?[['#hospedagem','Hotel']]:[]).concat(D.servicos&&D.servicos.length?[['#servicos','Serviços']]:[]).concat(D.dias&&D.dias.length?[['#roteiro','Roteiro']]:[]).concat(D.documentos&&D.documentos.length?[['#documentos','Documentos']]:[]);document.getElementById('topbar-nav').innerHTML=nl.map(function(n){return'<a href="'+n[0]+'">'+n[1]+'</a>';}).join('');var cards=D.visaoGeral||[];var half=Math.ceil(cards.length/2);document.getElementById('overview-grid-1').innerHTML=cards.slice(0,half).map(function(c){return'<div class="info-card '+(c.variant||'')+'"><span class="info-card-label">'+c.label+'</span><span class="info-card-value">'+c.value+'</span></div>';}).join('');document.getElementById('overview-grid-2').innerHTML=cards.slice(half).map(function(c){return'<div class="info-card '+(c.variant||'')+'"><span class="info-card-label">'+c.label+'</span><span class="info-card-value">'+c.value+'</span></div>';}).join('');if(D.obs){document.getElementById('obs-box').style.display='';document.getElementById('obs-text').innerHTML=D.obs;}if(D.voos&&D.voos.length){document.getElementById('voos').style.display='';document.getElementById('voos-container').innerHTML=D.voos.map(bVC).join('');}if(D.hospedagem&&D.hospedagem.length){document.getElementById('hospedagem').style.display='';document.getElementById('hr-hospedagem').style.display='';document.getElementById('hospedagem-container').innerHTML=D.hospedagem.map(bHC).join('');}if(D.servicos&&D.servicos.length){document.getElementById('servicos').style.display='';document.getElementById('hr-servicos').style.display='';document.getElementById('servicos-grid').innerHTML=D.servicos.map(bSC).join('');}if(D.dias&&D.dias.length){document.getElementById('roteiro').style.display='';document.getElementById('hr-roteiro').style.display='';document.getElementById('day-nav').style.display='';var ne=document.getElementById('day-nav-inner');var te=document.getElementById('timeline');ne.innerHTML='';te.innerHTML='';D.dias.forEach(function(d,i){var r=bDB(d);ne.innerHTML+=r.nb;te.innerHTML+=r.bl;});}if(D.documentos&&D.documentos.length){document.getElementById('documentos').style.display='';document.getElementById('hr-documentos').style.display='';renderDocCards(D.documentos);}document.getElementById('footer-note').textContent=D.footerNote||D.titulo||'';document.title=(D.titulo||'Roteiro')+' · Travel Concierge';}
 window.addEventListener('scroll',function(){document.getElementById('topbar').classList.toggle('scrolled',window.scrollY>60);},{passive:true});
 function toggleDay(btn){var c=btn.nextElementSibling;btn.classList.toggle('open',!btn.classList.contains('open'));c.classList.toggle('open',!c.classList.contains('open'));}
 function jumpToDay(n){var el=document.getElementById('day-'+n);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-160,behavior:'smooth'});document.querySelectorAll('.day-nav-btn').forEach(function(b){b.classList.remove('active');});var btn=document.getElementById('day-nav-'+n);if(btn){btn.classList.add('active');btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}}
 function uDN(){if(!window.ROTEIRO_DATA||!ROTEIRO_DATA.dias||!ROTEIRO_DATA.dias.length)return;var a=1;ROTEIRO_DATA.dias.forEach(function(d){var el=document.getElementById('day-'+d.num);if(el&&el.getBoundingClientRect().top<=170)a=d.num;});document.querySelectorAll('.day-nav-btn').forEach(function(b){b.classList.remove('active');});var btn=document.getElementById('day-nav-'+a);if(btn)btn.classList.add('active');}
 window.addEventListener('scroll',uDN,{passive:true});
+// ── Docs upload ──────────────────────────────────────────────
+const PROXY = 'https://cdv-proxy-production.up.railway.app';
+// _docsUploadados: { docId: [ {nome, rawUrl, mediaType, fileId}, ... ] }
+let _docsUploadados = {};
+let _docsList = [];
+
+// ── helpers proxy ─────────────────────────────────────────────
+async function _metaGet(slug) {
+  try {
+    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug) + '&_=' + Date.now());
+    const d = await r.json();
+    return (d.ok && d.docs) ? d.docs : {};
+  } catch(e) { return {}; }
+}
+
+async function _metaSave(slug, meta) {
+  // Usa POST /roteiros/doc-meta (novo endpoint) para salvar meta completo
+  try {
+    await fetch(PROXY + '/roteiros/doc-meta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, meta })
+    });
+  } catch(e) {}
+}
+
+// ── renderiza a grid de cards ─────────────────────────────────
+function _fileListHtml(docId) {
+  const files = _docsUploadados[docId] || [];
+  if (!files.length) return '';
+  return files.map((f, fi) => {
+    const short = f.nome.length > 20 ? f.nome.substring(0,17)+'...' : f.nome;
+    return `<div class="doc-uploaded" style="margin-top:4px">
+      ✅ <a href="${f.rawUrl}" target="_blank" class="doc-uploaded-link" title="${f.nome}">${short}</a>
+      <button class="doc-del-btn" title="Remover arquivo" onclick="removerDocArquivo('${docId}',${fi})">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function _redrawDocs() {
+  const grid = document.getElementById('docs-grid');
+  grid.innerHTML = _docsList.map((doc) => {
+    const docId = doc.docId;
+    const titulo = (doc.titulo||'doc').replace(/'/g, '');
+    return `
+    <div class="doc-card" id="doccard-${docId}" style="position:relative">
+      <button class="doc-card-del" title="Remover este cartão" onclick="removerDocCard('${docId}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;line-height:1;padding:0" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted2)'">✕</button>
+      <span class="doc-icon">${doc.icon||'📄'}</span>
+      <span class="doc-title">${doc.titulo||''}</span>
+      <span class="doc-meta">${doc.meta||''}</span>
+      ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
+      <div class="doc-upload-area" id="upload-area-${docId}">
+        <div class="doc-uploading" id="uploading-${docId}" style="display:none">Enviando...</div>
+        <div id="upload-status-${docId}">${_fileListHtml(docId)}</div>
+        <button class="doc-upload-btn" style="margin-top:6px" onclick="triggerUpload('${docId}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Anexar arquivo
+        </button>
+        <input class="doc-input" type="file" id="input-${docId}"
+          accept=".pdf,.jpg,.jpeg,.png,.webp,.heic"
+          onchange="handleDocUpload('${docId}', '${titulo}', this)">
+      </div>
+    </div>`;
+  }).join('') + `
+    <div class="doc-card doc-card-add" onclick="adicionarDocCard()" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--border2);background:transparent;min-height:140px;transition:border-color .15s,background .15s" onmouseover="this.style.borderColor='var(--blue)';this.style.background='rgba(18,110,255,.06)'" onmouseout="this.style.borderColor='var(--border2)';this.style.background='transparent'">
+      <span style="font-size:26px;color:var(--muted2)">+</span>
+      <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Adicionar documento</span>
+    </div>`;
+}
+
+// ── carregamento inicial ──────────────────────────────────────
+async function carregarDocsUpload(slug) {
+  // Busca docs-meta.json via proxy — fonte de verdade absoluta
+  const meta = await _metaGet(slug);
+
+  // Cards deletados (persistidos no meta como _deletedCards: ['id1','id2'])
+  const deletedCards = new Set(meta._deletedCards || []);
+  // Cards extras criados pelo usuário (meta._extraCards: [{docId, titulo, icon, meta, badge}])
+  const extraCards = meta._extraCards || [];
+
+  // Reconstituir _docsList: cards base do ROTEIRO_DATA menos deletados, mais extras
+  // (já foi montado por renderDocCards antes, mas aqui refiltramos)
+  _docsList = (_docsList.length ? _docsList : (ROTEIRO_DATA?.documentos||[]).map((d,i)=>({...d, docId: d.docId||('doc_'+i)})))
+    .filter(d => !deletedCards.has(d.docId));
+  // Adicionar extras (evitar duplicatas)
+  const existingIds = new Set(_docsList.map(d => d.docId));
+  for (const ex of extraCards) {
+    if (!existingIds.has(ex.docId)) _docsList.push(ex);
+  }
+
+  // Mapear arquivos para cards
+  _docsUploadados = {};
+  Object.entries(meta).forEach(([fileName, info]) => {
+    if (fileName.startsWith('_')) return; // skip _deletedCards, _extraCards
+    const fileId = fileName.replace(/\.[^.]+$/, '');
+    const docId  = fileId.replace(/_\d+$/, '');
+    const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    if (!_docsUploadados[docId].some(x => x.fileId === fileId))
+      _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
+  });
+
+  _redrawDocs();
+}
+
+function renderDocCards(documentos) {
+  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
+  _redrawDocs();
+  // Carregar estado real do servidor em seguida
+  const slug = ROTEIRO_DATA?._slug;
+  if (slug) carregarDocsUpload(slug);
+}
+
+function triggerUpload(docId) {
+  document.getElementById('input-' + docId)?.click();
+}
+
+// ── upload de arquivo ─────────────────────────────────────────
+async function handleDocUpload(docId, nomeDoc, input) {
+  const file = input.files?.[0];
+  if (!file) return;
+  const slug = ROTEIRO_DATA?._slug;
+  if (!slug) { alert('Slug do roteiro não definido.'); return; }
+
+  const maxMB = 8;
+  if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
+
+  const ext = file.name.split('.').pop().toLowerCase();
+  const fileId = docId + '_' + Date.now();
+  const fileName = fileId + '.' + ext;
+
+  document.getElementById('uploading-' + docId).style.display = '';
+
+  try {
+    const b64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    const resp = await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName, nome: nomeDoc, tipo: ext, base64: b64, mediaType: file.type })
+    });
+    const data = await resp.json();
+    if (!data.ok) throw new Error(data.erro||'Erro no upload');
+
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
+    document.getElementById('uploading-' + docId).style.display = 'none';
+    document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+  } catch(e) {
+    alert('Erro ao enviar arquivo: ' + e.message);
+    document.getElementById('uploading-' + docId).style.display = 'none';
+  }
+  input.value = '';
+}
+
+// ── remover arquivo ───────────────────────────────────────────
+async function removerDocArquivo(docId, fi) {
+  const files = _docsUploadados[docId] || [];
+  const f = files[fi];
+  if (!f) return;
+  if (!confirm('Remover "' + f.nome + '"?')) return;
+
+  // Remove localmente imediato
+  _docsUploadados[docId].splice(fi, 1);
+  document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+
+  // Remove no servidor via DELETE /roteiros/doc-upload
+  // O proxy já cuida de deletar o arquivo e remover do docs-meta.json
+  const slug = ROTEIRO_DATA?._slug;
+  if (!slug) return;
+  // Extrair extensão do rawUrl (fonte correta), não do nome amigável
+  const ext = f.rawUrl.split('.').pop().toLowerCase();
+  const fileName = f.fileId + '.' + ext;
+  try {
+    await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName })
+    });
+  } catch(e) {}
+}
+
+// ── remover card ──────────────────────────────────────────────
+async function removerDocCard(docId) {
+  if (!confirm('Remover este cartão de documento?')) return;
+  const slug = ROTEIRO_DATA?._slug;
+
+  // Remove localmente imediato
+  _docsList = _docsList.filter(d => d.docId !== docId);
+  delete _docsUploadados[docId];
+  _redrawDocs();
+
+  // Persiste no servidor: adiciona docId à lista _deletedCards no meta
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  const deleted = new Set(meta._deletedCards || []);
+  deleted.add(docId);
+  // Remove também do _extraCards se era um card extra
+  const extras = (meta._extraCards || []).filter(e => e.docId !== docId);
+  meta._deletedCards = [...deleted];
+  meta._extraCards = extras;
+  await _metaSave(slug, meta);
+}
+
+// ── adicionar card extra ──────────────────────────────────────
+async function adicionarDocCard() {
+  const titulo = prompt('Nome do documento:');
+  if (!titulo) return;
+  const slug = ROTEIRO_DATA?._slug;
+  const newId = 'doc_extra_' + Date.now();
+  const novoCard = { docId: newId, icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' };
+
+  _docsList.push(novoCard);
+  _redrawDocs();
+
+  // Persiste no servidor
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  meta._extraCards = [...(meta._extraCards || []), novoCard];
+  await _metaSave(slug, meta);
+}
+
+// ── compat legado ─────────────────────────────────────────────
+function mostrarDocAnexado(docId) {}
+async function removerDoc(docId) { await removerDocArquivo(docId, 0); }
+// ── Fim docs upload ──────────────────────────────────────────
+
 document.addEventListener('DOMContentLoaded',function(){rR();uDN();});
 </script></body></html>
