@@ -53,8 +53,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .section{padding:56px 0}
 .section-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:8px;display:block}
 .section-title{font-family:var(--display);font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--text);text-transform:uppercase;line-height:1;margin-bottom:32px}
-.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
-.overview-grid.two{grid-template-columns:repeat(2,1fr)}
+.overview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+.overview-grid>.info-card:last-child:nth-child(odd){grid-column:1/-1}
 .info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;border-left:3px solid var(--blue)}
 .info-card.coral{border-left-color:var(--accent)}.info-card.green{border-left-color:var(--green)}
 .info-card-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:4px}
@@ -193,9 +193,6 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   .container{padding:0 16px}
   .section{padding:36px 0}
 
-  /* Visão geral — 2 colunas */
-  .overview-grid{grid-template-columns:1fr 1fr}
-
   /* Voo card — coluna única, centralizado */
   .voo-card{flex-direction:column;align-items:stretch;gap:0;padding:16px}
   .voo-lado{display:flex;justify-content:space-between;align-items:flex-end;padding:10px 0}
@@ -287,8 +284,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
   <div class="container">
     <span class="section-label">Visão Geral</span>
     <h2 class="section-title">A Viagem</h2>
-    <div id="overview-grid-1" class="overview-grid"></div>
-    <div id="overview-grid-2" class="overview-grid"></div>
+    <div id="overview-grid" class="overview-grid"></div>
     <div id="obs-box" style="display:none" class="dica-box"><span class="dica-box-text" id="obs-text"></span></div>
   </div>
 </section>
@@ -601,14 +597,7 @@ function renderRoteiro() {
 
   // Visão geral
   const cards = D.visaoGeral||[];
-  const half = Math.ceil(cards.length/2);
-  const g1 = cards.slice(0,half), g2 = cards.slice(half);
-  document.getElementById('overview-grid-1').innerHTML = g1.map(c=>`
-    <div class="info-card ${c.variant||''}">
-      <span class="info-card-label">${c.label}</span>
-      <span class="info-card-value">${c.value}</span>
-    </div>`).join('');
-  document.getElementById('overview-grid-2').innerHTML = g2.map(c=>`
+  document.getElementById('overview-grid').innerHTML = cards.map(c=>`
     <div class="info-card ${c.variant||''}">
       <span class="info-card-label">${c.label}</span>
       <span class="info-card-value">${c.value}</span>
