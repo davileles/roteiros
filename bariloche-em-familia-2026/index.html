@@ -1227,7 +1227,7 @@ function renderRoteiro() {
   // Voos
   if (D.voos?.length) {
     document.getElementById('voos').style.display = '';
-    document.getElementById('voos-container').innerHTML = D.voos.map(buildVooCard).join('');
+    document.getElementById('voos-container').innerHTML = [...D.voos].sort((a,b)=>((a.data||'')+' '+(a.horaPartida||'')).localeCompare((b.data||'')+' '+(b.horaPartida||''))).map(buildVooCard).join('');
   }
 
   // Hospedagem
