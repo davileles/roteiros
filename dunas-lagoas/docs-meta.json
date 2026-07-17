@@ -10,5 +10,9 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-07-17T16:42:48.307Z"
-  }
+  },
+  "_deletedCards": [
+    "doc_2"
+  ],
+  "_extraCards": []
 }
