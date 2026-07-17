@@ -1571,7 +1571,7 @@ async function handleDocUpload(docId, nomeDoc, input) {
     const resp = await fetch(PROXY + '/roteiros/doc-upload', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, docId: fileName, nome: nomeDoc, tipo: ext, base64: b64, mediaType: file.type })
+      body: JSON.stringify({ slug, docId: fileName, nome: file.name, tipo: ext, base64: b64, mediaType: file.type })
     });
     const data = await resp.json();
     if (!data.ok) throw new Error(data.erro||'Erro no upload');
