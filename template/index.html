@@ -71,6 +71,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .voo-arrow{font-size:22px;color:var(--blue);display:block}
 .voo-duration{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
 .voo-badge{display:inline-block;font-size:10px;font-weight:700;background:rgba(18,110,255,.15);color:var(--blue);border:1px solid rgba(18,110,255,.3);border-radius:6px;padding:3px 8px;margin-top:8px}
+.voo-pnr{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.3px}.voo-pnr strong{color:var(--text);font-weight:700;letter-spacing:.5px}
 /* HOTEL CARD */
 .hotel-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
 .hotel-icon{font-size:28px;flex-shrink:0}
@@ -368,7 +369,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 //    obs: "Texto opcional de observação",
 //    voos: [
 //      { tipo:'ida'|'volta', origemIata, origemNome, destinoIata, destinoNome,
-//        data, horaPartida, horaChegada, cia, nvoo, conexao, classe }
+//        data, horaPartida, horaChegada, cia, nvoo, conexao, classe, pnr }
 //    ],
 //    hospedagem: [
 //      { nome, cidade, checkin, checkout, noites, conf, hospedes }
@@ -421,6 +422,7 @@ function buildVooCard(v) {
       <div class="voo-duration">Voo ${v.tipo==='ida'?'Ida':'Volta'}${v.nvoo?' · '+v.nvoo:''}</div>
       <span class="voo-badge">${v.cia||'Companhia a confirmar'}${v.classe?' · '+v.classe:''}</span>
       ${v.conexao?`<div style="font-size:11px;color:var(--muted);margin-top:4px">Conexão: ${v.conexao}</div>`:''}
+      ${v.pnr?`<div class="voo-pnr">Localizador: <strong>${v.pnr}</strong></div>`:''}
     </div>
     <div class="voo-lado">
       <div class="voo-city">${v.destinoIata||'???'}</div>
