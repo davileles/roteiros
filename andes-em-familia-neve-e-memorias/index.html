@@ -1332,7 +1332,7 @@ function renderRoteiro() {
   if (D.hospedagem?.length) {
     document.getElementById('hospedagem').style.display = '';
     document.getElementById('hr-hospedagem').style.display = '';
-    document.getElementById('hospedagem-container').innerHTML = D.hospedagem.map(buildHotelCard).join('');
+    document.getElementById('hospedagem-container').innerHTML = [...D.hospedagem].sort((a,b)=>(a.checkin||'').localeCompare(b.checkin||'')).map(buildHotelCard).join('');
   }
 
   // Serviços
