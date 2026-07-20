@@ -347,7 +347,7 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-brand">Travel <span>Concierge</span></div>
+  <div class="footer-brand" id="footer-brand">Travel <span>Concierge</span></div>
   <div class="footer-note" id="footer-note"></div>
 </footer>
 
@@ -359,6 +359,8 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 //    titulo: "Santiago & Andes",
 //    subtitulo: "Andes em Família — Neve, Vinho e Memórias",
 //    eyebrow: "Travel Concierge · Santiago, Chile",
+//    marcaTexto: "Travel Concierge",              // opcional — texto puro (título da aba, eyebrow padrão)
+//    marcaHTML: "Travel <span>Concierge</span>",   // opcional — HTML da marca (topbar + rodapé, 2ª palavra em coral)
 //    heroImage: "https://images.unsplash.com/...",
 //    pills: ["✈️ 15 a 23 de julho", "👨‍👩‍👧 4 pessoas"],
 //    visaoGeral: [ {label, value, variant?} ],  // variant: 'coral'|'green'|''
@@ -572,13 +574,18 @@ function renderRoteiro() {
   }
   const D = ROTEIRO_DATA;
 
+  // Marca (opcional — permite reaproveitar o template para outras frentes,
+  // como o Clube do Viajante, sem alterar o padrão do Travel Concierge)
+  document.getElementById('topbar-brand-text').innerHTML = D.marcaHTML || 'Travel <span>Concierge</span>';
+  document.getElementById('footer-brand').innerHTML = D.marcaHTML || 'Travel <span>Concierge</span>';
+
   // Title
-  document.getElementById('page-title').textContent = (D.titulo||'Roteiro') + ' · Travel Concierge';
+  document.getElementById('page-title').textContent = (D.titulo||'Roteiro') + ' · ' + (D.marcaTexto||'Travel Concierge');
 
 
   // Hero
   if (D.heroImage) document.getElementById('hero-img').style.backgroundImage = `url('${D.heroImage}')`;
-  document.getElementById('hero-eyebrow').textContent = D.eyebrow||'Travel Concierge';
+  document.getElementById('hero-eyebrow').textContent = D.eyebrow||D.marcaTexto||'Travel Concierge';
   document.getElementById('hero-title').innerHTML = (D.titulo||'').replace(' & ','<br>');
   document.getElementById('hero-subtitle').textContent = D.subtitulo||'';
   document.getElementById('hero-pills').innerHTML = (D.pills||[]).map(p=>`<span class="pill">${p}</span>`).join('');
