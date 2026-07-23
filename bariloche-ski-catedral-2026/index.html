@@ -397,23 +397,56 @@ hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
 // ══════════════════════════════════════════════════════════════
 
 const ROTEIRO_DATA = {
-  titulo: "Bariloche · Cerro Catedral",
-  subtitulo: "Sete Dias de Neve, Vinho e Patagônia",
-  eyebrow: "Travel Concierge · Bariloche, Argentina · Agosto 2026",
+  titulo: "Entre Pistas e Vinhos",
+  subtitulo: "Bariloche 2026 \u2014 Ski, Boa Mesa e Patag\u00f4nia",
+  eyebrow: "Travel Concierge \u00b7 Bariloche, Argentina \u00b7 Agosto 2026",
   heroImage: "https://images.unsplash.com/photo-1617548437735-92d875423353?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  pills: ["\u2708\ufe0f 1 a 7 de agosto de 2026", "\ud83d\udc64 1 viajante", "\ud83c\udfbf 4 dias de ski com aula particular"],
+  pills: ["\u2708\ufe0f 1 a 7 de agosto de 2026", "\ud83d\udc64 Viagem solo", "\ud83c\udfbf 4 dias de aula particular de ski"],
   visaoGeral: [
     { label: "Destino", value: "San Carlos de Bariloche, Argentina" },
     { label: "Per\u00edodo", value: "1 a 7 de agosto de 2026" },
     { label: "Viajante", value: "Diego Leoni Sandim da Silva" },
     { label: "Hotel", value: "Hotel Catedral Patagonia Ski & Wellness", variant: "coral" },
-    { label: "Localiza\u00e7\u00e3o", value: "Villa Cerro Catedral \u2014 ski in / ski out" },
+    { label: "Localiza\u00e7\u00e3o", value: "Villa Cerro Catedral \u2014 na base da montanha" },
+    { label: "Companhia", value: "LATAM Airlines \u2014 voo direto" },
     { label: "Dura\u00e7\u00e3o", value: "7 dias / 6 noites" },
-    { label: "Ritmo", value: "Moderado \u2014 esqui pela manh\u00e3, tardes livres", variant: "green" },
-    { label: "Alta temporada", value: "Invierno na Patag\u00f4nia \u2014 reservas antecipadas" }
+    { label: "Estilo", value: "Ski + boa mesa + natureza", variant: "green" },
+    { label: "Ritmo", value: "Moderado" },
+    { label: "Clima em agosto", value: "Inverno intenso \u00b7 -2\u00b0C a 8\u00b0C \u00b7 escurece ~18h" }
   ],
-  obs: "Roteiro desenhado em torno do Cerro Catedral, com hospedagem na pr\u00f3pria base da montanha \u2014 quatro dias dedicados ao ski com aula particular e os demais reservados para o Circuito Chico, Llao Llao e o centro de Bariloche. Dados dos voos ser\u00e3o inclu\u00eddos assim que confirmados.",
-  voos: [],
+  obs: "Roteiro constru\u00eddo em torno do Cerro Catedral, com hospedagem na pr\u00f3pria base da montanha \u2014 quatro dias dedicados ao ski com aula particular e os demais reservados ao Circuito Chico, Llao Llao e ao centro de Bariloche. Leve roupas t\u00e9rmicas e imperme\u00e1veis, reserve aulas e equipamento com anteced\u00eancia e garanta mesa nos restaurantes principais: agosto \u00e9 alta temporada de neve.",
+  voos: [
+    {
+      tipo: "ida",
+      origemIata: "GRU",
+      origemNome: "S\u00e3o Paulo \u00b7 Guarulhos",
+      destinoIata: "BRC",
+      destinoNome: "Bariloche \u00b7 Tte. Luis Candelaria",
+      data: "2026-08-01",
+      horaPartida: "Manh\u00e3 \u2014 a confirmar",
+      horaChegada: "16:00",
+      cia: "LATAM Airlines",
+      nvoo: "A confirmar",
+      conexao: "Voo direto",
+      classe: "Econ\u00f4mica",
+      pnr: "A confirmar"
+    },
+    {
+      tipo: "volta",
+      origemIata: "BRC",
+      origemNome: "Bariloche \u00b7 Tte. Luis Candelaria",
+      destinoIata: "GRU",
+      destinoNome: "S\u00e3o Paulo \u00b7 Guarulhos",
+      data: "2026-08-07",
+      horaPartida: "18:10",
+      horaChegada: "A confirmar",
+      cia: "LATAM Airlines",
+      nvoo: "A confirmar",
+      conexao: "Voo direto",
+      classe: "Econ\u00f4mica",
+      pnr: "A confirmar"
+    }
+  ],
   hospedagem: [
     {
       nome: "Hotel Catedral Patagonia Ski & Wellness",
@@ -426,81 +459,89 @@ const ROTEIRO_DATA = {
     }
   ],
   servicos: [
-    { tipo: "passeio", icon: "\ud83c\udfbf", nome: "Aula particular de ski \u2014 Cerro Catedral", meta: "4 dias (02 a 05 de agosto) \u2014 cota\u00e7\u00e3o a confirmar", badge: "A confirmar" },
-    { tipo: "outro", icon: "\ud83e\udd7f", nome: "Loca\u00e7\u00e3o de equipamento de ski", meta: "Botas, esqui e bast\u00f5es \u2014 retirada na base do Catedral", badge: "A confirmar" },
-    { tipo: "outro", icon: "\ud83c\udfab", nome: "Passe de teleféricos Cerro Catedral", meta: "Compra online antecipada recomendada em alta temporada", badge: "A confirmar" },
+    { tipo: "passeio", icon: "\ud83c\udfbf", nome: "Aula particular de ski \u2014 Escola La Base", meta: "4 dias (02 a 05 de agosto) \u00b7 aula exclusiva de 3h \u00b7 refer\u00eancia ARS 297.000 \u2248 R$ 1.040/dia", badge: "A reservar" },
+    { tipo: "outro", icon: "\ud83e\udd7f", nome: "Loca\u00e7\u00e3o de equipamento de ski", meta: "Ski completo standard \u00b7 refer\u00eancia ARS 40.000 \u2248 R$ 140/dia \u00b7 retirada na base", badge: "A reservar" },
+    { tipo: "outro", icon: "\ud83c\udfab", nome: "Passe di\u00e1rio Cerro Catedral", meta: "Faixa indicativa R$ 560 a R$ 770/dia \u00b7 conferir tarifa oficial antes da compra", badge: "A confirmar" },
     { tipo: "carro", icon: "\ud83d\ude90", nome: "Transfer aeroporto BRC \u2192 Cerro Catedral", meta: "O hotel solicita contato com at\u00e9 24h de anteced\u00eancia para organizar o traslado", badge: "Solicitar" }
   ],
   dias: [
     {
       num: 1,
       data: "2026-08-01",
-      titulo: "Chegada, check-in na montanha e primeira noite na base",
-      resumo: "Dia de chegada com transi\u00e7\u00e3o suave: traslado do aeroporto direto para a base do Cerro Catedral, check-in a partir das 16h e uma primeira noite tranquila para se ambientar ao frio e \u00e0 altitude do vale.",
+      titulo: "Chegada, check-in na montanha e jantar de boas-vindas",
+      resumo: "Primeiro dia para chegar sem correria, subir direto do aeroporto para a base do Cerro Catedral e j\u00e1 entrar no clima da viagem. A ideia \u00e9 evitar o centro e deslocamentos longos, fazer um check-in confort\u00e1vel, sentir a neve ao redor e jantar bem logo na primeira noite.",
       energia: "Leve",
       atividades: [
-        { horario: "Chegada", nome: "Desembarque no Aeroporto de Bariloche (BRC)", descricao: "Aeroporto Teniente Luis Candelaria, cerca de 14 km do centro. O trajeto direto at\u00e9 o Cerro Catedral leva aproximadamente 37 minutos de carro.", dica: "O hotel pede contato com pelo menos 24 horas de anteced\u00eancia para organizar o traslado \u2014 deixe isso resolvido antes de embarcar." },
-        { horario: "16:00", nome: "Check-in \u2014 Hotel Catedral Patagonia Ski & Wellness", descricao: "Hospedagem na pr\u00f3pria Villa Cerro Catedral, na base da montanha. A vantagem \u00e9 come\u00e7ar a esquiar sem deslocamento nos dias seguintes.", dica: "Check-in a partir das 16h; check-out no dia 07 \u00e0s 10h. Reserva n\u00e3o reembols\u00e1vel \u2014 evite altera\u00e7\u00f5es." },
-        { horario: "18:00", nome: "Fim de tarde na base \u2014 drink, vinho ou caf\u00e9", descricao: "Uma volta curta pela vila da base para reconhecer os pontos de aluguel de equipamento, escolas de ski e restaurantes que ser\u00e3o usados nos pr\u00f3ximos dias.", dica: "Aproveite para j\u00e1 confirmar hor\u00e1rio da aula particular e retirada do equipamento no dia seguinte." },
-        { horario: "20:30", nome: "Jantar na base do Catedral", descricao: "Primeira noite sem deslocamento: jantar na pr\u00f3pria vila, com foco em descanso antes do primeiro dia de neve.", dica: "Em alta temporada, vale reservar mesa \u2014 a base lota nos fins de semana." }
+        { horario: "16:00 \u2013 16:45", nome: "Desembarque e retirada de bagagem no aeroporto de Bariloche", descricao: "Com chegada \u00e0s 16h, o melhor \u00e9 sair sem perder tempo com o centro e seguir direto para o Cerro Catedral. O trajeto at\u00e9 a base leva cerca de 39 minutos de carro; de transporte p\u00fablico, pode passar de 1h50 com conex\u00e3o.", dica: "Para esse primeiro trecho vale transfer privado ou t\u00e1xi/remis, especialmente por causa do frio, da bagagem e do movimento de alta temporada." },
+        { horario: "16:45 \u2013 17:30", nome: "Transfer para o hotel na base do Cerro Catedral", descricao: "O foco aqui \u00e9 efici\u00eancia. Com 4 dias de aula particular pela frente, dormir na base da montanha reduz muito o desgaste de manh\u00e3 cedo. O Hotel Catedral Patagonia fica a metros dos meios de eleva\u00e7\u00e3o e tem spa e gastronomia no pr\u00f3prio complexo.", dica: "Avise o hotel sobre o check-in mais tarde e pe\u00e7a apoio para a pr\u00e9-reserva da aula particular do dia seguinte." },
+        { horario: "17:30 \u2013 18:30", nome: "Check-in e reconhecimento da base do Cerro Catedral", descricao: "Momento de se ambientar e ver onde ficam os acessos, o rental e a escola. O Cerro Catedral \u00e9 o principal centro de ski da regi\u00e3o e funciona como uma pequena base-vila de montanha.", dica: "Antes de dormir, confirme o parte di\u00e1rio da montanha e o ponto exato de encontro da aula." },
+        { horario: "18:30 \u2013 19:15", nome: "Drink ou caf\u00e9 no hotel \u2014 pausa after-travel", descricao: "Come\u00e7ar a viagem num ritmo elegante e sem pressa. O hotel tem bar pr\u00f3prio e mais de uma op\u00e7\u00e3o gastron\u00f4mica no complexo.", dica: "Pe\u00e7a uma ta\u00e7a de vinho patag\u00f4nico e descanse cedo \u2014 o ski rende muito mais quando o dia come\u00e7a inteiro." },
+        { horario: "20:00 \u2013 22:00", nome: "Jantar de boas-vindas \u2014 HANS Restaurant ou Bar Catedral", descricao: "O Hotel Catedral opera diferentes espa\u00e7os gastron\u00f4micos, entre eles o HANS Restaurant (cozinha autoral patag\u00f4nica, R$ 160 a R$ 240) e o Bar Catedral (bar e coquetelaria, R$ 80 a R$ 160). A Casa Cumbre, na base, \u00e9 alternativa para fondue noturna (R$ 120 a R$ 220).", dica: "Como \u00e9 s\u00e1bado de alta temporada, vale reservar. Na chegada, evite jantar no centro para n\u00e3o perder tempo em deslocamento." }
       ],
-      deslocamentos: ["Aeroporto BRC \u2192 Cerro Catedral: carro/transfer, ~37 min"],
+      deslocamentos: [
+        "Aeroporto BRC \u2192 hotel na base do Cerro Catedral: carro app / t\u00e1xi / remis privado, ~39 min (refer\u00eancia de t\u00e1xi ARS 55.000 a 70.000)",
+        "Hotel \u2192 restaurantes do complexo e da base: a p\u00e9"
+      ],
       custos: [
-        { label: "Transfer aeroporto \u2192 Cerro Catedral", valor: "R$ 180 a R$ 260" },
-        { label: "Drink / vinho / caf\u00e9", valor: "R$ 35 a R$ 80" },
-        { label: "Jantar na base", valor: "R$ 120 a R$ 240" }
+        { label: "Transfer aeroporto \u2192 Cerro Catedral", valor: "R$ 195 a R$ 245" },
+        { label: "Drink / vinho no hotel", valor: "R$ 35 a R$ 70" },
+        { label: "Jantar no hotel / base", valor: "R$ 120 a R$ 220" }
       ],
-      custoTotal: "R$ 335 a R$ 580"
+      custoTotal: "R$ 350 a R$ 535"
     },
     {
       num: 2,
       data: "2026-08-02",
-      titulo: "Primeiro dia de ski com aula particular",
-      resumo: "O dia de calibrar tudo: retirada do equipamento, primeira aula particular e reconhecimento das pistas do Catedral. Manh\u00e3 dedicada \u00e0 t\u00e9cnica, tarde livre para repetir o que foi aprendido.",
-      energia: "Intenso",
+      titulo: "Primeira imers\u00e3o no ski + after-ski com vista",
+      resumo: "Agora come\u00e7a a viagem de verdade: manh\u00e3 organizada, aula particular no Cerro Catedral e tarde de pr\u00e1tica leve para ganhar confian\u00e7a. Como voc\u00ea est\u00e1 hospedado na base, o dia fica muito mais fluido e sem perda de tempo em estrada.",
+      energia: "Moderado",
       atividades: [
-        { horario: "08:30 \u2013 09:30", nome: "Retirada do equipamento e ajuste de botas", descricao: "Esqui, bast\u00f5es, botas e capacete. O ajuste da bota \u00e9 o que define o conforto do dia inteiro \u2014 vale gastar tempo aqui.", dica: "V\u00e1 cedo: nas primeiras horas as filas das lojas de aluguel na base s\u00e3o bem menores." },
-        { horario: "10:00 \u2013 12:00", nome: "Aula particular de ski \u2014 n\u00edvel inicial", descricao: "Duas horas de aula individual nas pistas-escola da base, trabalhando postura, freio em cunha e primeiras curvas.", dica: "Aula particular rende muito mais que aula em grupo no primeiro dia \u2014 confirme o instrutor com anteced\u00eancia." },
-        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "Pausa quente na base do Catedral, com op\u00e7\u00f5es de refei\u00e7\u00e3o r\u00e1pida e restaurantes com vista para as pistas.", dica: "Almo\u00e7ar por volta das 12h30 evita o pico das 13h." },
-        { horario: "14:00 \u2013 16:30", nome: "Pr\u00e1tica livre nas pistas", descricao: "Tarde para consolidar o que foi visto na aula, sem instrutor, nas pistas mais suaves.", dica: "A luz e a neve ficam melhores no meio da tarde; encerre antes do fim do funcionamento dos meios de eleva\u00e7\u00e3o." },
-        { horario: "17:30", nome: "After-ski na base", descricao: "Vinho, cerveja ou caf\u00e9 na base \u2014 parte essencial da cultura de montanha em Bariloche.", dica: "Alongar as pernas depois do primeiro dia faz muita diferen\u00e7a no segundo." },
-        { horario: "20:30", nome: "Jantar", descricao: "Jantar na base, sem deslocamento, para preservar energia para o segundo dia de ski.", dica: "Hidrate-se bem: o ar seco de montanha desidrata mais do que parece." }
+        { horario: "08:30 \u2013 09:00", nome: "Caf\u00e9 da manh\u00e3 e prepara\u00e7\u00e3o de equipamento", descricao: "Acordar na base do Cerro Catedral \u00e9 justamente o ganho log\u00edstico que faz diferen\u00e7a em viagem de ski: d\u00e1 para tomar caf\u00e9 com calma e chegar sem correria ao ponto da aula.", dica: "Saia j\u00e1 com camada t\u00e9rmica, luvas, gola e \u00f3culos \u2014 o vento muda r\u00e1pido." },
+        { horario: "09:00 \u2013 09:30", nome: "Retirada de equipamento e ajuste de botas", descricao: "A escola La Base fica no acesso \u00e0s pistas, em posi\u00e7\u00e3o muito pr\u00e1tica, e tamb\u00e9m opera aluguel de equipamentos.", dica: "Para o primeiro dia, fique no ski completo standard e s\u00f3 migre para categoria superior se fizer sentido depois." },
+        { horario: "09:30 \u2013 12:30", nome: "Aula particular de ski (3h) \u2014 dia 1 de 4", descricao: "A La Base publica tarifa de aula exclusiva de 3 horas e trabalha com instrutores certificados \u2014 bom encaixe para o pedido de aula particular.", dica: "Sendo a primeira vez, foque em base, frenagem, giro e confian\u00e7a em pista verde. N\u00e3o vale queimar etapa no primeiro dia." },
+        { horario: "12:30 \u2013 13:45", nome: "Almo\u00e7o na montanha", descricao: "O ideal \u00e9 almo\u00e7ar perto da base para n\u00e3o quebrar o ritmo. O Sur Bistr\u00f3 aparece ativo na temporada de inverno, com opera\u00e7\u00e3o di\u00e1ria ao meio-dia (R$ 90 a R$ 150), e a Casa Cumbre tamb\u00e9m \u00e9 boa pedida de almo\u00e7o.", dica: "Escolha algo leve. Esquiar \u00e0 tarde depois de almo\u00e7o pesado derruba muito." },
+        { horario: "14:00 \u2013 16:00", nome: "Pr\u00e1tica leve em \u00e1rea de iniciante", descricao: "Depois da aula, vale repetir os movimentos aprendidos enquanto ainda est\u00e3o frescos no corpo. O objetivo n\u00e3o \u00e9 volume, e sim consolidar t\u00e9cnica.", dica: "Encerre antes de cansar demais \u2014 o primeiro dia costuma cobrar joelho, panturrilha e p\u00e9s." },
+        { horario: "16:15 \u2013 17:30", nome: "After-ski \u2014 Casa Cumbre ou bar do hotel", descricao: "Um dos melhores momentos de viagem de neve: baixar a adrenalina, tomar um vinho ou chocolate quente e curtir a montanha ainda acesa.", dica: "Se bater fadiga, troque o after por spa e piscina aquecida no hotel, que tem estrutura de wellness coberta." },
+        { horario: "20:00 \u2013 22:00", nome: "Jantar descontra\u00eddo na base", descricao: "Para o segundo dia, mantenha o jantar na base tamb\u00e9m, sem ir ao centro, preservando energia para os pr\u00f3ximos dias de aula.", dica: "Cabe repetir o hotel ou fazer a Casa Cumbre se quiser um clima mais animado." }
       ],
-      deslocamentos: ["Hotel \u2192 base do Catedral: a p\u00e9 (ski in / ski out)"],
+      deslocamentos: [
+        "Hotel \u2192 rental / escola La Base: a p\u00e9",
+        "Escola e pistas iniciantes \u2192 almo\u00e7o na base: a p\u00e9",
+        "Almo\u00e7o \u2192 pr\u00e1tica da tarde: a p\u00e9 / meios de eleva\u00e7\u00e3o conforme n\u00edvel",
+        "After-ski \u2192 hotel: a p\u00e9"
+      ],
       custos: [
-        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
+        { label: "Aula particular 3h (La Base) \u2014 ARS 297.000", valor: "\u2248 R$ 1.040" },
+        { label: "Aluguel ski completo standard \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
+        { label: "Passe de montanha / ski pass di\u00e1rio", valor: "R$ 560 a R$ 770" },
+        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 160" },
         { label: "After-ski / vinho / caf\u00e9", valor: "R$ 35 a R$ 90" },
-        { label: "Jantar", valor: "R$ 120 a R$ 240" }
+        { label: "Jantar", valor: "R$ 120 a R$ 220" }
       ],
-      custoTotal: "R$ 245 a R$ 500 + cota\u00e7\u00f5es de ski"
+      custoTotal: "R$ 1.985 a R$ 2.420"
     },
     {
       num: 3,
       data: "2026-08-03",
-      titulo: "Segundo dia de ski + noite de vinho no centro",
+      titulo: "Segundo dia de ski + vinho e jantar no centro",
       resumo: "Com a base t\u00e9cnica do primeiro dia, o segundo rende muito mais. \u00c0 noite, a viagem ganha outro ritmo: descida ao centro de Bariloche para um wine bar e um jantar melhor.",
-      energia: "Intenso",
+      energia: "Moderado",
       atividades: [
-        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 2", descricao: "Progress\u00e3o para curvas paralelas e pistas um pouco mais longas, aproveitando o condicionamento do dia anterior.", dica: "Se o tempo estiver aberto, pe\u00e7a ao instrutor para subir mais alto \u2014 a vista do Catedral sobre o Lago Gutiérrez compensa." },
-        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "Refei\u00e7\u00e3o na base entre a aula e a pr\u00e1tica livre da tarde.", dica: "Mantenha o almo\u00e7o leve se pretende voltar \u00e0s pistas." },
-        { horario: "14:00 \u2013 16:30", nome: "Pr\u00e1tica livre", descricao: "Tarde nas pistas repetindo o que foi trabalhado na aula.", dica: "Encerre com energia sobrando \u2014 a noite tem programa no centro." },
-        { horario: "19:30 \u2013 21:00", nome: "Wine bar no centro de Bariloche", descricao: "A cena de vinhos de Bariloche \u00e9 forte, com boa presen\u00e7a de Patag\u00f4nia e Mendoza por ta\u00e7a. Um bom aquecimento antes do jantar.", dica: "Pe\u00e7a por ta\u00e7a para comparar Malbec de Mendoza com Pinot Noir da Patag\u00f4nia." },
-        { horario: "21:00 \u2013 23:00", nome: "Jantar no centro", descricao: "Jantar mais caprichado no centro, aproveitando que o deslocamento j\u00e1 foi feito.", dica: "Reserve com anteced\u00eancia \u2014 em agosto o centro fica cheio, especialmente aos fins de semana." }
+        { horario: "09:30 \u2013 12:30", nome: "Aula particular de ski \u2014 dia 2 de 4", descricao: "Progress\u00e3o para curvas mais fluidas e pistas um pouco mais longas, aproveitando o condicionamento do dia anterior.", dica: "Bloco a detalhar com voc\u00ea \u2014 este dia ainda n\u00e3o foi escrito na vers\u00e3o longa." },
+        { horario: "12:30 \u2013 13:45", nome: "Almo\u00e7o na base", descricao: "Refei\u00e7\u00e3o na base entre a aula e a pr\u00e1tica livre da tarde.", dica: "Mantenha o almo\u00e7o leve se pretende voltar \u00e0s pistas." },
+        { horario: "19:30 \u2013 23:00", nome: "Wine bar e jantar no centro de Bariloche", descricao: "Noite no centro, com wine bar antes do jantar \u2014 boa oportunidade para comparar Malbec de Mendoza com Pinot Noir da Patag\u00f4nia.", dica: "Reserve com anteced\u00eancia: em agosto o centro fica cheio." }
       ],
       deslocamentos: [
         "Hotel \u2192 base do Catedral: a p\u00e9",
-        "Cerro Catedral \u2192 centro de Bariloche: carro/app, ~24 a 25 min (\u00f4nibus linha 55, ~35 a 38 min)",
-        "Centro \u2192 Cerro Catedral (retorno noturno): carro/app"
+        "Cerro Catedral \u2192 centro: carro/app, ~24 a 25 min (\u00f4nibus linha 55, ~35 a 38 min)",
+        "Centro \u2192 Cerro Catedral: carro/app"
       ],
       custos: [
         { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
         { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
         { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
         { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
-        { label: "T\u00e1xi / app \u2014 noite (ida e volta)", valor: "R$ 220 a R$ 380" },
+        { label: "T\u00e1xi / app \u2014 noite", valor: "R$ 220 a R$ 380" },
         { label: "Wine bar", valor: "R$ 80 a R$ 180" },
         { label: "Jantar", valor: "R$ 180 a R$ 320" }
       ],
@@ -510,13 +551,12 @@ const ROTEIRO_DATA = {
       num: 4,
       data: "2026-08-04",
       titulo: "Terceiro dia de ski + caf\u00e9 de especialidade no centro",
-      resumo: "Dia de ski mais solto, sem a tens\u00e3o dos primeiros. \u00c0 tarde, descida ao centro para um caf\u00e9 de especialidade e uma volta calma pelo Centro C\u00edvico antes de um jantar leve.",
+      resumo: "Dia de ski mais solto, sem a tens\u00e3o dos primeiros. \u00c0 tarde, descida ao centro para um caf\u00e9 de especialidade e uma volta calma antes de um jantar leve.",
       energia: "Moderado",
       atividades: [
-        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 3", descricao: "Terceira aula, j\u00e1 explorando setores diferentes da montanha e pistas mais variadas.", dica: "Este costuma ser o dia em que o esqui \u201cengata\u201d \u2014 vale insistir mesmo se o dia 2 pareceu dif\u00edcil." },
-        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "\u00daltima refei\u00e7\u00e3o na montanha antes de descer para o centro.", dica: "Guarde o equipamento no hotel \u2014 n\u00e3o vale carregar at\u00e9 o centro." },
-        { horario: "15:00 \u2013 16:30", nome: "Centro C\u00edvico e orla do Nahuel Huapi", descricao: "O conjunto de pedra e madeira do Centro C\u00edvico \u00e9 o cart\u00e3o-postal urbano de Bariloche, com vista direta para o lago Nahuel Huapi.", dica: "Fim de tarde \u00e9 o melhor hor\u00e1rio de luz para fotos do lago." },
-        { horario: "16:30 \u2013 17:30", nome: "Caf\u00e9 de especialidade \u2014 QV Caf\u00e9", descricao: "Caf\u00e9 de especialidade em endere\u00e7o central (Moreno 815), com hor\u00e1rio amplo em dias \u00fateis.", dica: "Segunda a sexta das 8h \u00e0s 20h30; s\u00e1bado a partir das 9h; domingo fechado." },
+        { horario: "09:30 \u2013 12:30", nome: "Aula particular de ski \u2014 dia 3 de 4", descricao: "Terceira aula, explorando setores diferentes da montanha e pistas mais variadas.", dica: "Bloco a detalhar com voc\u00ea \u2014 este dia ainda n\u00e3o foi escrito na vers\u00e3o longa." },
+        { horario: "12:30 \u2013 13:45", nome: "Almo\u00e7o na base", descricao: "\u00daltima refei\u00e7\u00e3o na montanha antes de descer para o centro.", dica: "Guarde o equipamento no hotel \u2014 n\u00e3o vale carregar at\u00e9 o centro." },
+        { horario: "16:30 \u2013 17:30", nome: "Caf\u00e9 de especialidade \u2014 QV Caf\u00e9", descricao: "Caf\u00e9 de especialidade em endere\u00e7o central, na Moreno 815, com hor\u00e1rio amplo em dias \u00fateis.", dica: "Segunda a sexta das 8h \u00e0s 20h30; s\u00e1bado a partir das 9h; domingo fechado." },
         { horario: "20:00", nome: "Jantar leve", descricao: "Jantar sem excessos para preservar energia para o quarto e \u00faltimo dia de ski.", dica: "Se quiser encurtar a noite, jante no centro antes de subir de volta." }
       ],
       deslocamentos: [
@@ -538,14 +578,13 @@ const ROTEIRO_DATA = {
     {
       num: 5,
       data: "2026-08-05",
-      titulo: "\u00daltimo dia de ski + jantar especial na regi\u00e3o de Llao Llao",
+      titulo: "\u00daltimo dia de ski + jantar especial em Llao Llao",
       resumo: "O quarto e \u00faltimo dia na neve, aproveitando o melhor n\u00edvel t\u00e9cnico da semana. \u00c0 noite, o jantar mais especial da viagem, na regi\u00e3o de Llao Llao, cercado por lago e floresta.",
-      energia: "Intenso",
+      energia: "Moderado",
       atividades: [
-        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 4", descricao: "\u00daltima aula, aproveitando o melhor n\u00edvel da semana para fechar com pistas mais desafiadoras.", dica: "Devolva o equipamento ainda hoje se n\u00e3o for esquiar no dia 06 \u2014 evita corre-corre no \u00faltimo dia." },
-        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "\u00daltimo almo\u00e7o de bota calçada da viagem.", dica: "Vale escolher um restaurante com deck ao sol para fechar bem a semana de ski." },
-        { horario: "14:00 \u2013 16:00", nome: "Descanso / wellness no hotel", descricao: "Tarde reservada para recuperar as pernas depois de quatro dias consecutivos de neve, aproveitando a estrutura de wellness do hotel.", dica: "Confirme na recep\u00e7\u00e3o os hor\u00e1rios de spa e piscina aquecida." },
-        { horario: "19:30 \u2013 22:30", nome: "Jantar especial na regi\u00e3o de Llao Llao", descricao: "A regi\u00e3o de Llao Llao, a cerca de 25 km do centro, concentra os restaurantes de vista mais bonitos de Bariloche, entre o Nahuel Huapi e a floresta andina.", dica: "Reserva obrigat\u00f3ria em agosto, e combine o retorno com o motorista \u2014 a regi\u00e3o tem pouca oferta de app tarde da noite." }
+        { horario: "09:30 \u2013 12:30", nome: "Aula particular de ski \u2014 dia 4 de 4", descricao: "\u00daltima aula, aproveitando o melhor n\u00edvel da semana para fechar com pistas mais desafiadoras.", dica: "Bloco a detalhar com voc\u00ea \u2014 este dia ainda n\u00e3o foi escrito na vers\u00e3o longa." },
+        { horario: "12:30 \u2013 13:45", nome: "Almo\u00e7o na base", descricao: "\u00daltimo almo\u00e7o de bota cal\u00e7ada da viagem.", dica: "Devolva o equipamento ainda hoje se n\u00e3o for esquiar no dia 06." },
+        { horario: "19:30 \u2013 22:30", nome: "Jantar especial na regi\u00e3o de Llao Llao", descricao: "A regi\u00e3o de Llao Llao concentra os restaurantes de vista mais bonitos de Bariloche, entre o Nahuel Huapi e a floresta andina.", dica: "Reserva obrigat\u00f3ria em agosto \u2014 e combine o retorno com o motorista, porque a regi\u00e3o tem pouca oferta de app tarde da noite." }
       ],
       deslocamentos: [
         "Hotel \u2192 base do Catedral: a p\u00e9",
@@ -569,9 +608,9 @@ const ROTEIRO_DATA = {
       resumo: "Dia sem esqui, dedicado \u00e0 paisagem: o Circuito Chico com suas ba\u00edas e mirantes, a subida ao Cerro Campanario para a vista mais famosa da regi\u00e3o e um almo\u00e7o com vista para o Nahuel Huapi.",
       energia: "Moderado",
       atividades: [
-        { horario: "09:30 \u2013 12:30", nome: "Circuito Chico", descricao: "Percurso cl\u00e1ssico de estrada entre lagos, penínsulas e mirantes a oeste de Bariloche, passando por Llao Llao e Bah\u00eda L\u00f3pez.", dica: "Fa\u00e7a com carro/app por hora ou motorista contratado \u2014 as paradas s\u00e3o curtas e frequentes." },
-        { horario: "12:30 \u2013 13:30", nome: "Cerro Campanario \u2014 aerosilla", descricao: "Subida de aerosilla at\u00e9 o mirante do Campanario, com vista 360\u00b0 sobre o Nahuel Huapi, o Moreno e a p\u00e9nínsula de Llao Llao.", dica: "\u00c9 a vista mais fotografada de Bariloche \u2014 v\u00e1 com c\u00e9u aberto e reserve uns 40 minutos no topo." },
-        { horario: "13:30 \u2013 15:00", nome: "Almo\u00e7o com vista", descricao: "Almo\u00e7o na regi\u00e3o do Circuito Chico, aproveitando os restaurantes voltados para o lago.", dica: "Reserve \u2014 os endere\u00e7os com vista enchem no hor\u00e1rio de almo\u00e7o." },
+        { horario: "09:30 \u2013 12:30", nome: "Circuito Chico", descricao: "Percurso cl\u00e1ssico de estrada entre lagos, pen\u00ednsulas e mirantes a oeste de Bariloche, passando por Llao Llao e Bah\u00eda L\u00f3pez.", dica: "Bloco a detalhar com voc\u00ea \u2014 este dia ainda n\u00e3o foi escrito na vers\u00e3o longa." },
+        { horario: "12:30 \u2013 13:30", nome: "Cerro Campanario \u2014 aerosilla", descricao: "Subida de aerosilla at\u00e9 o mirante do Campanario, com vista sobre o Nahuel Huapi, o Moreno e a pen\u00ednsula de Llao Llao.", dica: "\u00c9 a vista mais fotografada de Bariloche \u2014 v\u00e1 com c\u00e9u aberto e reserve uns 40 minutos no topo." },
+        { horario: "13:30 \u2013 15:00", nome: "Almo\u00e7o com vista", descricao: "Almo\u00e7o na regi\u00e3o do Circuito Chico, nos restaurantes voltados para o lago.", dica: "Reserve \u2014 os endere\u00e7os com vista enchem no hor\u00e1rio de almo\u00e7o." },
         { horario: "16:30 \u2013 17:30", nome: "Caf\u00e9 de especialidade no centro", descricao: "Parada final de caf\u00e9 no centro antes de subir de volta \u00e0 montanha.", dica: "Bom momento para comprar chocolates e lembran\u00e7as \u2014 evita fazer isso correndo no \u00faltimo dia." },
         { horario: "20:00", nome: "Jantar leve", descricao: "Jantar tranquilo para fechar o \u00faltimo dia cheio da viagem.", dica: "Organize a mala hoje \u00e0 noite \u2014 o check-out \u00e9 \u00e0s 10h." }
       ],
@@ -593,27 +632,27 @@ const ROTEIRO_DATA = {
       num: 7,
       data: "2026-08-07",
       titulo: "Manh\u00e3 leve, \u00faltimo caf\u00e9 e retorno sem correria",
-      resumo: "\u00daltimo dia desenhado para ser elegante e funcional: manh\u00e3 sem pressa, brunch no centro, uma volta curta e sa\u00edda organizada para o aeroporto, com folga confort\u00e1vel antes do voo.",
+      resumo: "\u00daltimo dia desenhado para ser elegante e funcional: manh\u00e3 sem pressa, um caf\u00e9/brunch bom no centro, tempo para uma volta curta e sa\u00edda organizada para o aeroporto. Como o trajeto do Cerro Catedral at\u00e9 o aeroporto leva cerca de 37 minutos, a melhor estrat\u00e9gia \u00e9 almo\u00e7ar cedo e sair do centro com folga para o voo das 18h10.",
       energia: "Leve",
       atividades: [
-        { horario: "10:00 \u2013 10:40", nome: "Check-out e sa\u00edda da base do Cerro Catedral", descricao: "Como o hotel fica na base, d\u00e1 para fechar as malas com calma e sair sem estresse. Neste \u00faltimo dia, nada de programa longo ou dependente de clima.", dica: "Deixe a bagagem pronta antes do caf\u00e9, para n\u00e3o quebrar a manh\u00e3 com uma volta ao quarto." },
-        { horario: "10:40 \u2013 11:05", nome: "Deslocamento at\u00e9 o centro de Bariloche", descricao: "Do Cerro Catedral ao centro s\u00e3o cerca de 24 a 25 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 35 a 38 minutos pela linha 55.", dica: "No \u00faltimo dia, carro por app ou t\u00e1xi \u00e9 a melhor escolha \u2014 posiciona voc\u00ea bem para caf\u00e9, compras e sa\u00edda ao aeroporto." },
-        { horario: "11:15 \u2013 12:30", nome: "Brunch / caf\u00e9 de encerramento", descricao: "Duas op\u00e7\u00f5es com hor\u00e1rio publicado: QV Caf\u00e9 (Moreno 815), de segunda a sexta das 8h \u00e0s 20h30, e Bruncherie, pastelería de autor e caf\u00e9 de especialidade, todos os dias das 11h \u00e0s 20h.", dica: "Como a volta \u00e9 numa sexta-feira, o QV Caf\u00e9 encaixa bem pela manh\u00e3; a Bruncherie funciona melhor se quiser um brunch mais \u201cprograma\u201d do que caf\u00e9 r\u00e1pido." },
-        { horario: "12:30 \u2013 13:30", nome: "Volta curta pelo centro e compras pontuais", descricao: "Uma \u00faltima passada leve pelo centro, sem transformar o dia em maratona. Como o aeroporto fica a cerca de 14 km, h\u00e1 margem confort\u00e1vel.", dica: "Concentre-se em 1 ou 2 lojas e evite se espalhar." },
+        { horario: "10:00 \u2013 10:40", nome: "Check-out tranquilo e sa\u00edda da base do Cerro Catedral", descricao: "Como o hotel fica na base, d\u00e1 para fechar as malas com calma e sair sem estresse. Neste \u00faltimo dia, evite qualquer programa longo ou dependente de clima.", dica: "Deixe a bagagem pronta antes do caf\u00e9, para n\u00e3o quebrar a manh\u00e3 com uma volta ao quarto." },
+        { horario: "10:40 \u2013 11:05", nome: "Deslocamento at\u00e9 o centro de Bariloche", descricao: "Do Cerro Catedral ao centro s\u00e3o cerca de 24 a 25 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 35 a 38 minutos pela linha 55.", dica: "No \u00faltimo dia, carro app ou t\u00e1xi \u00e9 a melhor escolha \u2014 posiciona voc\u00ea bem para caf\u00e9, compras r\u00e1pidas e sa\u00edda ao aeroporto." },
+        { horario: "11:15 \u2013 12:30", nome: "Brunch / caf\u00e9 de encerramento", descricao: "Duas op\u00e7\u00f5es com hor\u00e1rio publicado: QV Caf\u00e9, na Moreno 815, de segunda a sexta das 8h \u00e0s 20h30 e s\u00e1bado das 9h \u00e0s 20h30 (R$ 35 a R$ 75); e Bruncherie, pastelería de autor e caf\u00e9 de especialidade, todos os dias das 11h \u00e0s 20h (R$ 45 a R$ 95).", dica: "O QV Caf\u00e9 encaixa muito bem pela manh\u00e3; a Bruncherie funciona melhor se voc\u00ea quiser um brunch mais programa do que caf\u00e9 r\u00e1pido." },
+        { horario: "12:30 \u2013 13:30", nome: "Volta curta pelo centro e compras pontuais", descricao: "Uma \u00faltima passada leve pelo centro, sem transformar o dia em maratona. Como o aeroporto fica a cerca de 14 km e o trajeto leva cerca de 17 minutos, h\u00e1 margem confort\u00e1vel.", dica: "Concentre-se em 1 ou 2 lojas e evite se espalhar." },
         { horario: "13:30 \u2013 14:30", nome: "Almo\u00e7o leve", descricao: "Almo\u00e7o simples no centro, perto de onde voc\u00ea j\u00e1 estiver \u2014 comer bem sem alongar demais o dia.", dica: "No \u00faltimo dia vale mais a conveni\u00eancia do que atravessar a cidade por um restaurante espec\u00edfico." },
-        { horario: "14:45 \u2013 15:10", nome: "Sa\u00edda do centro rumo ao aeroporto", descricao: "O deslocamento do centro ao aeroporto leva aproximadamente 17 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 24 minutos, com servi\u00e7o di\u00e1rio.", dica: "Acompanhe o status do voo pela ferramenta oficial da companhia a partir de 48 horas antes da partida." },
-        { horario: "15:15 \u2013 embarque", nome: "Aeroporto BRC \u2014 despacho e embarque", descricao: "Chegada com folga ao aeroporto, despacho de bagagem e embarque. Em alta temporada de inverno, manter essa janela longa \u00e9 a decis\u00e3o mais segura.", dica: "O sal\u00e3o VIP Bariloche by AMAE, no BRC, \u00e9 uma boa op\u00e7\u00e3o de espera \u2014 confirmarei a eleg\u00edbilidade quando os dados do voo estiverem definidos." }
+        { horario: "14:45 \u2013 15:10", nome: "Sa\u00edda do centro rumo ao aeroporto", descricao: "O deslocamento do centro ao aeroporto leva aproximadamente 17 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 24 minutos, com servi\u00e7o di\u00e1rio.", dica: "Acompanhe o status do voo pela ferramenta oficial da LATAM a partir de 48 horas antes da partida." },
+        { horario: "15:15 \u2013 18:10", nome: "Aeroporto BRC \u2014 despacho e embarque", descricao: "Chegada com folga, despacho de bagagem e embarque no voo das 18h10. Em alta temporada de inverno, manter essa janela longa \u00e9 a decis\u00e3o mais segura.", dica: "O sal\u00e3o VIP Bariloche by AMAE, no BRC, \u00e9 uma boa op\u00e7\u00e3o de espera \u2014 confirmarei a eleg\u00edbilidade quando o n\u00famero do voo estiver definido." }
       ],
       deslocamentos: [
-        "Cerro Catedral \u2192 centro: carro/app, ~24 a 25 min (\u00f4nibus ~35 a 38 min)",
-        "Centro \u2192 aeroporto BRC: carro/app, ~17 min (\u00f4nibus ~24 min)",
-        "Alternativa direta \u2014 Cerro Catedral \u2192 aeroporto: ~37 min de carro"
+        "Cerro Catedral \u2192 centro: carro app / t\u00e1xi, ~24 a 25 min (\u00f4nibus ~35 a 38 min)",
+        "Centro \u2192 aeroporto BRC: carro app / t\u00e1xi, ~17 min (\u00f4nibus ~24 min)",
+        "Alternativa direta \u2014 Cerro Catedral \u2192 aeroporto: ~37 min de carro (\u00f4nibus com conex\u00e3o, ~1h41)"
       ],
       custos: [
-        { label: "T\u00e1xi / app Cerro Catedral \u2192 centro", valor: "R$ 90 a R$ 160" },
+        { label: "Carro app / t\u00e1xi Cerro Catedral \u2192 centro", valor: "R$ 90 a R$ 160" },
         { label: "Brunch / caf\u00e9 especial", valor: "R$ 35 a R$ 95" },
         { label: "Almo\u00e7o leve", valor: "R$ 70 a R$ 150" },
-        { label: "T\u00e1xi / app centro \u2192 aeroporto", valor: "R$ 60 a R$ 120" }
+        { label: "Carro app / t\u00e1xi centro \u2192 aeroporto", valor: "R$ 60 a R$ 120" }
       ],
       custoTotal: "R$ 255 a R$ 525"
     }
@@ -622,12 +661,12 @@ const ROTEIRO_DATA = {
     { icon: "\ud83d\udec2", titulo: "Passaporte ou RG", meta: "Documento v\u00e1lido para entrada na Argentina", badge: "Obrigat\u00f3rio", badgeClass: "badge-coral" },
     { icon: "\ud83d\udee1\ufe0f", titulo: "Seguro Viagem", meta: "Cobertura internacional com pr\u00e1tica de esportes de neve", badge: "Essencial", badgeClass: "badge-coral" },
     { icon: "\ud83c\udfe8", titulo: "Hospedagem", meta: "Voucher Hoteis.com \u2014 itiner\u00e1rio 72074033997375", badge: "Voucher", badgeClass: "badge-green" },
-    { icon: "\ud83e\udeaa", titulo: "Cart\u00e3o de Embarque", meta: "Comprovantes de embarque de todos os voos", badge: "Embarque", badgeClass: "" },
+    { icon: "\ud83e\udeaa", titulo: "Cart\u00e3o de Embarque", meta: "Comprovantes de embarque LATAM \u2014 ida e volta", badge: "Embarque", badgeClass: "" },
     { icon: "\ud83c\udfbf", titulo: "Ski \u2014 aula e equipamento", meta: "Vouchers de aula particular, loca\u00e7\u00e3o e passe do Cerro Catedral", badge: "A confirmar", badgeClass: "" },
     { icon: "\ud83d\ude97", titulo: "Loca\u00e7\u00e3o de Carro", meta: "Voucher e contrato da locadora, se contratada", badge: "Se aplic\u00e1vel", badgeClass: "" },
     { icon: "\ud83d\ude8c", titulo: "Transporte", meta: "Transfers, traslados e transportes contratados", badge: "Reservado", badgeClass: "" }
   ],
-  footerNote: "Bariloche \u00b7 Cerro Catedral \u00b7 Agosto de 2026",
+  footerNote: "Entre Pistas e Vinhos \u00b7 Bariloche, Argentina \u00b7 Agosto de 2026",
   _slug: "bariloche-ski-catedral-2026"
 };
 
