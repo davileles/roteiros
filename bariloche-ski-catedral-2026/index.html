@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title id="page-title">Roteiro · Travel Concierge</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#1e2535;--surface:#2a3246;--surface2:#323c54;
+  --border:#3d4a66;--border2:#4a5878;
+  --accent:#ff585e;--accent2:#e04449;
+  --blue:#126eff;--blue2:#0f5fe0;
+  --text:#eeeeee;--muted:#8a9bbf;--muted2:#5a6a8a;
+  --green:#22c55e;--r:10px;
+  --font:'Plus Jakarta Sans',sans-serif;
+  --display:'Barlow Condensed',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.6}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+.hero{position:relative;height:100vh;min-height:600px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,#1e2535 18%,rgba(30,37,53,.7) 45%,rgba(30,37,53,.2) 70%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 40px 48px;max-width:900px}
+.hero-eyebrow{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;display:block}
+.hero-title{font-family:var(--display);font-size:clamp(48px,8vw,96px);font-weight:900;color:var(--text);line-height:.95;text-transform:uppercase;margin-bottom:10px}
+.hero-subtitle{font-family:var(--display);font-size:clamp(20px,3vw,32px);font-weight:700;color:rgba(238,238,238,.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{border:1px solid rgba(238,238,238,.2);border-radius:20px;padding:5px 16px;font-size:12px;font-weight:600;color:rgba(238,238,238,.75);backdrop-filter:blur(8px);background:rgba(42,50,70,.4)}
+.hero-stripe{position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue));z-index:3}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(30,37,53,0);transition:background .3s,backdrop-filter .3s}
+.topbar.scrolled{background:rgba(30,37,53,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.topbar-coral-line{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);z-index:101;pointer-events:none}
+.topbar-brand{font-family:var(--display);font-size:20px;font-weight:900;color:var(--text);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.topbar-brand span{color:var(--accent)}
+/* Nav desktop */
+.topbar-nav{display:flex;gap:8px;flex-wrap:wrap}
+.topbar-nav a{font-size:11px;font-weight:700;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.8px;padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.topbar-nav a:hover{color:var(--text);background:var(--surface)}
+/* Hamburguer */
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:101}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile drawer */
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(30,37,53,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:8px;backdrop-filter:blur(16px)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;padding:12px 24px;border-radius:10px;width:220px;text-align:center;transition:background .15s,color .15s}
+.mobile-nav a:hover,.mobile-nav a:active{background:var(--surface2);color:var(--accent)}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+.section{padding:56px 0}
+.section-label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:8px;display:block}
+.section-title{font-family:var(--display);font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--text);text-transform:uppercase;line-height:1;margin-bottom:32px}
+.overview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+.overview-grid>.info-card:last-child:nth-child(odd){grid-column:1/-1}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;border-left:3px solid var(--blue)}
+.info-card.coral{border-left-color:var(--accent)}.info-card.green{border-left-color:var(--green)}
+.info-card-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:4px}
+.info-card.coral .info-card-label{color:var(--accent)}.info-card.green .info-card-label{color:var(--green)}
+.info-card-value{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+/* VOO CARD */
+.voo-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:24px;margin-bottom:10px}
+.voo-lado{flex:1}.voo-lado:last-child{text-align:right}
+.voo-city{font-family:var(--display);font-size:clamp(28px,7vw,42px);font-weight:900;color:var(--text);line-height:1}
+.voo-airport{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px}
+.voo-time{font-size:18px;font-weight:700;color:var(--accent);margin-top:4px}
+.voo-date{font-size:12px;color:var(--muted)}
+.voo-center{text-align:center;flex-shrink:0}
+.voo-arrow{font-size:22px;color:var(--blue);display:block}
+.voo-duration{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}
+.voo-badge{display:inline-block;font-size:10px;font-weight:700;background:rgba(18,110,255,.15);color:var(--blue);border:1px solid rgba(18,110,255,.3);border-radius:6px;padding:3px 8px;margin-top:8px}
+.voo-pnr{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.3px}.voo-pnr strong{color:var(--text);font-weight:700;letter-spacing:.5px}
+/* HOTEL CARD */
+.hotel-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.hotel-icon{font-size:28px;flex-shrink:0}
+.hotel-info{flex:1;min-width:0}
+.hotel-nome{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;word-break:break-word}
+.hotel-meta{font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.hotel-periodo{font-size:13px;font-weight:600;color:var(--accent);margin-top:4px}
+.hotel-conf{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);margin-top:6px}
+/* SERVIÇOS */
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:12px}
+.serv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.serv-card-header{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.serv-icon{font-size:20px;flex-shrink:0}
+.serv-nome{font-size:13px;font-weight:700;color:var(--text)}
+.serv-meta{font-size:11px;color:var(--muted);line-height:1.5}
+.serv-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(18,110,255,.12);color:#60a5fa;border:1px solid rgba(18,110,255,.25);margin-top:6px}
+/* DAY NAV */
+.day-nav{position:sticky;top:var(--topbar-h,64px);z-index:90;background:rgba(30,37,53,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.day-nav::-webkit-scrollbar{display:none}
+.day-nav-inner{display:flex;gap:4px;padding:10px 16px;min-width:max-content;justify-content:center}
+.day-nav-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 14px;border:none;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:background .15s,color .15s;min-width:64px}
+.day-nav-btn:hover{background:var(--surface);color:var(--text)}
+.day-nav-btn.active{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.day-nav-num{font-family:var(--display);font-size:22px;font-weight:900;line-height:1}
+.day-nav-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
+.day-nav-dots{display:flex;gap:3px;justify-content:center}
+.day-nav-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+/* DAY BLOCK */
+.day-block{margin-bottom:16px}
+.day-toggle{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
+.day-toggle:hover{background:var(--surface2);border-color:var(--border2)}
+.day-toggle.open{border-color:var(--blue);background:var(--surface2)}
+.day-num-badge{font-family:var(--display);font-size:28px;font-weight:900;color:var(--accent);line-height:1;flex-shrink:0;width:44px}
+.day-toggle-info{flex:1;min-width:0}
+.day-toggle-date{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.day-toggle-title{font-family:var(--display);font-size:18px;font-weight:900;color:var(--text);text-transform:uppercase;white-space:normal;overflow:visible}
+.day-toggle-summary{font-size:12px;color:var(--muted);margin-top:4px;white-space:normal;overflow:visible;line-height:1.45}
+.day-chevron{color:var(--muted);font-size:18px;transition:transform .25s;flex-shrink:0}
+.day-toggle.open .day-chevron{transform:rotate(180deg)}
+.day-energy{font-size:10px;font-weight:700;background:#e1f5ee;color:#0f6e56;border-radius:20px;padding:3px 8px;flex-shrink:0;white-space:nowrap}
+.day-content{display:none;background:var(--surface);border:1px solid var(--blue);border-top:none;border-radius:0 0 var(--r) var(--r);padding:18px 20px;margin-top:-4px}
+.day-content.open{display:block}
+/* ATRAÇÕES */
+.atracao{padding:14px 0;border-bottom:1px solid var(--border)}
+.atracao:last-child{border-bottom:none}
+.atracao-header{display:flex;gap:12px;align-items:flex-start;margin-bottom:6px}
+.atracao-time{font-size:12px;font-weight:700;color:var(--blue);white-space:nowrap;min-width:90px;flex-shrink:0;padding-top:2px}
+.atracao-nome{font-size:15px;font-weight:700;color:var(--text);flex:1;min-width:0}
+.atracao-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-left:102px;margin-top:0}
+.atracao-tip{font-size:12px;color:#4ade80;font-style:italic;margin-left:102px;margin-top:4px;line-height:1.5}
+.day-section-label{font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin:18px 0 8px;display:block;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.desl-item{font-size:13px;color:var(--muted);padding:5px 0 5px 14px;border-left:2px solid var(--blue);margin-bottom:6px;line-height:1.5}
+.desl-arrow{color:var(--accent);font-weight:700;margin:0 4px}
+.dica-box{background:rgba(18,110,255,.06);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.dica-box-text{font-size:13px;color:var(--muted);line-height:1.55}
+.dica-box-text strong{color:var(--text)}
+/* DOCUMENTOS */
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;position:relative}
+.doc-icon{font-size:28px}.doc-title{font-size:13px;font-weight:700;color:var(--text)}
+.doc-meta{font-size:11px;color:var(--muted)}
+.doc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25);width:fit-content}
+.doc-badge.pending{background:rgba(255,88,94,.12);color:var(--accent);border-color:rgba(255,88,94,.25)}
+/* Upload área */
+.doc-upload-area{margin-top:auto;padding-top:8px;border-top:1px dashed var(--border)}
+.doc-upload-btn{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 0;transition:color .15s;width:100%;text-align:left}
+.doc-upload-btn:hover{color:var(--blue)}
+.doc-upload-btn svg{flex-shrink:0;opacity:.7}
+.doc-uploaded{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);font-weight:600;flex-wrap:wrap}
+.doc-uploaded-link{color:var(--green);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block;vertical-align:middle}
+.doc-uploaded-link:hover{text-decoration:underline}
+.doc-del-btn{background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;padding:0;line-height:1;margin-left:auto;flex-shrink:0}
+.doc-del-btn:hover{color:var(--accent)}
+.doc-uploading{font-size:11px;color:var(--muted);font-style:italic}
+.desl-nav-btns{display:flex;gap:6px;margin-top:5px}
+.desl-nav-btn{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;text-decoration:none;transition:opacity .15s}
+.desl-nav-btn:hover{opacity:.8}
+.desl-nav-btn.maps{background:rgba(18,110,255,.15);color:#60a5fa;border:1px solid rgba(18,110,255,.3)}
+.desl-nav-btn.waze{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
+.atracao-nav{margin-left:102px;margin-top:6px;padding:8px 10px;background:rgba(18,110,255,.06);border:1px solid rgba(18,110,255,.15);border-radius:7px}
+.atracao-nav-label{font-size:9px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px}
+.atracao-nav-btns{display:flex;gap:5px;flex-wrap:wrap}
+.nav-btn{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;text-decoration:none;transition:opacity .15s;white-space:nowrap}
+.nav-btn:hover{opacity:.75}
+.nav-drive{background:rgba(18,110,255,.15);color:#60a5fa;border:1px solid rgba(18,110,255,.3)}
+.nav-transit{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+.nav-walk{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.nav-waze{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.25)}
+.doc-input{display:none}
+/* FINANCE TABLE */
+.finance-table{width:100%;border-collapse:collapse}
+.finance-table th{background:var(--surface2);font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 14px;text-align:left}
+.finance-table td{font-size:13px;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--border)}
+.finance-table td:last-child{text-align:right;font-weight:600;color:var(--text)}
+.finance-table tr:last-child td{border-bottom:none}
+.finance-table .dia-num{font-family:var(--display);font-size:20px;font-weight:900;color:var(--accent)}
+.finance-table .total-row td{font-weight:700;color:var(--accent);font-size:14px;border-top:1px solid var(--border2);border-bottom:none;background:rgba(255,88,94,.05)}
+.finance-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;overflow-x:auto;margin-bottom:16px;-webkit-overflow-scrolling:touch}
+/* FOOTER */
+.site-footer{background:var(--surface);border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-brand{font-family:var(--display);font-size:22px;font-weight:900;color:var(--text);text-transform:uppercase}
+.footer-brand span{color:var(--accent)}
+.footer-note{font-size:12px;color:var(--muted)}
+hr.sec-div{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ══ MOBILE ≤ 680px ══ */
+@media(max-width:680px){
+  /* Topbar */
+  .topbar{height:56px;padding:0 20px}
+  .topbar-nav{display:none}
+  .menu-toggle{display:flex}
+
+  /* Hero */
+  .hero{min-height:500px}
+  .hero-content{padding:0 20px 36px}
+  .hero-title{line-height:1}
+
+  /* Layout */
+  .container{padding:0 16px}
+  .section{padding:36px 0}
+
+  /* Voo card — coluna única, centralizado */
+  .voo-card{flex-direction:column;align-items:stretch;gap:0;padding:16px}
+  .voo-lado{display:flex;justify-content:space-between;align-items:flex-end;padding:10px 0}
+  .voo-lado:last-child{text-align:left;border-top:1px solid var(--border)}
+  .voo-center{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .voo-arrow{font-size:18px}
+  .voo-city{font-size:clamp(28px,9vw,38px)}
+  .voo-duration{white-space:normal;flex:1}
+
+  /* Day nav — scroll livre sem justify-content:center */
+  .day-nav-inner{justify-content:flex-start;padding:8px 16px}
+
+  /* Day toggle — compacto */
+  .day-toggle{padding:14px 14px;gap:10px}
+  .day-num-badge{font-size:22px;width:36px}
+  .day-toggle-title{font-size:16px}
+  .day-energy{display:none}
+
+  /* Day content — padding menor */
+  .day-content{padding:14px 14px}
+
+  /* Atração — empilhado */
+  .atracao-header{flex-direction:column;gap:2px}
+  .atracao-time{min-width:unset;font-size:11px}
+  .atracao-nome{font-size:14px}
+  .atracao-desc,.atracao-tip,.atracao-nav{margin-left:0;margin-top:4px}
+
+  /* Serviços — 1 coluna */
+  .serv-grid{grid-template-columns:1fr}
+
+  /* Docs — 1 coluna */
+  .docs-grid{grid-template-columns:1fr 1fr}
+
+  /* Footer */
+  .site-footer{flex-direction:column;text-align:center;padding:24px 20px}
+}
+
+/* ══ EXTRA PEQUENO ≤ 380px ══ */
+@media(max-width:380px){
+  .overview-grid{grid-template-columns:1fr}
+  .docs-grid{grid-template-columns:1fr}
+  .day-toggle-summary{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar" id="topbar">
+  <div class="topbar-brand">
+    <img id="topbar-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfUAAAH1CAMAAADYlpcjAAADAFBMVEX////v7+8rMkX/WF/t7ez9/fz7+/vx8fErMkfz8/P4+fj09fX+/v339/cpMUT9/fv9//z9/v/+/f7+V179/f7+/fz9WF7/WWAqMUUoM0UsNEcoMUP8/vwrM0gqMUYtMkf+//opM0b/WF0nLkH+/fv6+/r8/fgpMUYrNUUsNEn9WF0pMUH7/v77/PwpMEglLD8pMkP6/fr9V139V2D/WmD6+vz+V1wrMkgoLkMqNUcuNEj+Wl7+V2D/VVydoKoqNEr9+/zv7e37WF33+PcjKT/+WGLu7uz8W1r8Wl78WF/8WmEjLkE7P1D6/P4vNkosM0T+Vlr8WVr3+fns7u8vN0dBRlg0Ok0nMEUlK0H6+fgqM0NfZHTu7Oo3PE719vVKUF9jZ3ZbYW7/W2KfoasgKD37V1o7QlTw8e7U1tr8s7a6vsV4fIlGTFzq6+38/Pjz9ffp6evr7Ovm6Orx8vH79vZ2e4eTlqP9VVza3eKChZGiprH7/vvf4eT/+/79bnPu7/GMkZs+Q1T+/vn8VFnx8/VFS1h+g4/8+/f8jJCXm6X4//rGyM/t7fD78vHi5ej9Ulf8XmGNkp5OVGL9Y2lTWWjP0tb+6+3h4+X9ZWn+X2X9+fj9dHvw8fJla3f86uf92dyqrbb61dX8UFWlqrLDxs1rb3t1eYf87uz7W1/29/r/Ulv8enwnLUPy9PXX2Nv+lpv9gov8zs2/wsn+WFkzOUr7k5ecoKn+h4/83N6tsLj9y8/8T1b99PT+UFv8yMpwdYH49fOJjZcpNEVYXWrJy9GztL79cnbMztP85eSDipX/vMCzuL39xcb9o6f68PD+r7KQlZ5RVmb7anH9u73+4t7m5ur7WGDc3+H9wcO1ucEeJTr8rbD9aWygpKr9z9X9foHY299DSFkrMUv9d4D9TVS/wMX6WWL8qKr+d3v9m6Hy7/D73+L17u79naT66+r/WWj5j5T4naD9trv4WV33/f3/VV75np2pq7X4+/74uLP3/vr3x8Tytbv3io742d735OIONtevAAAACXBIWXMAAAdiAAAHYgE4epnbAAAFWGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLyc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpBdHRyaWI9J2h0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8nPgogIDxBdHRyaWI6QWRzPgogICA8cmRmOlNlcT4KICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0nUmVzb3VyY2UnPgogICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI2LTA3LTAxPC9BdHRyaWI6Q3JlYXRlZD4KICAgICA8QXR0cmliOkRhdGE+eyZxdW90O2RvYyZxdW90OzomcXVvdDtEQUhPSl9DVTFSdyZxdW90OywmcXVvdDt1c2VyJnF1b3Q7OiZxdW90O1VBQ0p3alpGR2M0JnF1b3Q7LCZxdW90O2JyYW5kJnF1b3Q7OiZxdW90O1R1ZG8gU29icmUgTWlsaGFzJnF1b3Q7fTwvQXR0cmliOkRhdGE+CiAgICAgPEF0dHJpYjpFeHRJZD4yNzQzZmYxZi0xNWMyLTRiNTYtYTBmMi02Zjg4YWEyYWRjNzE8L0F0dHJpYjpFeHRJZD4KICAgICA8QXR0cmliOkZiSWQ+NTI1MjY1OTE0MTc5NTgwPC9BdHRyaWI6RmJJZD4KICAgICA8QXR0cmliOlRvdWNoVHlwZT4yPC9BdHRyaWI6VG91Y2hUeXBlPgogICAgPC9yZGY6bGk+CiAgIDwvcmRmOlNlcT4KICA8L0F0dHJpYjpBZHM+CiA8L3JkZjpEZXNjcmlwdGlvbj4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0nJwogIHhtbG5zOmRjPSdodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyc+CiAgPGRjOnRpdGxlPgogICA8cmRmOkFsdD4KICAgIDxyZGY6bGkgeG1sOmxhbmc9J3gtZGVmYXVsdCc+RGVzaWduIHNlbSBub21lIC0gMTwvcmRmOmxpPgogICA8L3JkZjpBbHQ+CiAgPC9kYzp0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" alt="Travel Concierge" style="height:32px;width:32px;border-radius:8px;object-fit:cover;flex-shrink:0">
+    <span id="topbar-brand-text">Travel <span>Concierge</span></span>
+  </div>
+  <nav class="topbar-nav" id="topbar-nav">
+    <!-- gerado por JS -->
+  </nav>
+  <!-- Hamburguer mobile -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="topbar-coral-line"></div>
+</header>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobile-nav">
+  <!-- gerado por JS -->
+</nav>
+
+<!-- DAY NAV -->
+<nav class="day-nav" id="day-nav" style="display:none">
+  <div class="day-nav-inner" id="day-nav-inner"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img" id="hero-img"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow" id="hero-eyebrow">Travel Concierge</span>
+    <h1 class="hero-title" id="hero-title">Roteiro</h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <div class="hero-pills" id="hero-pills"></div>
+  </div>
+  <div class="hero-stripe"></div>
+</section>
+
+<!-- VISÃO GERAL -->
+<section class="section" id="visao-geral">
+  <div class="container">
+    <span class="section-label">Visão Geral</span>
+    <h2 class="section-title">A Viagem</h2>
+    <div id="overview-grid" class="overview-grid"></div>
+    <div id="obs-box" style="display:none" class="dica-box"><span class="dica-box-text" id="obs-text"></span></div>
+  </div>
+</section>
+
+<hr class="sec-div"/>
+
+<!-- VOOS -->
+<section class="section" id="voos" style="display:none">
+  <div class="container">
+    <span class="section-label">Voos</span>
+    <h2 class="section-title">Ida &amp; Volta</h2>
+    <div id="voos-container"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-hospedagem" style="display:none"/>
+
+<!-- HOSPEDAGEM -->
+<section class="section" id="hospedagem" style="display:none">
+  <div class="container">
+    <span class="section-label">Hospedagem</span>
+    <h2 class="section-title">Onde Ficar</h2>
+    <div id="hospedagem-container"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-servicos" style="display:none"/>
+
+<!-- SERVIÇOS (carro, passeio, seguro) -->
+<section class="section" id="servicos" style="display:none">
+  <div class="container">
+    <span class="section-label">Serviços</span>
+    <h2 class="section-title">Reservas &amp; Serviços</h2>
+    <div id="servicos-grid" class="serv-grid"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-roteiro" style="display:none"/>
+
+<!-- ROTEIRO DIA A DIA -->
+<section class="section" id="roteiro" style="display:none">
+  <div class="container">
+    <span class="section-label">Dia a Dia</span>
+    <h2 class="section-title">Roteiro</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<hr class="sec-div" id="hr-documentos" style="display:none"/>
+
+<!-- DOCUMENTOS -->
+<section class="section" id="documentos" style="display:none">
+  <div class="container">
+    <span class="section-label">Documentos</span>
+    <h2 class="section-title">Pasta de Viagem</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:20px;margin-top:-20px">Clique em &#8593; para anexar comprovantes, passaportes e reservas — ficam salvos e acessíveis em qualquer dispositivo.</p>
+    <div class="docs-grid" id="docs-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand" id="footer-brand">Travel <span>Concierge</span></div>
+  <div class="footer-note" id="footer-note"></div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+//  ROTEIRO_DATA — injetado pelo gerador do concierge
+//  Estrutura esperada:
+//  {
+//    titulo: "Santiago & Andes",
+//    subtitulo: "Andes em Família — Neve, Vinho e Memórias",
+//    eyebrow: "Travel Concierge · Santiago, Chile",
+//    marcaTexto: "Travel Concierge",              // opcional — texto puro (título da aba, eyebrow padrão)
+//    marcaHTML: "Travel <span>Concierge</span>",   // opcional — HTML da marca (topbar + rodapé, 2ª palavra em coral)
+//    heroImage: "https://images.unsplash.com/...",
+//    pills: ["✈️ 15 a 23 de julho", "👨‍👩‍👧 4 pessoas"],
+//    visaoGeral: [ {label, value, variant?} ],  // variant: 'coral'|'green'|''
+//    obs: "Texto opcional de observação",
+//    voos: [
+//      { tipo:'ida'|'volta', origemIata, origemNome, destinoIata, destinoNome,
+//        data, horaPartida, horaChegada, cia, nvoo, conexao, classe, pnr }
+//    ],
+//    hospedagem: [
+//      { nome, cidade, checkin, checkout, noites, conf, hospedes }
+//    ],
+//    servicos: [
+//      { tipo:'carro'|'passeio'|'seguro'|'outro', icon, nome, meta, badge }
+//    ],
+//    dias: [
+//      { num, data, titulo, resumo, energia?,
+//        atividades: [ { horario, nome, descricao, dica? } ],
+//        deslocamentos: ["Hotel → Aeroporto"],
+//        custos: [ {label, valor} ],
+//        custoTotal: "R$ 200–400"
+//      }
+//    ],
+//    documentos: [
+//      { icon: "🛂", titulo: "Passaporte", meta: "Validade mínima 6 meses após retorno", badge: "Obrigatório", badgeClass: "badge-coral" },
+//      { icon: "🛡️", titulo: "Seguro Viagem", meta: "Cobertura internacional recomendada", badge: "Recomendado", badgeClass: "badge-green" },
+//      { icon: "🏨", titulo: "Hospedagem", meta: "Vouchers e confirmações das hospedagens", badge: "Voucher", badgeClass: "badge-green" },
+//      { icon: "🪪", titulo: "Cartão de Embarque", meta: "Comprovantes de embarque de todos os voos", badge: "Embarque", badgeClass: "" },
+//      { icon: "🚗", titulo: "Locação de Carro", meta: "Voucher e contrato da locadora", badge: "Confirmar", badgeClass: "" },
+//      { icon: "🚌", titulo: "Transporte", meta: "Transfers, traslados e transportes contratados", badge: "Reservado", badgeClass: "" }
+//    ],
+//    footerNote: "Andes em Família · Santiago, Chile · Julho 2025",
+//    _slug: "andes-em-familia"  // pasta no repositório roteiros (para upload de docs)
+//  }
+// ══════════════════════════════════════════════════════════════
+
+const ROTEIRO_DATA = {
+  titulo: "Bariloche · Cerro Catedral",
+  subtitulo: "Sete Dias de Neve, Vinho e Patagônia",
+  eyebrow: "Travel Concierge · Bariloche, Argentina · Agosto 2026",
+  heroImage: "https://images.unsplash.com/photo-1617548437735-92d875423353?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  pills: ["\u2708\ufe0f 1 a 7 de agosto de 2026", "\ud83d\udc64 1 viajante", "\ud83c\udfbf 4 dias de ski com aula particular"],
+  visaoGeral: [
+    { label: "Destino", value: "San Carlos de Bariloche, Argentina" },
+    { label: "Per\u00edodo", value: "1 a 7 de agosto de 2026" },
+    { label: "Viajante", value: "Diego Leoni Sandim da Silva" },
+    { label: "Hotel", value: "Hotel Catedral Patagonia Ski & Wellness", variant: "coral" },
+    { label: "Localiza\u00e7\u00e3o", value: "Villa Cerro Catedral \u2014 ski in / ski out" },
+    { label: "Dura\u00e7\u00e3o", value: "7 dias / 6 noites" },
+    { label: "Ritmo", value: "Moderado \u2014 esqui pela manh\u00e3, tardes livres", variant: "green" },
+    { label: "Alta temporada", value: "Invierno na Patag\u00f4nia \u2014 reservas antecipadas" }
+  ],
+  obs: "Roteiro desenhado em torno do Cerro Catedral, com hospedagem na pr\u00f3pria base da montanha \u2014 quatro dias dedicados ao ski com aula particular e os demais reservados para o Circuito Chico, Llao Llao e o centro de Bariloche. Dados dos voos ser\u00e3o inclu\u00eddos assim que confirmados.",
+  voos: [],
+  hospedagem: [
+    {
+      nome: "Hotel Catedral Patagonia Ski & Wellness",
+      cidade: "Villa Cerro Catedral, San Carlos de Bariloche \u2014 Rio Negro",
+      checkin: "2026-08-01",
+      checkout: "2026-08-07",
+      noites: 6,
+      conf: "72074033997375",
+      hospedes: "1 adulto \u2014 Quarto Standard (n\u00e3o fumantes)"
+    }
+  ],
+  servicos: [
+    { tipo: "passeio", icon: "\ud83c\udfbf", nome: "Aula particular de ski \u2014 Cerro Catedral", meta: "4 dias (02 a 05 de agosto) \u2014 cota\u00e7\u00e3o a confirmar", badge: "A confirmar" },
+    { tipo: "outro", icon: "\ud83e\udd7f", nome: "Loca\u00e7\u00e3o de equipamento de ski", meta: "Botas, esqui e bast\u00f5es \u2014 retirada na base do Catedral", badge: "A confirmar" },
+    { tipo: "outro", icon: "\ud83c\udfab", nome: "Passe de teleféricos Cerro Catedral", meta: "Compra online antecipada recomendada em alta temporada", badge: "A confirmar" },
+    { tipo: "carro", icon: "\ud83d\ude90", nome: "Transfer aeroporto BRC \u2192 Cerro Catedral", meta: "O hotel solicita contato com at\u00e9 24h de anteced\u00eancia para organizar o traslado", badge: "Solicitar" }
+  ],
+  dias: [
+    {
+      num: 1,
+      data: "2026-08-01",
+      titulo: "Chegada, check-in na montanha e primeira noite na base",
+      resumo: "Dia de chegada com transi\u00e7\u00e3o suave: traslado do aeroporto direto para a base do Cerro Catedral, check-in a partir das 16h e uma primeira noite tranquila para se ambientar ao frio e \u00e0 altitude do vale.",
+      energia: "Leve",
+      atividades: [
+        { horario: "Chegada", nome: "Desembarque no Aeroporto de Bariloche (BRC)", descricao: "Aeroporto Teniente Luis Candelaria, cerca de 14 km do centro. O trajeto direto at\u00e9 o Cerro Catedral leva aproximadamente 37 minutos de carro.", dica: "O hotel pede contato com pelo menos 24 horas de anteced\u00eancia para organizar o traslado \u2014 deixe isso resolvido antes de embarcar." },
+        { horario: "16:00", nome: "Check-in \u2014 Hotel Catedral Patagonia Ski & Wellness", descricao: "Hospedagem na pr\u00f3pria Villa Cerro Catedral, na base da montanha. A vantagem \u00e9 come\u00e7ar a esquiar sem deslocamento nos dias seguintes.", dica: "Check-in a partir das 16h; check-out no dia 07 \u00e0s 10h. Reserva n\u00e3o reembols\u00e1vel \u2014 evite altera\u00e7\u00f5es." },
+        { horario: "18:00", nome: "Fim de tarde na base \u2014 drink, vinho ou caf\u00e9", descricao: "Uma volta curta pela vila da base para reconhecer os pontos de aluguel de equipamento, escolas de ski e restaurantes que ser\u00e3o usados nos pr\u00f3ximos dias.", dica: "Aproveite para j\u00e1 confirmar hor\u00e1rio da aula particular e retirada do equipamento no dia seguinte." },
+        { horario: "20:30", nome: "Jantar na base do Catedral", descricao: "Primeira noite sem deslocamento: jantar na pr\u00f3pria vila, com foco em descanso antes do primeiro dia de neve.", dica: "Em alta temporada, vale reservar mesa \u2014 a base lota nos fins de semana." }
+      ],
+      deslocamentos: ["Aeroporto BRC \u2192 Cerro Catedral: carro/transfer, ~37 min"],
+      custos: [
+        { label: "Transfer aeroporto \u2192 Cerro Catedral", valor: "R$ 180 a R$ 260" },
+        { label: "Drink / vinho / caf\u00e9", valor: "R$ 35 a R$ 80" },
+        { label: "Jantar na base", valor: "R$ 120 a R$ 240" }
+      ],
+      custoTotal: "R$ 335 a R$ 580"
+    },
+    {
+      num: 2,
+      data: "2026-08-02",
+      titulo: "Primeiro dia de ski com aula particular",
+      resumo: "O dia de calibrar tudo: retirada do equipamento, primeira aula particular e reconhecimento das pistas do Catedral. Manh\u00e3 dedicada \u00e0 t\u00e9cnica, tarde livre para repetir o que foi aprendido.",
+      energia: "Intenso",
+      atividades: [
+        { horario: "08:30 \u2013 09:30", nome: "Retirada do equipamento e ajuste de botas", descricao: "Esqui, bast\u00f5es, botas e capacete. O ajuste da bota \u00e9 o que define o conforto do dia inteiro \u2014 vale gastar tempo aqui.", dica: "V\u00e1 cedo: nas primeiras horas as filas das lojas de aluguel na base s\u00e3o bem menores." },
+        { horario: "10:00 \u2013 12:00", nome: "Aula particular de ski \u2014 n\u00edvel inicial", descricao: "Duas horas de aula individual nas pistas-escola da base, trabalhando postura, freio em cunha e primeiras curvas.", dica: "Aula particular rende muito mais que aula em grupo no primeiro dia \u2014 confirme o instrutor com anteced\u00eancia." },
+        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "Pausa quente na base do Catedral, com op\u00e7\u00f5es de refei\u00e7\u00e3o r\u00e1pida e restaurantes com vista para as pistas.", dica: "Almo\u00e7ar por volta das 12h30 evita o pico das 13h." },
+        { horario: "14:00 \u2013 16:30", nome: "Pr\u00e1tica livre nas pistas", descricao: "Tarde para consolidar o que foi visto na aula, sem instrutor, nas pistas mais suaves.", dica: "A luz e a neve ficam melhores no meio da tarde; encerre antes do fim do funcionamento dos meios de eleva\u00e7\u00e3o." },
+        { horario: "17:30", nome: "After-ski na base", descricao: "Vinho, cerveja ou caf\u00e9 na base \u2014 parte essencial da cultura de montanha em Bariloche.", dica: "Alongar as pernas depois do primeiro dia faz muita diferen\u00e7a no segundo." },
+        { horario: "20:30", nome: "Jantar", descricao: "Jantar na base, sem deslocamento, para preservar energia para o segundo dia de ski.", dica: "Hidrate-se bem: o ar seco de montanha desidrata mais do que parece." }
+      ],
+      deslocamentos: ["Hotel \u2192 base do Catedral: a p\u00e9 (ski in / ski out)"],
+      custos: [
+        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
+        { label: "After-ski / vinho / caf\u00e9", valor: "R$ 35 a R$ 90" },
+        { label: "Jantar", valor: "R$ 120 a R$ 240" }
+      ],
+      custoTotal: "R$ 245 a R$ 500 + cota\u00e7\u00f5es de ski"
+    },
+    {
+      num: 3,
+      data: "2026-08-03",
+      titulo: "Segundo dia de ski + noite de vinho no centro",
+      resumo: "Com a base t\u00e9cnica do primeiro dia, o segundo rende muito mais. \u00c0 noite, a viagem ganha outro ritmo: descida ao centro de Bariloche para um wine bar e um jantar melhor.",
+      energia: "Intenso",
+      atividades: [
+        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 2", descricao: "Progress\u00e3o para curvas paralelas e pistas um pouco mais longas, aproveitando o condicionamento do dia anterior.", dica: "Se o tempo estiver aberto, pe\u00e7a ao instrutor para subir mais alto \u2014 a vista do Catedral sobre o Lago Gutiérrez compensa." },
+        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "Refei\u00e7\u00e3o na base entre a aula e a pr\u00e1tica livre da tarde.", dica: "Mantenha o almo\u00e7o leve se pretende voltar \u00e0s pistas." },
+        { horario: "14:00 \u2013 16:30", nome: "Pr\u00e1tica livre", descricao: "Tarde nas pistas repetindo o que foi trabalhado na aula.", dica: "Encerre com energia sobrando \u2014 a noite tem programa no centro." },
+        { horario: "19:30 \u2013 21:00", nome: "Wine bar no centro de Bariloche", descricao: "A cena de vinhos de Bariloche \u00e9 forte, com boa presen\u00e7a de Patag\u00f4nia e Mendoza por ta\u00e7a. Um bom aquecimento antes do jantar.", dica: "Pe\u00e7a por ta\u00e7a para comparar Malbec de Mendoza com Pinot Noir da Patag\u00f4nia." },
+        { horario: "21:00 \u2013 23:00", nome: "Jantar no centro", descricao: "Jantar mais caprichado no centro, aproveitando que o deslocamento j\u00e1 foi feito.", dica: "Reserve com anteced\u00eancia \u2014 em agosto o centro fica cheio, especialmente aos fins de semana." }
+      ],
+      deslocamentos: [
+        "Hotel \u2192 base do Catedral: a p\u00e9",
+        "Cerro Catedral \u2192 centro de Bariloche: carro/app, ~24 a 25 min (\u00f4nibus linha 55, ~35 a 38 min)",
+        "Centro \u2192 Cerro Catedral (retorno noturno): carro/app"
+      ],
+      custos: [
+        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
+        { label: "T\u00e1xi / app \u2014 noite (ida e volta)", valor: "R$ 220 a R$ 380" },
+        { label: "Wine bar", valor: "R$ 80 a R$ 180" },
+        { label: "Jantar", valor: "R$ 180 a R$ 320" }
+      ],
+      custoTotal: "R$ 570 a R$ 1.050 + cota\u00e7\u00f5es de ski"
+    },
+    {
+      num: 4,
+      data: "2026-08-04",
+      titulo: "Terceiro dia de ski + caf\u00e9 de especialidade no centro",
+      resumo: "Dia de ski mais solto, sem a tens\u00e3o dos primeiros. \u00c0 tarde, descida ao centro para um caf\u00e9 de especialidade e uma volta calma pelo Centro C\u00edvico antes de um jantar leve.",
+      energia: "Moderado",
+      atividades: [
+        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 3", descricao: "Terceira aula, j\u00e1 explorando setores diferentes da montanha e pistas mais variadas.", dica: "Este costuma ser o dia em que o esqui \u201cengata\u201d \u2014 vale insistir mesmo se o dia 2 pareceu dif\u00edcil." },
+        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "\u00daltima refei\u00e7\u00e3o na montanha antes de descer para o centro.", dica: "Guarde o equipamento no hotel \u2014 n\u00e3o vale carregar at\u00e9 o centro." },
+        { horario: "15:00 \u2013 16:30", nome: "Centro C\u00edvico e orla do Nahuel Huapi", descricao: "O conjunto de pedra e madeira do Centro C\u00edvico \u00e9 o cart\u00e3o-postal urbano de Bariloche, com vista direta para o lago Nahuel Huapi.", dica: "Fim de tarde \u00e9 o melhor hor\u00e1rio de luz para fotos do lago." },
+        { horario: "16:30 \u2013 17:30", nome: "Caf\u00e9 de especialidade \u2014 QV Caf\u00e9", descricao: "Caf\u00e9 de especialidade em endere\u00e7o central (Moreno 815), com hor\u00e1rio amplo em dias \u00fateis.", dica: "Segunda a sexta das 8h \u00e0s 20h30; s\u00e1bado a partir das 9h; domingo fechado." },
+        { horario: "20:00", nome: "Jantar leve", descricao: "Jantar sem excessos para preservar energia para o quarto e \u00faltimo dia de ski.", dica: "Se quiser encurtar a noite, jante no centro antes de subir de volta." }
+      ],
+      deslocamentos: [
+        "Hotel \u2192 base do Catedral: a p\u00e9",
+        "Cerro Catedral \u2192 centro: carro/app, ~24 a 25 min",
+        "Centro \u2192 Cerro Catedral: carro/app"
+      ],
+      custos: [
+        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 160" },
+        { label: "T\u00e1xi / app ao centro", valor: "R$ 180 a R$ 320" },
+        { label: "Caf\u00e9 de especialidade", valor: "R$ 35 a R$ 75" },
+        { label: "Jantar leve", valor: "R$ 90 a R$ 180" }
+      ],
+      custoTotal: "R$ 395 a R$ 735 + cota\u00e7\u00f5es de ski"
+    },
+    {
+      num: 5,
+      data: "2026-08-05",
+      titulo: "\u00daltimo dia de ski + jantar especial na regi\u00e3o de Llao Llao",
+      resumo: "O quarto e \u00faltimo dia na neve, aproveitando o melhor n\u00edvel t\u00e9cnico da semana. \u00c0 noite, o jantar mais especial da viagem, na regi\u00e3o de Llao Llao, cercado por lago e floresta.",
+      energia: "Intenso",
+      atividades: [
+        { horario: "09:30 \u2013 12:00", nome: "Aula particular de ski \u2014 dia 4", descricao: "\u00daltima aula, aproveitando o melhor n\u00edvel da semana para fechar com pistas mais desafiadoras.", dica: "Devolva o equipamento ainda hoje se n\u00e3o for esquiar no dia 06 \u2014 evita corre-corre no \u00faltimo dia." },
+        { horario: "12:30 \u2013 13:30", nome: "Almo\u00e7o na base", descricao: "\u00daltimo almo\u00e7o de bota calçada da viagem.", dica: "Vale escolher um restaurante com deck ao sol para fechar bem a semana de ski." },
+        { horario: "14:00 \u2013 16:00", nome: "Descanso / wellness no hotel", descricao: "Tarde reservada para recuperar as pernas depois de quatro dias consecutivos de neve, aproveitando a estrutura de wellness do hotel.", dica: "Confirme na recep\u00e7\u00e3o os hor\u00e1rios de spa e piscina aquecida." },
+        { horario: "19:30 \u2013 22:30", nome: "Jantar especial na regi\u00e3o de Llao Llao", descricao: "A regi\u00e3o de Llao Llao, a cerca de 25 km do centro, concentra os restaurantes de vista mais bonitos de Bariloche, entre o Nahuel Huapi e a floresta andina.", dica: "Reserva obrigat\u00f3ria em agosto, e combine o retorno com o motorista \u2014 a regi\u00e3o tem pouca oferta de app tarde da noite." }
+      ],
+      deslocamentos: [
+        "Hotel \u2192 base do Catedral: a p\u00e9",
+        "Cerro Catedral \u2192 Llao Llao: carro/app",
+        "Llao Llao \u2192 Cerro Catedral: carro/app (combinar retorno)"
+      ],
+      custos: [
+        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Passe / acessos Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
+        { label: "T\u00e1xi / app para Llao Llao", valor: "R$ 220 a R$ 380" },
+        { label: "Jantar caprichado", valor: "R$ 220 a R$ 420" }
+      ],
+      custoTotal: "R$ 530 a R$ 970 + cota\u00e7\u00f5es de ski"
+    },
+    {
+      num: 6,
+      data: "2026-08-06",
+      titulo: "Circuito Chico, Cerro Campanario e a Bariloche cl\u00e1ssica",
+      resumo: "Dia sem esqui, dedicado \u00e0 paisagem: o Circuito Chico com suas ba\u00edas e mirantes, a subida ao Cerro Campanario para a vista mais famosa da regi\u00e3o e um almo\u00e7o com vista para o Nahuel Huapi.",
+      energia: "Moderado",
+      atividades: [
+        { horario: "09:30 \u2013 12:30", nome: "Circuito Chico", descricao: "Percurso cl\u00e1ssico de estrada entre lagos, penínsulas e mirantes a oeste de Bariloche, passando por Llao Llao e Bah\u00eda L\u00f3pez.", dica: "Fa\u00e7a com carro/app por hora ou motorista contratado \u2014 as paradas s\u00e3o curtas e frequentes." },
+        { horario: "12:30 \u2013 13:30", nome: "Cerro Campanario \u2014 aerosilla", descricao: "Subida de aerosilla at\u00e9 o mirante do Campanario, com vista 360\u00b0 sobre o Nahuel Huapi, o Moreno e a p\u00e9nínsula de Llao Llao.", dica: "\u00c9 a vista mais fotografada de Bariloche \u2014 v\u00e1 com c\u00e9u aberto e reserve uns 40 minutos no topo." },
+        { horario: "13:30 \u2013 15:00", nome: "Almo\u00e7o com vista", descricao: "Almo\u00e7o na regi\u00e3o do Circuito Chico, aproveitando os restaurantes voltados para o lago.", dica: "Reserve \u2014 os endere\u00e7os com vista enchem no hor\u00e1rio de almo\u00e7o." },
+        { horario: "16:30 \u2013 17:30", nome: "Caf\u00e9 de especialidade no centro", descricao: "Parada final de caf\u00e9 no centro antes de subir de volta \u00e0 montanha.", dica: "Bom momento para comprar chocolates e lembran\u00e7as \u2014 evita fazer isso correndo no \u00faltimo dia." },
+        { horario: "20:00", nome: "Jantar leve", descricao: "Jantar tranquilo para fechar o \u00faltimo dia cheio da viagem.", dica: "Organize a mala hoje \u00e0 noite \u2014 o check-out \u00e9 \u00e0s 10h." }
+      ],
+      deslocamentos: [
+        "Cerro Catedral \u2192 Circuito Chico / Llao Llao: carro/app",
+        "Circuito Chico \u2192 centro: carro/app",
+        "Centro \u2192 Cerro Catedral: carro/app, ~24 a 25 min"
+      ],
+      custos: [
+        { label: "Transporte do dia", valor: "R$ 250 a R$ 420" },
+        { label: "Cerro Campanario / aerosilla", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Almo\u00e7o com vista", valor: "R$ 180 a R$ 350" },
+        { label: "Caf\u00e9 de especialidade", valor: "R$ 35 a R$ 80" },
+        { label: "Jantar leve", valor: "R$ 90 a R$ 180" }
+      ],
+      custoTotal: "R$ 555 a R$ 1.030"
+    },
+    {
+      num: 7,
+      data: "2026-08-07",
+      titulo: "Manh\u00e3 leve, \u00faltimo caf\u00e9 e retorno sem correria",
+      resumo: "\u00daltimo dia desenhado para ser elegante e funcional: manh\u00e3 sem pressa, brunch no centro, uma volta curta e sa\u00edda organizada para o aeroporto, com folga confort\u00e1vel antes do voo.",
+      energia: "Leve",
+      atividades: [
+        { horario: "10:00 \u2013 10:40", nome: "Check-out e sa\u00edda da base do Cerro Catedral", descricao: "Como o hotel fica na base, d\u00e1 para fechar as malas com calma e sair sem estresse. Neste \u00faltimo dia, nada de programa longo ou dependente de clima.", dica: "Deixe a bagagem pronta antes do caf\u00e9, para n\u00e3o quebrar a manh\u00e3 com uma volta ao quarto." },
+        { horario: "10:40 \u2013 11:05", nome: "Deslocamento at\u00e9 o centro de Bariloche", descricao: "Do Cerro Catedral ao centro s\u00e3o cerca de 24 a 25 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 35 a 38 minutos pela linha 55.", dica: "No \u00faltimo dia, carro por app ou t\u00e1xi \u00e9 a melhor escolha \u2014 posiciona voc\u00ea bem para caf\u00e9, compras e sa\u00edda ao aeroporto." },
+        { horario: "11:15 \u2013 12:30", nome: "Brunch / caf\u00e9 de encerramento", descricao: "Duas op\u00e7\u00f5es com hor\u00e1rio publicado: QV Caf\u00e9 (Moreno 815), de segunda a sexta das 8h \u00e0s 20h30, e Bruncherie, pastelería de autor e caf\u00e9 de especialidade, todos os dias das 11h \u00e0s 20h.", dica: "Como a volta \u00e9 numa sexta-feira, o QV Caf\u00e9 encaixa bem pela manh\u00e3; a Bruncherie funciona melhor se quiser um brunch mais \u201cprograma\u201d do que caf\u00e9 r\u00e1pido." },
+        { horario: "12:30 \u2013 13:30", nome: "Volta curta pelo centro e compras pontuais", descricao: "Uma \u00faltima passada leve pelo centro, sem transformar o dia em maratona. Como o aeroporto fica a cerca de 14 km, h\u00e1 margem confort\u00e1vel.", dica: "Concentre-se em 1 ou 2 lojas e evite se espalhar." },
+        { horario: "13:30 \u2013 14:30", nome: "Almo\u00e7o leve", descricao: "Almo\u00e7o simples no centro, perto de onde voc\u00ea j\u00e1 estiver \u2014 comer bem sem alongar demais o dia.", dica: "No \u00faltimo dia vale mais a conveni\u00eancia do que atravessar a cidade por um restaurante espec\u00edfico." },
+        { horario: "14:45 \u2013 15:10", nome: "Sa\u00edda do centro rumo ao aeroporto", descricao: "O deslocamento do centro ao aeroporto leva aproximadamente 17 minutos de carro; de \u00f4nibus, a refer\u00eancia \u00e9 de 24 minutos, com servi\u00e7o di\u00e1rio.", dica: "Acompanhe o status do voo pela ferramenta oficial da companhia a partir de 48 horas antes da partida." },
+        { horario: "15:15 \u2013 embarque", nome: "Aeroporto BRC \u2014 despacho e embarque", descricao: "Chegada com folga ao aeroporto, despacho de bagagem e embarque. Em alta temporada de inverno, manter essa janela longa \u00e9 a decis\u00e3o mais segura.", dica: "O sal\u00e3o VIP Bariloche by AMAE, no BRC, \u00e9 uma boa op\u00e7\u00e3o de espera \u2014 confirmarei a eleg\u00edbilidade quando os dados do voo estiverem definidos." }
+      ],
+      deslocamentos: [
+        "Cerro Catedral \u2192 centro: carro/app, ~24 a 25 min (\u00f4nibus ~35 a 38 min)",
+        "Centro \u2192 aeroporto BRC: carro/app, ~17 min (\u00f4nibus ~24 min)",
+        "Alternativa direta \u2014 Cerro Catedral \u2192 aeroporto: ~37 min de carro"
+      ],
+      custos: [
+        { label: "T\u00e1xi / app Cerro Catedral \u2192 centro", valor: "R$ 90 a R$ 160" },
+        { label: "Brunch / caf\u00e9 especial", valor: "R$ 35 a R$ 95" },
+        { label: "Almo\u00e7o leve", valor: "R$ 70 a R$ 150" },
+        { label: "T\u00e1xi / app centro \u2192 aeroporto", valor: "R$ 60 a R$ 120" }
+      ],
+      custoTotal: "R$ 255 a R$ 525"
+    }
+  ],
+  documentos: [
+    { icon: "\ud83d\udec2", titulo: "Passaporte ou RG", meta: "Documento v\u00e1lido para entrada na Argentina", badge: "Obrigat\u00f3rio", badgeClass: "badge-coral" },
+    { icon: "\ud83d\udee1\ufe0f", titulo: "Seguro Viagem", meta: "Cobertura internacional com pr\u00e1tica de esportes de neve", badge: "Essencial", badgeClass: "badge-coral" },
+    { icon: "\ud83c\udfe8", titulo: "Hospedagem", meta: "Voucher Hoteis.com \u2014 itiner\u00e1rio 72074033997375", badge: "Voucher", badgeClass: "badge-green" },
+    { icon: "\ud83e\udeaa", titulo: "Cart\u00e3o de Embarque", meta: "Comprovantes de embarque de todos os voos", badge: "Embarque", badgeClass: "" },
+    { icon: "\ud83c\udfbf", titulo: "Ski \u2014 aula e equipamento", meta: "Vouchers de aula particular, loca\u00e7\u00e3o e passe do Cerro Catedral", badge: "A confirmar", badgeClass: "" },
+    { icon: "\ud83d\ude97", titulo: "Loca\u00e7\u00e3o de Carro", meta: "Voucher e contrato da locadora, se contratada", badge: "Se aplic\u00e1vel", badgeClass: "" },
+    { icon: "\ud83d\ude8c", titulo: "Transporte", meta: "Transfers, traslados e transportes contratados", badge: "Reservado", badgeClass: "" }
+  ],
+  footerNote: "Bariloche \u00b7 Cerro Catedral \u00b7 Agosto de 2026",
+  _slug: "bariloche-ski-catedral-2026"
+};
+
+
+function fmtDateBR(iso) {
+  if (!iso) return '';
+  const p = iso.split('-');
+  if (p.length === 3) return p[2]+'/'+p[1]+'/'+p[0];
+  return iso;
+}
+
+function buildVooCard(v) {
+  return `
+  <div class="voo-card">
+    <div class="voo-lado">
+      <div class="voo-city">${v.origemIata||'???'}</div>
+      <div class="voo-airport">${v.origemNome||''}</div>
+      <div class="voo-time">${v.horaPartida||'—'}</div>
+      <div class="voo-date">${v.data ? fmtDateBR(v.data) : ''}</div>
+    </div>
+    <div class="voo-center">
+      <span class="voo-arrow">✈</span>
+      <div class="voo-duration">Voo ${v.tipo==='ida'?'Ida':'Volta'}${v.nvoo?' · '+v.nvoo:''}</div>
+      <span class="voo-badge">${v.cia||'Companhia a confirmar'}${v.classe?' · '+v.classe:''}</span>
+      ${v.conexao?`<div style="font-size:11px;color:var(--muted);margin-top:4px">Conexão: ${v.conexao}</div>`:''}
+      ${v.pnr?`<div class="voo-pnr">Localizador: <strong>${v.pnr}</strong></div>`:''}
+    </div>
+    <div class="voo-lado">
+      <div class="voo-city">${v.destinoIata||'???'}</div>
+      <div class="voo-airport">${v.destinoNome||''}</div>
+      <div class="voo-time">${v.horaChegada||'—'}</div>
+      <div class="voo-date">${v.dataChegada ? fmtDateBR(v.dataChegada) : ''}</div>
+    </div>
+  </div>`;
+}
+
+function buildHotelCard(h) {
+  return `
+  <div class="hotel-card">
+    <div class="hotel-icon">🏨</div>
+    <div class="hotel-info">
+      <div class="hotel-nome">${h.nome||'Hotel'}</div>
+      <div class="hotel-meta">
+        ${h.cidade ? `<span>📍 ${h.cidade}</span>` : ''}
+        ${h.hospedes ? `<span>👥 ${h.hospedes}</span>` : ''}
+        ${h.noites ? `<span>🌙 ${h.noites} noite${h.noites!=1?'s':''}</span>` : ''}
+      </div>
+      <div class="hotel-periodo">
+        ${h.checkin ? fmtDateBR(h.checkin) : ''}${h.checkout ? ' → '+fmtDateBR(h.checkout) : ''}
+      </div>
+      ${h.conf ? `<span class="hotel-conf">Conf. ${h.conf}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+function buildServCard(s) {
+  return `
+  <div class="serv-card">
+    <div class="serv-card-header">
+      <span class="serv-icon">${s.icon||'📋'}</span>
+      <span class="serv-nome">${s.nome||''}</span>
+    </div>
+    <div class="serv-meta">${s.meta||''}</div>
+    ${s.badge ? `<span class="serv-badge">${s.badge}</span>` : ''}
+  </div>`;
+}
+
+function buildDayBlock(d, idx) {
+  const dotColors = ['#126eff','#22c55e','#f59e0b','#60a5fa','#a78bfa','#fb923c','#34d399'];
+  const dots = (d.atividades||[]).slice(0,4).map((_,i) =>
+    `<div class="day-nav-dot" style="background:${dotColors[i%dotColors.length]}"></div>`
+  ).join('');
+
+  const ativsHtml = (d.atividades||[]).map((a, ai, arr) => {
+    const prev = ai > 0 ? arr[ai-1] : null;
+    // Extract clean location name from activity nome (strip times, extra info)
+    function extractLoc(nome) {
+      if (!nome) return '';
+      // Remove localizador codes, parentheses content, pipe content
+      return nome.replace(/·.*$/,'').replace(/\|.*$/,'').replace(/\(.*?\)/g,'').replace(/Loc\..*$/,'').trim();
+    }
+    const destName = extractLoc(a.nome);
+    const origName = prev ? extractLoc(prev.nome) : '';
+    const mapsBase = 'https://www.google.com/maps/dir/?api=1';
+    const mapsUrl = destName ? (origName
+      ? mapsBase + '&origin=' + encodeURIComponent(origName) + '&destination=' + encodeURIComponent(destName)
+      : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(destName)) : '';
+    const mapsWalk = destName && origName ? mapsUrl + '&travelmode=walking' : mapsUrl;
+    const mapsDrive = destName && origName ? mapsUrl + '&travelmode=driving' : mapsUrl;
+    const mapsTransit = destName && origName ? mapsUrl + '&travelmode=transit' : mapsUrl;
+    const wazeUrl = destName ? 'https://waze.com/ul?q=' + encodeURIComponent(destName) + '&navigate=yes' : '';
+    const navHtml = (mapsUrl && ai > 0) ? `
+      <div class="atracao-nav">
+        <span class="atracao-nav-label">Como chegar</span>
+        <div class="atracao-nav-btns">
+          <a href="${mapsDrive}" target="_blank" class="nav-btn nav-drive" title="Carro">🚗 Carro</a>
+          <a href="${mapsTransit}" target="_blank" class="nav-btn nav-transit" title="Transporte público">🚇 Ônibus/Metrô</a>
+          <a href="${mapsWalk}" target="_blank" class="nav-btn nav-walk" title="A pé">🚶 A pé</a>
+          <a href="${wazeUrl}" target="_blank" class="nav-btn nav-waze" title="Waze">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm3.8 14.2c-1 .7-2.3 1.1-3.8 1.1s-2.8-.4-3.8-1.1c-.3-.2-.4-.6-.2-.9.2-.3.6-.4.9-.2.8.6 1.9.9 3.1.9s2.3-.3 3.1-.9c.3-.2.7-.1.9.2.2.3.1.7-.2.9zM9 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+            Waze
+          </a>
+        </div>
+      </div>` : '';
+    return `
+    <div class="atracao">
+      <div class="atracao-header">
+        <span class="atracao-time">${a.horario||''}</span>
+        <span class="atracao-nome">${a.nome||''}</span>
+      </div>
+      ${a.descricao ? `<div class="atracao-desc">${a.descricao}</div>` : ''}
+      ${a.dica ? `<div class="atracao-tip">💡 ${a.dica}</div>` : ''}
+      ${navHtml}
+    </div>`;
+  }).join('');
+
+  const deslHtml = (d.deslocamentos||[]).length ? `
+    <span class="day-section-label">Deslocamentos</span>
+    ${d.deslocamentos.map(dl => {
+      // Extract destination from pattern "A → B: details" or "A → B"
+      const arrowMatch = dl.match(/→\s*([^:→\(]+)/);
+      const dest = arrowMatch ? arrowMatch[1].trim().split(/[\(,]/)[0].trim() : '';
+      const mapsUrl = dest ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(dest) : '';
+      const wazeUrl = dest ? 'https://waze.com/ul?q=' + encodeURIComponent(dest) + '&navigate=yes' : '';
+      const navBtns = dest ? `
+        <div class="desl-nav-btns">
+          <a href="${mapsUrl}" target="_blank" class="desl-nav-btn maps" title="Abrir no Google Maps">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Maps
+          </a>
+          <a href="${wazeUrl}" target="_blank" class="desl-nav-btn waze" title="Abrir no Waze">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm3.8 14.2c-1 .7-2.3 1.1-3.8 1.1s-2.8-.4-3.8-1.1c-.3-.2-.4-.6-.2-.9.2-.3.6-.4.9-.2.8.6 1.9.9 3.1.9s2.3-.3 3.1-.9c.3-.2.7-.1.9.2.2.3.1.7-.2.9zM9 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+            Waze
+          </a>
+        </div>` : '';
+      return `<div class="desl-item">${dl}${navBtns}</div>`;
+    }).join('')}` : '';
+
+  const custosHtml = (d.custos||[]).length ? `
+    <span class="day-section-label">Custos Estimados</span>
+    ${d.custos.map(c => `<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:4px 0;border-bottom:1px dashed rgba(255,255,255,.06)"><span>${c.label}</span><span>${c.valor}</span></div>`).join('')}
+    ${d.custoTotal ? `<div style="display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:var(--accent);padding:8px 0 0;border-top:1px solid var(--border);margin-top:4px"><span>Total estimado</span><span>${d.custoTotal}</span></div>` : ''}` : '';
+
+  return {
+    navBtn: `
+    <button class="day-nav-btn" onclick="jumpToDay(${d.num})" id="day-nav-${d.num}">
+      <span class="day-nav-num">${d.num}</span>
+      <span class="day-nav-label">${(d.titulo||'Dia').substring(0,10)}</span>
+      <div class="day-nav-dots">${dots}</div>
+      ${d.data ? `<span style="font-size:9px;color:var(--muted2);margin-top:-2px">${fmtDateBR(d.data).substring(0,5)}</span>` : ''}
+    </button>`,
+    block: `
+    <div class="day-block" id="day-${d.num}">
+      <button class="day-toggle" onclick="toggleDay(this)">
+        <div class="day-num-badge">${String(d.num).padStart(2,'0')}</div>
+        <div class="day-toggle-info">
+          ${d.data ? `<div class="day-toggle-date">${fmtDateBR(d.data)}</div>` : ''}
+          <div class="day-toggle-title">${d.titulo||'Dia '+d.num}</div>
+          ${d.resumo ? `<div class="day-toggle-summary">${d.resumo}</div>` : ''}
+        </div>
+        ${d.energia ? `<span class="day-energy">${d.energia}</span>` : ''}
+        <span class="day-chevron">▾</span>
+      </button>
+      <div class="day-content">
+        ${ativsHtml}
+        ${deslHtml}
+        ${custosHtml}
+      </div>
+    </div>`
+  };
+}
+
+function renderRoteiro() {
+  if (typeof ROTEIRO_DATA === 'undefined') {
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#8a9bbf;font-size:14px">Nenhum roteiro carregado.</div>';
+    return;
+  }
+  const D = ROTEIRO_DATA;
+
+  // Marca (opcional — permite reaproveitar o template para outras frentes,
+  // como o Clube do Viajante, sem alterar o padrão do Travel Concierge)
+  document.getElementById('topbar-brand-text').innerHTML = D.marcaHTML || 'Travel <span>Concierge</span>';
+  document.getElementById('footer-brand').innerHTML = D.marcaHTML || 'Travel <span>Concierge</span>';
+
+  // Title
+  document.getElementById('page-title').textContent = (D.titulo||'Roteiro') + ' · ' + (D.marcaTexto||'Travel Concierge');
+
+
+  // Hero
+  if (D.heroImage) document.getElementById('hero-img').style.backgroundImage = `url('${D.heroImage}')`;
+  document.getElementById('hero-eyebrow').textContent = D.eyebrow||D.marcaTexto||'Travel Concierge';
+  document.getElementById('hero-title').innerHTML = (D.titulo||'').replace(' & ','<br>');
+  document.getElementById('hero-subtitle').textContent = D.subtitulo||'';
+  document.getElementById('hero-pills').innerHTML = (D.pills||[]).map(p=>`<span class="pill">${p}</span>`).join('');
+
+  // Topbar nav links
+  const navLinks = [
+    ['#visao-geral','Visão Geral'],
+    ...(D.voos?.length ? [['#voos','Voos']] : []),
+    ...(D.hospedagem?.length ? [['#hospedagem','Hotel']] : []),
+    ...(D.servicos?.length ? [['#servicos','Serviços']] : []),
+    ...(D.dias?.length ? [['#roteiro','Roteiro']] : []),
+    ...(D.documentos?.length ? [['#documentos','Documentos']] : []),
+  ];
+  document.getElementById('topbar-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}">${l}</a>`).join('');
+  document.getElementById('mobile-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}" onclick="closeMobileNav()">${l}</a>`).join('');
+
+  // Visão geral
+  const cards = D.visaoGeral||[];
+  document.getElementById('overview-grid').innerHTML = cards.map(c=>`
+    <div class="info-card ${c.variant||''}">
+      <span class="info-card-label">${c.label}</span>
+      <span class="info-card-value">${c.value}</span>
+    </div>`).join('');
+  if (D.obs) {
+    document.getElementById('obs-box').style.display = 'block';
+    document.getElementById('obs-text').innerHTML = D.obs;
+  }
+
+  // Voos
+  if (D.voos?.length) {
+    document.getElementById('voos').style.display = '';
+    document.getElementById('voos-container').innerHTML = [...D.voos].sort((a,b)=>((a.data||'')+' '+(a.horaPartida||'')).localeCompare((b.data||'')+' '+(b.horaPartida||''))).map(buildVooCard).join('');
+  }
+
+  // Hospedagem
+  if (D.hospedagem?.length) {
+    document.getElementById('hospedagem').style.display = '';
+    document.getElementById('hr-hospedagem').style.display = '';
+    document.getElementById('hospedagem-container').innerHTML = [...D.hospedagem].sort((a,b)=>(a.checkin||'').localeCompare(b.checkin||'')).map(buildHotelCard).join('');
+  }
+
+  // Serviços
+  if (D.servicos?.length) {
+    document.getElementById('servicos').style.display = '';
+    document.getElementById('hr-servicos').style.display = '';
+    document.getElementById('servicos-grid').innerHTML = D.servicos.map(buildServCard).join('');
+  }
+
+  // Roteiro dia a dia
+  if (D.dias?.length) {
+    document.getElementById('roteiro').style.display = '';
+    document.getElementById('hr-roteiro').style.display = '';
+    document.getElementById('day-nav').style.display = '';
+    const navEl = document.getElementById('day-nav-inner');
+    const timelineEl = document.getElementById('timeline');
+    navEl.innerHTML = '';
+    timelineEl.innerHTML = '';
+    D.dias.forEach((d,i) => {
+      const { navBtn, block } = buildDayBlock(d, i);
+      navEl.innerHTML += navBtn;
+      timelineEl.innerHTML += block;
+    });
+  }
+
+  // Documentos
+  if (D.documentos?.length) {
+    document.getElementById('documentos').style.display = '';
+    document.getElementById('hr-documentos').style.display = '';
+    renderDocCards(D.documentos);
+    if (D._slug) carregarDocsUpload(D._slug);
+  }
+
+  // Footer
+  document.getElementById('footer-note').textContent = D.footerNote||D.titulo||'';
+}
+
+// Topbar scroll
+// Topbar scroll + CSS var para day-nav top dinâmico
+function updateTopbarVar() {
+  const h = document.getElementById('topbar')?.offsetHeight || 64;
+  document.documentElement.style.setProperty('--topbar-h', h + 'px');
+}
+window.addEventListener('scroll', ()=>{
+  document.getElementById('topbar').classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+window.addEventListener('resize', updateTopbarVar, {passive:true});
+updateTopbarVar();
+
+// Toggle day
+function toggleDay(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  content.classList.toggle('open', !isOpen);
+}
+
+// Day nav jump
+function jumpToDay(n) {
+  const el = document.getElementById('day-'+n);
+  if (!el) return;
+  window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 160, behavior:'smooth'});
+  document.querySelectorAll('.day-nav-btn').forEach(b=>b.classList.remove('active'));
+  const btn = document.getElementById('day-nav-'+n);
+  if (btn) { btn.classList.add('active'); btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+}
+
+function updateDayNav() {
+  if (!ROTEIRO_DATA?.dias?.length) return;
+  let active = 1;
+  ROTEIRO_DATA.dias.forEach(d => {
+    const el = document.getElementById('day-'+d.num);
+    if (el && el.getBoundingClientRect().top <= 170) active = d.num;
+  });
+  document.querySelectorAll('.day-nav-btn').forEach(b=>b.classList.remove('active'));
+  const btn = document.getElementById('day-nav-'+active);
+  if (btn) btn.classList.add('active');
+}
+window.addEventListener('scroll', updateDayNav, {passive:true});
+
+// Mobile nav
+function toggleMobileNav() {
+  const nav = document.getElementById('mobile-nav');
+  const toggle = document.getElementById('menu-toggle');
+  const open = nav.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.getElementById('menu-toggle').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Docs upload ──────────────────────────────────────────────
+const PROXY = 'https://cdv-proxy-production.up.railway.app';
+// _docsUploadados: { docId: [ {nome, rawUrl, mediaType, fileId}, ... ] }
+let _docsUploadados = {};
+let _docsList = [];
+
+// ── helpers proxy ─────────────────────────────────────────────
+async function _metaGet(slug) {
+  try {
+    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug) + '&_=' + Date.now());
+    const d = await r.json();
+    return (d.ok && d.docs) ? d.docs : {};
+  } catch(e) { return {}; }
+}
+
+async function _metaSave(slug, meta) {
+  // Usa POST /roteiros/doc-meta (novo endpoint) para salvar meta completo
+  try {
+    await fetch(PROXY + '/roteiros/doc-meta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, meta })
+    });
+  } catch(e) {}
+}
+
+// ── renderiza a grid de cards ─────────────────────────────────
+function _fileListHtml(docId) {
+  const files = _docsUploadados[docId] || [];
+  if (!files.length) return '';
+  return files.map((f, fi) => {
+    const short = f.nome.length > 20 ? f.nome.substring(0,17)+'...' : f.nome;
+    return `<div class="doc-uploaded" style="margin-top:4px">
+      ✅ <a href="${f.rawUrl}" target="_blank" class="doc-uploaded-link" title="${f.nome}">${short}</a>
+      <button class="doc-del-btn" title="Remover arquivo" onclick="removerDocArquivo('${docId}',${fi})">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function _redrawDocs() {
+  const grid = document.getElementById('docs-grid');
+  grid.innerHTML = _docsList.map((doc) => {
+    const docId = doc.docId;
+    const titulo = (doc.titulo||'doc').replace(/'/g, '');
+    return `
+    <div class="doc-card" id="doccard-${docId}" style="position:relative">
+      <button class="doc-card-del" title="Remover este cartão" onclick="removerDocCard('${docId}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:13px;line-height:1;padding:0" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted2)'">✕</button>
+      <span class="doc-icon">${doc.icon||'📄'}</span>
+      <span class="doc-title">${doc.titulo||''}</span>
+      <span class="doc-meta">${doc.meta||''}</span>
+      ${doc.badge ? `<span class="doc-badge ${doc.badgeClass||''}">${doc.badge}</span>` : ''}
+      <div class="doc-upload-area" id="upload-area-${docId}">
+        <div class="doc-uploading" id="uploading-${docId}" style="display:none">Enviando...</div>
+        <div id="upload-status-${docId}">${_fileListHtml(docId)}</div>
+        <button class="doc-upload-btn" style="margin-top:6px" onclick="triggerUpload('${docId}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Anexar arquivo
+        </button>
+        <input class="doc-input" type="file" id="input-${docId}"
+          accept=".pdf,.jpg,.jpeg,.png,.webp,.heic"
+          onchange="handleDocUpload('${docId}', '${titulo}', this)">
+      </div>
+    </div>`;
+  }).join('') + `
+    <div class="doc-card doc-card-add" onclick="adicionarDocCard()" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--border2);background:transparent;min-height:140px;transition:border-color .15s,background .15s" onmouseover="this.style.borderColor='var(--blue)';this.style.background='rgba(18,110,255,.06)'" onmouseout="this.style.borderColor='var(--border2)';this.style.background='transparent'">
+      <span style="font-size:26px;color:var(--muted2)">+</span>
+      <span style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Adicionar documento</span>
+    </div>`;
+}
+
+// ── carregamento inicial ──────────────────────────────────────
+async function carregarDocsUpload(slug) {
+  // Busca docs-meta.json via proxy — fonte de verdade absoluta
+  const meta = await _metaGet(slug);
+
+  // Cards deletados (persistidos no meta como _deletedCards: ['id1','id2'])
+  const deletedCards = new Set(meta._deletedCards || []);
+  // Cards extras criados pelo usuário (meta._extraCards: [{docId, titulo, icon, meta, badge}])
+  const extraCards = meta._extraCards || [];
+
+  // Reconstituir _docsList: cards base do ROTEIRO_DATA menos deletados, mais extras
+  // (já foi montado por renderDocCards antes, mas aqui refiltramos)
+  _docsList = (_docsList.length ? _docsList : (ROTEIRO_DATA?.documentos||[]).map((d,i)=>({...d, docId: d.docId||('doc_'+i)})))
+    .filter(d => !deletedCards.has(d.docId));
+  // Adicionar extras (evitar duplicatas)
+  const existingIds = new Set(_docsList.map(d => d.docId));
+  for (const ex of extraCards) {
+    if (!existingIds.has(ex.docId)) _docsList.push(ex);
+  }
+
+  // Mapear arquivos para cards
+  _docsUploadados = {};
+  Object.entries(meta).forEach(([fileName, info]) => {
+    if (fileName.startsWith('_')) return; // skip _deletedCards, _extraCards
+    const fileId = fileName.replace(/\.[^.]+$/, '');
+    const docId  = fileId.replace(/_\d+$/, '');
+    const rawUrl = `https://raw.githubusercontent.com/davileles/roteiros/main/${slug}/docs/${fileName}`;
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    if (!_docsUploadados[docId].some(x => x.fileId === fileId))
+      _docsUploadados[docId].push({ nome: info.nome||fileName, rawUrl, mediaType: info.mediaType||'', fileId });
+  });
+
+  _redrawDocs();
+}
+
+function renderDocCards(documentos) {
+  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
+  _redrawDocs();
+  // Carregar estado real do servidor em seguida
+  const slug = ROTEIRO_DATA?._slug;
+  if (slug) carregarDocsUpload(slug);
+}
+
+function triggerUpload(docId) {
+  document.getElementById('input-' + docId)?.click();
+}
+
+// ── upload de arquivo ─────────────────────────────────────────
+async function handleDocUpload(docId, nomeDoc, input) {
+  const file = input.files?.[0];
+  if (!file) return;
+  const slug = ROTEIRO_DATA?._slug;
+  if (!slug) { alert('Slug do roteiro não definido.'); return; }
+
+  const maxMB = 8;
+  if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
+
+  const ext = file.name.split('.').pop().toLowerCase();
+  const fileId = docId + '_' + Date.now();
+  const fileName = fileId + '.' + ext;
+
+  document.getElementById('uploading-' + docId).style.display = '';
+
+  try {
+    const b64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    const resp = await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName, nome: file.name, tipo: ext, base64: b64, mediaType: file.type })
+    });
+    const data = await resp.json();
+    if (!data.ok) throw new Error(data.erro||'Erro no upload');
+
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
+    document.getElementById('uploading-' + docId).style.display = 'none';
+    document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+  } catch(e) {
+    alert('Erro ao enviar arquivo: ' + e.message);
+    document.getElementById('uploading-' + docId).style.display = 'none';
+  }
+  input.value = '';
+}
+
+// ── remover arquivo ───────────────────────────────────────────
+async function removerDocArquivo(docId, fi) {
+  const files = _docsUploadados[docId] || [];
+  const f = files[fi];
+  if (!f) return;
+  if (!confirm('Remover "' + f.nome + '"?')) return;
+
+  // Remove localmente imediato
+  _docsUploadados[docId].splice(fi, 1);
+  document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+
+  // Remove no servidor via DELETE /roteiros/doc-upload
+  // O proxy já cuida de deletar o arquivo e remover do docs-meta.json
+  const slug = ROTEIRO_DATA?._slug;
+  if (!slug) return;
+  // Extrair extensão do rawUrl (fonte correta), não do nome amigável
+  const ext = f.rawUrl.split('.').pop().toLowerCase();
+  const fileName = f.fileId + '.' + ext;
+  try {
+    await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName })
+    });
+  } catch(e) {}
+}
+
+// ── remover card ──────────────────────────────────────────────
+async function removerDocCard(docId) {
+  if (!confirm('Remover este cartão de documento?')) return;
+  const slug = ROTEIRO_DATA?._slug;
+
+  // Remove localmente imediato
+  _docsList = _docsList.filter(d => d.docId !== docId);
+  delete _docsUploadados[docId];
+  _redrawDocs();
+
+  // Persiste no servidor: adiciona docId à lista _deletedCards no meta
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  const deleted = new Set(meta._deletedCards || []);
+  deleted.add(docId);
+  // Remove também do _extraCards se era um card extra
+  const extras = (meta._extraCards || []).filter(e => e.docId !== docId);
+  meta._deletedCards = [...deleted];
+  meta._extraCards = extras;
+  await _metaSave(slug, meta);
+}
+
+// ── adicionar card extra ──────────────────────────────────────
+async function adicionarDocCard() {
+  const titulo = prompt('Nome do documento:');
+  if (!titulo) return;
+  const slug = ROTEIRO_DATA?._slug;
+  const newId = 'doc_extra_' + Date.now();
+  const novoCard = { docId: newId, icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' };
+
+  _docsList.push(novoCard);
+  _redrawDocs();
+
+  // Persiste no servidor
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  meta._extraCards = [...(meta._extraCards || []), novoCard];
+  await _metaSave(slug, meta);
+}
+
+// ── compat legado ─────────────────────────────────────────────
+function mostrarDocAnexado(docId) {}
+async function removerDoc(docId) { await removerDocArquivo(docId, 0); }
+// ── Fim docs upload ──────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderRoteiro();
+  updateDayNav();
+});
+</script>
+</body>
+</html>
