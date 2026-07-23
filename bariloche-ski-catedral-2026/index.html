@@ -414,7 +414,7 @@ const ROTEIRO_DATA = {
     { label: "Ritmo", value: "Moderado" },
     { label: "Clima em agosto", value: "Inverno intenso \u00b7 -2\u00b0C a 8\u00b0C \u00b7 escurece ~18h" }
   ],
-  obs: "Roteiro constru\u00eddo em torno do Cerro Catedral, com hospedagem na pr\u00f3pria base da montanha \u2014 quatro dias dedicados ao ski com aula particular e os demais reservados ao Circuito Chico, Llao Llao e ao centro de Bariloche. Leve roupas t\u00e9rmicas e imperme\u00e1veis, reserve aulas e equipamento com anteced\u00eancia e garanta mesa nos restaurantes principais: agosto \u00e9 alta temporada de neve.",
+  obs: "Roteiro constru\u00eddo em torno do Cerro Catedral, com hospedagem na pr\u00f3pria base da montanha \u2014 quatro dias dedicados ao ski com aula particular e os demais reservados ao Circuito Chico, Llao Llao e ao centro de Bariloche. Leve roupas t\u00e9rmicas e imperme\u00e1veis, reserve aulas e equipamento com anteced\u00eancia e garanta mesa nos restaurantes principais: agosto \u00e9 alta temporada de neve. Valores em pesos convertidos pela cota\u00e7\u00e3o de refer\u00eancia 1 BRL \u2248 ARS 290 (23/07/2026) \u2014 confira a cota\u00e7\u00e3o do dia antes de fechar.",
   voos: [
     {
       tipo: "ida",
@@ -459,8 +459,9 @@ const ROTEIRO_DATA = {
     }
   ],
   servicos: [
-    { tipo: "passeio", icon: "\ud83c\udfbf", nome: "Aula particular de ski \u2014 Escola La Base", meta: "4 dias (02 a 05 de agosto) \u00b7 aula exclusiva de 3h \u00b7 refer\u00eancia ARS 297.000 \u2248 R$ 1.040/dia", badge: "A reservar" },
-    { tipo: "outro", icon: "\ud83e\udd7f", nome: "Loca\u00e7\u00e3o de equipamento de ski", meta: "Ski completo standard \u00b7 refer\u00eancia ARS 40.000 \u2248 R$ 140/dia \u00b7 retirada na base", badge: "A reservar" },
+    { tipo: "passeio", icon: "\ud83c\udfbf", nome: "Aula EXCLUSIVA de ski \u2014 Escola La Base", meta: "Meio dia (3h): ARS 412.000 \u2248 R$ 1.420 por dia \u00b7 4 dias \u2248 R$ 5.680 \u00b7 n\u00e3o inclui equipamento", badge: "Op\u00e7\u00e3o 1" },
+    { tipo: "passeio", icon: "\ud83c\udfc2", nome: "Aula SEMI-EXCLUSIVA de ski \u2014 Escola La Base", meta: "Grupo de 4 a 6 pessoas \u00b7 pacote 4 dias / 2h di\u00e1rias: ARS 345.000 \u2248 R$ 1.190 por pessoa \u00b7 n\u00e3o inclui equipamento", badge: "Op\u00e7\u00e3o 2" },
+    { tipo: "outro", icon: "\ud83e\udd7f", nome: "Loca\u00e7\u00e3o de equipamento de ski", meta: "Ski completo standard \u00b7 ARS 40.000 \u2248 R$ 140 por dia \u00b7 retirada na base", badge: "A reservar" },
     { tipo: "outro", icon: "\ud83c\udfab", nome: "Passe di\u00e1rio Cerro Catedral", meta: "Faixa indicativa R$ 560 a R$ 770/dia \u00b7 conferir tarifa oficial antes da compra", badge: "A confirmar" },
     { tipo: "carro", icon: "\ud83d\ude90", nome: "Transfer aeroporto BRC \u2192 Cerro Catedral", meta: "O hotel solicita contato com at\u00e9 24h de anteced\u00eancia para organizar o traslado", badge: "Solicitar" }
   ],
@@ -479,15 +480,15 @@ const ROTEIRO_DATA = {
         { horario: "20:00 \u2013 22:00", nome: "Jantar de boas-vindas \u2014 HANS Restaurant ou Bar Catedral", descricao: "O Hotel Catedral opera diferentes espa\u00e7os gastron\u00f4micos, entre eles o HANS Restaurant (cozinha autoral patag\u00f4nica, R$ 160 a R$ 240) e o Bar Catedral (bar e coquetelaria, R$ 80 a R$ 160). A Casa Cumbre, na base, \u00e9 alternativa para fondue noturna (R$ 120 a R$ 220).", dica: "Como \u00e9 s\u00e1bado de alta temporada, vale reservar. Na chegada, evite jantar no centro para n\u00e3o perder tempo em deslocamento." }
       ],
       deslocamentos: [
-        "Aeroporto BRC \u2192 hotel na base do Cerro Catedral: carro app / t\u00e1xi / remis privado, ~39 min (refer\u00eancia de t\u00e1xi ARS 55.000 a 70.000)",
+        "Aeroporto BRC \u2192 hotel na base do Cerro Catedral: carro app / t\u00e1xi / remis privado, ~39 min (refer\u00eancia de t\u00e1xi ARS 55.000 a 70.000 \u2248 R$ 190 a R$ 240)",
         "Hotel \u2192 restaurantes do complexo e da base: a p\u00e9"
       ],
       custos: [
-        { label: "Transfer aeroporto \u2192 Cerro Catedral", valor: "R$ 195 a R$ 245" },
+        { label: "Transfer aeroporto \u2192 Cerro Catedral \u2014 ARS 55.000 a 70.000", valor: "R$ 190 a R$ 240" },
         { label: "Drink / vinho no hotel", valor: "R$ 35 a R$ 70" },
         { label: "Jantar no hotel / base", valor: "R$ 120 a R$ 220" }
       ],
-      custoTotal: "R$ 350 a R$ 535"
+      custoTotal: "R$ 345 a R$ 530"
     },
     {
       num: 2,
@@ -511,14 +512,15 @@ const ROTEIRO_DATA = {
         "After-ski \u2192 hotel: a p\u00e9"
       ],
       custos: [
-        { label: "Aula particular 3h (La Base) \u2014 ARS 297.000", valor: "\u2248 R$ 1.040" },
-        { label: "Aluguel ski completo standard \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
-        { label: "Passe de montanha / ski pass di\u00e1rio", valor: "R$ 560 a R$ 770" },
+        { label: "Aula EXCLUSIVA 3h (La Base) \u2014 ARS 412.000", valor: "\u2248 R$ 1.420" },
+        { label: "OU aula SEMI-EXCLUSIVA 2h \u2014 ARS 345.000 pelos 4 dias", valor: "\u2248 R$ 300 por dia" },
+        { label: "Loca\u00e7\u00e3o de equipamento \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
+        { label: "Passe / acessos do Cerro Catedral", valor: "R$ 560 a R$ 770 (a confirmar)" },
         { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 160" },
         { label: "After-ski / vinho / caf\u00e9", valor: "R$ 35 a R$ 90" },
         { label: "Jantar", valor: "R$ 120 a R$ 220" }
       ],
-      custoTotal: "R$ 1.985 a R$ 2.420"
+      custoTotal: "R$ 1.245 (semi) a R$ 2.800 (exclusiva)"
     },
     {
       num: 3,
@@ -545,15 +547,16 @@ const ROTEIRO_DATA = {
         "\u0100nima \u2192 hotel no Cerro Catedral: carro app / t\u00e1xi"
       ],
       custos: [
-        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Passe / acessos do Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Aula EXCLUSIVA 3h (La Base) \u2014 ARS 412.000", valor: "\u2248 R$ 1.420" },
+        { label: "OU aula SEMI-EXCLUSIVA 2h \u2014 ARS 345.000 pelos 4 dias", valor: "\u2248 R$ 300 por dia" },
+        { label: "Loca\u00e7\u00e3o de equipamento \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
+        { label: "Passe / acessos do Cerro Catedral", valor: "R$ 560 a R$ 770 (a confirmar)" },
         { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
         { label: "T\u00e1xi / app ida e volta \u2014 centro e Circuito Chico", valor: "R$ 220 a R$ 380" },
         { label: "Wine bar / ta\u00e7as / pequena degusta\u00e7\u00e3o", valor: "R$ 80 a R$ 180" },
         { label: "Jantar no \u0100nima", valor: "R$ 180 a R$ 320" }
       ],
-      custoTotal: "R$ 1.450 a R$ 2.650"
+      custoTotal: "R$ 1.570 (semi) a R$ 3.380 (exclusiva)"
     },
     {
       num: 4,
@@ -580,15 +583,16 @@ const ROTEIRO_DATA = {
         "Centro \u2192 hotel: carro app / t\u00e1xi"
       ],
       custos: [
-        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Passe / acessos do Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Aula EXCLUSIVA 3h (La Base) \u2014 ARS 412.000", valor: "\u2248 R$ 1.420" },
+        { label: "OU aula SEMI-EXCLUSIVA 2h \u2014 ARS 345.000 pelos 4 dias", valor: "\u2248 R$ 300 por dia" },
+        { label: "Loca\u00e7\u00e3o de equipamento \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
+        { label: "Passe / acessos do Cerro Catedral", valor: "R$ 560 a R$ 770 (a confirmar)" },
         { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 160" },
         { label: "T\u00e1xi / app ida e volta ao centro", valor: "R$ 180 a R$ 320" },
         { label: "Caf\u00e9 de especialidade + doce / salgado", valor: "R$ 35 a R$ 75" },
         { label: "Jantar leve", valor: "R$ 90 a R$ 180" }
       ],
-      custoTotal: "R$ 1.300 a R$ 2.400"
+      custoTotal: "R$ 1.395 (semi) a R$ 3.065 (exclusiva)"
     },
     {
       num: 5,
@@ -612,14 +616,15 @@ const ROTEIRO_DATA = {
         "Llao Llao \u2192 hotel: carro app / t\u00e1xi"
       ],
       custos: [
-        { label: "Aula particular de ski", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Loca\u00e7\u00e3o de equipamento", valor: "cota\u00e7\u00e3o a confirmar" },
-        { label: "Passe / acessos do Cerro Catedral", valor: "cota\u00e7\u00e3o a confirmar" },
+        { label: "Aula EXCLUSIVA 3h (La Base) \u2014 ARS 412.000", valor: "\u2248 R$ 1.420" },
+        { label: "OU aula SEMI-EXCLUSIVA 2h \u2014 ARS 345.000 pelos 4 dias", valor: "\u2248 R$ 300 por dia" },
+        { label: "Loca\u00e7\u00e3o de equipamento \u2014 ARS 40.000", valor: "\u2248 R$ 140" },
+        { label: "Passe / acessos do Cerro Catedral", valor: "R$ 560 a R$ 770 (a confirmar)" },
         { label: "Almo\u00e7o na base", valor: "R$ 90 a R$ 170" },
         { label: "T\u00e1xi / app ida e volta para Llao Llao", valor: "R$ 220 a R$ 380" },
         { label: "Jantar caprichado", valor: "R$ 220 a R$ 420" }
       ],
-      custoTotal: "R$ 1.500 a R$ 2.800"
+      custoTotal: "R$ 1.530 (semi) a R$ 3.300 (exclusiva)"
     },
     {
       num: 6,
