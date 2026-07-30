@@ -50,5 +50,13 @@
   "_deletedCards": [
     "doc_3"
   ],
-  "_extraCards": []
+  "_extraCards": [
+    {
+      "docId": "doc_extra_1785423139979",
+      "icon": "📄",
+      "titulo": "Ferry",
+      "meta": "Adicionado manualmente",
+      "badge": ""
+    }
+  ]
 }
