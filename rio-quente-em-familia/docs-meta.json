@@ -20,5 +20,13 @@
   "_deletedCards": [
     "doc_3"
   ],
-  "_extraCards": []
+  "_extraCards": [
+    {
+      "docId": "doc_extra_1785869777002",
+      "icon": "📄",
+      "titulo": "Cartão de embarque ",
+      "meta": "Adicionado manualmente",
+      "badge": ""
+    }
+  ]
 }
