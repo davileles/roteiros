@@ -789,9 +789,9 @@ function _redrawDocs() {
         <div id="upload-status-${docId}">${_fileListHtml(docId)}</div>
         <button class="doc-upload-btn" style="margin-top:6px" onclick="triggerUpload('${docId}')">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          Anexar arquivo
+          Anexar arquivo(s)
         </button>
-        <input class="doc-input" type="file" id="input-${docId}"
+        <input class="doc-input" type="file" multiple id="input-${docId}"
           accept=".pdf,.jpg,.jpeg,.png,.webp,.heic"
           onchange="handleDocUpload('${docId}', '${titulo}', this)">
       </div>
@@ -852,44 +852,60 @@ function triggerUpload(docId) {
 
 // ── upload de arquivo ─────────────────────────────────────────
 async function handleDocUpload(docId, nomeDoc, input) {
-  const file = input.files?.[0];
-  if (!file) return;
+  // multi-arquivo: aceita seleção múltipla e envia em série (evita conflito de SHA no docs-meta.json)
+  const selecionados = Array.from(input.files || []);
+  if (!selecionados.length) return;
   const slug = ROTEIRO_DATA?._slug;
-  if (!slug) { alert('Slug do roteiro não definido.'); return; }
+  if (!slug) { alert('Slug do roteiro não definido.'); input.value=''; return; }
 
   const maxMB = 8;
-  if (file.size > maxMB * 1024 * 1024) { alert(`Arquivo muito grande. Máximo ${maxMB}MB.`); input.value=''; return; }
+  const grandes = selecionados.filter(f => f.size > maxMB * 1024 * 1024);
+  const fila    = selecionados.filter(f => f.size <= maxMB * 1024 * 1024);
+  if (grandes.length) alert(`Ignorado(s) por passar de ${maxMB}MB:\n` + grandes.map(f => f.name).join('\n'));
+  if (!fila.length) { input.value=''; return; }
 
-  const ext = file.name.split('.').pop().toLowerCase();
-  const fileId = docId + '_' + Date.now();
-  const fileName = fileId + '.' + ext;
+  const elUp = document.getElementById('uploading-' + docId);
+  const erros = [];
 
-  document.getElementById('uploading-' + docId).style.display = '';
+  for (let i = 0; i < fila.length; i++) {
+    const file = fila[i];
+    if (elUp) {
+      elUp.textContent = fila.length > 1 ? `Enviando ${i+1}/${fila.length}...` : 'Enviando...';
+      elUp.style.display = '';
+    }
 
-  try {
-    const b64 = await new Promise((res, rej) => {
-      const r = new FileReader();
-      r.onload = () => res(r.result.split(',')[1]);
-      r.onerror = rej;
-      r.readAsDataURL(file);
-    });
+    const ext = file.name.split('.').pop().toLowerCase();
+    // fileId único por arquivo dentro do card (Date.now()+i evita colisão no mesmo lote)
+    const fileId = docId + '_' + (Date.now() + i);
+    const fileName = fileId + '.' + ext;
 
-    const resp = await fetch(PROXY + '/roteiros/doc-upload', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug, docId: fileName, nome: file.name, tipo: ext, base64: b64, mediaType: file.type })
-    });
-    const data = await resp.json();
-    if (!data.ok) throw new Error(data.erro||'Erro no upload');
+    try {
+      const b64 = await new Promise((res, rej) => {
+        const r = new FileReader();
+        r.onload = () => res(r.result.split(',')[1]);
+        r.onerror = rej;
+        r.readAsDataURL(file);
+      });
 
-    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
-    _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
-    document.getElementById('uploading-' + docId).style.display = 'none';
-    document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
-  } catch(e) {
-    alert('Erro ao enviar arquivo: ' + e.message);
-    document.getElementById('uploading-' + docId).style.display = 'none';
+      const resp = await fetch(PROXY + '/roteiros/doc-upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, docId: fileName, nome: file.name, tipo: ext, base64: b64, mediaType: file.type })
+      });
+      const data = await resp.json();
+      if (!data.ok) throw new Error(data.erro||'Erro no upload');
+
+      if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+      _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
+      const st = document.getElementById('upload-status-' + docId);
+      if (st) st.innerHTML = _fileListHtml(docId);
+    } catch(e) {
+      erros.push(file.name + ' — ' + e.message);
+    }
   }
+
+  if (elUp) { elUp.style.display = 'none'; elUp.textContent = 'Enviando...'; }
+  if (erros.length) alert('Erro ao enviar arquivo(s):\n' + erros.join('\n'));
   input.value = '';
 }
 
