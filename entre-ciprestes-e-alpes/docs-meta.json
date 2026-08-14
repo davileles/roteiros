@@ -88,5 +88,9 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-08-14T09:47:58.854Z"
-  }
+  },
+  "_deletedCards": [
+    "doc_4"
+  ],
+  "_extraCards": []
 }
