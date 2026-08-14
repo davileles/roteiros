@@ -92,5 +92,13 @@
   "_deletedCards": [
     "doc_4"
   ],
-  "_extraCards": []
+  "_extraCards": [
+    {
+      "docId": "doc_extra_1786733008988",
+      "icon": "📄",
+      "titulo": "Trem",
+      "meta": "Adicionado manualmente",
+      "badge": ""
+    }
+  ]
 }
