@@ -40,5 +40,29 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-09-10T10:48:34.261Z"
+  },
+  "doc_hotel_1790192579012.pdf": {
+    "nome": "NH Venezia - 23-10 a 24-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-09-23T19:43:01.000Z"
+  },
+  "doc_hotel_1790192579013.pdf": {
+    "nome": "NH Venezia - 24-10 a 25-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-09-23T19:43:02.000Z"
+  },
+  "doc_hotel_1790192579014.pdf": {
+    "nome": "Grand Hotel Mediterraneo - 25-10 a 29-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-09-23T19:43:03.000Z"
+  },
+  "doc_hotel_1790192579015.pdf": {
+    "nome": "Mercure Colosseo - 30-10 a 02-11.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-09-23T19:43:04.000Z"
   }
 }
