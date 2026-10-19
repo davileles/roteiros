@@ -269,12 +269,12 @@ Body:
 - Nunca concatene o template completo com um segundo bloco de script — isso causa duplicação silenciosa que quebra a renderização.
 - Após a injeção, verifique: `html.count('<script') == 1` e `html.count('const ROTEIRO_DATA') == 1` e `'// const ROTEIRO_DATA = { ... };' not in html`.
 
-**URL final:** `https://davileles.github.io/roteiros/{slug}/`
+**URL final:** `https://roteiros.clubedoviajante.com.br/{slug}/`
 
 ### 2e. Confirmar ao usuário
 
 > "🚀 Roteiro publicado com sucesso!
-> 🔗 **Link:** https://davileles.github.io/roteiros/{slug}/
+> 🔗 **Link:** https://roteiros.clubedoviajante.com.br/{slug}/
 >
 > ⚠️ O GitHub Pages pode levar até 10 minutos para atualizar. Aguarde antes de enviar ao cliente."
 
@@ -284,9 +284,11 @@ Body:
 
 Se o usuário mencionar viagem cadastrada no concierge:
 
-> "Para vincular este roteiro à viagem no painel do concierge, você tem o ID da viagem? (formato: VIA-XXXXXXXXXX)"
+Depois de publicar, sempre orientar a vinculação no painel do concierge:
 
-A vinculação no painel deve ser feita manualmente por enquanto.
+> "🔗 Para usar este roteiro na viagem do concierge (bom dia automático, link nos modelos e lembretes): abra o painel do concierge → aba **Gerar Roteiro** → escolha a viagem → em **Roteiro feito no gerador de roteiros**, cole o link https://roteiros.clubedoviajante.com.br/{slug}/ e clique em **Vincular**. Se mudar o roteiro depois, use **Reimportar**."
+
+Para o bom dia funcionar: cada dia precisa de `data` em `AAAA-MM-DD` (preferir sempre esse formato) e, de preferência, `hospedagem` com `cidade`, `checkin` e `checkout` — o painel usa isso para saber em que cidade o cliente acorda. Não publicar pelo concierge depois de vincular: o "Publicar" de lá substitui esta página.
 
 ---
 
@@ -302,7 +304,7 @@ Roteiro finalizado
   → GET SHA do arquivo existente (ou criar novo se 404)
   → PUT /repos/davileles/roteiros/contents/{slug}/index.html
   → Receber 200/201
-  → Exibir link https://davileles.github.io/roteiros/{slug}/
+  → Exibir link https://roteiros.clubedoviajante.com.br/{slug}/
 ```
 
 ---
