@@ -1,0 +1,86 @@
+# Gera a imagem de preview (WhatsApp/Telegram) de cada roteiro a partir da própria
+# capa da página: mesmas fontes, título, foto e cores. Grava <slug>/capa.jpg e aponta
+# og:image para capa.jpg?v=<carimbo> (o carimbo força o WhatsApp a buscar a nova).
+#
+# - Automático: todo push na main que mexe em <slug>/index.html (proxy, painel ou
+#   sessão do Claude). O commit deste job usa o GITHUB_TOKEN e não dispara o job de novo.
+# - Manual: Actions → "Capa de preview dos roteiros" → Run workflow → slugs separados
+#   por espaço, ou "todos".
+name: Capa de preview dos roteiros
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*/index.html'
+      - '!template/**'
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: 'Slugs separados por espaço, ou "todos"'
+        required: true
+        default: 'todos'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capa-og
+  cancel-in-progress: false
+
+jobs:
+  capa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: Quais roteiros
+        id: alvo
+        env:
+          ANTES: ${{ github.event.before }}
+          ENTRADA: ${{ github.event.inputs.slugs }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "$ENTRADA" = "todos" ]; then
+              PASTAS=$(ls -d */ | sed 's#/##' | grep -vE '^(template|assets|scripts)$' | while read d; do [ -f "$d/index.html" ] && echo "$d"; done | tr '\n' ' ')
+            else
+              PASTAS="$ENTRADA"
+            fi
+          else
+            if git cat-file -e "$ANTES^{commit}" 2>/dev/null; then BASE="$ANTES"; else BASE="HEAD~1"; fi
+            PASTAS=$(git diff --name-only "$BASE" HEAD -- '*/index.html' | cut -d/ -f1 | grep -v '^template$' | sort -u | tr '\n' ' ')
+          fi
+          echo "pastas=$PASTAS" >> "$GITHUB_OUTPUT"
+          echo "Roteiros: ${PASTAS:-nenhum}"
+
+      - uses: actions/setup-python@v5
+        if: steps.alvo.outputs.pastas != ''
+        with:
+          python-version: '3.12'
+
+      - name: Playwright
+        if: steps.alvo.outputs.pastas != ''
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+
+      - name: Gerar capas
+        if: steps.alvo.outputs.pastas != ''
+        run: python scripts/capa_og.py ${{ steps.alvo.outputs.pastas }}
+
+      - name: Commit
+        if: steps.alvo.outputs.pastas != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*/capa.jpg' '*/index.html'
+          if git diff --cached --quiet; then echo "Nada mudou"; exit 0; fi
+          git commit -m "roteiro: capa de preview (${{ steps.alvo.outputs.pastas }})"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
