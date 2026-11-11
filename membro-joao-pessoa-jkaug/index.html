@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title id="page-title">João pessoa · Clube do Viajante</title>
+<link rel="canonical" href="https://roteiros.clubedoviajante.com.br/membro-joao-pessoa-jkaug/"/>
+<meta name="description" content="Cultura, Gastronomia e Aventura"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Clube do Viajante"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:title" content="João pessoa"/>
+<meta property="og:description" content="Cultura, Gastronomia e Aventura"/>
+<meta property="og:url" content="https://roteiros.clubedoviajante.com.br/membro-joao-pessoa-jkaug/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="João pessoa"/>
+<meta name="twitter:description" content="Cultura, Gastronomia e Aventura"/>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Modelo de roteiro · Travel Concierge / Clube do Viajante.
+   Layout: capa escura com foto escurecida; abertura de cada dia escura; conteúdo em creme,
+   coluna única de leitura pensada primeiro para o celular. */
+:root{
+  --ink:#0B0D0F; --ink2:#14171A;
+  --paper:#F4EFE7; --card:#FBF8F3;
+  --text:#14171A; --muted:#55524C; --line:rgba(20,23,26,.14);
+  --gold:#9A7B36; --gold-soft:rgba(154,123,54,.12);
+  --on-ink:#F4EFE7; --on-ink-muted:rgba(244,239,231,.74); --on-ink-line:rgba(244,239,231,.16);
+  --gold-hi:#C8A45C; --gold-pale:#E3C589;
+  --warn:#9A4A2E; --warn-soft:rgba(154,74,46,.10);
+  --ok:#3F6B45; --ok-soft:rgba(63,107,69,.10);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:Manrope,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#14171A; --card:#1B1F23; --text:#EFEAE1; --muted:#B4AEA4; --line:rgba(244,239,231,.14);
+  --gold:#D2B06B; --gold-soft:rgba(200,164,92,.12); --warn:#E08F6C; --warn-soft:rgba(224,143,108,.12);
+  --ok:#8CC394; --ok-soft:rgba(140,195,148,.12); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#14171A; --card:#1B1F23; --text:#EFEAE1; --muted:#B4AEA4; --line:rgba(244,239,231,.14);
+  --gold:#D2B06B; --gold-soft:rgba(200,164,92,.12); --warn:#E08F6C; --warn-soft:rgba(224,143,108,.12);
+  --ok:#8CC394; --ok-soft:rgba(140,195,148,.12); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink2)}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:400}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+b,strong{font-weight:600}
+.eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.tnum{font-variant-numeric:tabular-nums}
+em.g{font-style:italic;color:var(--gold-hi)}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}
+button{font:inherit;color:inherit}
+
+/* ── Capa ── */
+.cover{position:relative;overflow:hidden;background-color:var(--ink);background-size:cover;background-position:center;color:var(--on-ink)}
+.cover::after{content:"";position:absolute;width:640px;height:640px;left:-220px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(200,164,92,.18),transparent 62%);pointer-events:none}
+.cover .wrap{position:relative;z-index:1;padding-block:84px 40px;display:flex;flex-direction:column;gap:18px;min-height:min(520px,82vh);justify-content:flex-end}
+.brand{position:absolute;z-index:1;top:22px;left:0;right:0}
+.brand .wrap{min-height:0;padding-block:0;font-family:var(--serif);font-size:22px;color:var(--on-ink);display:block}
+.brand span,.foot-brand span{font-style:italic;color:var(--gold-hi)}
+.cover .eyebrow{color:var(--gold-hi);display:flex;align-items:center;gap:12px}
+.cover .eyebrow::before{content:"";width:40px;height:1px;background:var(--gold-hi);flex:none}
+.cover h1{font-family:var(--serif);font-size:clamp(52px,14vw,100px);line-height:.95;letter-spacing:-.02em}
+.cover .sub{font-size:19px;color:var(--on-ink-muted);max-width:30em}
+.facts{display:flex;flex-wrap:wrap;gap:8px;padding-top:18px;border-top:1px solid var(--on-ink-line)}
+.facts span{font-size:14px;font-weight:500;padding:5px 11px;border:1px solid rgba(200,164,92,.45);color:var(--on-ink);background:rgba(11,13,15,.35)}
+
+/* ── Barra de navegação ── */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink2);border-bottom:1px solid rgba(200,164,92,.25)}
+.bar .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:9px;scrollbar-width:none}
+.bar .wrap::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:52px;min-height:46px;padding:5px 9px;border-radius:8px;text-decoration:none;color:var(--on-ink-muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent}
+.chip b{font-size:17px;color:var(--on-ink);font-weight:600;letter-spacing:0;font-variant-numeric:tabular-nums}
+.chip.sec{font-weight:600;font-size:12px}
+.chip:hover,.chip.on{border-color:rgba(200,164,92,.55);color:var(--gold-pale)}
+.bar .sep{flex:none;width:1px;margin:8px 4px;background:var(--on-ink-line)}
+
+/* ── Seções ── */
+section.blk{padding-block:44px 8px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 66px)}
+.blk-h{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.blk-h .eyebrow{color:var(--gold)}
+.blk-h h2{font-family:var(--serif);font-size:clamp(34px,8vw,46px);line-height:1.05;letter-spacing:-.01em}
+.blk-h h2 em{font-style:italic;color:var(--gold)}
+
+.overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.overview > div{background:var(--paper);padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.overview .lb{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.overview .vl{font-weight:500;font-size:16px;overflow-wrap:anywhere}
+.overview .green .vl{color:var(--gold);font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.1}
+.overview .coral{box-shadow:inset 2px 0 0 var(--gold)}
+.overview .coral .vl{font-weight:600}
+.overview > div:last-child:nth-child(odd){grid-column:1/-1}
+.note{margin-top:18px;font-size:15px;color:var(--muted);padding-left:14px;border-left:1px solid var(--gold)}
+
+/* Voos */
+.flights{display:flex;flex-direction:column;gap:12px}
+.leg-group{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:10px}
+.flight{background:var(--card);border:1px solid var(--line);padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:6px 12px;align-items:start}
+.flight .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 10px;font-size:14px;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.flight .meta b{color:var(--text)}
+.ap{display:flex;flex-direction:column;min-width:0}
+.ap.r{text-align:right;align-items:flex-end}
+.ap .iata{font-size:30px;font-weight:700;letter-spacing:.02em;line-height:1}
+.ap .time{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--gold)}
+.ap .time small{font-size:12px;color:var(--muted);font-weight:600}
+.ap .dt{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ap .nm{font-size:13px;color:var(--muted);line-height:1.3}
+.arrow{color:var(--gold);font-size:20px;padding-top:4px}
+.flight .foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.code{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:var(--muted);max-width:100%}.code b{overflow-wrap:anywhere}
+.code b{font-size:17px;letter-spacing:.08em;color:var(--text);font-variant-numeric:tabular-nums}
+.copy{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--line);background:none;cursor:pointer;color:var(--gold)}
+.copy.ok{color:var(--ok);border-color:var(--ok)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 8px;border:1px solid currentColor;white-space:nowrap}
+.tag.warn{color:var(--warn);background:var(--warn-soft)}
+.tag.gold{color:var(--gold);background:var(--gold-soft)}
+.tag.ok{color:var(--ok);background:var(--ok-soft)}
+
+/* Hospedagem */
+.stays{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.stay{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.stay .n{grid-row:span 3;font-family:var(--serif);font-size:40px;line-height:1;color:var(--gold);min-width:46px}
+.stay .n small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stay h3{font-size:17px;font-weight:600}
+.stay p{font-size:15px;color:var(--muted)}
+
+/* Reservas e serviços */
+.todo{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.todo > div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.todo .tag{grid-row:1/span 2;grid-column:2;align-self:center}
+.todo .m{grid-column:1;font-size:15px;color:var(--muted)}
+
+/* ── Dias ── */
+.days-intro{padding-block:44px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
+.days-intro .blk-h{margin:0}
+.all{font:600 14px/1 var(--sans);color:var(--gold);background:none;border:1px solid var(--gold);padding:11px 14px;cursor:pointer}
+.day{margin-top:14px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 64px)}
+.day-h{display:block;width:100%;border:0;text-align:left;font:inherit;cursor:pointer;background:var(--ink);color:var(--on-ink);padding:0}
+.day-h:hover{background:#111418}
+.day-h .wrap{padding-block:24px 22px;display:flex;flex-direction:column;gap:12px}
+.day-h .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.day-h .eyebrow{color:var(--gold-hi)}
+.day-h .h2{display:block;font-family:var(--serif);font-size:clamp(32px,8vw,46px);line-height:1.04;letter-spacing:-.01em;text-wrap:balance}
+.day-h .sum{display:block;color:var(--on-ink-muted);font-size:16px;line-height:1.5}
+.day-h .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{font-size:13px;font-weight:600;padding:5px 11px;border:1px solid rgba(200,164,92,.45);color:var(--gold-pale)}
+.pill.solid{background:var(--gold-hi);color:var(--ink);border-color:var(--gold-hi)}
+.more{font-size:13px;color:var(--on-ink-muted);margin-left:auto}
+.chev{width:34px;height:34px;flex:none;border:1px solid rgba(200,164,92,.5);border-radius:50%;position:relative}
+.chev::after{content:"";position:absolute;left:50%;top:44%;width:8px;height:8px;border-right:1.5px solid var(--gold-hi);border-bottom:1.5px solid var(--gold-hi);transform:translate(-50%,-50%) rotate(45deg);transition:transform .2s}
+.day.open .chev::after{transform:translate(-50%,-25%) rotate(-135deg)}
+.day-c{padding-bottom:22px;border-bottom:1px solid var(--line)}
+.agenda{list-style:none;margin:0;padding:22px 0 0;display:flex;flex-direction:column}
+.act{display:grid;grid-template-columns:62px minmax(0,1fr);gap:0 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.act:last-child{border-bottom:0}
+.act .t{font-variant-numeric:tabular-nums;font-weight:700;font-size:16px;line-height:1.35}
+.act .t small{display:block;font-weight:500;font-size:13px;color:var(--muted)}
+.act h3{font-size:17px;font-weight:600;line-height:1.35}
+.act p,.act .d{font-size:16px;color:var(--muted);margin-top:4px}
+.tip{margin-top:10px;font-size:15px;padding:10px 12px;background:var(--gold-soft);border-left:2px solid var(--gold)}
+.tip::before{content:"Dica do concierge";display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:2px}
+.nav{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.nav .dest{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);min-width:0}
+.nav .dest span{overflow-wrap:anywhere}
+.nav svg{width:14px;height:14px;fill:var(--gold);flex:none}
+.nbs{display:flex;flex-wrap:wrap;gap:6px}
+.nb{display:inline-flex;align-items:center;min-height:36px;padding:0 13px;font-size:14px;font-weight:600;text-decoration:none;color:var(--text);border:1px solid var(--line);background:var(--card)}
+.nb:hover{border-color:var(--gold);color:var(--gold)}
+.nb.waze{color:var(--gold);border-color:var(--gold)}
+.nav.c{margin-top:8px}
+.nav.c .nb{min-height:32px;padding:0 11px;font-size:13px}
+.subgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:28px}
+@media (min-width:720px){.subgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sub-h{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold);padding-bottom:8px;border-bottom:1px solid var(--gold);margin-bottom:6px}
+.moves{list-style:none;margin:0;padding:0}
+.moves li{font-size:15px;padding:10px 0;border-bottom:1px solid var(--line)}
+.costs{width:100%;border-collapse:collapse;font-size:15px}
+.costs td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.costs td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:12px;font-weight:500}
+.costs tr.total td{border-bottom:0;padding-top:12px;font-weight:700;font-size:17px}
+.costs tr.total td:last-child{color:var(--gold)}
+
+/* ── Documentos ── */
+.docs-help{font-size:15px;color:var(--muted);margin:-8px 0 18px}
+.docs{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.doc{padding:16px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.doc .h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.doc .h b{font-size:17px}
+.doc .m{font-size:15px;color:var(--muted)}
+.files{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.file{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--card);border:1px solid var(--line);font-size:15px;min-width:0}
+.file a{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;text-decoration:none}
+.file a:hover{color:var(--gold)}
+.file svg{width:16px;height:16px;fill:var(--gold);flex:none}
+.x{flex:none;background:none;border:0;cursor:pointer;color:var(--muted);font-size:13px;font-weight:600;padding:4px 2px}
+.x:hover{color:var(--warn)}
+.ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;padding:8px 10px;background:var(--warn-soft);border:1px solid var(--warn)}
+.ask span{flex:1 1 160px}
+.ask button,.addform button{font-size:13px;font-weight:700;padding:7px 12px;cursor:pointer;border:1px solid currentColor;background:none}
+.ask .yes{color:var(--warn)}
+.ask .no,.addform .no{color:var(--muted)}
+.doc .acts{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:6px}
+.up{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;font-size:14px;font-weight:700;cursor:pointer;color:var(--gold);border:1px solid var(--gold);background:var(--gold-soft)}
+.up svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
+.rmcard{background:none;border:0;cursor:pointer;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px;padding:4px 0}
+.status{font-size:14px;color:var(--gold);font-weight:600}
+.status.err{color:var(--warn);white-space:pre-line}
+.doc-input{display:none}
+.add{margin-top:16px}
+.addbtn{width:100%;min-height:52px;border:1px dashed var(--gold);background:none;color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.addform{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px;border:1px solid var(--gold);background:var(--gold-soft)}
+.addform label{flex:1 1 100%;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.addform input{flex:1 1 200px;min-width:0;font:inherit;font-size:16px;padding:9px 10px;border:1px solid var(--line);background:var(--paper);color:var(--text)}
+.addform .yes{color:var(--gold)}
+
+/* Rodapé */
+footer{background:var(--ink);color:var(--on-ink-muted);margin-top:56px}
+footer .wrap{padding-block:40px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.foot-brand{font-family:var(--serif);font-size:30px;color:var(--on-ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chev::after{transition:none}}
+</style>
+</head>
+<body>
+<header class="cover" id="topo">
+  <div class="brand"><div class="wrap" id="brand"></div></div>
+  <div class="wrap" id="cover"></div>
+</header>
+<nav class="bar" aria-label="Navegação do roteiro"><div class="wrap" id="bar"></div></nav>
+<main>
+  <section class="blk" id="visao-geral"><div class="wrap">
+    <div class="blk-h"><span class="eyebrow">Visão geral</span><h2>A <em>viagem</em></h2></div>
+    <div class="overview" id="overview-grid"></div>
+    <p class="note" id="obs-text" hidden></p>
+  </div></section>
+  <section class="blk" id="voos" hidden><div class="wrap">
+    <div class="blk-h"><span class="eyebrow">Voos</span><h2>Ida e <em>volta</em></h2></div>
+    <div class="flights" id="voos-container"></div>
+  </div></section>
+  <section class="blk" id="hospedagem" hidden><div class="wrap">
+    <div class="blk-h"><span class="eyebrow">Hospedagem</span><h2>Onde <em>ficar</em></h2></div>
+    <div class="stays" id="hospedagem-container"></div>
+  </div></section>
+  <section class="blk" id="servicos" hidden><div class="wrap">
+    <div class="blk-h"><span class="eyebrow">Reservas e serviços</span><h2>Reservas e <em>serviços</em></h2></div>
+    <div class="todo" id="servicos-grid"></div>
+  </div></section>
+  <div id="roteiro" hidden>
+    <div class="wrap days-intro"><div class="blk-h"><span class="eyebrow">Dia a dia</span><h2>O <em>roteiro</em></h2></div>
+      <button type="button" class="all" id="toggle-all">Abrir todos os dias</button></div>
+    <div id="timeline"></div>
+  </div>
+  <section class="blk" id="documentos" hidden><div class="wrap">
+    <div class="blk-h"><span class="eyebrow">Documentos</span><h2>Pasta de <em>viagem</em></h2></div>
+    <p class="docs-help">Anexe aqui comprovantes, passaportes e reservas. Os arquivos ficam salvos no roteiro e abrem em qualquer aparelho.</p>
+    <div class="docs" id="docs-grid"></div>
+    <div class="add" id="docs-add"></div>
+  </div></section>
+</main>
+<footer><div class="wrap"><span class="foot-brand" id="footer-brand"></span><span id="footer-note"></span></div></footer>
+
+<script>
+const ROTEIRO_DATA = {"titulo":"João pessoa","subtitulo":"Cultura, Gastronomia e Aventura","eyebrow":"Clube do Viajante · João Pessoa, Brasil","pills":["17 a 24/04/2027","3 viajantes","Cultural · Gastronômico · Aventura","Meio-termo"],"visaoGeral":[{"label":"DESTINO","value":"João Pessoa, PB","variant":""},{"label":"DATAS","value":"17 a 24/04/2027","variant":""},{"label":"VIAJANTES","value":"3 pessoas (casal + filho 18a)","variant":""},{"label":"ORÇAMENTO","value":"R$ 200/pessoa/dia","variant":""},{"label":"RITMO","value":"Meio-termo","variant":""},{"label":"ESTILO","value":"Cultural · Gastronômico · Aventura","variant":""}],"footerNote":"João Pessoa, Paraíba · Roteiro personalizado","obs":"Abril é fim da temporada chuvosa em João Pessoa, com temperaturas entre <b>26°C e 32°C</b>. Espere alguns dias nublados ou com chuva rápida à tarde.<br><br><b>Reserve com antecedência:</b> passeios de barco para Areia Vermelha e Picãozinho têm alta demanda — reserve pelo menos 1 semana antes.<br><br><b>Atenção especial:</b> filho com dermatite atópica — leve protetor solar hipoalergênico FPS 50+, hidratante e medicação de rotina. Enxágue com água doce após cada contato com o mar.<br><br><b>Lembranças:</b> licor de tamarindo, rapadura, cocada, bordados de Renascença, temperos nordestinos e cerâmica.<br><br><b>Tábua de marés:</b> consulte tabuademares.com.br para planejar Areia Vermelha e Picãozinho.","voos":[{"tipo":"ida","origemIata":"GRU","origemNome":"São Paulo","destinoIata":"JPA","destinoNome":"João Pessoa","data":"2027-04-17","dataChegada":"2027-04-17","horaPartida":"02:30","horaChegada":"","cia":"","nvoo":"","classe":"","pnr":""},{"tipo":"volta","origemIata":"JPA","origemNome":"João Pessoa","destinoIata":"GRU","destinoNome":"São Paulo","data":"2027-04-24","dataChegada":"2027-04-24","horaPartida":"17:45","horaChegada":"","cia":"","nvoo":"","classe":"","pnr":""}],"hospedagem":[{"nome":"Hotel a definir — Tambaú ou Manaíra (orla)","cidade":"João Pessoa","checkin":"2027-04-17","checkout":"2027-04-24","noites":7,"hospedes":"3"}],"servicos":[{"tipo":"passeio","icon":"🐠","nome":"Passeio de Barco — Piscinas Naturais de Picãozinho","meta":"19/04/2027 · GetYourGuide ou operadora local","badge":"Prioridade"},{"tipo":"passeio","icon":"🏝️","nome":"Passeio para Areia Vermelha (Cabedelo)","meta":"20/04/2027 · GetYourGuide ou operadora local","badge":"Prioridade"},{"tipo":"restaurante","icon":"🍽️","nome":"Mangai — jantar gastronomia regional","meta":"Reservar mesa com antecedência","badge":"Reservar"},{"tipo":"restaurante","icon":"🦞","nome":"Cais do Pescador — jantar especial","meta":"Reservar mesa com antecedência","badge":"Reservar"},{"tipo":"passeio","icon":"🌅","nome":"Pôr do Sol com Saxofone — Praia do Jacaré","meta":"19/04/2027 · acesso gratuito, chegar 30min antes","badge":"Opcional"}],"documentos":[{"icon":"🪪","titulo":"Documento de Identidade","meta":"RG ou CNH — válido para viagem doméstica","badge":"Obrigatório","badgeClass":"badge-coral"},{"icon":"✈️","titulo":"Passagens Aéreas","meta":"GRU → JPA (17/04) e JPA → GRU (24/04)","badge":"Obrigatório","badgeClass":"badge-coral"},{"icon":"🏨","titulo":"Voucher do Hotel","meta":"Check-in 17/04 · Check-out 24/04","badge":"Obrigatório","badgeClass":"badge-coral"},{"icon":"🛡️","titulo":"Seguro Viagem","meta":"Recomendado — especialmente pelo filho com dermatite","badge":"Recomendado","badgeClass":"badge-gold"},{"icon":"🎟️","titulo":"Vouchers dos Passeios","meta":"Picãozinho e Areia Vermelha — imprimir ou salvar no celular","badge":"Importante","badgeClass":"badge-gold"}],"dias":[{"num":1,"data":"2027-04-17","titulo":"Chegada e Primeiro Contato com João Pessoa","resumo":"Chegada de madrugada após voo de Guarulhos. Dia dedicado ao descanso e ambientação, com passeio leve pelo calçadão de Tambaú, visita à Feira e jantar com a primeira prova da gastronomia paraibana.","energia":"Leve","atividades":[{"horario":"15:00–16:30","nome":"Calçadão e Praia de Tambaú","descricao":"Caminhada leve de primeiro contato com a cidade. Feirinha de artesanato local, quiosques à beira-mar e vista linda do oceano.","dica":"Evite mergulho neste primeiro dia — apenas observação e pés na areia para o filho com dermatite."},{"horario":"16:30–17:30","nome":"Feira de Tambaú","descricao":"Logo atrás do calçadão, ótima para produtos típicos paraibanos: rapadura, cocada, licor de tamarindo, castanha, bordados e artesanato.","dica":"Leve dinheiro em espécie — a maioria dos feirantes não aceita cartão. Pechinche com simpatia!"},{"horario":"17:30–18:30","nome":"Tempo livre no hotel","descricao":"Momento para refrescar, trocar de roupa e preparar para o jantar. Piscina do hotel é boa opção para o filho refrescar sem água salgada.","dica":"Aproveite para checar a tábua de marés para os próximos dias em tabuademares.com.br."},{"horario":"19:00–21:00","nome":"Jantar — primeira prova da gastronomia paraibana","descricao":"Inaugurar a viagem com culinária local: frutos do mar, baião de dois, carne de sol e tapioca.","dica":"Restaurantes na orla de Tambaú lotam nos fins de semana. Reserve ou chegue antes das 19h."}],"deslocamentos":["Aeroporto Castro Pinto → Hotel (Tambaú/Manaíra): táxi ou app — 30 a 40 min, R$ 60 a R$ 80 para o grupo","Hotel → Calçadão de Tambaú: a pé, 5 a 10 min","Calçadão → Feira de Tambaú: a pé, 5 min","Hotel → Restaurante (jantar): a pé ou app, até 10 min"],"custos":[{"label":"Táxi/app do aeroporto ao hotel","valor":"R$ 25"},{"label":"Feira de Tambaú (lembranças iniciais)","valor":"R$ 50"},{"label":"Jantar","valor":"R$ 60 a R$ 80"},{"label":"Extras (água, lanche)","valor":"R$ 20"}],"custoTotal":"R$ 155 a R$ 175"},{"num":2,"data":"2027-04-18","titulo":"História e Cultura no Centro Histórico","resumo":"Dia cultural rico e caminhável pelo Centro Histórico de João Pessoa, um dos mais bem preservados do Brasil. Igreja de São Francisco, Mercado de Artesanato e visita à Ponta do Seixas para um pôr do sol deslumbrante.","energia":"Moderado","atividades":[{"horario":"09:00–11:00","nome":"Centro Histórico de João Pessoa","descricao":"Um dos centros históricos mais antigos do Brasil (1585). Ruas de paralelepípedo, casarões coloniais e atmosfera única.","dica":"Use tênis confortável — o calçamento irregular pode cansar. Vá pela manhã, antes do calor intenso. Leve água!"},{"horario":"11:00–12:30","nome":"Igreja e Convento de São Francisco e Museu de Arte Sacra","descricao":"Uma das igrejas barrocas mais belas do Brasil, com azulejos portugueses deslumbrantes. O Museu de Arte Sacra complementa a visita.","dica":"Entrada gratuita, museu ~R$ 5 por pessoa. Evite domingos de manhã por causa das missas."},{"horario":"12:30–14:00","nome":"Almoço no Centro Histórico","descricao":"Restaurantes típicos com baião de dois, macaxeira frita, carne de sol e sucos de frutas nordestinas como cajá e umbu.","dica":"Restaurantes por quilo na região têm ótimo custo-benefício para experimentar variedade."},{"horario":"14:00–15:00","nome":"Mercado de Artesanato da Paraíba","descricao":"Cerâmica, bordados de Renascença, redes, chapéus, licores e doces típicos. Ótimo para lembranças autênticas e presentes.","dica":"Funciona seg a sáb, 8h às 18h. Leve espécie para barganhar. Preços mais acessíveis que nas feirinhas da orla."},{"horario":"15:00–17:00","nome":"Tempo livre — descanso no hotel ou praia","descricao":"Tarde reservada para descanso ou caminhada tranquila na praia.","dica":"Se optar pela praia, use protetor hipoalergênico no filho e enxágue bem com água doce após sair do mar."},{"horario":"17:30–19:00","nome":"Ponta do Seixas — o ponto mais oriental das Américas","descricao":"Ponto mais a leste de toda a América. Monumento, farol histórico e pôr do sol de tirar o fôlego.","dica":"Visita gratuita. Chegue antes do pôr do sol para garantir boa posição para fotos."}],"deslocamentos":["Hotel → Centro Histórico: app — 15 a 20 min, R$ 15 a R$ 20","Centro Histórico (entre atrações): a pé, 5 a 10 min","Centro → Hotel: app — R$ 15 a R$ 20","Hotel → Ponta do Seixas: app — 10 a 15 min, R$ 15 a R$ 20","Ponta do Seixas → Restaurante/Hotel: app — R$ 15 a R$ 20"],"custos":[{"label":"Transporte (apps ao longo do dia)","valor":"R$ 40"},{"label":"Museu de Arte Sacra","valor":"R$ 5"},{"label":"Almoço","valor":"R$ 35 a R$ 45"},{"label":"Mercado de Artesanato (lembranças)","valor":"R$ 50"},{"label":"Jantar","valor":"R$ 60 a R$ 80"},{"label":"Extras (água, lanches, cocadas)","valor":"R$ 20"}],"custoTotal":"R$ 210 a R$ 240"},{"num":3,"data":"2027-04-19","titulo":"Piscinas Naturais e o Mar de Corais","resumo":"Passeio de barco às Piscinas Naturais de Picãozinho com snorkel entre peixes coloridos e corais. Tarde na Praia do Jacaré para o famoso pôr do sol com saxofone ao vivo — uma experiência cultural única no Brasil.","energia":"Moderado","atividades":[{"horario":"08:00–12:00","nome":"Passeio de Barco — Piscinas Naturais de Picãozinho","descricao":"Recife de coral a 700m da Praia de Tambaú com piscinas naturais rasas e transparentes, habitadas por peixes tropicais coloridos.","dica":"Reserve com antecedência! Depende da maré baixa. Para o filho: protetor hipoalergênico, minimize imersão e enxágue com água doce ao sair."},{"horario":"12:00–13:30","nome":"Almoço em quiosque na orla de Tambaú","descricao":"Frutos do mar, peixe grelhado, tapioca e sucos tropicais com vista para o mar.","dica":"Evite quiosques próximos ao pier turístico — mais caros. Peça a moqueca de camarão!"},{"horario":"13:30–16:00","nome":"Tempo livre — descanso no hotel","descricao":"Tarde de descanso após o passeio matinal. Essencial para cuidar da pele do filho após contato com água salgada.","dica":"Piscina do hotel é boa opção — mas atenção ao cloro, que também pode irritar. Enxágue bem!"},{"horario":"16:30–18:00","nome":"Praia do Jacaré e Pôr do Sol com Saxofone","descricao":"Praia às margens do Rio Paraíba, famosa pelo saxofonista Jurandir que toca ao vivo durante o pôr do sol. Experiência única no país!","dica":"Fica a ~20km do centro. Chegue 30 min antes do pôr do sol. Leve dinheiro para passeios de barco e quiosques."}],"deslocamentos":["Hotel → Orla de Tambaú (embarque): a pé ou app, 5 a 10 min","Orla → Quiosques (almoço): a pé, 5 min","Orla → Hotel: a pé ou app, 5 a 10 min","Hotel → Praia do Jacaré: app — 30 a 40 min, R$ 40 a R$ 55 para o grupo","Praia do Jacaré → Hotel/Restaurante: app — R$ 40 a R$ 55"],"custos":[{"label":"Passeio de barco Picãozinho","valor":"R$ 60 a R$ 80"},{"label":"Almoço no quiosque","valor":"R$ 40 a R$ 55"},{"label":"Transporte (apps ao longo do dia)","valor":"R$ 50"},{"label":"Passeio de barco no Rio Paraíba (Jacaré)","valor":"R$ 15 a R$ 20"},{"label":"Jantar especial","valor":"R$ 80 a R$ 100"},{"label":"Extras (água, lanches, sucos)","valor":"R$ 20"}],"custoTotal":"R$ 265 a R$ 325"},{"num":4,"data":"2027-04-20","titulo":"Areia Vermelha, Cabedelo e Jardim Botânico","resumo":"Dia da Areia Vermelha — o banco de areia avermelhada que surge no meio do mar com a maré baixa. Um fenômeno da natureza impressionante! Tarde no Jardim Botânico Benjamim Maranhão, um dos maiores do Brasil, com trilhas e biodiversidade incrível.","energia":"Moderado","atividades":[{"horario":"07:00–11:00","nome":"Praia de Areia Vermelha","descricao":"Banco de areia que emerge do mar durante a maré baixa, a ~1km da Praia de Intermares em Cabedelo. Areia avermelhada cercada pelo azul do mar.","dica":"Visita depende TOTALMENTE da maré baixa! Acesso de barco ou jet ski. Para o filho: protetor hipoalergênico e cuide da pele logo após."},{"horario":"11:00–12:00","nome":"Praia de Intermares e Cabedelo","descricao":"Praia mais tranquila e menos turística, com águas calmas e boa infraestrutura de quiosques.","dica":"Quiosques com preços mais acessíveis que Tambaú. Ótimo para água de coco e pastel de camarão!"},{"horario":"12:00–13:30","nome":"Almoço em Cabedelo","descricao":"Gastronomia de frutos do mar excelente e mais autêntica, fugindo dos restaurantes turísticos.","dica":"Peça o peixe do dia grelhado com pirão — clássico nordestino favorito dos moradores locais!"},{"horario":"14:00–16:00","nome":"Jardim Botânico Benjamim Maranhão","descricao":"Um dos maiores jardins botânicos do Brasil, com 471 hectares de Mata Atlântica preservada. Trilhas leves, lagos e animais silvestres.","dica":"Leve repelente — fundamental! Use calçado fechado para as trilhas. Confirme horários e entrada antes de ir."}],"deslocamentos":["Hotel → Praia de Intermares (Cabedelo): app — 25 a 35 min, R$ 35 a R$ 50 para o grupo","Intermares → Areia Vermelha: barco ou jet ski — R$ 20 a R$ 40 por pessoa (ida e volta)","Intermares → Restaurante em Cabedelo: app ou a pé, 5 a 15 min","Cabedelo → Jardim Botânico: app — 20 a 30 min, R$ 25 a R$ 35","Jardim Botânico → Hotel: app — 20 a 30 min, R$ 25 a R$ 35"],"custos":[{"label":"Transporte (apps ao longo do dia)","valor":"R$ 60"},{"label":"Barco/jet ski para Areia Vermelha","valor":"R$ 30 a R$ 40"},{"label":"Almoço em Cabedelo","valor":"R$ 45 a R$ 60"},{"label":"Jardim Botânico (entrada)","valor":"R$ 10 a R$ 15"},{"label":"Jantar","valor":"R$ 60 a R$ 80"},{"label":"Extras (água de coco, lanches)","valor":"R$ 20"}],"custoTotal":"R$ 225 a R$ 275"},{"num":5,"data":"2027-04-21","titulo":"Praias Selvagens do Sul — Coqueirinho e Tambaba","resumo":"Dia de aventura nas praias selvagens ao sul de João Pessoa. Coqueirinho encanta com falésias, piscinas naturais entre pedras e coqueiros. Tambaba impressiona pela beleza natural selvagem. Paisagens inesquecíveis e natureza pura!","energia":"Moderado","atividades":[{"horario":"09:00–12:00","nome":"Praia de Coqueirinho","descricao":"Uma das praias mais bonitas da Paraíba, com falésias coloridas, piscinas naturais entre rochas, águas cristalinas e coqueiros imponentes.","dica":"Leve tênis ou sandália com boa aderência para caminhar pelas pedras. As piscinas entre pedras são mais calmas — boas para o filho com moderação."},{"horario":"12:00–13:30","nome":"Almoço em Coqueirinho","descricao":"Barracas de praia com frutos do mar fresquíssimos, peixe grelhado e petiscos típicos com os pés na areia.","dica":"Peça o caldinho de sururu ou o peixe frito com pirão — clássicos da culinária litorânea paraibana!"},{"horario":"13:30–15:30","nome":"Praia de Tambaba","descricao":"Praia selvagem com falésias, vegetação nativa e mar agitado. A área convencional é deslumbrante para fotos e contemplação.","dica":"Mar mais agitado — não indicado para banho do filho. Aproveite para caminhar, fotografar e contemplar. Leve água!"},{"horario":"17:00–18:30","nome":"Compras e lembranças na orla","descricao":"Garimpar lembranças na Feira de Tambaú ou nos quiosques da orla para fechar a lista de presentes.","dica":"Negocie em espécie. Caixinha de doces de leite e cocada são ótimas lembranças compactas!"}],"deslocamentos":["Hotel → Praia de Coqueirinho: app ou transfer — 40 a 50 min, R$ 60 a R$ 80 para o grupo","Coqueirinho → Tambaba: app/táxi local — 10 min, R$ 20 a R$ 30","Tambaba → Hotel: app — 50 a 60 min, R$ 70 a R$ 90","Hotel → Feira de Tambaú: a pé, 5 a 10 min","Hotel → Restaurante (jantar): a pé ou app, até 15 min"],"custos":[{"label":"Transporte (apps/transfer ao longo do dia)","valor":"R$ 70"},{"label":"Almoço em Coqueirinho","valor":"R$ 45 a R$ 60"},{"label":"Lembranças na feira","valor":"R$ 50"},{"label":"Jantar típico","valor":"R$ 60 a R$ 80"},{"label":"Extras (água, lanches, sucos)","valor":"R$ 20"}],"custoTotal":"R$ 245 a R$ 280"},{"num":6,"data":"2027-04-22","titulo":"Gastronomia, Mercado Central e Vida Local","resumo":"Dia urbano e gastronômico para desacelerar e mergulhar na cultura local. Café da manhã típico com tapioca artesanal, visita ao Mercado Central para lembranças, almoço típico e pôr do sol tranquilo na Praia de Tambaú.","energia":"Leve","atividades":[{"horario":"09:30–11:00","nome":"Café da manhã típico e experiência com tapioca artesanal","descricao":"Café da manhã nordestino completo: tapioca recheada com coco e mel, cuscuz com manteiga de garrafa, queijo coalho grelhado e suco de cajá ou umbu.","dica":"Procure tapiocarias próximas à orla de Tambaú. Confirme nome e endereço exatos no Google Maps antes de ir!"},{"horario":"11:00–13:00","nome":"Mercado Central de João Pessoa","descricao":"Coração gastronômico e cultural da cidade. Ervas medicinais, especiarias, produtos regionais, artesanato e itens típicos paraibanos.","dica":"Especiarias como pimenta e colorau são leves na mala e fazem sucesso como presentes. Leve espécie!"},{"horario":"13:00–14:30","nome":"Almoço no Mercado ou arredores","descricao":"Comida típica caseira a preços acessíveis. Pratos do cotidiano paraibano que raramente aparecem nos restaurantes turísticos.","dica":"Peça o sarapatel ou sopa de macaxeira — favoritos dos paraibanos e muito autênticos!"},{"horario":"17:30–19:00","nome":"Pôr do sol na Praia de Tambaú","descricao":"Despedida do sol na praia mais famosa de João Pessoa, com coco gelado na mão e pés na areia.","dica":"Leve câmera carregada — o pôr do sol em Tambaú com reflexo no mar rende fotos lindíssimas!"}],"deslocamentos":["Hotel → Tapiocaria: a pé ou app, até 10 min","Hotel → Mercado Central: app — 15 a 20 min, R$ 15 a R$ 25","Mercado Central → Hotel: app — R$ 15 a R$ 25","Hotel → Praia de Tambaú (pôr do sol): a pé, 5 a 10 min","Hotel → Restaurante (jantar): a pé ou app, até 15 min"],"custos":[{"label":"Café da manhã típico (tapiocaria)","valor":"R$ 25 a R$ 35"},{"label":"Transporte (apps ao longo do dia)","valor":"R$ 30"},{"label":"Mercado Central (lembranças e especiarias)","valor":"R$ 60"},{"label":"Almoço no Mercado","valor":"R$ 25 a R$ 35"},{"label":"Água de coco + extras","valor":"R$ 15"},{"label":"Jantar especial","valor":"R$ 80 a R$ 100"}],"custoTotal":"R$ 235 a R$ 275"},{"num":7,"data":"2027-04-23","titulo":"Último Dia de Aventura e Jantar de Despedida","resumo":"Manhã na praia favorita do grupo para um último mergulho inesquecível, compras finais de lembranças e um jantar especial de despedida com toda a gastronomia que João Pessoa tem de melhor. Um dia para guardar no coração!","energia":"Moderado","atividades":[{"horario":"09:00–12:00","nome":"Manhã livre na praia favorita do grupo","descricao":"Último e inesquecível mergulho na praia que mais marcou durante a viagem — Tambaú, Coqueirinho ou Intermares.","dica":"Para o filho: protetor hipoalergênico, minimize imersão e tenha hidratante em mãos para aplicar logo após sair da água."},{"horario":"12:00–13:30","nome":"Almoço de despedida da orla","descricao":"Almoço especial na beira do mar repetindo o prato favorito da semana — última homenagem à gastronomia paraibana.","dica":"Se ainda não experimentaram a moqueca paraibana com dendê e leite de coco, esse é o momento!"},{"horario":"13:30–15:30","nome":"Compras finais — lembranças e produtos típicos","descricao":"Última oportunidade para fechar a lista de presentes na Feira de Tambaú ou no Mercado de Artesanato.","dica":"Produtos sólidos passam facilmente na bagagem despachada. Licores: embale com roupas para proteção."},{"horario":"15:30–17:00","nome":"Tempo livre no hotel — organização das malas","descricao":"Descanso e organização das malas antes da última noite especial da viagem.","dica":"Faça checklist das lembranças. Separe documentos e itens essenciais na bagagem de mão para o voo!"},{"horario":"17:30–19:00","nome":"Passeio de despedida pelo calçadão de Tambaú","descricao":"Última caminhada pelo calçadão que inaugurou a viagem no Dia 1 — agora com o olhar de quem conheceu a cidade de verdade.","dica":"Compre uma última água de coco e sente na areia para ver o sol baixar. Momento simples e inesquecível!"},{"horario":"19:30–22:00","nome":"Jantar de despedida — a grande celebração final","descricao":"O jantar mais especial da viagem! Pratos favoritos da semana e um brinde a uma viagem incrível cheia de memórias e descobertas.","dica":"Reserve o restaurante com antecedência para garantir mesa na última noite!"}],"deslocamentos":["Hotel → Praia escolhida: a pé ou app, até 15 min","Praia → Restaurante almoço: a pé ou app, até 10 min","Hotel → Feira de Tambaú/Mercado de Artesanato: a pé ou app, até 15 min","Hotel → Calçadão de Tambaú: a pé, 5 a 10 min","Hotel → Restaurante jantar: a pé ou app, até 15 min"],"custos":[{"label":"Almoço de despedida","valor":"R$ 55 a R$ 75"},{"label":"Compras finais (lembranças)","valor":"R$ 70"},{"label":"Transporte (apps ao longo do dia)","valor":"R$ 20"},{"label":"Água de coco + extras","valor":"R$ 15"},{"label":"Jantar de despedida","valor":"R$ 90 a R$ 110"}],"custoTotal":"R$ 250 a R$ 290"},{"num":8,"data":"2027-04-24","titulo":"Partida — Últimas Horas em João Pessoa","resumo":"Último dia curto mas bem aproveitado. Café da manhã especial, última caminhada tranquila na orla, check-out com calma e almoço leve antes da partida. Uma despedida serena de uma cidade que conquistou os corações de toda a família!","energia":"Leve","atividades":[{"horario":"08:00–09:30","nome":"Café da manhã especial no hotel ou tapiocaria","descricao":"Café da manhã nordestino completo — tapioca, cuscuz, queijo coalho e frutas tropicais — a despedida perfeita dos sabores paraibanos.","dica":"Se o hotel oferecer café incluso, aproveite ao máximo. Senão, a Tapiocaria da Orla é a pedida certa!"},{"horario":"09:30–11:00","nome":"Última caminhada na orla de Tambaú","descricao":"Caminhada tranquila com os pés na areia, vento do mar e olhar cheio de gratidão. Últimas fotos e absorção de tudo que a viagem proporcionou.","dica":"Aproveite para comprar uma última lembrança ou água de coco dos vendedores ambulantes na praia."},{"horario":"11:00–12:00","nome":"Check-out e organização","descricao":"Check-out com calma e organização de toda a bagagem. Confirme se não esqueceu nada no hotel.","dica":"Guarde documentos, passagens e itens essenciais na bagagem de mão. Embale licores e frágeis na despachada!"},{"horario":"12:00–13:30","nome":"Almoço leve antes do voo","descricao":"Almoço mais leve antes do voo — evite frutos do mar pesados ou pratos gordurosos para não pesar no estômago.","dica":"Tapioca, caldo de peixe leve ou salada com frango são opções mais seguras antes do voo. Hidrate-se bem!"},{"horario":"14:30","nome":"Saída para o Aeroporto Castro Pinto","descricao":"Saída do hotel com antecedência confortável para o voo das 17h45.","dica":"Trajeto Tambaú/Manaíra → aeroporto: 30 a 40 min. Sair às 14h30 garante chegada tranquila!"}],"deslocamentos":["Hotel → Orla de Tambaú: a pé, 5 a 10 min","Hotel → Restaurante almoço: a pé ou app, até 10 min","Hotel → Aeroporto Castro Pinto: app — 30 a 40 min, R$ 60 a R$ 80 para o grupo"],"custos":[{"label":"Café da manhã (se não incluso)","valor":"R$ 25 a R$ 35"},{"label":"Última lembrança/água de coco","valor":"R$ 15"},{"label":"Almoço leve","valor":"R$ 30 a R$ 40"},{"label":"Transporte ao aeroporto","valor":"R$ 25"},{"label":"Extras","valor":"R$ 10"}],"custoTotal":"R$ 105 a R$ 125"}],"heroImage":"","marcaTexto":"Clube do Viajante","marcaHTML":"Clube do <span>Viajante</span>","_slug":"membro-joao-pessoa-jkaug"};
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   Renderização do roteiro. Lê ROTEIRO_DATA (mesmo formato dos modelos
+   anteriores). Campos de texto aceitam HTML simples (negrito, <br>),
+   como antes.
+   ════════════════════════════════════════════════════════════════════ */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const txt = s => String(s == null ? '' : s).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();     // texto puro
+const noEmoji = s => String(s == null ? '' : s).replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}️‍⃣]/gu, '').replace(/[ \t]{2,}/g, ' ').trim();
+const rich = s => noEmoji(s);                                                                         // HTML confiável do gerador
+const WD = ['dom','seg','ter','qua','qui','sex','sáb'];
+const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const isoOk = iso => /^\d{4}-\d{2}-\d{2}/.test(String(iso || ''));
+const dt = iso => { const [y,m,d] = String(iso).slice(0,10).split('-').map(Number); return new Date(Date.UTC(y,m-1,d)); };
+function fmtDateBR(iso) { if (!iso) return ''; const p = String(iso).split('-'); return p.length === 3 ? p[2]+'/'+p[1]+'/'+p[0] : iso; }
+const dShort = iso => isoOk(iso) ? String(iso).slice(8,10) + '/' + String(iso).slice(5,7) : esc(iso);
+const wd = iso => isoOk(iso) ? WD[dt(iso).getUTCDay()] : '';
+const dLong = iso => { if (!isoOk(iso)) return esc(iso || ''); const x = dt(iso); return wd(iso) + ', ' + x.getUTCDate() + ' ' + MES[x.getUTCMonth()]; };
+const hh = h => esc(String(h || '').replace(/^(\d{1,2}):(\d{2})$/, '$1h$2'));
+const pad2 = n => String(n).padStart(2, '0');
+const hojeSP = () => new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10);   // America/Sao_Paulo (-03:00 fixo)
+
+let D = {};
+function cityOf(iso) {
+  const c = [];
+  (D.hospedagem || []).slice().sort((a,b) => String(a.checkin||'').localeCompare(String(b.checkin||''))).forEach(h => {
+    if (h.cidade && h.checkin && h.checkout && h.checkin <= iso && iso <= h.checkout && c[c.length-1] !== h.cidade) c.push(h.cidade);
+  });
+  return c.join(' → ');
+}
+// Últimas duas palavras do título em itálico dourado (assinatura visual)
+function titleHtml(t) {
+  const s = noEmoji(txt(t));
+  const w = s.split(' ');
+  if (w.length < 3) return esc(s);
+  return esc(w.slice(0,-2).join(' ')) + ' <em class="g">' + esc(w.slice(-2).join(' ')) + '</em>';
+}
+function marcaHTML() { return D.marcaHTML || 'Travel <span>Concierge</span>'; }
+function marcaTexto() { return D.marcaTexto || 'Travel Concierge'; }
+
+/* ── Botão copiar (localizador, confirmação) ─────────────────────────── */
+function copyBtn(v) { return '<button type="button" class="copy" data-copy="' + esc(v) + '">Copiar</button>'; }
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const v = b.getAttribute('data-copy');
+  const done = ok => { b.textContent = ok ? 'Copiado' : 'Selecionado'; b.classList.toggle('ok', ok); setTimeout(() => { b.textContent = 'Copiar'; b.classList.remove('ok'); }, 1800); };
+  const sel = () => { const el = b.previousElementSibling; if (el) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } done(false); };
+  try { navigator.clipboard.writeText(v).then(() => done(true), sel); } catch (err) { sel(); }
+});
+
+/* ── Rotas: Google Maps e Waze ───────────────────────────────────────── */
+// Com coordenadas (lat/lng preenchidos no concierge) a rota é exata.
+// Sem coordenadas, o lugar sai do nome da atividade e ganha a cidade do dia.
+const FIM = '(?![\\p{L}\\p{N}])';
+const SEM_DESTINO = new RegExp('^(voo|descanso|almoço com|show|parada|café da manhã|segurança|caminhada|check-in \\+|check-in gol|desembarque gru|hotel|transfer|livre|tempo livre|custos|dicas|observações|checklist|encerramento)' + FIM, 'iu');
+const GENERICO = new RegExp('^(check-in|almoço|jantar|desembarque|trem|rer|malas|sala vip|táxi|transfer|chegada|saída)' + FIM, 'iu');
+const VAGO = new RegExp('(^(check-in|hotel|(gru )?t\\d\\w*)' + FIM + ')|^casa$|lounge|sala vip|a definir', 'iu');
+function lugar(nome) {
+  let n = noEmoji(txt(nome)).replace(/\(.*?\)/g, '').replace(/\|.*$/, '').replace(/Loc\..*$/i, '').trim();
+  if (!n || SEM_DESTINO.test(n)) return '';
+  if (n.includes('·')) {
+    const [a, b] = n.split('·').map(x => x.trim());
+    n = GENERICO.test(a) ? b : a;
+  }
+  if (n.includes('→')) {
+    const parts = n.split('→').map(x => x.trim());
+    const fim = parts[parts.length - 1];
+    if (/^[a-zà-ú]/.test(fim)) {
+      if (/^(táxi|voo|trem|transfer)/i.test(parts[0])) return '';
+      n = parts[0];
+    } else n = fim;
+  }
+  n = n.split('+')[0].trim();
+  if (!n || /^[a-zà-ú]/.test(n) || VAGO.test(n)) return '';
+  return n;
+}
+function cidadesConhecidas() {
+  const s = new Set();
+  (D.hospedagem || []).forEach(h => { if (h.cidade) s.add(String(h.cidade).trim()); });
+  return [...s];
+}
+function contextoDia(d) {
+  const cid = cidadesConhecidas();
+  const estadia = isoOk(d.data) ? cityOf(d.data).split(' → ').filter(Boolean) : [];
+  const titulo = txt(d.titulo);
+  const excursao = cid.find(c => titulo.includes(c) && !estadia.includes(c)) || '';
+  return { estadia, excursao, atual: estadia[0] || '' };
+}
+function consulta(l, cidade) {
+  if (!l) return '';
+  if (!cidade || /aeroporto/i.test(l) || l.includes(cidade)) return l;
+  return l + ', ' + cidade;
+}
+function consultaAtividade(a, ctx) {
+  const nome = noEmoji(txt(a.nome));
+  if (/^voo/i.test(nome) && ctx.estadia[1]) ctx.atual = ctx.estadia[1];
+  const l = lugar(nome);
+  if (ctx.excursao && l === ctx.excursao) ctx.atual = ctx.excursao;
+  const q = consulta(l, ctx.atual);
+  if (ctx.excursao && /volta/i.test(nome)) ctx.atual = ctx.estadia[0] || '';
+  return q;
+}
+function consultaDeslocamento(rota, ctx) {
+  const partes = rota.split('→').map(x => x.trim());
+  if (partes.length < 2) return '';
+  if (/^aeroporto/i.test(partes[0]) && ctx.estadia[1]) ctx.atual = ctx.estadia[1];
+  if (ctx.excursao && rota.includes(ctx.excursao)) ctx.atual = ctx.excursao;
+  const ult = partes[partes.length - 1];
+  const q = consulta(lugar(ult), ctx.atual);
+  if (ctx.excursao && ctx.atual === ctx.excursao && !rota.includes(ctx.excursao) && /atocha|hotel|esta[cç][aã]o/i.test(ult)) ctx.atual = ctx.estadia[0] || '';
+  return q;
+}
+const temCoord = a => a && a.lat !== undefined && a.lat !== '' && a.lng !== undefined && a.lng !== '' && !isNaN(parseFloat(a.lat)) && !isNaN(parseFloat(a.lng));
+const PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+// dest/orig: { q: texto da busca, ll: "lat,lng" opcional, rotulo }
+function navHtml(dest, orig, compacto) {
+  if (!dest || !(dest.q || dest.ll)) return '';
+  const alvo = encodeURIComponent(dest.ll || dest.q);
+  const daOrigem = orig && (orig.ll || orig.q) ? '&origin=' + encodeURIComponent(orig.ll || orig.q) : '';
+  const dir = 'https://www.google.com/maps/dir/?api=1' + daOrigem + '&destination=' + alvo;
+  const waze = dest.ll ? 'https://waze.com/ul?ll=' + encodeURIComponent(dest.ll) + '&navigate=yes' + (orig && orig.ll ? '&from=' + encodeURIComponent(orig.ll) : '')
+                       : 'https://waze.com/ul?q=' + alvo + '&navigate=yes';
+  const L = (href, t, cls) => '<a class="nb' + (cls ? ' ' + cls : '') + '" href="' + esc(href) + '" target="_blank" rel="noopener">' + t + '</a>';
+  if (compacto) {
+    return '<div class="nav c"><div class="nbs">' + L('https://www.google.com/maps/search/?api=1&query=' + alvo, 'Maps') + L(waze, 'Waze', 'waze') + '</div></div>';
+  }
+  const rot = (orig && orig.rotulo ? esc(orig.rotulo) + ' → ' : '') + esc(dest.rotulo || dest.q);
+  return '<div class="nav"><span class="dest">' + PIN + '<span>' + rot + '</span></span><div class="nbs">' +
+    L(dir + '&travelmode=walking', 'A pé') + L(dir + '&travelmode=driving', 'Carro') + L(dir + '&travelmode=transit', 'Transporte') + L(waze, 'Waze', 'waze') + '</div></div>';
+}
+
+/* ── Capa ────────────────────────────────────────────────────────────── */
+function renderCapa() {
+  document.getElementById('brand').innerHTML = marcaHTML();
+  document.getElementById('footer-brand').innerHTML = marcaHTML();
+  if (D.heroImage) {
+    const url = String(D.heroImage).replace(/["\\\n\r]/g, '');
+    document.getElementById('topo').style.backgroundImage =
+      'linear-gradient(180deg,rgba(11,13,15,.55) 0%,rgba(11,13,15,.62) 40%,rgba(11,13,15,.94) 100%),url("' + url + '")';
+  }
+  const titulo = noEmoji(txt(D.titulo || 'Roteiro'));
+  const partes = titulo.split(' & ');
+  const h1 = partes.length > 1 ? esc(partes[0]) + ' <em class="g">&amp; ' + esc(partes.slice(1).join(' & ')) + '</em>' : titleHtml(titulo);
+  const pills = (D.pills || []).map(p => noEmoji(txt(p))).filter(Boolean);
+  document.getElementById('cover').innerHTML =
+    '<span class="eyebrow">' + esc(noEmoji(txt(D.eyebrow || marcaTexto()))) + '</span>' +
+    '<h1>' + h1 + '</h1>' +
+    (D.subtitulo ? '<p class="sub">' + esc(noEmoji(txt(D.subtitulo))) + '</p>' : '') +
+    (pills.length ? '<div class="facts">' + pills.map(p => '<span class="tnum">' + esc(p) + '</span>').join('') + '</div>' : '');
+}
+
+/* ── Barra de navegação (seções + dias) ──────────────────────────────── */
+function renderBarra() {
+  const sec = [['#visao-geral','Geral']];
+  if ((D.voos || []).length) sec.push(['#voos','Voos']);
+  if ((D.hospedagem || []).length) sec.push(['#hospedagem','Hotel']);
+  if ((D.servicos || []).length) sec.push(['#servicos','Reservas']);
+  let h = sec.map(([href, l]) => '<a class="chip sec" href="' + href + '">' + l + '</a>').join('');
+  if ((D.dias || []).length) {
+    h += '<span class="sep" aria-hidden="true"></span>' + D.dias.map(d => {
+      const n = d.num != null ? d.num : '';
+      return '<a class="chip" id="day-nav-' + esc(n) + '" href="#day-' + esc(n) + '">' +
+        (isoOk(d.data) ? wd(d.data) + '<b>' + String(d.data).slice(8,10) + '</b>' : 'Dia<b>' + esc(n) + '</b>') + '</a>';
+    }).join('') + '<span class="sep" aria-hidden="true"></span>';
+  }
+  if ((D.documentos || []).length) h += '<a class="chip sec" href="#documentos">Docs</a>';
+  document.getElementById('bar').innerHTML = h;
+}
+
+/* ── Visão geral ─────────────────────────────────────────────────────── */
+function renderVisao() {
+  document.getElementById('overview-grid').innerHTML = (D.visaoGeral || []).map(c =>
+    '<div class="' + esc(c.variant || '') + '"><span class="lb">' + rich(c.label) + '</span><span class="vl">' + rich(c.value) + '</span></div>').join('');
+  if ((D.visaoGeral || []).length === 0) document.getElementById('overview-grid').hidden = true;
+  const obs = document.getElementById('obs-text');
+  if (D.obs) { obs.innerHTML = rich(D.obs); obs.hidden = false; }
+  if (!(D.visaoGeral || []).length && !D.obs) document.getElementById('visao-geral').hidden = true;
+}
+
+/* ── Voos ────────────────────────────────────────────────────────────── */
+function buildVooCard(v, grupo) {
+  const pend = /reservar|a confirmar/i.test((v.cia || '') + ' ' + (v.conexao || ''));
+  const conexaoTxt = v.conexao && !/reservar|sugerido/i.test(v.conexao) ? v.conexao : '';
+  const chegaOutroDia = v.dataChegada && v.data && v.dataChegada !== v.data;
+  const foot = [];
+  if (v.pnr) foot.push('<span class="code">Localizador <b>' + esc(v.pnr) + '</b>' + copyBtn(v.pnr) + '</span>');
+  if (conexaoTxt) foot.push('<span>Conexão: ' + rich(conexaoTxt) + '</span>');
+  return grupo + '<article class="flight">' +
+    '<div class="meta"><span><b>' + (v.data ? dLong(v.data) : 'Data a confirmar') + '</b> · ' + rich(v.cia || 'Companhia a confirmar') +
+      (v.nvoo ? ' ' + esc(v.nvoo) : '') + (v.classe ? ' · ' + esc(v.classe) : '') + '</span>' +
+      (pend ? '<span class="tag warn">' + esc(/sugerido/i.test(v.conexao || '') ? v.conexao : 'A reservar') + '</span>' : '') + '</div>' +
+    '<div class="ap"><span class="iata">' + esc(v.origemIata || '???') + '</span><span class="time">' + (hh(v.horaPartida) || '—') + '</span><span class="nm">' + rich(v.origemNome || '') + '</span></div>' +
+    '<span class="arrow" aria-hidden="true">→</span>' +
+    '<div class="ap r"><span class="iata">' + esc(v.destinoIata || '???') + '</span><span class="time">' + (hh(v.horaChegada) || '—') + (chegaOutroDia ? ' <small>' + dShort(v.dataChegada) + '</small>' : '') + '</span><span class="nm">' + rich(v.destinoNome || '') + '</span></div>' +
+    (foot.length ? '<div class="foot">' + foot.join('') + '</div>' : '') +
+    '</article>';
+}
+function renderVoos() {
+  const voos = (D.voos || []).slice().sort((a,b) => ((a.data||'')+' '+(a.horaPartida||'')).localeCompare((b.data||'')+' '+(b.horaPartida||'')));
+  if (!voos.length) return;
+  let ultimo = '';
+  document.getElementById('voos-container').innerHTML = voos.map(v => {
+    let g = '';
+    const tipo = v.tipo === 'volta' ? 'volta' : 'ida';
+    if (tipo !== ultimo) { ultimo = tipo; g = '<div class="leg-group">' + (tipo === 'ida' ? '🛫 Ida' : '🛬 Volta') + '</div>'; }
+    return buildVooCard(v, g);
+  }).join('');
+  document.getElementById('voos').hidden = false;
+}
+
+/* ── Hospedagem ──────────────────────────────────────────────────────── */
+function buildHotelCard(h) {
+  const n = parseInt(h.noites, 10);
+  const linha = [h.checkin ? 'Check-in ' + dLong(h.checkin) : '', h.checkout ? 'check-out ' + dLong(h.checkout) : '', h.hospedes ? esc(h.hospedes) + (/^\d+$/.test(String(h.hospedes).trim()) ? (String(h.hospedes).trim() === '1' ? ' hóspede' : ' hóspedes') : '') : ''].filter(Boolean).join(' · ');
+  return '<div class="stay"><div class="n tnum">' + (n ? n + '<small>' + (n > 1 ? 'noites' : 'noite') + '</small>' : '') + '</div>' +
+    '<h3>' + (h.cidade ? esc(h.cidade) + ' · ' : '') + rich(h.nome || 'Hotel') + '</h3>' +
+    (linha ? '<p class="tnum">' + linha + '</p>' : '') +
+    (h.conf ? '<p><span class="code">Confirmação <b>' + esc(h.conf) + '</b>' + copyBtn(h.conf) + '</span></p>' : '') + '</div>';
+}
+function renderHospedagem() {
+  const hs = (D.hospedagem || []).slice().sort((a,b) => String(a.checkin||'').localeCompare(String(b.checkin||'')));
+  if (!hs.length) return;
+  document.getElementById('hospedagem-container').innerHTML = hs.map(buildHotelCard).join('');
+  document.getElementById('hospedagem').hidden = false;
+}
+
+/* ── Reservas e serviços ─────────────────────────────────────────────── */
+function buildServCard(s) {
+  const b = txt(s.badge);
+  const cls = /já|urgente|pendente|reservar já/i.test(b) ? 'warn' : /confirmad|reservad|pago|ok|emitid|inclu/i.test(b) ? 'ok' : 'gold';
+  return '<div><b>' + rich(s.nome || '') + '</b>' + (b ? '<span class="tag ' + cls + '">' + esc(noEmoji(b)) + '</span>' : '') +
+    (s.meta ? '<span class="m">' + rich(s.meta) + '</span>' : '') + '</div>';
+}
+function renderServicos() {
+  if (!(D.servicos || []).length) return;
+  document.getElementById('servicos-grid').innerHTML = D.servicos.map(buildServCard).join('');
+  document.getElementById('servicos').hidden = false;
+}
+
+/* ── Dia a dia ───────────────────────────────────────────────────────── */
+function buildDayBlock(d) {
+  let resumo = rich(d.resumo || '');
+  let saida = '';
+  const m = resumo.match(/\s*(Saída d[eo] [^:<]+):\s*([0-9]{1,2}h[0-9]{0,2}|[0-9]{1,2}:[0-9]{2})\.?/i);
+  if (m) { saida = m[1].trim() + ' às ' + m[2].replace(':', 'h'); resumo = resumo.replace(m[0], ' ').trim(); }
+  const ctxA = contextoDia(d), ctxD = contextoDia(d);
+  const ativs = d.atividades || [];
+  // Destino de cada atividade: coordenada se houver, senão nome + cidade
+  const alvos = ativs.map(a => {
+    const q = consultaAtividade(a, ctxA);
+    const rotulo = lugar(a.nome) || noEmoji(txt(a.nome));
+    if (temCoord(a)) return { ll: parseFloat(a.lat) + ',' + parseFloat(a.lng), q, rotulo };
+    return q ? { q, rotulo } : null;
+  });
+  const acts = ativs.map((a, i) => {
+    const [ini, fim] = String(a.horario || '').split(/\s*[–—-]\s*/);
+    const dest = alvos[i];
+    const orig = i > 0 ? alvos[i - 1] : null;
+    // Mesmo ponto (mesmas coordenadas ou mesmo lugar) não gera rota
+    const igual = dest && orig && ((dest.ll && dest.ll === orig.ll) || (!dest.ll && dest.q === orig.q));
+    return '<li class="act"><div class="t">' + esc(ini || '') + (fim ? '<small>até ' + esc(fim) + '</small>' : '') + '</div><div>' +
+      '<h3>' + rich(a.nome || '') + '</h3>' + (a.descricao ? '<div class="d">' + rich(a.descricao) + '</div>' : '') +
+      (a.dica ? '<div class="tip">' + rich(a.dica) + '</div>' : '') +
+      (igual ? '' : navHtml(dest, orig, false)) + '</div></li>';
+  }).join('');
+  const moves = (d.deslocamentos || []).map(s0 => {
+    const s = rich(s0);
+    const plano = txt(s);
+    const i = plano.indexOf(':');
+    const rota = i > 0 ? plano.slice(0, i) : plano;
+    const q = consultaDeslocamento(rota, ctxD);
+    const corpo = i > 0 && s === esc(plano) ? '<b>' + esc(rota) + '</b>' + esc(plano.slice(i)) : (i > 0 && !/<[a-z]/i.test(s) ? '<b>' + esc(rota) + '</b>' + esc(plano.slice(i)) : s);
+    return '<li><div>' + corpo + '</div>' + navHtml(q ? { q } : null, null, true) + '</li>';
+  }).join('');
+  const custos = (d.custos || []).map(c => '<tr><td>' + rich(c.label) + '</td><td>' + rich(c.valor) + '</td></tr>').join('');
+  const custosHtml = custos || d.custoTotal ? '<div><div class="sub-h">Custos estimados</div><table class="costs">' + custos +
+    (d.custoTotal ? '<tr class="total"><td>Total estimado</td><td>' + rich(d.custoTotal) + '</td></tr>' : '') + '</table></div>' : '';
+  const num = d.num != null ? d.num : '';
+  const cidade = isoOk(d.data) ? cityOf(d.data) : '';
+  const eyebrow = ['Dia ' + pad2(num), d.data ? dLong(d.data) : '', esc(cidade)].filter(Boolean).join(' · ');
+  const aberto = isoOk(d.data) && String(d.data).slice(0,10) === hojeSP();
+  const pills = (saida ? '<span class="pill solid tnum">' + esc(saida) + '</span>' : '') +
+    (energiaTxt(d.energia) ? '<span class="pill">' + esc(energiaTxt(d.energia)) + '</span>' : '') +
+    (d.custoTotal ? '<span class="pill tnum">' + esc(txt(d.custoTotal)) + '</span>' : '') +
+    (ativs.length ? '<span class="more">' + ativs.length + (ativs.length > 1 ? ' atividades' : ' atividade') + '</span>' : '');
+  return '<section class="day' + (aberto ? ' open' : '') + '" id="day-' + esc(num) + '">' +
+    '<button type="button" class="day-h" aria-expanded="' + aberto + '" aria-controls="day-' + esc(num) + '-c"><span class="wrap">' +
+      '<span class="top"><span class="eyebrow">' + eyebrow + '</span><span class="chev" aria-hidden="true"></span></span>' +
+      '<span class="h2">' + titleHtml(d.titulo || ('Dia ' + num)) + '</span>' +
+      (resumo ? '<span class="sum">' + resumo + '</span>' : '') +
+      (pills ? '<span class="row">' + pills + '</span>' : '') +
+    '</span></button>' +
+    '<div class="day-c" id="day-' + esc(num) + '-c"' + (aberto ? '' : ' hidden') + '><div class="wrap">' +
+      (acts ? '<ol class="agenda">' + acts + '</ol>' : '') +
+      (moves || custosHtml ? '<div class="subgrid">' + (moves ? '<div><div class="sub-h">Deslocamentos</div><ul class="moves">' + moves + '</ul></div>' : '') + custosHtml + '</div>' : '') +
+    '</div></div></section>';
+}
+// "🟢 Leve" → "Ritmo leve"; "🎉 Agenda Livre" fica como está
+function energiaTxt(e) {
+  const s = noEmoji(txt(e));
+  if (!s) return '';
+  return /^(leve|moderad|intens|tranquil|pesad|puxad)/i.test(s) ? 'Ritmo ' + s.charAt(0).toLowerCase() + s.slice(1) : s;
+}
+function setDia(sec, abrir) {
+  if (!sec) return;
+  const b = sec.querySelector('.day-h'), c = sec.querySelector('.day-c');
+  sec.classList.toggle('open', abrir); b.setAttribute('aria-expanded', abrir); c.hidden = !abrir;
+  atualizarBotaoTodos();
+}
+function toggleDay(btn) { const sec = btn.closest('.day'); setDia(sec, !sec.classList.contains('open')); }
+function jumpToDay(n) { const sec = document.getElementById('day-' + n); if (!sec) return; setDia(sec, true); sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function atualizarBotaoTodos() {
+  const dias = [...document.querySelectorAll('.day')];
+  const btn = document.getElementById('toggle-all');
+  if (btn) btn.textContent = dias.length && dias.every(x => x.classList.contains('open')) ? 'Fechar todos os dias' : 'Abrir todos os dias';
+}
+function renderDias() {
+  if (!(D.dias || []).length) return;
+  document.getElementById('timeline').innerHTML = D.dias.map(buildDayBlock).join('');
+  document.getElementById('roteiro').hidden = false;
+  document.querySelectorAll('.day-h').forEach(b => b.addEventListener('click', () => toggleDay(b)));
+  document.getElementById('toggle-all').addEventListener('click', () => {
+    const dias = [...document.querySelectorAll('.day')];
+    const abrir = !dias.every(x => x.classList.contains('open'));
+    dias.forEach(x => setDia(x, abrir));
+  });
+  document.getElementById('bar').addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#day-"]'); if (!a) return;
+    setDia(document.getElementById(a.getAttribute('href').slice(1)), true);
+  });
+  const h = (location.hash || '').match(/^#day-(\d+)$/);
+  if (h) setTimeout(() => jumpToDay(h[1]), 50);
+}
+// Destaca na barra a seção ou o dia visível
+function updateDayNav() {
+  const chips = [...document.querySelectorAll('#bar .chip')];
+  const alvos = chips.map(c => document.getElementById(c.getAttribute('href').slice(1))).filter(Boolean);
+  if (!('IntersectionObserver' in window) || !alvos.length) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    chips.forEach(c => c.classList.toggle('on', c.getAttribute('href') === '#' + e.target.id));
+    const on = chips.find(c => c.classList.contains('on'));
+    const bar = document.querySelector('#bar');
+    if (on && bar) bar.scrollTo({ left: on.offsetLeft - bar.clientWidth / 2 + on.clientWidth / 2, behavior: 'smooth' });
+  }), { rootMargin: '-30% 0px -65% 0px' });
+  alvos.forEach(s => io.observe(s));
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   Pasta de documentos — anexos salvos via proxy (docs-meta.json no
+   repositório roteiros). Mesmas rotas e mesmo formato dos modelos
+   anteriores: /roteiros/doc-upload (GET/POST/DELETE) e /roteiros/doc-meta.
+   ════════════════════════════════════════════════════════════════════ */
+const PROXY = 'https://cdv-proxy-production.up.railway.app';
+// _docsUploadados: { docId: [ {nome, rawUrl, mediaType, fileId}, ... ] }
+let _docsUploadados = {};
+let _docsList = [];
+const _confirmando = {};   // docId -> índice do arquivo (ou 'card') aguardando confirmação
+let _adicionando = false;
+
+async function _metaGet(slug) {
+  try {
+    const r = await fetch(PROXY + '/roteiros/doc-upload?slug=' + encodeURIComponent(slug) + '&_=' + Date.now());
+    const d = await r.json();
+    return (d.ok && d.docs) ? d.docs : {};
+  } catch (e) { return {}; }
+}
+async function _metaSave(slug, meta) {
+  try {
+    await fetch(PROXY + '/roteiros/doc-meta', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, meta })
+    });
+  } catch (e) {}
+}
+const FILE_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 7V3.5L18.5 9z"/></svg>';
+const UP_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>';
+function _fileListHtml(docId) {
+  const files = _docsUploadados[docId] || [];
+  return files.map((f, fi) => {
+    if (_confirmando[docId] === fi) {
+      return '<div class="ask"><span>Remover “' + esc(f.nome) + '”?</span>' +
+        '<button type="button" class="yes" data-act="rmfile-ok" data-doc="' + esc(docId) + '" data-i="' + fi + '">Remover</button>' +
+        '<button type="button" class="no" data-act="cancel" data-doc="' + esc(docId) + '">Cancelar</button></div>';
+    }
+    return '<div class="file">' + FILE_ICO + '<a href="' + esc(f.rawUrl) + '" target="_blank" rel="noopener" title="' + esc(f.nome) + '">' + esc(f.nome) + '</a>' +
+      '<button type="button" class="x" data-act="rmfile" data-doc="' + esc(docId) + '" data-i="' + fi + '" aria-label="Remover ' + esc(f.nome) + '">Remover</button></div>';
+  }).join('');
+}
+function _badgeHtml(doc) {
+  const n = (_docsUploadados[doc.docId] || []).length;
+  if (n && (!doc.badge || doc.badgeClass === 'pending')) return '<span class="tag ok">Anexado</span>';
+  if (!doc.badge) return '';
+  const cls = doc.badgeClass === 'badge-coral' ? 'warn' : doc.badgeClass === 'badge-green' ? 'ok' : 'gold';
+  return '<span class="tag ' + cls + '">' + esc(noEmoji(txt(doc.badge))) + '</span>';
+}
+function _atualizarBadge(docId) {
+  const el = document.getElementById('badge-' + docId);
+  const doc = _docsList.find(d => d.docId === docId);
+  if (el && doc) el.innerHTML = _badgeHtml(doc);
+}
+function _cardHtml(doc) {
+  const id = doc.docId;
+  const pedeCard = _confirmando[id] === 'card';
+  return '<div class="doc" id="doccard-' + esc(id) + '">' +
+    '<div class="h"><b>' + rich(doc.titulo || '') + '</b><span id="badge-' + esc(id) + '">' + _badgeHtml(doc) + '</span></div>' +
+    (doc.meta ? '<span class="m">' + rich(doc.meta) + '</span>' : '') +
+    '<div class="files" id="upload-status-' + esc(id) + '">' + _fileListHtml(id) + '</div>' +
+    '<span class="status" id="uploading-' + esc(id) + '" hidden></span>' +
+    (pedeCard
+      ? '<div class="ask"><span>Remover o cartão “' + esc(txt(doc.titulo)) + '” e os arquivos dele?</span>' +
+        '<button type="button" class="yes" data-act="rmcard-ok" data-doc="' + esc(id) + '">Remover</button>' +
+        '<button type="button" class="no" data-act="cancel" data-doc="' + esc(id) + '">Cancelar</button></div>'
+      : '<div class="acts"><button type="button" class="up" data-act="upload" data-doc="' + esc(id) + '">' + UP_ICO + 'Anexar arquivos</button>' +
+        '<button type="button" class="rmcard" data-act="rmcard" data-doc="' + esc(id) + '">Remover cartão</button></div>') +
+    '<input class="doc-input" type="file" multiple id="input-' + esc(id) + '" data-doc="' + esc(id) + '" accept=".pdf,.jpg,.jpeg,.png,.webp,.heic">' +
+    '</div>';
+}
+function _redrawDocs() {
+  document.getElementById('docs-grid').innerHTML = _docsList.map(_cardHtml).join('');
+  document.getElementById('docs-add').innerHTML = _adicionando
+    ? '<form class="addform" id="addform"><label for="novo-doc">Nome do documento</label><input id="novo-doc" type="text" maxlength="80" placeholder="Ex.: Ingresso do museu" autocomplete="off">' +
+      '<button type="submit" class="yes">Adicionar</button><button type="button" class="no" data-act="add-cancel">Cancelar</button></form>'
+    : '<button type="button" class="addbtn" data-act="add">+ Adicionar documento</button>';
+  if (_adicionando) { const i = document.getElementById('novo-doc'); if (i) i.focus(); }
+}
+function _redrawCard(docId) {
+  const el = document.getElementById('doccard-' + docId);
+  const doc = _docsList.find(d => d.docId === docId);
+  if (el && doc) el.outerHTML = _cardHtml(doc); else _redrawDocs();
+}
+async function carregarDocsUpload(slug) {
+  const meta = await _metaGet(slug);
+  const deletedCards = new Set(meta._deletedCards || []);
+  const extraCards = meta._extraCards || [];
+  _docsList = (_docsList.length ? _docsList : (D.documentos || []).map((d, i) => ({ ...d, docId: d.docId || ('doc_' + i) })))
+    .filter(d => !deletedCards.has(d.docId));
+  const existingIds = new Set(_docsList.map(d => d.docId));
+  for (const ex of extraCards) if (!existingIds.has(ex.docId)) _docsList.push(ex);
+  _docsUploadados = {};
+  Object.entries(meta).forEach(([fileName, info]) => {
+    if (fileName.startsWith('_')) return;
+    const fileId = fileName.replace(/\.[^.]+$/, '');
+    const docId = fileId.replace(/_\d+$/, '');
+    const rawUrl = 'https://raw.githubusercontent.com/davileles/roteiros/main/' + slug + '/docs/' + fileName;
+    if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+    if (!_docsUploadados[docId].some(x => x.fileId === fileId))
+      _docsUploadados[docId].push({ nome: (info && info.nome) || fileName, rawUrl, mediaType: (info && info.mediaType) || '', fileId });
+  });
+  _redrawDocs();
+}
+function renderDocCards(documentos) {
+  _docsList = documentos.map((doc, i) => ({ ...doc, docId: doc.docId || ('doc_' + i) }));
+  _redrawDocs();
+  if (D._slug) carregarDocsUpload(D._slug);
+}
+function triggerUpload(docId) { const el = document.getElementById('input-' + docId); if (el) el.click(); }
+function _status(docId, msg, erro) {
+  const el = document.getElementById('uploading-' + docId); if (!el) return;
+  el.textContent = msg || ''; el.hidden = !msg; el.classList.toggle('err', !!erro);
+}
+async function handleDocUpload(docId, nomeDoc, input) {
+  // multi-arquivo: envia em série (evita conflito de SHA no docs-meta.json)
+  const selecionados = Array.from(input.files || []);
+  if (!selecionados.length) return;
+  const slug = D._slug;
+  if (!slug) { _status(docId, 'Este roteiro ainda não foi publicado, então não dá para anexar arquivos.', true); input.value = ''; return; }
+  const maxMB = 8;
+  const grandes = selecionados.filter(f => f.size > maxMB * 1024 * 1024);
+  const fila = selecionados.filter(f => f.size <= maxMB * 1024 * 1024);
+  const erros = grandes.map(f => f.name + ' passa de ' + maxMB + ' MB e não foi enviado.');
+  for (let i = 0; i < fila.length; i++) {
+    const file = fila[i];
+    _status(docId, fila.length > 1 ? 'Enviando ' + (i + 1) + ' de ' + fila.length + '…' : 'Enviando…');
+    const ext = file.name.split('.').pop().toLowerCase();
+    const fileId = docId + '_' + (Date.now() + i);
+    const fileName = fileId + '.' + ext;
+    try {
+      const b64 = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(file); });
+      const resp = await fetch(PROXY + '/roteiros/doc-upload', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, docId: fileName, nome: file.name, tipo: ext, base64: b64, mediaType: file.type })
+      });
+      const data = await resp.json();
+      if (!data.ok) throw new Error(data.erro || 'erro no envio');
+      if (!_docsUploadados[docId]) _docsUploadados[docId] = [];
+      _docsUploadados[docId].push({ nome: file.name, rawUrl: data.rawUrl, mediaType: file.type, fileId });
+      const st = document.getElementById('upload-status-' + docId); if (st) st.innerHTML = _fileListHtml(docId);
+      _atualizarBadge(docId);
+    } catch (e) {
+      erros.push(file.name + ' não foi enviado (' + (e && e.message ? e.message : 'falha de conexão') + '). Tente de novo.');
+    }
+  }
+  _status(docId, erros.join('\n'), erros.length > 0);
+  input.value = '';
+}
+async function removerDocArquivo(docId, fi, confirmado) {
+  const files = _docsUploadados[docId] || [];
+  const f = files[fi];
+  if (!f) return;
+  if (!confirmado) { _confirmando[docId] = fi; document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId); return; }
+  delete _confirmando[docId];
+  _docsUploadados[docId].splice(fi, 1);
+  document.getElementById('upload-status-' + docId).innerHTML = _fileListHtml(docId);
+  _atualizarBadge(docId);
+  const slug = D._slug; if (!slug) return;
+  const ext = String(f.rawUrl).split('.').pop().toLowerCase();
+  const fileName = f.fileId + '.' + ext;
+  try {
+    await fetch(PROXY + '/roteiros/doc-upload', {
+      method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, docId: fileName })
+    });
+  } catch (e) {}
+}
+async function removerDocCard(docId, confirmado) {
+  if (!confirmado) { _confirmando[docId] = 'card'; _redrawCard(docId); return; }
+  delete _confirmando[docId];
+  const slug = D._slug;
+  _docsList = _docsList.filter(d => d.docId !== docId);
+  delete _docsUploadados[docId];
+  _redrawDocs();
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  const deleted = new Set(meta._deletedCards || []);
+  deleted.add(docId);
+  meta._deletedCards = [...deleted];
+  meta._extraCards = (meta._extraCards || []).filter(e => e.docId !== docId);
+  await _metaSave(slug, meta);
+}
+async function adicionarDocCard(titulo) {
+  if (!titulo) { _adicionando = true; _redrawDocs(); return; }
+  _adicionando = false;
+  const slug = D._slug;
+  const novoCard = { docId: 'doc_extra_' + Date.now(), icon: '📄', titulo, meta: 'Adicionado manualmente', badge: '' };
+  _docsList.push(novoCard);
+  _redrawDocs();
+  if (!slug) return;
+  const meta = await _metaGet(slug);
+  meta._extraCards = [...(meta._extraCards || []), novoCard];
+  await _metaSave(slug, meta);
+}
+// compat com os modelos anteriores
+function mostrarDocAnexado(docId) {}
+async function removerDoc(docId) { await removerDocArquivo(docId, 0, true); }
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const doc = b.getAttribute('data-doc'), i = parseInt(b.getAttribute('data-i'), 10);
+  switch (b.getAttribute('data-act')) {
+    case 'upload': triggerUpload(doc); break;
+    case 'rmfile': removerDocArquivo(doc, i); break;
+    case 'rmfile-ok': removerDocArquivo(doc, i, true); break;
+    case 'rmcard': removerDocCard(doc); break;
+    case 'rmcard-ok': removerDocCard(doc, true); break;
+    case 'cancel': delete _confirmando[doc]; _redrawCard(doc); break;
+    case 'add': adicionarDocCard(); break;
+    case 'add-cancel': _adicionando = false; _redrawDocs(); break;
+  }
+});
+document.addEventListener('change', e => {
+  const inp = e.target.closest('.doc-input'); if (!inp) return;
+  const docId = inp.getAttribute('data-doc');
+  const doc = _docsList.find(d => d.docId === docId);
+  handleDocUpload(docId, doc ? txt(doc.titulo) : 'doc', inp);
+});
+document.addEventListener('submit', e => {
+  if (e.target.id !== 'addform') return;
+  e.preventDefault();
+  const v = (document.getElementById('novo-doc').value || '').trim();
+  if (v) adicionarDocCard(v);
+});
+
+/* ── Montagem da página ──────────────────────────────────────────────── */
+function renderRoteiro() {
+  if (typeof ROTEIRO_DATA === 'undefined') {
+    document.body.innerHTML = '<p style="padding:40px 20px;text-align:center;font-family:sans-serif;color:#55524C">Nenhum roteiro carregado.</p>';
+    return;
+  }
+  D = ROTEIRO_DATA || {};
+  const tituloPg = noEmoji(txt(D.titulo || 'Roteiro')) + ' · ' + marcaTexto();
+  document.title = tituloPg;
+  const pt = document.getElementById('page-title'); if (pt) pt.textContent = tituloPg;
+  renderCapa();
+  renderBarra();
+  renderVisao();
+  renderVoos();
+  renderHospedagem();
+  renderServicos();
+  renderDias();
+  if ((D.documentos || []).length) {
+    document.getElementById('documentos').hidden = false;
+    renderDocCards(D.documentos);
+  }
+  document.getElementById('footer-note').textContent = noEmoji(txt(D.footerNote || D.titulo || ''));
+  updateDayNav();
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderRoteiro);
+else renderRoteiro();
+</script>
+</body>
+</html>
