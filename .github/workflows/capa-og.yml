@@ -1,5 +1,5 @@
 # Gera a imagem de preview (WhatsApp/Telegram) de cada roteiro a partir da própria
-# capa da página: mesmas fontes, título, foto e cores. Grava <slug>/capa.jpg e aponta
+# capa da página: mesmas fontes, título, foto e cores. Grava <pasta>/capa.jpg (vale também para pastas aninhadas, ex. roteiros/<slug>) e aponta
 # og:image para capa.jpg?v=<carimbo> (o carimbo força o WhatsApp a buscar a nova).
 #
 # - Automático: todo push na main que mexe em <slug>/index.html (proxy, painel ou
@@ -12,7 +12,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '*/index.html'
+      - '**/index.html'
       - '!template/**'
   workflow_dispatch:
     inputs:
@@ -45,13 +45,13 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             if [ "$ENTRADA" = "todos" ]; then
-              PASTAS=$(ls -d */ | sed 's#/##' | grep -vE '^(template|assets|scripts)$' | while read d; do [ -f "$d/index.html" ] && echo "$d"; done | tr '\n' ' ')
+              PASTAS=$(git ls-files '*index.html' | xargs -r -n1 dirname | grep -vE '^(\.|template|assets|scripts)(/|$)' | sort -u | tr '\n' ' ')
             else
               PASTAS="$ENTRADA"
             fi
           else
             if git cat-file -e "$ANTES^{commit}" 2>/dev/null; then BASE="$ANTES"; else BASE="HEAD~1"; fi
-            PASTAS=$(git diff --name-only "$BASE" HEAD -- '*/index.html' | cut -d/ -f1 | grep -v '^template$' | sort -u | tr '\n' ' ')
+            PASTAS=$(git diff --name-only --diff-filter=AM "$BASE" HEAD -- '*index.html' | xargs -r -n1 dirname | grep -vE '^(\.|template|assets|scripts)(/|$)' | sort -u | tr '\n' ' ')
           fi
           echo "pastas=$PASTAS" >> "$GITHUB_OUTPUT"
           echo "Roteiros: ${PASTAS:-nenhum}"
@@ -76,7 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add -A -- '*/capa.jpg' '*/index.html'
+          git add -A -- '*capa.jpg' '*index.html'
           if git diff --cached --quiet; then echo "Nada mudou"; exit 0; fi
           git commit -m "roteiro: capa de preview (${{ steps.alvo.outputs.pastas }})"
           for i in 1 2 3; do

@@ -61,7 +61,7 @@ async def gerar(pg, pasta: Path) -> bool:
     await pg.wait_for_timeout(1200)
     await pg.screenshot(path=str(pasta / 'capa.jpg'), type='jpeg', quality=88,
                         clip={'x': 0, 'y': 0, 'width': W, 'height': H})
-    apontar_og(html, pasta.name)
+    apontar_og(html, pasta.as_posix().strip('/'))
     print(f'[capa-og] {pasta.name}: capa gerada')
     return True
 
@@ -88,7 +88,7 @@ async def main(pastas):
         feitos = 0
         for nome in pastas:
             pasta = Path(nome)
-            if pasta.name in ('template', 'assets', 'scripts', '.github') or not pasta.is_dir():
+            if pasta.parts[:1] in (('template',), ('assets',), ('scripts',), ('.github',)) or not pasta.is_dir():
                 continue
             try:
                 feitos += await gerar(pg, pasta)
