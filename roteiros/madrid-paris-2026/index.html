@@ -307,7 +307,7 @@ const ROTEIRO_DATA = {
   },
   {
    "label": "Custo estimado",
-   "value": "~R$ 7.844 por pessoa",
+   "value": "~R$ 7.788 por pessoa",
    "variant": "green"
   }
  ],
@@ -323,7 +323,9 @@ const ROTEIRO_DATA = {
    "dataChegada": "2026-11-21",
    "horaPartida": "11:55",
    "horaChegada": "13:15",
-   "cia": "Azul"
+   "cia": "Azul",
+   "nvoo": "AD 4236",
+   "pnr": "WMPKNJ"
   },
   {
    "tipo": "ida",
@@ -336,6 +338,7 @@ const ROTEIRO_DATA = {
    "horaPartida": "20:30",
    "horaChegada": "10:15",
    "cia": "Iberia",
+   "nvoo": "IB 272",
    "classe": "Executiva"
   },
   {
@@ -388,7 +391,9 @@ const ROTEIRO_DATA = {
    "horaPartida": "11:50",
    "horaChegada": "19:00",
    "cia": "Iberia",
-   "classe": "Executiva"
+   "nvoo": "IB 271",
+   "classe": "Executiva",
+   "pnr": "9ATXBV"
   },
   {
    "tipo": "volta",
@@ -400,12 +405,14 @@ const ROTEIRO_DATA = {
    "dataChegada": "2026-12-01",
    "horaPartida": "21:55",
    "horaChegada": "23:10",
-   "cia": "Gol"
+   "cia": "Gol",
+   "nvoo": "G3 1488",
+   "pnr": "FBUZUD"
   }
  ],
  "hospedagem": [
   {
-   "nome": "Hotel a definir · região Sol/Ópera",
+   "nome": "Catalonia Gran Vía Madrid",
    "cidade": "Madrid",
    "checkin": "2026-11-22",
    "checkout": "2026-11-25",
@@ -413,7 +420,7 @@ const ROTEIRO_DATA = {
    "hospedes": "4 pessoas"
   },
   {
-   "nome": "Hotel a definir · região Opéra (9º arr.)",
+   "nome": "Novotel Paris Les Halles",
    "cidade": "Paris",
    "checkin": "2026-11-25",
    "checkout": "2026-11-27",
@@ -421,7 +428,7 @@ const ROTEIRO_DATA = {
    "hospedes": "4 pessoas"
   },
   {
-   "nome": "Hotel a definir · região Covent Garden/Soho",
+   "nome": "Marlin Waterloo",
    "cidade": "Londres",
    "checkin": "2026-11-27",
    "checkout": "2026-11-30",
@@ -429,7 +436,7 @@ const ROTEIRO_DATA = {
    "hospedes": "4 pessoas"
   },
   {
-   "nome": "Hotel a definir · região Sol/Ópera",
+   "nome": "Novotel Madrid Feria and Airport",
    "cidade": "Madrid",
    "checkin": "2026-11-30",
    "checkout": "2026-12-01",
@@ -646,7 +653,7 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "11h30 – 12h15",
-     "nome": "Transfer até o hotel (região Sol/Ópera)",
+     "nome": "Transfer até o Catalonia Gran Vía",
      "descricao": "O táxi oficial tem tarifa fixa de € 33 até qualquer ponto dentro da M-30.",
      "dica": "Com 4 pessoas e malas, reservem uma van de transfer (~€ 70 no total)."
     },
@@ -692,14 +699,14 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Aeroporto → Hotel (Sol/Ópera): van de transfer, 25 a 45 min, ~€ 70 total",
-    "Hotel → Mercado de San Miguel: a pé, ~7 min",
+    "Aeroporto → Catalonia Gran Vía: van de transfer, 25 a 45 min, ~€ 70 total",
+    "Hotel → Mercado de San Miguel: a pé, ~12 min",
     "Mercado de San Miguel → Plaza Mayor: a pé, ~2 min",
-    "Plaza Mayor → Hotel: a pé, ~8 min",
-    "Hotel → Chocolatería San Ginés: a pé, ~5 min",
+    "Plaza Mayor → Hotel: a pé, ~10 min",
+    "Hotel → Chocolatería San Ginés: a pé, ~8 min",
     "San Ginés → Puerta del Sol: a pé, ~3 min",
     "Calle Preciados → Restaurante Botín: a pé, ~12 min",
-    "Botín → Hotel: a pé, ~10 min"
+    "Botín → Hotel: a pé, ~15 min"
    ],
    "custos": [
     {
@@ -775,14 +782,14 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Palácio Real: a pé, ~12 min",
+    "Hotel → Palácio Real: a pé, ~20 min",
     "Palácio Real → Catedral de la Almudena: a pé, ~2 min",
     "Almudena → Taberna La Bola: a pé, ~8 min",
-    "Taberna La Bola → Hotel: a pé, ~8 min",
-    "Hotel → Gran Vía: a pé, ~8 min",
+    "Taberna La Bola → Hotel: a pé, ~15 min",
+    "Hotel → Gran Vía: o hotel fica na própria avenida",
     "Gran Vía → Templo de Debod: a pé, ~15 min",
     "Templo de Debod → El Corte Inglés Callao: a pé pela Gran Vía, ~20 min (ou táxi ~€ 8)",
-    "Callao → Hotel: a pé, ~7 min"
+    "Callao → Hotel: a pé pela Gran Vía, ~8 min"
    ],
    "custos": [
     {
@@ -924,7 +931,7 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "11h45 – 12h45",
-     "nome": "Táxi Orly → hotel (região Opéra)",
+     "nome": "Táxi Orly → Novotel Paris Les Halles",
      "descricao": "Tarifa fixa de € 45 até a margem direita.",
      "dica": "Usem apenas a fila oficial de táxi."
     },
@@ -961,8 +968,8 @@ const ROTEIRO_DATA = {
    ],
    "deslocamentos": [
     "Hotel Madrid → Aeroporto de Barajas: táxi, ~30 min, € 33 total",
-    "Aeroporto de Orly → Hotel (Opéra): táxi, ~45 min, € 45 total",
-    "Hotel → Bouillon Chartier: a pé, ~10 min",
+    "Aeroporto de Orly → Novotel Les Halles: táxi, ~45 min, € 45 total",
+    "Hotel → Bouillon Chartier: a pé, ~15 min",
     "Chartier → Galeries Lafayette: a pé, ~12 min",
     "Lafayette → Champs-Élysées (Franklin D. Roosevelt): metrô linha 9, ~15 min, ~€ 2,50",
     "Champs-Élysées → Arco do Triunfo: a pé, ~20 min",
@@ -1050,7 +1057,7 @@ const ROTEIRO_DATA = {
      "horario": "16h30 – 17h00",
      "nome": "Trocadéro 🌅",
      "descricao": "A vista mais famosa da Torre Eiffel, com pôr do sol por volta das 17h.",
-     "dica": "Metrô linha 9 direto da região Opéra."
+     "dica": "Do hotel: metrô linha 1 até Franklin D. Roosevelt e linha 9 até Trocadéro."
     },
     {
      "horario": "17h15 – 18h45",
@@ -1072,13 +1079,13 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Sainte-Chapelle: metrô linha 7 + caminhada, ~20 min, ~€ 2,50",
+    "Hotel → Sainte-Chapelle: a pé pela Pont au Change, ~12 min",
     "Sainte-Chapelle → Notre-Dame: a pé, ~5 min",
     "Notre-Dame → Île Saint-Louis: a pé, ~5 min",
     "Île Saint-Louis → Pont Neuf: a pé pelo Sena, ~15 min",
     "Pont Neuf → Angelina (Rue de Rivoli): a pé, ~15 min",
     "Tulherias → Hotel: a pé, ~15 min",
-    "Hotel → Trocadéro: metrô linha 9, ~20 min, ~€ 2,50",
+    "Hotel → Trocadéro: metrô linha 1 + linha 9, ~25 min, ~€ 2,50",
     "Trocadéro → Torre Eiffel: a pé pela Pont d'Iéna, ~10 min",
     "Torre Eiffel → Chez Francis: a pé, ~15 min",
     "Pont de l'Alma → Hotel: táxi/Uber, ~15 min, ~€ 20 total"
@@ -1158,7 +1165,7 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "15h20 – 16h15",
-     "nome": "Táxi St Pancras → hotel (região Covent Garden/Soho)",
+     "nome": "Táxi St Pancras → Marlin Waterloo",
      "descricao": "Check-in e uma pausa rápida."
     },
     {
@@ -1185,14 +1192,14 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Museu do Louvre: a pé pela Avenue de l'Opéra, ~15 min",
-    "Louvre → Hotel: a pé, ~15 min",
+    "Hotel → Museu do Louvre: a pé pela Rue de Rivoli, ~10 min",
+    "Louvre → Hotel: a pé, ~10 min",
     "Hotel → Gare du Nord: táxi, ~15 min, ~€ 20 total",
-    "St Pancras → Hotel (Covent Garden/Soho): táxi, ~20 min, ~£ 20 total",
-    "Hotel → London Eye: metrô até Waterloo, ~15 min",
+    "St Pancras → Marlin Waterloo: táxi, ~25 min, ~£ 25 total",
+    "Hotel → London Eye: a pé, ~12 min",
     "London Eye → Big Ben: a pé pela Westminster Bridge, ~10 min",
     "Westminster → Covent Garden: metrô, ~10 min",
-    "Covent Garden → Hotel: a pé, ~10 min"
+    "Covent Garden → Hotel: a pé pela Waterloo Bridge, ~20 min (ou táxi, ~10 min)"
    ],
    "custos": [
     {
@@ -1274,7 +1281,7 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Estação de Euston: metrô, ~15 min",
+    "Hotel → Estação de Euston: metrô Northern line desde Waterloo, ~15 min",
     "Euston → Watford Junction: trem, ~20 min",
     "Watford Junction → Studio Tour: ônibus ou táxi, ~15 min",
     "Euston → Oxford Circus: metrô, ~10 min",
@@ -1349,13 +1356,13 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Green Park: metrô, ~10 min",
+    "Hotel → Green Park: metrô Jubilee line desde Waterloo, ~10 min",
     "Green Park → Palácio de Buckingham: a pé, ~10 min",
     "Buckingham → St James's Park: a pé, ~3 min",
     "St James's Park → The Albert: a pé, ~10 min",
     "Victoria → South Kensington (Museu de História Natural): metrô, ~10 min",
     "Museu → Hyde Park Winter Wonderland: táxi, ~10 min, ~£ 15",
-    "Hyde Park Corner → Hotel: metrô, ~15 min"
+    "Hyde Park Corner → Hotel: metrô, ~20 min"
    ],
    "custos": [
     {
@@ -1394,7 +1401,7 @@ const ROTEIRO_DATA = {
    "data": "2026-11-30",
    "titulo": "Joias da Coroa e ¡hola de nuevo, Madrid! 👑",
    "energia": "Moderado",
-   "resumo": "Manhã na Torre de Londres com as Joias da Coroa e travessia da Tower Bridge. À tarde, voo de volta a Madrid para a última noite, com tapas no Mercado de San Miguel. Checkout em Londres: 09h15.",
+   "resumo": "Manhã na Torre de Londres com as Joias da Coroa e travessia da Tower Bridge. À tarde, voo de volta a Madrid para a última noite, num hotel a 10 minutos do aeroporto. Checkout em Londres: 09h15.",
    "atividades": [
     {
      "horario": "09h15 – 09h30",
@@ -1424,8 +1431,8 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "14h00 – 15h00",
-     "nome": "Trem Elizabeth line · Tottenham Court Road → Heathrow",
-     "descricao": "Trem direto até o aeroporto em ~40 min.",
+     "nome": "Metrô + Elizabeth line · Waterloo → Heathrow",
+     "descricao": "Jubilee line até Bond Street e Elizabeth line direto ao aeroporto, ~55 min no total.",
      "dica": "Paguem por aproximação com o cartão. A Sarah viaja grátis com um adulto."
     },
     {
@@ -1435,25 +1442,24 @@ const ROTEIRO_DATA = {
      "dica": "Opções diretas de Iberia, British Airways, Vueling e easyJet."
     },
     {
-     "horario": "20h10 – 21h15",
-     "nome": "Táxi Barajas → hotel (região Sol/Ópera)",
-     "descricao": "Tarifa fixa de € 33 até o centro. Façam o check-in online do voo MAD → GRU."
+     "horario": "20h10 – 21h00",
+     "nome": "Táxi Barajas → Novotel Madrid Feria and Airport",
+     "descricao": "Hotel ao lado do IFEMA, a ~10 min do aeroporto (taxímetro, ~€ 15). Façam o check-in online do voo MAD → GRU."
     },
     {
-     "horario": "21h30 – 22h30",
-     "nome": "Jantar leve · Mercado de San Miguel",
-     "descricao": "Tapas para fechar a viagem, a 5 min do hotel.",
-     "dica": "Abre até meia-noite. Se o mercado de Natal da Plaza Mayor já estiver montado, deem uma espiada."
+     "horario": "21h15 – 22h15",
+     "nome": "Jantar leve · restaurante do hotel",
+     "descricao": "Noite tranquila para descansar antes do voo de volta.",
+     "dica": "Se ainda houver energia, o Mercado de San Miguel (aberto até meia-noite) fica a ~25 min de táxi, ~€ 30 por trecho."
     }
    ],
    "deslocamentos": [
-    "Hotel → Tower Hill: metrô, ~15 min, ~£ 3 por adulto",
+    "Hotel → Tower Hill: metrô desde Waterloo, ~20 min, ~£ 3 por adulto",
     "Torre de Londres → Tower Bridge: a pé, ~5 min",
     "Tower Bridge → St Katharine Docks: a pé, ~5 min",
-    "Tower Hill → Hotel: metrô, ~15 min",
-    "Tottenham Court Road → Aeroporto de Heathrow: Elizabeth line, ~40 min, ~£ 13 por adulto",
-    "Aeroporto de Barajas → Hotel (Sol/Ópera): táxi, ~30 min, € 33 total",
-    "Hotel → Mercado de San Miguel: a pé, ~7 min"
+    "Tower Hill → Hotel: metrô, ~20 min",
+    "Waterloo → Aeroporto de Heathrow: Jubilee line + Elizabeth line (Bond Street), ~55 min, ~£ 13 por adulto",
+    "Aeroporto de Barajas → Novotel Feria and Airport: táxi, ~10 min, ~€ 15 total"
    ],
    "custos": [
     {
@@ -1478,14 +1484,14 @@ const ROTEIRO_DATA = {
     },
     {
      "label": "Táxi Barajas (rateado)",
-     "valor": "R$ 52"
+     "valor": "R$ 24"
     },
     {
-     "label": "Jantar San Miguel (~€ 20)",
+     "label": "Jantar no hotel (~€ 20)",
      "valor": "R$ 126"
     }
    ],
-   "custoTotal": "R$ 1.272"
+   "custoTotal": "R$ 1.244"
   },
   {
    "num": 11,
@@ -1500,9 +1506,9 @@ const ROTEIRO_DATA = {
      "descricao": "Confiram passaportes, cartões de embarque e notas de tax free."
     },
     {
-     "horario": "08h15 – 08h45",
+     "horario": "08h15 – 08h30",
      "nome": "Táxi hotel → Aeroporto de Barajas T4",
-     "descricao": "Tarifa fixa de € 33."
+     "descricao": "Cerca de 10 min, ~€ 15 no taxímetro. Perguntem na recepção se o hotel oferece traslado."
     },
     {
      "horario": "08h45 – 09h30",
@@ -1549,7 +1555,7 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Aeroporto de Barajas T4: táxi, ~30 min, € 33 total",
+    "Hotel → Aeroporto de Barajas T4: táxi, ~10 min, ~€ 15 total",
     "T4 → T4S: trem interno automático, ~5 min",
     "GRU T3 → GRU T2: a pé pela passarela, ~10 min",
     "Aeroporto de Confins → Casa: Uber/táxi ou carro, 40 a 60 min, ~R$ 120 a 180 total"
@@ -1557,7 +1563,7 @@ const ROTEIRO_DATA = {
    "custos": [
     {
      "label": "Táxi em Madrid (rateado)",
-     "valor": "R$ 52"
+     "valor": "R$ 24"
     },
     {
      "label": "Café da manhã",
@@ -1572,7 +1578,7 @@ const ROTEIRO_DATA = {
      "valor": "R$ 38"
     }
    ],
-   "custoTotal": "R$ 153"
+   "custoTotal": "R$ 125"
   }
  ],
  "documentos": [
