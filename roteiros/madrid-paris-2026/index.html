@@ -307,11 +307,11 @@ const ROTEIRO_DATA = {
   },
   {
    "label": "Custo estimado",
-   "value": "~R$ 7.788 por pessoa",
+   "value": "~R$ 7.700 por pessoa",
    "variant": "green"
   }
  ],
- "obs": "Valores por pessoa (média entre adultos e crianças), com câmbio de referência € 1 = R$ 6,30 e £ 1 = R$ 7,30. Não incluem hotéis, voos internacionais nem compras. O voo Madrid → Paris, o Eurostar e o voo Londres → Madrid estão estimados e ainda precisam ser reservados. Para entrar no Reino Unido, os quatro precisam do ETA (£ 20 cada, pelo app UK ETA ou gov.uk/eta). Por causa das manifestações na França, Paris ficou de quarta a sexta, fora do fim de semana, quando os protestos têm se concentrado. As greves nacionais costumam ser anunciadas com antecedência: acompanhem o noticiário, evitem a região de République, Bastille e Nation e, em dia de greve, prefiram táxi ao metrô. Horários e preços podem mudar: confirmem nos sites oficiais antes de ir.",
+ "obs": "Valores por pessoa (média entre adultos e crianças), com câmbio de referência € 1 = R$ 6,30 e £ 1 = R$ 7,30. Não incluem hotéis, voos internacionais nem compras. Os voos Madrid → Paris e Londres → Madrid são da Iberia; o Eurostar está estimado e ainda precisa ser reservado. Para entrar no Reino Unido, os quatro precisam do ETA (£ 20 cada, pelo app UK ETA ou gov.uk/eta). Por causa das manifestações na França, Paris ficou de quarta a sexta, fora do fim de semana, quando os protestos têm se concentrado. As greves nacionais costumam ser anunciadas com antecedência: acompanhem o noticiário, evitem a região de République, Bastille e Nation e, em dia de greve, prefiram táxi ao metrô. Horários e preços podem mudar: confirmem nos sites oficiais antes de ir.",
  "voos": [
   {
    "tipo": "ida",
@@ -350,10 +350,9 @@ const ROTEIRO_DATA = {
    "destinoNome": "Paris · Orly",
    "data": "2026-11-25",
    "dataChegada": "2026-11-25",
-   "horaPartida": "09:30",
-   "horaChegada": "11:35",
-   "cia": "A reservar",
-   "conexao": "Horário sugerido"
+   "horaPartida": "09:55",
+   "horaChegada": "12:00",
+   "cia": "Iberia"
   },
   {
    "tipo": "ida",
@@ -370,16 +369,15 @@ const ROTEIRO_DATA = {
   },
   {
    "tipo": "volta",
-   "origemIata": "LHR",
-   "origemNome": "Londres · Heathrow",
+   "origemIata": "LGW",
+   "origemNome": "Londres · Gatwick",
    "destinoIata": "MAD",
    "destinoNome": "Madrid · Barajas",
    "data": "2026-11-30",
    "dataChegada": "2026-11-30",
-   "horaPartida": "16:50",
-   "horaChegada": "20:10",
-   "cia": "A reservar",
-   "conexao": "Horário sugerido"
+   "horaPartida": "11:45",
+   "horaChegada": "15:05",
+   "cia": "Iberia"
   },
   {
    "tipo": "volta",
@@ -461,7 +459,7 @@ const ROTEIRO_DATA = {
    "tipo": "outro",
    "icon": "✈️",
    "nome": "Voo Madrid → Paris",
-   "meta": "25/11 · manhã · Madrid → Orly",
+   "meta": "25/11 · Iberia · 09h55 Barajas → 12h00 Orly",
    "badge": "Reservar"
   },
   {
@@ -475,7 +473,7 @@ const ROTEIRO_DATA = {
    "tipo": "outro",
    "icon": "✈️",
    "nome": "Voo Londres → Madrid",
-   "meta": "30/11 · fim de tarde · Heathrow → Barajas",
+   "meta": "30/11 · Iberia · 11h45 Gatwick → 15h05 Barajas",
    "badge": "Reservar"
   },
   {
@@ -503,7 +501,7 @@ const ROTEIRO_DATA = {
    "tipo": "passeio",
    "icon": "🌈",
    "nome": "Sainte-Chapelle",
-   "meta": "26/11 às 9h30",
+   "meta": "27/11 às 9h",
    "badge": "Reservar"
   },
   {
@@ -524,7 +522,7 @@ const ROTEIRO_DATA = {
    "tipo": "passeio",
    "icon": "🖼️",
    "nome": "Museu do Louvre",
-   "meta": "27/11 às 9h · horário marcado",
+   "meta": "26/11 às 9h · horário marcado",
    "badge": "Reservar"
   },
   {
@@ -546,13 +544,6 @@ const ROTEIRO_DATA = {
    "icon": "🎄",
    "nome": "Hyde Park Winter Wonderland",
    "meta": "29/11 · entrada com horário marcado",
-   "badge": "Reservar"
-  },
-  {
-   "tipo": "passeio",
-   "icon": "💎",
-   "nome": "Torre de Londres · Joias da Coroa",
-   "meta": "30/11 às 10h",
    "badge": "Reservar"
   },
   {
@@ -921,27 +912,26 @@ const ROTEIRO_DATA = {
    "data": "2026-11-25",
    "titulo": "Adiós, Madrid! Bonjour, Paris! 🇫🇷",
    "energia": "Moderado",
-   "resumo": "Voo curto pela manhã, bistrô clássico, vitrines natalinas da Lafayette, Champs-Élysées iluminada com mercado de Natal e Paris brilhando do alto do Arco do Triunfo. ✨ Saída do hotel: 07h00.",
+   "resumo": "Voo curto pela manhã, bistrô clássico, vitrines natalinas da Lafayette, Champs-Élysées iluminada com mercado de Natal e Paris brilhando do alto do Arco do Triunfo. ✨ Saída do hotel: 07h30.",
    "atividades": [
     {
-     "horario": "07h00 – 07h40",
+     "horario": "07h30 – 08h10",
      "nome": "Táxi hotel → Aeroporto de Barajas",
      "descricao": "Tarifa fixa de € 33 dentro da M-30."
     },
     {
-     "horario": "09h30 – 11h35",
-     "nome": "Voo Madrid → Paris-Orly (a reservar)",
-     "descricao": "Opções diretas de Iberia, Air France, Vueling e Transavia. Prefiram Orly, mais perto do hotel.",
-     "dica": "Nas low-cost, a bagagem despachada é cobrada à parte."
+     "horario": "09h55 – 12h00",
+     "nome": "Voo Iberia · Madrid → Paris-Orly",
+     "descricao": "Voo direto de cerca de 2h. Façam o check-in online na véspera."
     },
     {
-     "horario": "11h45 – 12h45",
+     "horario": "12h15 – 13h15",
      "nome": "Táxi Orly → Novotel Paris Les Halles",
      "descricao": "Tarifa fixa de € 45 até a margem direita.",
      "dica": "Usem apenas a fila oficial de táxi."
     },
     {
-     "horario": "13h00 – 14h30",
+     "horario": "13h30 – 14h45",
      "nome": "Bouillon Chartier",
      "descricao": "Restaurante centenário com salão Belle Époque e comida francesa clássica a preço baixo.",
      "dica": "Não aceita reserva; a fila anda rápido."
@@ -986,7 +976,7 @@ const ROTEIRO_DATA = {
      "valor": "R$ 52"
     },
     {
-     "label": "Voo Madrid → Paris (estimativa)",
+     "label": "Voo Iberia Madrid → Paris (estimativa)",
      "valor": "R$ 630"
     },
     {
@@ -1015,59 +1005,42 @@ const ROTEIRO_DATA = {
   {
    "num": 6,
    "data": "2026-11-26",
-   "titulo": "Vitrais, Notre-Dame e a Torre Eiffel ao anoitecer 🗼",
+   "titulo": "Louvre, Tulherias e a Torre Eiffel de dia e de noite 🗼",
    "energia": "Intenso",
-   "resumo": "Os vitrais da Sainte-Chapelle, Notre-Dame restaurada, sorvete na Île Saint-Louis e o chocolate quente mais famoso de Paris. Depois de um descanso, o grande momento: topo da Torre Eiffel ao anoitecer, jantar com vista para ela e cruzeiro no Sena com a torre piscando. ✨ Saída do hotel: 09h00.",
+   "resumo": "Manhã inteira no Louvre, chocolate quente no Angelina e passeio pelas Tulherias. Depois de um descanso, a Torre Eiffel ainda de dia, o topo com Paris acendendo, jantar com vista para ela e cruzeiro no Sena com a torre piscando. ✨ Saída do hotel: 08h45.",
    "atividades": [
     {
-     "horario": "09h30 – 10h30",
-     "nome": "Sainte-Chapelle 🌈",
-     "descricao": "Capela gótica de 1248 com mais de 600 m² de vitrais.",
-     "dica": "Abre às 9h. € 22 para fora do EEE; menores de 18 grátis. Ingresso com horário marcado."
+     "horario": "09h00 – 12h30",
+     "nome": "Museu do Louvre 🖼️",
+     "descricao": "Mona Lisa, Vênus de Milo, Vitória de Samotrácia e a ala egípcia com múmias, com tempo para ir sem pressa.",
+     "dica": "Desde 14/01/2026, € 32 para visitantes de fora do EEE. Menores de 18 não pagam, mas reservam horário. Reservem a entrada das 9h."
     },
     {
-     "horario": "10h30 – 11h30",
-     "nome": "Catedral de Notre-Dame",
-     "descricao": "Reaberta em dezembro de 2024 após cinco anos de restauração.",
-     "dica": "Entrada gratuita. Reservem horário gratuito no site ou app oficial; as vagas abrem 2 a 3 dias antes."
-    },
-    {
-     "horario": "11h30 – 12h00",
-     "nome": "Berthillon · Île Saint-Louis 🍦",
-     "descricao": "O sorvete mais tradicional de Paris, numa ilhinha charmosa.",
-     "dica": "Fecha às segundas e terças; quinta está aberta."
-    },
-    {
-     "horario": "12h00 – 12h45",
-     "nome": "Pont Neuf · caminhada pelo Sena",
-     "descricao": "A ponte mais antiga de Paris e os buquinistas às margens do rio."
-    },
-    {
-     "horario": "13h00 – 14h15",
+     "horario": "12h45 – 14h00",
      "nome": "Angelina · Rue de Rivoli",
      "descricao": "Salão de chá de 1903, famoso pelo chocolate quente L'Africain e pelo Mont-Blanc.",
-     "dica": "Reservem ou cheguem antes das 13h."
+     "dica": "Fica em frente ao Louvre. Reservem ou cheguem cedo."
     },
     {
-     "horario": "14h15 – 14h45",
+     "horario": "14h00 – 14h45",
      "nome": "Jardim das Tulherias",
      "descricao": "Caminhada pelos jardins entre o Louvre e a Concorde."
     },
     {
-     "horario": "15h00 – 16h00",
+     "horario": "14h45 – 15h30",
      "nome": "Descanso no hotel 😴",
-     "descricao": "Pausa obrigatória antes da noite especial."
+     "descricao": "Pausa antes da tarde e da noite na Torre Eiffel."
     },
     {
-     "horario": "16h30 – 17h00",
-     "nome": "Trocadéro 🌅",
-     "descricao": "A vista mais famosa da Torre Eiffel, com pôr do sol por volta das 17h.",
+     "horario": "16h00 – 17h00",
+     "nome": "Trocadéro + Champ de Mars 🌅",
+     "descricao": "A Torre Eiffel ainda de dia: fotos no Trocadéro e caminhada pela Pont d'Iéna até o Champ de Mars, com o pôr do sol por volta das 17h.",
      "dica": "Do hotel: metrô linha 1 até Franklin D. Roosevelt e linha 9 até Trocadéro."
     },
     {
      "horario": "17h15 – 18h45",
      "nome": "Torre Eiffel · topo de elevador 🗼",
-     "descricao": "Subida aos 276 m com Paris acendendo lá embaixo.",
+     "descricao": "Subida aos 276 m com Paris acendendo lá embaixo. Às 18h a torre pisca com vocês lá em cima.",
      "dica": "Topo: € 36,70 (adultos), € 18,40 (12–24 anos) e € 9,20 (4–11 anos). Ingressos já à venda; reservem às 17h15."
     },
     {
@@ -1084,25 +1057,18 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Sainte-Chapelle: a pé pela Pont au Change, ~12 min",
-    "Sainte-Chapelle → Notre-Dame: a pé, ~5 min",
-    "Notre-Dame → Île Saint-Louis: a pé, ~5 min",
-    "Île Saint-Louis → Pont Neuf: a pé pelo Sena, ~15 min",
-    "Pont Neuf → Angelina (Rue de Rivoli): a pé, ~15 min",
+    "Hotel → Museu do Louvre: a pé pela Rue de Rivoli, ~10 min",
+    "Louvre → Angelina: a pé, ~5 min",
     "Tulherias → Hotel: a pé, ~15 min",
     "Hotel → Trocadéro: metrô linha 1 + linha 9, ~25 min, ~€ 2,50",
-    "Trocadéro → Torre Eiffel: a pé pela Pont d'Iéna, ~10 min",
+    "Trocadéro → Champ de Mars: a pé pela Pont d'Iéna, ~10 min",
     "Torre Eiffel → Chez Francis: a pé, ~15 min",
     "Pont de l'Alma → Hotel: táxi/Uber, ~15 min, ~€ 20 total"
    ],
    "custos": [
     {
-     "label": "Sainte-Chapelle (média; meninas grátis)",
-     "valor": "R$ 69"
-    },
-    {
-     "label": "Sorvete Berthillon",
-     "valor": "R$ 38"
+     "label": "Louvre (média; meninas grátis)",
+     "valor": "R$ 101"
     },
     {
      "label": "Almoço Angelina (~€ 35)",
@@ -1125,42 +1091,53 @@ const ROTEIRO_DATA = {
      "valor": "R$ 63"
     }
    ],
-   "custoTotal": "R$ 941"
+   "custoTotal": "R$ 935"
   },
   {
    "num": 7,
    "data": "2026-11-27",
-   "titulo": "Louvre, Eurostar e Londres iluminada 🇬🇧",
+   "titulo": "Sainte-Chapelle, Notre-Dame, Eurostar e Londres iluminada 🇬🇧",
    "energia": "Intenso",
-   "resumo": "Louvre na abertura, Eurostar pelo túnel sob o Canal da Mancha e, à noite, Londres do alto da London Eye, Big Ben iluminado e a árvore de Natal de Covent Garden. Checkout em Paris: 08h40.",
+   "resumo": "Manhã a pé na Île de la Cité, com os vitrais da Sainte-Chapelle, Notre-Dame restaurada e sorvete na Île Saint-Louis. Depois, Eurostar pelo túnel sob o Canal da Mancha e, à noite, Londres do alto da London Eye, Big Ben iluminado e a árvore de Natal de Covent Garden. Checkout em Paris: 08h40.",
    "atividades": [
     {
      "horario": "08h40 – 09h00",
      "nome": "Checkout · deixar as malas no hotel",
-     "descricao": "As malas ficam na recepção até o meio-dia."
+     "descricao": "As malas ficam na recepção até o fim da manhã."
     },
     {
-     "horario": "09h00 – 11h15",
-     "nome": "Museu do Louvre",
-     "descricao": "Mona Lisa, Vênus de Milo, Vitória de Samotrácia e a ala egípcia com múmias.",
-     "dica": "Desde 14/01/2026, € 32 para visitantes de fora do EEE. Menores de 18 não pagam, mas reservam horário."
+     "horario": "09h00 – 09h45",
+     "nome": "Sainte-Chapelle 🌈",
+     "descricao": "Capela gótica de 1248 com mais de 600 m² de vitrais.",
+     "dica": "Abre às 9h. € 22 para fora do EEE; menores de 18 grátis. Reservem o ingresso das 9h."
     },
     {
-     "horario": "11h15 – 12h00",
-     "nome": "Almoço rápido · Carrousel du Louvre",
-     "descricao": "Praça de alimentação sob a pirâmide invertida, sem sair do museu.",
-     "dica": "Hoje é Black Friday: evitem as grandes lojas."
+     "horario": "09h50 – 10h45",
+     "nome": "Catedral de Notre-Dame",
+     "descricao": "Reaberta em dezembro de 2024 após cinco anos de restauração.",
+     "dica": "Entrada gratuita. Reservem horário gratuito no site ou app oficial; as vagas abrem 2 a 3 dias antes."
     },
     {
-     "horario": "12h00 – 12h40",
-     "nome": "Hotel → Gare du Nord",
+     "horario": "10h45 – 11h10",
+     "nome": "Berthillon · Île Saint-Louis 🍦",
+     "descricao": "O sorvete mais tradicional de Paris, numa ilhinha charmosa.",
+     "dica": "Se estiverem atrasados, pulem e voltem direto ao hotel."
+    },
+    {
+     "horario": "11h10 – 11h30",
+     "nome": "Volta a pé ao hotel",
+     "descricao": "Pela Pont au Change, ~15 min."
+    },
+    {
+     "horario": "11h45 – 12h05",
+     "nome": "Táxi hotel → Gare du Nord",
      "descricao": "Pegar as malas e seguir de táxi para a estação do Eurostar.",
-     "dica": "Usem apenas táxi oficial ou Uber."
+     "dica": "Usem apenas táxi oficial ou Uber. Hoje é Black Friday: contem com trânsito."
     },
     {
-     "horario": "12h40 – 14h01",
+     "horario": "12h05 – 14h01",
      "nome": "Check-in Eurostar · Gare du Nord",
-     "descricao": "Raio-X, saída do Espaço Schengen e imigração do Reino Unido feitas ainda em Paris.",
+     "descricao": "Raio-X, saída do Espaço Schengen e imigração do Reino Unido feitas ainda em Paris. Almocem na área de embarque depois dos controles.",
      "dica": "Cheguem 75 a 90 min antes; o portão fecha 30 min antes. Tenham o ETA dos quatro aprovado."
     },
     {
@@ -1197,9 +1174,11 @@ const ROTEIRO_DATA = {
     }
    ],
    "deslocamentos": [
-    "Hotel → Museu do Louvre: a pé pela Rue de Rivoli, ~10 min",
-    "Louvre → Hotel: a pé, ~10 min",
-    "Hotel → Gare du Nord: táxi, ~15 min, ~€ 20 total",
+    "Hotel → Sainte-Chapelle: a pé pela Pont au Change, ~15 min",
+    "Sainte-Chapelle → Notre-Dame: a pé, ~5 min",
+    "Notre-Dame → Île Saint-Louis: a pé, ~5 min",
+    "Île Saint-Louis → Hotel: a pé, ~20 min",
+    "Hotel → Gare du Nord: táxi, ~20 min, ~€ 20 total",
     "St Pancras → Marlin Waterloo: táxi, ~25 min, ~£ 25 total",
     "Hotel → London Eye: a pé, ~12 min",
     "London Eye → Big Ben: a pé pela Westminster Bridge, ~10 min",
@@ -1208,11 +1187,15 @@ const ROTEIRO_DATA = {
    ],
    "custos": [
     {
-     "label": "Louvre (média; meninas grátis)",
-     "valor": "R$ 101"
+     "label": "Sainte-Chapelle (média; meninas grátis)",
+     "valor": "R$ 69"
     },
     {
-     "label": "Almoço Carrousel (~€ 15)",
+     "label": "Sorvete Berthillon",
+     "valor": "R$ 38"
+    },
+    {
+     "label": "Almoço na Gare du Nord (~€ 15)",
      "valor": "R$ 95"
     },
     {
@@ -1236,7 +1219,7 @@ const ROTEIRO_DATA = {
      "valor": "R$ 146"
     }
    ],
-   "custoTotal": "R$ 1.070"
+   "custoTotal": "R$ 1.076"
   },
   {
    "num": 8,
@@ -1404,87 +1387,72 @@ const ROTEIRO_DATA = {
   {
    "num": 10,
    "data": "2026-11-30",
-   "titulo": "Joias da Coroa e ¡hola de nuevo, Madrid! 👑",
+   "titulo": "Até logo, Londres! ¡Hola de nuevo, Madrid! 🇪🇸",
    "energia": "Moderado",
-   "resumo": "Manhã na Torre de Londres com as Joias da Coroa e travessia da Tower Bridge. À tarde, voo de volta a Madrid para a última noite, num hotel a 10 minutos do aeroporto. Checkout em Londres: 09h15.",
+   "resumo": "Manhã cedo de trem até Gatwick e voo da Iberia de volta a Madrid. À tarde, check-in num hotel a 10 minutos do aeroporto e última noite no centro, entre as luzes de Natal da Puerta del Sol, o mercado de Natal da Plaza Mayor e as tapas do Mercado de San Miguel. Checkout em Londres: 08h00.",
    "atividades": [
     {
-     "horario": "09h15 – 09h30",
-     "nome": "Checkout · deixar as malas no hotel",
-     "descricao": "As malas ficam na recepção até a hora de ir ao aeroporto."
+     "horario": "07h15 – 08h00",
+     "nome": "Café da manhã + checkout",
+     "descricao": "Confiram passaportes e o check-in online do voo para Madrid."
     },
     {
-     "horario": "10h00 – 12h00",
-     "nome": "Torre de Londres · Joias da Coroa 💎",
-     "descricao": "Fortaleza de quase mil anos com as joias da família real, os guardas Beefeaters e os corvos da torre.",
-     "dica": "Às segundas abre às 10h. Vão direto às Joias da Coroa antes que a fila cresça. Ingresso com horário no site oficial."
+     "horario": "08h00 – 09h15",
+     "nome": "Metrô + Thameslink · Waterloo → Gatwick",
+     "descricao": "Jubilee line uma estação até London Bridge e trem Thameslink direto ao aeroporto, ~1h no total.",
+     "dica": "Paguem por aproximação com o cartão. Com malas e crianças, táxi ou Uber também é opção (~1h15, ~£ 100)."
     },
     {
-     "horario": "12h00 – 12h30",
-     "nome": "Tower Bridge",
-     "descricao": "A ponte mais famosa de Londres, vista de perto e atravessada a pé."
+     "horario": "09h15 – 11h15",
+     "nome": "Check-in e embarque · Gatwick",
+     "descricao": "Despacho das malas, controle de segurança e lanche no aeroporto."
     },
     {
-     "horario": "12h30 – 13h30",
-     "nome": "Almoço · St Katharine Docks",
-     "descricao": "Marina charmosa ao lado da Torre, com vários restaurantes."
+     "horario": "11h45 – 15h05",
+     "nome": "Voo Iberia · Londres-Gatwick → Madrid",
+     "descricao": "Cerca de 2h20 de voo. Madrid está 1h à frente de Londres."
     },
     {
-     "horario": "13h30 – 14h00",
-     "nome": "Hotel · pegar as malas",
-     "descricao": "Volta de metrô."
-    },
-    {
-     "horario": "14h00 – 15h00",
-     "nome": "Metrô + Elizabeth line · Waterloo → Heathrow",
-     "descricao": "Jubilee line até Bond Street e Elizabeth line direto ao aeroporto, ~55 min no total.",
-     "dica": "Paguem por aproximação com o cartão. A Sarah viaja grátis com um adulto."
-    },
-    {
-     "horario": "16h50 – 20h10",
-     "nome": "Voo Londres-Heathrow → Madrid (a reservar)",
-     "descricao": "Cerca de 2h20 de voo. Madrid está 1h à frente de Londres.",
-     "dica": "Opções diretas de Iberia, British Airways, Vueling e easyJet."
-    },
-    {
-     "horario": "20h10 – 21h00",
+     "horario": "15h05 – 16h00",
      "nome": "Táxi Barajas → Novotel Madrid Feria and Airport",
-     "descricao": "Hotel ao lado do IFEMA, a ~10 min do aeroporto (taxímetro, ~€ 15). Façam o check-in online do voo MAD → GRU."
+     "descricao": "Hotel ao lado do IFEMA, a ~10 min do aeroporto (taxímetro, ~€ 15). Façam o check-in online do voo MAD → GRU.",
+     "dica": "Entrada a partir das 14h."
     },
     {
-     "horario": "21h15 – 22h15",
-     "nome": "Jantar leve · restaurante do hotel",
-     "descricao": "Noite tranquila para descansar antes do voo de volta.",
-     "dica": "Se ainda houver energia, o Mercado de San Miguel (aberto até meia-noite) fica a ~25 min de táxi, ~€ 30 por trecho."
+     "horario": "16h00 – 17h00",
+     "nome": "Descanso no hotel 😴",
+     "descricao": "Pausa antes da última noite em Madrid."
+    },
+    {
+     "horario": "17h30 – 19h30",
+     "nome": "Puerta del Sol + Plaza Mayor 🎄",
+     "descricao": "As luzes de Natal do centro e o mercado de Natal da Plaza Mayor, com enfeites e doces."
+    },
+    {
+     "horario": "19h30 – 21h00",
+     "nome": "Jantar · Mercado de San Miguel",
+     "descricao": "Despedida com tapas, croquetas e jamón no mercado de ferro de 1916.",
+     "dica": "Fica a 2 min a pé da Plaza Mayor. Voltem cedo: o voo de amanhã sai às 11h50."
     }
    ],
    "deslocamentos": [
-    "Hotel → Tower Hill: metrô desde Waterloo, ~20 min, ~£ 3 por adulto",
-    "Torre de Londres → Tower Bridge: a pé, ~5 min",
-    "Tower Bridge → St Katharine Docks: a pé, ~5 min",
-    "Tower Hill → Hotel: metrô, ~20 min",
-    "Waterloo → Aeroporto de Heathrow: Jubilee line + Elizabeth line (Bond Street), ~55 min, ~£ 13 por adulto",
-    "Aeroporto de Barajas → Novotel Feria and Airport: táxi, ~10 min, ~€ 15 total"
+    "Waterloo → London Bridge: Jubilee line, ~5 min",
+    "London Bridge → Aeroporto de Gatwick: trem Thameslink, ~35 min, ~£ 20 por adulto",
+    "Aeroporto de Barajas → Novotel Feria and Airport: táxi, ~10 min, ~€ 15 total",
+    "Hotel → Puerta del Sol: táxi, ~25 min, ~€ 30 por trecho",
+    "Puerta del Sol → Plaza Mayor → Mercado de San Miguel: a pé, ~5 min"
    ],
    "custos": [
     {
-     "label": "Torre de Londres (média)",
-     "valor": "R$ 192"
+     "label": "Metrô + Thameslink (média)",
+     "valor": "R$ 91"
     },
     {
-     "label": "Almoço St Katharine Docks (~£ 18)",
-     "valor": "R$ 131"
+     "label": "Lanche em Gatwick (~£ 12)",
+     "valor": "R$ 88"
     },
     {
-     "label": "Metrô",
-     "valor": "R$ 20"
-    },
-    {
-     "label": "Elizabeth line (média)",
-     "valor": "R$ 51"
-    },
-    {
-     "label": "Voo Londres → Madrid (estimativa)",
+     "label": "Voo Iberia Londres → Madrid (estimativa)",
      "valor": "R$ 700"
     },
     {
@@ -1492,11 +1460,15 @@ const ROTEIRO_DATA = {
      "valor": "R$ 24"
     },
     {
-     "label": "Jantar no hotel (~€ 20)",
-     "valor": "R$ 126"
+     "label": "Táxi ida e volta ao centro (rateado)",
+     "valor": "R$ 95"
+    },
+    {
+     "label": "Jantar San Miguel (~€ 25)",
+     "valor": "R$ 158"
     }
    ],
-   "custoTotal": "R$ 1.244"
+   "custoTotal": "R$ 1.156"
   },
   {
    "num": 11,
@@ -1632,7 +1604,7 @@ const ROTEIRO_DATA = {
   {
    "icon": "🎟️",
    "titulo": "Ingressos",
-   "meta": "Torre Eiffel, Arco do Triunfo, Louvre, Harry Potter, Torre de Londres, Palácio Real e demais atrações",
+   "meta": "Torre Eiffel, Arco do Triunfo, Louvre, Sainte-Chapelle, Harry Potter, Palácio Real e demais atrações",
    "badge": "Reservar",
    "badgeClass": ""
   }
