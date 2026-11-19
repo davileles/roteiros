@@ -311,7 +311,7 @@ const ROTEIRO_DATA = {
    "variant": "green"
   }
  ],
- "obs": "Valores por pessoa (média entre adultos e crianças), com câmbio de referência € 1 = R$ 6,30 e £ 1 = R$ 7,30. Não incluem hotéis, voos internacionais nem compras. Os voos Madrid → Paris e Londres → Madrid são da Iberia; o Eurostar está estimado e ainda precisa ser reservado. Para entrar no Reino Unido, os quatro precisam do ETA (£ 20 cada, pelo app UK ETA ou gov.uk/eta). Por causa das manifestações na França, Paris ficou de quarta a sexta, fora do fim de semana, quando os protestos têm se concentrado. As greves nacionais costumam ser anunciadas com antecedência: acompanhem o noticiário, evitem a região de République, Bastille e Nation e, em dia de greve, prefiram táxi ao metrô. Horários e preços podem mudar: confirmem nos sites oficiais antes de ir.",
+ "obs": "Valores por pessoa (média entre adultos e crianças), com câmbio de referência € 1 = R$ 6,30 e £ 1 = R$ 7,30. Não incluem hotéis, voos internacionais nem compras. Os voos Madrid → Paris (IB 571) e Londres → Madrid (IB 984) estão reservados na Iberia, localizador KLNSB; o Eurostar está estimado e ainda precisa ser reservado. Para entrar no Reino Unido, os quatro precisam do ETA (£ 20 cada, pelo app UK ETA ou gov.uk/eta). Por causa das manifestações na França, Paris ficou de quarta a sexta, fora do fim de semana, quando os protestos têm se concentrado. As greves nacionais costumam ser anunciadas com antecedência: acompanhem o noticiário, evitem a região de République, Bastille e Nation e, em dia de greve, prefiram táxi ao metrô. Horários e preços podem mudar: confirmem nos sites oficiais antes de ir.",
  "voos": [
   {
    "tipo": "ida",
@@ -352,7 +352,10 @@ const ROTEIRO_DATA = {
    "dataChegada": "2026-11-25",
    "horaPartida": "09:55",
    "horaChegada": "12:00",
-   "cia": "Iberia"
+   "cia": "Iberia",
+   "nvoo": "IB 571",
+   "classe": "Econômica",
+   "pnr": "KLNSB"
   },
   {
    "tipo": "ida",
@@ -377,7 +380,10 @@ const ROTEIRO_DATA = {
    "dataChegada": "2026-11-30",
    "horaPartida": "11:45",
    "horaChegada": "15:05",
-   "cia": "Iberia"
+   "cia": "Iberia",
+   "nvoo": "IB 984",
+   "classe": "Econômica",
+   "pnr": "KLNSB"
   },
   {
    "tipo": "volta",
@@ -459,8 +465,8 @@ const ROTEIRO_DATA = {
    "tipo": "outro",
    "icon": "✈️",
    "nome": "Voo Madrid → Paris",
-   "meta": "25/11 · Iberia · 09h55 Barajas → 12h00 Orly",
-   "badge": "Reservar"
+   "meta": "25/11 · Iberia IB 571 · 09h55 Barajas → 12h00 Orly · localizador KLNSB",
+   "badge": "Reservado"
   },
   {
    "tipo": "outro",
@@ -473,8 +479,8 @@ const ROTEIRO_DATA = {
    "tipo": "outro",
    "icon": "✈️",
    "nome": "Voo Londres → Madrid",
-   "meta": "30/11 · Iberia · 11h45 Gatwick → 15h05 Barajas",
-   "badge": "Reservar"
+   "meta": "30/11 · Iberia IB 984 · 11h45 Gatwick → 15h05 Barajas · localizador KLNSB",
+   "badge": "Reservado"
   },
   {
    "tipo": "passeio",
@@ -921,8 +927,8 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "09h55 – 12h00",
-     "nome": "Voo Iberia · Madrid → Paris-Orly",
-     "descricao": "Voo direto de cerca de 2h. Façam o check-in online na véspera."
+     "nome": "Voo Iberia IB 571 · Madrid → Paris-Orly",
+     "descricao": "Voo direto de cerca de 2h, localizador KLNSB. Façam o check-in online na véspera."
     },
     {
      "horario": "12h15 – 13h15",
@@ -1409,8 +1415,8 @@ const ROTEIRO_DATA = {
     },
     {
      "horario": "11h45 – 15h05",
-     "nome": "Voo Iberia · Londres-Gatwick → Madrid",
-     "descricao": "Cerca de 2h20 de voo. Madrid está 1h à frente de Londres."
+     "nome": "Voo Iberia IB 984 · Londres-Gatwick → Madrid",
+     "descricao": "Cerca de 2h20 de voo, localizador KLNSB. Madrid está 1h à frente de Londres."
     },
     {
      "horario": "15h05 – 16h00",
@@ -1597,7 +1603,7 @@ const ROTEIRO_DATA = {
   {
    "icon": "🚌",
    "titulo": "Transporte",
-   "meta": "Transfers, trens Renfe, Eurostar e voos Madrid → Paris e Londres → Madrid",
+   "meta": "Transfers, trens Renfe e Eurostar (voos Madrid → Paris e Londres → Madrid já reservados)",
    "badge": "Reservar",
    "badgeClass": ""
   },
