@@ -143,5 +143,147 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-08-31T10:07:27.835Z"
-  }
+  },
+  "doc_1_1795475523342.pdf": {
+    "nome": "Mercure Porto Santa Catarina 17-08.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:04.783Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784161101840",
+    "idx": 0
+  },
+  "doc_2_1795475525038.pdf": {
+    "nome": "Locação de carro - 19 a 25 de agosto.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:06.411Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786358510420",
+    "idx": 0
+  },
+  "doc_1_1795475526561.pdf": {
+    "nome": "NH Siena - 20 a 23-08.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:07.912Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785867401356",
+    "idx": 0
+  },
+  "doc_1_1795475528105.pdf": {
+    "nome": "c-hotels Ambasciatori 23 a 24-08 - Oswaldo e José.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:09.359Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784814868965",
+    "idx": 0
+  },
+  "doc_2_1795475529596.pdf": {
+    "nome": "Aluguel de carro - Florença-Milão.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:11.095Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785873103708",
+    "idx": 0
+  },
+  "doc_1_1795475531262.pdf": {
+    "nome": "Hotel Excelsior San Marco - 26 a 27-08.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:12.876Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785346370355",
+    "idx": 0
+  },
+  "doc_1_1795475533095.pdf": {
+    "nome": "Hotel em Menaggio - 27 a 29:08.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:14.649Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786651551434",
+    "idx": 0
+  },
+  "doc_1_1795475534900.pdf": {
+    "nome": "Fassbind Beatenberg 29-08 a 04-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:16.335Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785016626253",
+    "idx": 0
+  },
+  "doc_2_1795475536548.pdf": {
+    "nome": "Trem - Milão-Brig 29:09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:18.033Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786732911793",
+    "idx": 0
+  },
+  "doc_2_1795475538239.pdf": {
+    "nome": "Swiss travel pass - Mônica.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:19.525Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786731492433",
+    "idx": 0
+  },
+  "doc_2_1795475539790.pdf": {
+    "nome": "Swiss travel pass - Oswaldo.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:21.251Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786731612662",
+    "idx": 0
+  },
+  "doc_1_1795475541503.pdf": {
+    "nome": "Hotel Kipling Genebra - 04 a 06-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:22.846Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785091816491",
+    "idx": 0
+  },
+  "doc_2_1795475543070.pdf": {
+    "nome": "Transfer - Hotel para Aeroporto de Paris - 07:09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:24.731Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786788039112",
+    "idx": 0
+  },
+  "doc_0_1795475544943.png": {
+    "nome": "Captura de Tela 2026-07-23 às 18.18.24.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:12:26.179Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784842213301",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1784161101840_0:dd34d6a4e6",
+    "RES-1786358510420_0:e09f94df4a",
+    "RES-1785867401356_0:089eb676ee",
+    "RES-1784814868965_0:50da5f736e",
+    "RES-1785873103708_0:3155d47e0e",
+    "RES-1785346370355_0:285bb7535c",
+    "RES-1786651551434_0:6098a7dd74",
+    "RES-1785016626253_0:7f0e5f1d91",
+    "RES-1786732911793_0:b705abc2cb",
+    "RES-1786731492433_0:7defcfbfd8",
+    "RES-1786731612662_0:d5f20afec7",
+    "RES-1785091816491_0:17b5f75e43",
+    "RES-1786788039112_0:b8db8ff161",
+    "RES-1784842213301_0:ddac130a90"
+  ]
 }
