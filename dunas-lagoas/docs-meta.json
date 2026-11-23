@@ -14,5 +14,37 @@
   "_deletedCards": [
     "doc_2"
   ],
-  "_extraCards": []
+  "_extraCards": [],
+  "doc_0_1795475494514.png": {
+    "nome": "Captura de Tela 2026-07-17 às 07.51.40.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:35.841Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784285621274",
+    "idx": 0
+  },
+  "doc_1_1795475496848.pdf": {
+    "nome": "Hotel Luzeiros - 16 a 19 de julho - José.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:37.876Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784285813444",
+    "idx": 0
+  },
+  "doc_1_1795475498192.pdf": {
+    "nome": "Hotel Porto Preguicas - 19 a 24 de julho - José.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:39.845Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784285907078",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1784285621274_0:9b8ff4d78e",
+    "RES-1784285813444_0:44f0eec3e0",
+    "RES-1784285907078_0:a47109e26e"
+  ]
 }
