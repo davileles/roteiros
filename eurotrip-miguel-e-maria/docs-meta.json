@@ -96,5 +96,37 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-08-01T08:51:24.239Z"
-  }
+  },
+  "doc_0_1795475501887.pdf": {
+    "nome": "FCO-AMS 02-08.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:43.388Z",
+    "origem": "reserva",
+    "reservaId": "RES-1783804355930",
+    "idx": 0
+  },
+  "doc_0_1795475503566.png": {
+    "nome": "Captura de Tela 2026-07-23 às 15.19.28.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:44.826Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784831085148",
+    "idx": 0
+  },
+  "doc_extra_1785423139979_1795475505002.pdf": {
+    "nome": "Ferry - Amalfi-Capri.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:46.382Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785783758001",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1783804355930_0:928dd1ba5f",
+    "RES-1784831085148_0:160a428cf8",
+    "RES-1785783758001_0:78a604fbdd"
+  ]
 }
