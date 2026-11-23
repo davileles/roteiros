@@ -22,5 +22,37 @@
     "tipo": "jpeg",
     "mediaType": "image/jpeg",
     "uploadEm": "2026-09-03T11:56:40.684Z"
-  }
+  },
+  "doc_0_1795475430309.png": {
+    "nome": "Captura de Tela 2026-08-21 às 17.08.15.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:10:31.714Z",
+    "origem": "reserva",
+    "reservaId": "RES-1787343088610",
+    "idx": 0
+  },
+  "doc_0_1795475431894.jpeg": {
+    "nome": "WhatsApp Image 2026-08-25 at 12.01.02.jpeg",
+    "tipo": "jpeg",
+    "mediaType": "image/jpeg",
+    "uploadEm": "2026-11-23T23:10:33.394Z",
+    "origem": "reserva",
+    "reservaId": "RES-1787670411648",
+    "idx": 0
+  },
+  "doc_0_1795475433556.pdf": {
+    "nome": "LHR-CNF 06:09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:34.697Z",
+    "origem": "reserva",
+    "reservaId": "RES-1787319642740",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1787343088610_0:2818349597",
+    "RES-1787670411648_0:83342adc36",
+    "RES-1787319642740_0:e7bb3decf5"
+  ]
 }
