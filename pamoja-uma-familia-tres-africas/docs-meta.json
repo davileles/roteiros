@@ -34,5 +34,77 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-11-17T20:30:01.000Z"
-  }
+  },
+  "doc_1_1795475417140.pdf": {
+    "nome": "X1YS12 - Paula.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:18.323Z",
+    "origem": "reserva",
+    "reservaId": "RES-1793736979393",
+    "idx": 0
+  },
+  "doc_1_1795475418510.pdf": {
+    "nome": "Hyatt Nairobi - 30:12 a 01:01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:19.910Z",
+    "origem": "reserva",
+    "reservaId": "RES-1788113221469",
+    "idx": 0
+  },
+  "doc_1_1795475420187.pdf": {
+    "nome": "Serval 01 a 02-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:21.851Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792781300202",
+    "idx": 0
+  },
+  "doc_1_1795475422087.pdf": {
+    "nome": "Ngorongoro - 12 a 14:01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:23.423Z",
+    "origem": "reserva",
+    "reservaId": "RES-1788112996369",
+    "idx": 0
+  },
+  "doc_1_1795475423593.pdf": {
+    "nome": "Serengueti Explorer 04 a 07-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:24.935Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792779934106",
+    "idx": 0
+  },
+  "doc_0_1795475425126.pdf": {
+    "nome": "LKY-SRO 04-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:26.614Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792782120470",
+    "idx": 0
+  },
+  "doc_0_1795475426861.pdf": {
+    "nome": "SEU-ZNZ 07-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:28.459Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792782046079",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1793736979393_0:d9173e14b4",
+    "RES-1788113221469_0:d6d7c1e37c",
+    "RES-1792781300202_0:7c3ea25017",
+    "RES-1788112996369_0:fed7677f19",
+    "RES-1792779934106_0:855119c09a",
+    "RES-1792782120470_0:e1796dc54d",
+    "RES-1792782046079_0:04c32d6e26"
+  ]
 }
