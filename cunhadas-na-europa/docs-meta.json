@@ -88,5 +88,147 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-10-15T22:20:34.232Z"
-  }
+  },
+  "doc_hotel_1795475447088.pdf": {
+    "nome": "Joy 124 Milão - Jane.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:48.292Z",
+    "origem": "reserva",
+    "reservaId": "RES-1791117210014",
+    "idx": 0
+  },
+  "doc_0_1795475448525.pdf": {
+    "nome": "LIS-MXP TAP 17-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:49.995Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792191975246",
+    "idx": 0
+  },
+  "doc_1_1795475450202.pdf": {
+    "nome": "Omio_Print_Tickets_151526831249_151526831077.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:51.641Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789037159711",
+    "idx": 0
+  },
+  "doc_1_1795475451825.pdf": {
+    "nome": "Milão - Tirano.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:53.163Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789036253810",
+    "idx": 0
+  },
+  "doc_1_1795475453376.pdf": {
+    "nome": "Omio_Print_Tickets_VXF69N_QKEDRK.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:54.944Z",
+    "origem": "reserva",
+    "reservaId": "RES-1788979403644",
+    "idx": 0
+  },
+  "doc_1_1795475455220.pdf": {
+    "nome": "Omio_Print_Tickets_VXTVSN_2944931268.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:56.484Z",
+    "origem": "reserva",
+    "reservaId": "RES-1788980258150",
+    "idx": 0
+  },
+  "doc_1_1795475456700.pdf": {
+    "nome": "Milão - Veneza.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:58.150Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789037103559",
+    "idx": 0
+  },
+  "doc_hotel_1795475458318.pdf": {
+    "nome": "NH Venezia - 23-10 a 24-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:59.621Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789984354020",
+    "idx": 0
+  },
+  "doc_hotel_1795475459818.pdf": {
+    "nome": "NH Venezia - 24-10 a 25-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:01.168Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789984433135",
+    "idx": 0
+  },
+  "doc_1_1795475461394.pdf": {
+    "nome": "Veneza - Firenze.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:02.862Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789036098573",
+    "idx": 0
+  },
+  "doc_hotel_1795475463033.pdf": {
+    "nome": "Grand hotel Mediterraneo - 25-10 a 29-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:04.312Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789984215555",
+    "idx": 0
+  },
+  "doc_hotel_1795475464516.pdf": {
+    "nome": "Mercure Colosseo 29 a 30-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:05.991Z",
+    "origem": "reserva",
+    "reservaId": "RES-1793202626511",
+    "idx": 0
+  },
+  "doc_hotel_1795475466226.pdf": {
+    "nome": "Mercure Colosseo - 30-10 a 02-11.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:07.542Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789984069799",
+    "idx": 0
+  },
+  "doc_hotel_1795475467726.pdf": {
+    "nome": "Hotel Mundial - Lisboa - Jane.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:09.048Z",
+    "origem": "reserva",
+    "reservaId": "RES-1791117630846",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1791117210014_0:d50d4ae9b4",
+    "RES-1792191975246_0:a6b8d35b28",
+    "RES-1789037159711_0:f7c8e99ff5",
+    "RES-1789036253810_0:3160411ea1",
+    "RES-1788979403644_0:4aa4928bcd",
+    "RES-1788980258150_0:e96d8522c9",
+    "RES-1789037103559_0:ffd5c4ebf6",
+    "RES-1789984354020_0:729df22dc4",
+    "RES-1789984433135_0:1dbd623024",
+    "RES-1789036098573_0:21f819b907",
+    "RES-1789984215555_0:cc11a73c36",
+    "RES-1793202626511_0:bb0d9cb5b5",
+    "RES-1789984069799_0:a55aab090d",
+    "RES-1791117630846_0:257c631753"
+  ]
 }
