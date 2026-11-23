@@ -1,0 +1,74 @@
+{
+  "doc_4_1795475511034.png": {
+    "nome": "Captura de Tela 2026-10-19 às 06.30.30.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:52.380Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792402298372",
+    "idx": 0
+  },
+  "doc_4_1795475512554.png": {
+    "nome": "Captura de Tela 2026-10-19 às 06.30.22.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:53.802Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792402298372",
+    "idx": 1
+  },
+  "doc_3_1795475513986.pdf": {
+    "nome": "Catalonia Gran Via Madrid 22 a 25-11.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:55.320Z",
+    "origem": "reserva",
+    "reservaId": "RES-1795030954926",
+    "idx": 0
+  },
+  "doc_5_1795475515499.pdf": {
+    "nome": "Omio_Print_Tickets_TX4WWZ.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:56.985Z",
+    "origem": "reserva",
+    "reservaId": "RES-1795209905251",
+    "idx": 0
+  },
+  "doc_4_1795475517173.pdf": {
+    "nome": "MAD-GRU 01-12.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:58.521Z",
+    "origem": "reserva",
+    "reservaId": "RES-1785015462878",
+    "idx": 0
+  },
+  "doc_4_1795475518724.png": {
+    "nome": "Meus Voos - Smiles.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:59.940Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792254031879",
+    "idx": 0
+  },
+  "doc_4_1795475520186.pdf": {
+    "nome": "IBERIA_KLNSB_CUNHASANZ.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:12:01.426Z",
+    "origem": "reserva",
+    "reservaId": "RES-1795116381559",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1792402298372_0:e02018f5d4",
+    "RES-1792402298372_1:d8ee3dddf0",
+    "RES-1795030954926_0:66f685c254",
+    "RES-1795209905251_0:4779788f1e",
+    "RES-1785015462878_0:da64ff3d6e",
+    "RES-1792254031879_0:f9620f4b4d",
+    "RES-1795116381559_0:18bc3065f1"
+  ]
+}
