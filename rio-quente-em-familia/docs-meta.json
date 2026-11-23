@@ -53,5 +53,37 @@
     "tipo": "png",
     "mediaType": "image/png",
     "uploadEm": "2026-08-04T18:58:24.472Z"
-  }
+  },
+  "doc_1_1795475487819.pdf": {
+    "nome": "Crystal Plaza - 05 a 06 de agosto.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:28.988Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784680095032",
+    "idx": 0
+  },
+  "doc_0_1795475489162.png": {
+    "nome": "Captura de Tela 2026-07-20 às 14.22.00.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:30.583Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784568587661",
+    "idx": 0
+  },
+  "doc_2_1795475490742.pdf": {
+    "nome": "Aluguel de carro - Goiânia.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:31.838Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784570034242",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1784680095032_0:f1d501aa91",
+    "RES-1784568587661_0:b859051478",
+    "RES-1784570034242_0:d5c3422ed4"
+  ]
 }
