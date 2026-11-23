@@ -2,5 +2,67 @@
   "_deletedCards": [
     "doc_2"
   ],
-  "_extraCards": []
+  "_extraCards": [],
+  "doc_0_1795475436531.png": {
+    "nome": "Captura de Tela 2026-08-07 às 06.53.16.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:10:37.805Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786096626966",
+    "idx": 0
+  },
+  "doc_3_1795475437971.pdf": {
+    "nome": "Bourbon Cataratas - 08 a 13-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:39.145Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786101509859",
+    "idx": 0
+  },
+  "doc_3_1795475439318.pdf": {
+    "nome": "Bourbon Cataratas - 13 a 14-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:40.694Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786101619599",
+    "idx": 0
+  },
+  "doc_0_1795475440904.png": {
+    "nome": "Captura de Tela 2026-08-07 às 06.53.35.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:10:42.145Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786096890517",
+    "idx": 0
+  },
+  "doc_3_1795475442331.pdf": {
+    "nome": "Radisson Curitiba - 14 a 16-10.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:43.706Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786109052042",
+    "idx": 0
+  },
+  "doc_0_1795475443898.png": {
+    "nome": "Captura de Tela 2026-08-07 às 06.53.49.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:10:45.141Z",
+    "origem": "reserva",
+    "reservaId": "RES-1786101344133",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1786096626966_0:895b051702",
+    "RES-1786101509859_0:481958855b",
+    "RES-1786101619599_0:6061c7e552",
+    "RES-1786096890517_0:683ef229f1",
+    "RES-1786109052042_0:9de7dc8e36",
+    "RES-1786101344133_0:ca30a8d0c5"
+  ]
 }
