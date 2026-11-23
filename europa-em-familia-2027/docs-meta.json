@@ -1,0 +1,34 @@
+{
+  "doc_2_1795475404365.jpeg": {
+    "nome": "WhatsApp Image 2026-09-27 at 21.19.17 (1).jpeg",
+    "tipo": "jpeg",
+    "mediaType": "image/jpeg",
+    "uploadEm": "2026-11-23T23:10:05.732Z",
+    "origem": "reserva",
+    "reservaId": "RES-1792411988346",
+    "idx": 0
+  },
+  "doc_2_1795475405942.pdf": {
+    "nome": "IBERIA_K9DM6_LOPESNUNESOTTONI.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:07.123Z",
+    "origem": "reserva",
+    "reservaId": "RES-1794223847817",
+    "idx": 0
+  },
+  "doc_2_1795475407397.pdf": {
+    "nome": "IBERIA_K9GRY_LOPESNUNESOTTONI.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:08.707Z",
+    "origem": "reserva",
+    "reservaId": "RES-1794223665062",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1792411988346_0:a5079d081a",
+    "RES-1794223847817_0:11c0319b0c",
+    "RES-1794223665062_0:4d2732daab"
+  ]
+}
