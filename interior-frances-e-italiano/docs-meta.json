@@ -46,5 +46,87 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-09-08T14:36:39.220Z"
-  }
+  },
+  "doc_2_1795475473988.pdf": {
+    "nome": "Locação de carro França - 13 a 20-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:15.147Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784749633080",
+    "idx": 0
+  },
+  "doc_1_1795475475367.pdf": {
+    "nome": "City Résidence Aix-en-Provence - 13 a 16-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:16.931Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784750561743",
+    "idx": 0
+  },
+  "doc_1_1795475477166.pdf": {
+    "nome": "B&B Hotel Sainte-Maxime Golfe De Saint-Tropez - 16 a 17-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:18.608Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784751770120",
+    "idx": 0
+  },
+  "doc_1_1795475479005.pdf": {
+    "nome": "Ibis Milano Centro - 20 a 22-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:20.074Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784937022961",
+    "idx": 0
+  },
+  "doc_1_1795475480368.pdf": {
+    "nome": "Antica Locanda Al Gambero - 22 a 24-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:21.510Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784937071992",
+    "idx": 0
+  },
+  "doc_2_1795475481757.pdf": {
+    "nome": "Aluguel de carro - Milão-Roma.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:23.050Z",
+    "origem": "reserva",
+    "reservaId": "RES-1789237483311",
+    "idx": 0
+  },
+  "doc_1_1795475483235.pdf": {
+    "nome": "La Torre Del Cestello - 24 a 26-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:24.501Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784936868091",
+    "idx": 0
+  },
+  "doc_1_1795475484665.pdf": {
+    "nome": "Colonna Luxury Suites - 26 a 30-09.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:11:25.825Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784936915953",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1784749633080_0:711e9c8a51",
+    "RES-1784750561743_0:72753ef9f6",
+    "RES-1784751770120_0:8b69080335",
+    "RES-1784937022961_0:07873cbd3c",
+    "RES-1784937071992_0:9e1e55bf21",
+    "RES-1789237483311_0:8bb6bc46c6",
+    "RES-1784936868091_0:02c95f56e7",
+    "RES-1784936915953_0:3fd5e5ccab"
+  ]
 }
