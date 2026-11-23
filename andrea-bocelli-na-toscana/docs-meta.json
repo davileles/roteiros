@@ -60,5 +60,17 @@
     "tipo": "pdf",
     "mediaType": "application/pdf",
     "uploadEm": "2026-07-18T00:01:52.959Z"
-  }
+  },
+  "doc_0_1795475508027.png": {
+    "nome": "Captura de Tela 2026-07-16 às 09.23.52.png",
+    "tipo": "png",
+    "mediaType": "image/png",
+    "uploadEm": "2026-11-23T23:11:49.402Z",
+    "origem": "reserva",
+    "reservaId": "RES-1784204692666",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1784204692666_0:283e4a0286"
+  ]
 }
