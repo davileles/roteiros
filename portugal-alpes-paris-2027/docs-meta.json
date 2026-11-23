@@ -1,0 +1,34 @@
+{
+  "doc_clubmed_1795475410901.pdf": {
+    "nome": "Lisbon Art Stay 06 a 09-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:12.155Z",
+    "origem": "reserva",
+    "reservaId": "RES-1794534645379",
+    "idx": 0
+  },
+  "doc_carro_1795475412321.pdf": {
+    "nome": "Aluguel carro Lisboa-Porto.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:13.781Z",
+    "origem": "reserva",
+    "reservaId": "RES-1794514497094",
+    "idx": 0
+  },
+  "doc_clubmed_1795475414036.pdf": {
+    "nome": "Mercure Porto Santa Catarina 16 a 17-01.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-23T23:10:15.287Z",
+    "origem": "reserva",
+    "reservaId": "RES-1794788415704",
+    "idx": 0
+  },
+  "_importados": [
+    "RES-1794534645379_0:df1ea0951b",
+    "RES-1794514497094_0:56a8060cd8",
+    "RES-1794788415704_0:cb7482172b"
+  ]
+}
