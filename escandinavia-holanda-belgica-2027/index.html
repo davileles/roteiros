@@ -435,6 +435,7 @@ function renderBarra() {
   if ((D.voos || []).length) sec.push(['#voos','Voos']);
   if ((D.hospedagem || []).length) sec.push(['#hospedagem','Hotel']);
   if ((D.servicos || []).length) sec.push(['#servicos','Reservas']);
+  if ((D.documentos || []).length || D._slug) sec.push(['#documentos','Docs']);
   let h = sec.map(([href, l]) => '<a class="chip sec" href="' + href + '">' + l + '</a>').join('');
   if ((D.dias || []).length) {
     h += '<span class="sep" aria-hidden="true"></span>' + D.dias.map(d => {
@@ -443,7 +444,6 @@ function renderBarra() {
         (isoOk(d.data) ? wd(d.data) + '<b>' + String(d.data).slice(8,10) + '</b>' : 'Dia<b>' + esc(n) + '</b>') + '</a>';
     }).join('') + '<span class="sep" aria-hidden="true"></span>';
   }
-  if ((D.documentos || []).length) h += '<a class="chip sec" href="#documentos">Docs</a>';
   document.getElementById('bar').innerHTML = h;
 }
 
@@ -868,9 +868,9 @@ function renderRoteiro() {
   renderHospedagem();
   renderServicos();
   renderDias();
-  if ((D.documentos || []).length) {
+  if ((D.documentos || []).length || D._slug) {
     document.getElementById('documentos').hidden = false;
-    renderDocCards(D.documentos);
+    renderDocCards(D.documentos || []);
   }
   document.getElementById('footer-note').textContent = noEmoji(txt(D.footerNote || D.titulo || ''));
   updateDayNav();

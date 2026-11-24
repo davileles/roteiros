@@ -1327,7 +1327,7 @@ function renderRoteiro() {
     ...(D.hospedagem?.length ? [['#hospedagem','Hotel']] : []),
     ...(D.servicos?.length ? [['#servicos','Serviços']] : []),
     ...(D.dias?.length ? [['#roteiro','Roteiro']] : []),
-    ...(D.documentos?.length ? [['#documentos','Documentos']] : []),
+    ...((D.documentos?.length || D._slug) ? [['#documentos','Documentos']] : []),
   ];
   document.getElementById('topbar-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}">${l}</a>`).join('');
   document.getElementById('mobile-nav').innerHTML = navLinks.map(([h,l])=>`<a href="${h}" onclick="closeMobileNav()">${l}</a>`).join('');
@@ -1381,10 +1381,10 @@ function renderRoteiro() {
   }
 
   // Documentos
-  if (D.documentos?.length) {
+  if (D.documentos?.length || D._slug) {
     document.getElementById('documentos').style.display = '';
     document.getElementById('hr-documentos').style.display = '';
-    renderDocCards(D.documentos);
+    renderDocCards(D.documentos || []);
     if (D._slug) carregarDocsUpload(D._slug);
   }
 
