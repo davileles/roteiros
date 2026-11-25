@@ -105,6 +105,16 @@
     "RES-1788112996369_0:fed7677f19",
     "RES-1792779934106_0:855119c09a",
     "RES-1792782120470_0:e1796dc54d",
-    "RES-1792782046079_0:04c32d6e26"
-  ]
+    "RES-1792782046079_0:04c32d6e26",
+    "RES-1795636829940_0:4f057599f4"
+  ],
+  "doc_0_1795637209332.pdf": {
+    "nome": "CPT-NBO e ZNZ-CPT.pdf",
+    "tipo": "pdf",
+    "mediaType": "application/pdf",
+    "uploadEm": "2026-11-25T20:06:50.707Z",
+    "origem": "reserva",
+    "reservaId": "RES-1795636829940",
+    "idx": 0
+  }
 }
